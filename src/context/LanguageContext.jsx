@@ -4,7 +4,10 @@ import fi from "../lang/fi.json";
 
 const languages = {en, fi};
 const languageList = Object.keys(languages).map((lang) => {
-  return {value: lang, label: languages[lang].icon + languages[lang].language};
+  return {
+    value: lang,
+    label: `${languages[lang].icon} ${languages[lang].language}`,
+  };
 });
 
 const LanguageContext = createContext();

@@ -7,7 +7,6 @@ const Home = () => {
     <div>
       <h1>{lang.home_page.title}</h1>
       <p>{lang.home_page.subtitle}</p>
-      <LanguageSelect />
     </div>
   );
 };
