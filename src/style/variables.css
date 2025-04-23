@@ -4,4 +4,5 @@
   --theme-foreground: #3A506B;
   --theme-lighter: #779CAB;
   --theme-contrast: #F0EFF4;
+  font-size: 62.5%; /* 1rem = 10px */
 }
