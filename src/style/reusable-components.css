@@ -11,3 +11,24 @@
     cursor: pointer;
   }
 }
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.8rem;
+
+  .input-label {
+    font-size: 2rem;
+  }
+
+  .input-field {
+    font-size: 2rem;
+    padding: 0.2rem 0.4rem;
+    border: none;
+    background: var(--theme-foreground);
+    border-radius: 0.8rem;
+    width: min-content;
+    max-width: 32rem;
+  }
+}

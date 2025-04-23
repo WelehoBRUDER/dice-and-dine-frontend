@@ -28,3 +28,5 @@ const Input = ({name, text, type, placeholder, value, onChange, className}) => {
     </div>
   );
 };
+
+export default Input;
