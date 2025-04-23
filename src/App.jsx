@@ -9,7 +9,6 @@ import Reservation from "./views/Reservation";
 import Review from "./views/Review";
 import Games from "./views/Games";
 import Menu from "./views/Menu";
-import "./style/variables.css";
 
 const App = () => {
   return (

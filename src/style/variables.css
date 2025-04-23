@@ -4,24 +4,5 @@
   --theme-foreground: #3a506b;
   --theme-lighter: #779cab;
   --theme-contrast: #f0eff4;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-header nav ul {
-  position: sticky;
-  background-color: #1c2541;
-  color: #f0eff4;
-  list-style: none;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
-header nav ul li {
-  background-color: rgb(217, 164, 85);
+  font-size: 62.5%; /* 1rem = 10px */
 }
