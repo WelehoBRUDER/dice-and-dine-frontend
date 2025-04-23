@@ -32,3 +32,9 @@
     max-width: 32rem;
   }
 }
+
+.language-select {
+  background: var(--theme-foreground);
+  font-size: 2rem;
+  padding: 0.4rem;
+}
