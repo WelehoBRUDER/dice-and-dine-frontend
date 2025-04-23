@@ -1,6 +1,7 @@
 {
   "id": "fi",
-  "name": "Suomi",
+  "language": "Suomi",
+  "icon": "🇫🇮",
   "home_page": {
     "title": "Dice&Dine",
     "subtitle": "Tervetuloa etusivulle"
