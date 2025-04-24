@@ -38,3 +38,51 @@
   font-size: 2rem;
   padding: 0.4rem;
 }
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  /*align-items: stretch;
+  padding: 0rem 2rem;
+  */
+  background: var(--theme-foreground);
+  font-size: 1.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#header * {
+  display: flex;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+#header li a {
+  padding: 2rem;
+}
+
+#header li:hover {
+  background-color: var(--theme-background);
+}
+
+.active-link {
+  background-color: var(--theme-background);
+}
+
+/*
+
+@media screen and (max-width: 500px) {
+  #header ul {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: blue;
+  }
+}
+
+*/
