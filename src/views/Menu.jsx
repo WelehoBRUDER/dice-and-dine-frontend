@@ -1,6 +1,5 @@
 import React from "react";
 import MenuCategory from "../components/MenuCategory";
-import "../style/menu.css";
 
 const Menu = () => {
   const menuItems = [
