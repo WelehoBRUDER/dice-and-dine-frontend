@@ -72,17 +72,9 @@
 }
 
 /*
-
-@media screen and (max-width: 500px) {
-  #header ul {
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: stretch;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    background-color: blue;
-  }
+.input-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 */

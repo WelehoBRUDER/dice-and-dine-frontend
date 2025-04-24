@@ -1,10 +1,7 @@
+import Form from "../components/Form";
+
 const Login = () => {
-  return (
-    <div>
-      <h1>Login page</h1>
-      <p>This is the login page.</p>
-    </div>
-  );
+  return <Form type="login"></Form>;
 };
 
 export default Login;
