@@ -49,26 +49,22 @@
   font-size: 1.5rem;
 }
 
-#header div {
+#header * {
   display: flex;
-  flex-grow: 1;
-  justify-content: space-between;
+  align-items: stretch;
   margin: 0;
+  padding: 0;
+  text-decoration: none;
 }
 
-#header nav {
-  display: flex;
-  flex-grow: 1;
-}
-#header ul {
-  display: flex;
-  flex-grow: 1;
-  justify-content: space-between;
-  list-style: none;
-  margin: 0;
+#header li a {
+  padding: 2rem;
 }
 
-#header li {
-  display: flex;
-  flex-grow: 1;
+#header li:hover {
+  background-color: var(--theme-background);
+}
+
+.active-link {
+  background-color: var(--theme-background);
 }

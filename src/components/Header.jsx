@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import LanguageSelect from "./LanguageSelect";
 
 const Header = () => {
@@ -18,28 +18,68 @@ const Header = () => {
           </li>
           */}
             <li>
-              <Link to="/about">about_page</Link>
+              <NavLink
+                to="/about"
+                className={({isActive}) => (isActive ? "active-link" : "")}
+              >
+                about_page
+              </NavLink>
             </li>
             <li>
-              <Link to="/forum">forum_page</Link>
+              <NavLink
+                to="/forum"
+                className={({isActive}) => (isActive ? "active-link" : "")}
+              >
+                forum_page
+              </NavLink>
             </li>
             <li>
-              <Link to="/login">login_page</Link>
+              <NavLink
+                to="/login"
+                className={({isActive}) => (isActive ? "active-link" : "")}
+              >
+                login_page
+              </NavLink>
             </li>
             <li>
-              <Link to="/register">register_page</Link>
+              <NavLink
+                to="/register"
+                className={({isActive}) => (isActive ? "active-link" : "")}
+              >
+                register_page
+              </NavLink>
             </li>
             <li>
-              <Link to="/reservation">reservation_page</Link>
+              <NavLink
+                to="/reservation"
+                className={({isActive}) => (isActive ? "active-link" : "")}
+              >
+                reservation_page
+              </NavLink>
             </li>
             <li>
-              <Link to="/review">review_page</Link>
+              <NavLink
+                to="/review"
+                className={({isActive}) => (isActive ? "active-link" : "")}
+              >
+                review_page
+              </NavLink>
             </li>
             <li>
-              <Link to="/games">games_page</Link>
+              <NavLink
+                to="/games"
+                className={({isActive}) => (isActive ? "active-link" : "")}
+              >
+                games_page
+              </NavLink>
             </li>
             <li>
-              <Link to="/menu">menu_page</Link>
+              <NavLink
+                to="/menu"
+                className={({isActive}) => (isActive ? "active-link" : "")}
+              >
+                menu_page
+              </NavLink>
             </li>
           </ul>
         </nav>
