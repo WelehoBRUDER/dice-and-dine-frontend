@@ -8,6 +8,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: sans-serif;
 }
 
 /* Blanket color change for all text */
@@ -15,13 +16,10 @@ body {
   color: var(--theme-contrast);
 }
 
+
 /* Fix default font size */
 p, span, div {
   font-size: 1.6rem; /* 16px */
-}
-
-h1 {
-  font-size: 2.4rem; /* 24px */
 }
 
 h2 {
@@ -53,3 +51,9 @@ h2 {
     justify-content: center;
   }
 }
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+

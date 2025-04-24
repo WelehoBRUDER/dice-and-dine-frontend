@@ -1,13 +1,15 @@
 :root {
-  --theme-darker: #0B132B;
-  --theme-background: #1C2541;
-  --theme-foreground: #3A506B;
-  --theme-lighter: #779CAB;
-  --theme-contrast: #F0EFF4;
+  --theme-darker: #0b132b;
+  --theme-background: #1c2541;
+  --theme-foreground: #3a506b;
+  --theme-lighter: #779cab;
+  --theme-contrast: #f0eff4;
   font-size: 62.5%; /* 1rem = 10px */
+
   font-family: 'Roboto', sans-serif;
 
   /* Content width */
   --max-content-width: 1200px;
   --text-content-width: 800px;
 }
+
