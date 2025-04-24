@@ -25,6 +25,7 @@ const Form = ({type}) => {
           placeholder="Enter your email"
         />
       )}
+      <Button>submit_button</Button>
     </form>
   );
 };
