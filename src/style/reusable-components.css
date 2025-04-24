@@ -47,6 +47,8 @@
   */
   background: var(--theme-foreground);
   font-size: 1.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 #header * {
@@ -68,3 +70,19 @@
 .active-link {
   background-color: var(--theme-background);
 }
+
+/*
+
+@media screen and (max-width: 500px) {
+  #header ul {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: blue;
+  }
+}
+
+*/
