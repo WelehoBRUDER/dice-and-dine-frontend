@@ -1,10 +1,7 @@
 // import { useLanguage } from "../context/LanguageContext";
 
-const MenuItem = ({item}) => {
-  // const { lang } = useLanguage();
-
+const MenuItem = ({item, lang}) => {
   //mock data:
-  const {lang} = {lang: "fi"};
   const allergenNames = {
     en: {
       1: "Gluten",
@@ -30,8 +27,8 @@ const MenuItem = ({item}) => {
   };
 
   return (
-    <div className="menu-item">
-      <div className="menu-item-header">
+    <div className="item">
+      <div className="item-header">
         <h3>{item.name}</h3>
         <span>{item.price.toFixed(2)} €</span>
       </div>

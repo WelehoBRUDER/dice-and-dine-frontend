@@ -543,7 +543,10 @@ const Menu = () => {
     },
   ];
 
-  const filteredItems = menuItems.filter((item) => item.lang === "fi");
+  // const { lang } = useLanguage();
+  const lang = "en";
+
+  const filteredItems = menuItems.filter((item) => item.lang === lang);
 
   const groupedItems = filteredItems.reduce((acc, item) => {
     if (!acc[item.category]) acc[item.category] = [];
@@ -559,6 +562,7 @@ const Menu = () => {
           key={categoryId}
           categoryId={parseInt(categoryId)}
           items={items}
+          lang={lang}
         />
       ))}
     </div>

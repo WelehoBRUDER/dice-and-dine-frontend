@@ -1,10 +1,6 @@
 import MenuItem from "./MenuItem.jsx";
 
-const MenuCategory = ({categoryId, items}) => {
-  // const { lang } = useLanguage();
-
-  //mock data
-  const {lang} = {lang: "fi"};
+const MenuCategory = ({categoryId, items, lang}) => {
   const categoryLabels = {
     en: {
       1: "Starters",
@@ -31,7 +27,7 @@ const MenuCategory = ({categoryId, items}) => {
   };
 
   return (
-    <div className="menu-category">
+    <div className="category">
       <h2 className="category-title">{categoryLabels[lang][categoryId]}</h2>
       <div className="category-image">
         <img
@@ -40,12 +36,10 @@ const MenuCategory = ({categoryId, items}) => {
         />
       </div>
 
-      <div className="menu-grid">
-        {items
-          .filter((item) => item.lang === lang)
-          .map((item, i) => (
-            <MenuItem key={i} item={item} />
-          ))}
+      <div className="list-grid">
+        {items.map((item, i) => (
+          <MenuItem key={i} item={item} lang={lang} />
+        ))}
       </div>
     </div>
   );
