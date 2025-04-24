@@ -2,7 +2,9 @@
 
 const MenuItem = ({item}) => {
   // const { lang } = useLanguage();
-  const {lang} = {lang: "en"};
+
+  //mock data:
+  const {lang} = {lang: "fi"};
   const allergenNames = {
     en: {
       1: "Gluten",
@@ -22,6 +24,11 @@ const MenuItem = ({item}) => {
     },
   };
 
+  const allergensLabel = {
+    en: "Allergens",
+    fi: "Allergeenit",
+  };
+
   return (
     <div className="menu-item">
       <div className="menu-item-header">
@@ -31,9 +38,9 @@ const MenuItem = ({item}) => {
       <p className="description">{item.description}</p>
       {item.allergens?.length > 0 && (
         <p className="allergens">
-          Allergens:{" "}
+          {allergensLabel[lang]}: {/* Render allergens label dynamically */}
           {item.allergens
-            .map((allergenCode) => allergenNames[lang][allergenCode]) // Get the allergen name based on the language
+            .map((allergenCode) => allergenNames[lang][allergenCode]) // Map allergens to their names based on selected language
             .join(", ")}
         </p>
       )}

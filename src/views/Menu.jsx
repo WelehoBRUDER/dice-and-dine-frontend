@@ -449,7 +449,7 @@ const Menu = () => {
       lang: "fi",
     },
     {
-      name: "Appelsiinimehu",
+      name: "Omenamehu",
       price: 2.0,
       category: 4,
       allergens: [],
@@ -543,7 +543,7 @@ const Menu = () => {
     },
   ];
 
-  const filteredItems = menuItems.filter((item) => item.lang === "en");
+  const filteredItems = menuItems.filter((item) => item.lang === "fi");
 
   const groupedItems = filteredItems.reduce((acc, item) => {
     if (!acc[item.category]) acc[item.category] = [];
