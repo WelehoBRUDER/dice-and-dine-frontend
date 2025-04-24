@@ -5,9 +5,15 @@ body {
   width: 100%;
   min-height: 100vh;
   position: absolute;
+  font-family: sans-serif;
 }
 
 /* Blanket color change for all text */
 * {
   color: var(--theme-contrast);
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
 }
