@@ -11,3 +11,24 @@ body {
 * {
   color: var(--theme-contrast);
 }
+
+/* Fix default font size */
+p, span, div {
+  font-size: 1.6rem; /* 16px */
+}
+
+h1 {
+  font-size: 2.4rem; /* 24px */
+}
+
+h2 {
+  font-size: 2.0rem; /* 20px */
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}

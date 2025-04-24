@@ -1,13 +1,19 @@
+import {useEffect} from "react";
 import {useLanguage} from "../context/LanguageContext";
-import LanguageSelect from "../components/LanguageSelect";
+import logo from "/restaurant_logo.png?url";
 
 const Home = () => {
-  const {lang} = useLanguage();
+  const {lang, setCurrentPage} = useLanguage();
+  useEffect(() => {
+    setCurrentPage("home_page");
+  }, []);
   return (
-    <div>
-      <h1>{lang.home_page.title}</h1>
-      <p>{lang.home_page.subtitle}</p>
-    </div>
+    <>
+      <div className="logo">
+        <img src={logo} alt={lang("restaurant_icon_alt")}></img>
+      </div>
+      <div className="description">{lang("description")}</div>
+    </>
   );
 };
 

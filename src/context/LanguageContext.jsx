@@ -14,6 +14,7 @@ const LanguageContext = createContext();
 
 export const LanguageProvider = ({children}) => {
   const [currentLanguage, setCurrentLanguage] = useState("en");
+  const [currentPage, setCurrentPage] = useState("home");
 
   useEffect(() => {
     const storedLanguage = localStorage.getItem("language");
@@ -33,9 +34,30 @@ export const LanguageProvider = ({children}) => {
     }
   };
 
+  const getLocalisation = (key) => {
+    const lang = languages[currentLanguage];
+    if (lang) {
+      if (lang[key]) {
+        return lang[key];
+      } else if (lang[currentPage]?.[key]) {
+        return lang[currentPage][key];
+      } else {
+        console.warn(`Key ${key} not found in language ${currentLanguage}`);
+        return key; // Fallback to the key itself if not found
+      }
+    }
+    console.warn(`Language ${currentLanguage} not found`);
+    return key; // Fallback to the key itself if language not found
+  };
+
   return (
     <LanguageContext.Provider
-      value={{lang: languages[currentLanguage], setLanguage, languageList}}
+      value={{
+        lang: getLocalisation,
+        setLanguage,
+        setCurrentPage,
+        languageList,
+      }}
     >
       {children}
     </LanguageContext.Provider>
