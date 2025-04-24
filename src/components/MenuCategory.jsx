@@ -42,7 +42,7 @@ const MenuCategory = ({categoryId, items}) => {
 
       <div className="menu-grid">
         {items
-          .filter((item) => item.lang === lang) // Filter items based on the current language
+          .filter((item) => item.lang === lang)
           .map((item, i) => (
             <MenuItem key={i} item={item} />
           ))}

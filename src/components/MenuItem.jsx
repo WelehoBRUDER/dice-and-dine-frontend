@@ -38,9 +38,9 @@ const MenuItem = ({item}) => {
       <p className="description">{item.description}</p>
       {item.allergens?.length > 0 && (
         <p className="allergens">
-          {allergensLabel[lang]}: {/* Render allergens label dynamically */}
+          {allergensLabel[lang]}:
           {item.allergens
-            .map((allergenCode) => allergenNames[lang][allergenCode]) // Map allergens to their names based on selected language
+            .map((allergenCode) => allergenNames[lang][allergenCode])
             .join(", ")}
         </p>
       )}
