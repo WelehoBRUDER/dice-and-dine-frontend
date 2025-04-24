@@ -1,5 +1,6 @@
 import {useEffect} from "react";
 import {useLanguage} from "../context/LanguageContext";
+import Button from "../components/Button";
 import logo from "/restaurant_logo.png?url";
 
 const Home = () => {
@@ -12,7 +13,12 @@ const Home = () => {
       <div className="logo">
         <img src={logo} alt={lang("restaurant_icon_alt")}></img>
       </div>
-      <div className="description">{lang("description")}</div>
+      <div className="text-width">{lang("description")}</div>
+      <nav className="flex-column center">
+        <Button to="/menu">{lang("menu_link")}</Button>
+        <Button to="/games">{lang("games_link")}</Button>
+        <Button to="/about">{lang("about_link")}</Button>
+      </nav>
     </>
   );
 };

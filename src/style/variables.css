@@ -6,4 +6,8 @@
   --theme-contrast: #F0EFF4;
   font-size: 62.5%; /* 1rem = 10px */
   font-family: 'Roboto', sans-serif;
+
+  /* Content width */
+  --max-content-width: 1200px;
+  --text-content-width: 800px;
 }
