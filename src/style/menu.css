@@ -1,0 +1,53 @@
+.menu-category {
+  margin-bottom: 3rem;
+}
+
+.category-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--theme-lighter); /* Using the lighter theme color */
+  padding-bottom: 0.5rem;
+  color: var(--theme-contrast); /* Text color from your theme */
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.menu-item {
+  padding: 1rem;
+  border: 1px solid var(--theme-foreground); /* Subtle contrast color for borders */
+  border-radius: 8px;
+  background-color: var(
+    --theme-background
+  ); /* Background color from your theme */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+  background-color: var(
+    --theme-foreground
+  ); /* Darken the background slightly on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--theme-contrast); /* Header text color */
+}
+
+.description {
+  margin: 0.5rem 0;
+  color: var(--theme-contrast); /* Text color from the theme */
+}
+
+.allergens {
+  font-size: 0.9rem;
+  color: var(--theme-lighter); /* Lighter color for allergens text */
+}
