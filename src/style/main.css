@@ -5,6 +5,9 @@ body {
   width: 100%;
   min-height: 100vh;
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: sans-serif;
 }
 
@@ -13,7 +16,44 @@ body {
   color: var(--theme-contrast);
 }
 
+
+/* Fix default font size */
+p, span, div {
+  font-size: 1.6rem; /* 16px */
+}
+
+h2 {
+  font-size: 2.0rem; /* 20px */
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: var(--max-content-width);
+}
+
+.text-width {
+  width: 100%;
+  max-width: var(--text-content-width);
+  margin: 0 auto;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem;
+
+  &.center {
+    justify-content: center;
+  }
+}
+
 h1 {
   font-size: 3rem;
   text-align: center;
 }
+
