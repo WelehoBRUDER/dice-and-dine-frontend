@@ -1,31 +1,33 @@
 import Input from "./Input";
 import Button from "./Button";
+//import {useLanguage} from "../context/LanguageContext";
+//import {useEffect} from "react";
 
-const Form = ({type}) => {
+const Form = ({lang, authorisation}) => {
   return (
     <form>
-      <h1>{type}_page_title</h1>
+      <h1>{lang(authorisation)}</h1>
       <Input
         name="username"
-        text={`${type}_username_field`}
+        text={lang("username_field")}
         type="text"
-        placeholder="Enter your username"
+        placeholder={lang("username_field_placeholder")}
       />
       <Input
         name="password"
-        text={`${type}_password_field`}
+        text={`${lang("password_field")}`}
         type="password"
-        placeholder="Enter your password"
+        placeholder={lang("password_field_placeholder")}
       />
-      {type === "register" && (
+      {authorisation === "register" && (
         <Input
           name="email"
           text="email_field"
           type="text"
-          placeholder="Enter your email"
+          placeholder={lang("email_field_placeholder")}
         />
       )}
-      <Button>submit_button</Button>
+      <Button>{lang("submit_button")}</Button>
     </form>
   );
 };

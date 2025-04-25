@@ -7,7 +7,7 @@ const Login = () => {
   useEffect(() => {
     setCurrentPage("login_page");
   }, []);
-  return <Form type="login"></Form>;
+  return <Form lang={lang} authorisation="login"></Form>;
 };
 
 export default Login;
