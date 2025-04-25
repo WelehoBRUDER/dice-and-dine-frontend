@@ -3,10 +3,10 @@ import Button from "./Button";
 //import {useLanguage} from "../context/LanguageContext";
 //import {useEffect} from "react";
 
-const Form = ({lang, authorisation}) => {
+const Form = ({lang, authentication}) => {
   return (
     <form>
-      <h1>{lang(authorisation)}</h1>
+      <h1>{lang(authentication)}</h1>
       <Input
         name="username"
         text={lang("username_field")}
@@ -19,7 +19,7 @@ const Form = ({lang, authorisation}) => {
         type="password"
         placeholder={lang("password_field_placeholder")}
       />
-      {authorisation === "register" && (
+      {authentication === "register" && (
         <Input
           name="email"
           text="email_field"
@@ -27,7 +27,7 @@ const Form = ({lang, authorisation}) => {
           placeholder={lang("email_field_placeholder")}
         />
       )}
-      <Button>{lang("submit_button")}</Button>
+      <Button>{lang(`${authentication}_button`)}</Button>
     </form>
   );
 };

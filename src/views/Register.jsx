@@ -5,9 +5,9 @@ import {useEffect} from "react";
 const Register = () => {
   const {lang, setCurrentPage} = useLanguage();
   useEffect(() => {
-    setCurrentPage("register_page");
+    setCurrentPage("authentication_page");
   }, []);
-  return <Form lang={lang} authorisation="register"></Form>;
+  return <Form lang={lang} authentication="register"></Form>;
 };
 
 export default Register;

@@ -5,9 +5,9 @@ import {useEffect} from "react";
 const Login = () => {
   const {lang, setCurrentPage} = useLanguage();
   useEffect(() => {
-    setCurrentPage("login_page");
+    setCurrentPage("authentication_page");
   }, []);
-  return <Form lang={lang} authorisation="login"></Form>;
+  return <Form lang={lang} authentication="login"></Form>;
 };
 
 export default Login;
