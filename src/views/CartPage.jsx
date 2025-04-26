@@ -6,7 +6,7 @@ import useOrder from "../hooks/useOrder";
 import {useNavigate} from "react-router-dom";
 
 const CartPage = () => {
-  const lang = "en"; // Replace with actual language context or prop
+  const lang = localStorage.getItem("language") || "en";
   const navigate = useNavigate();
   const {cart, clearCart} = useCart();
   const [cartItems, setCartItems] = useState([]);
@@ -64,13 +64,25 @@ const CartPage = () => {
     }
   }, [orderSuccess]);
 
+  const yourCartText = lang === "en" ? "Your Cart" : "Ostoskori";
+  const itemsLoadingText =
+    lang === "en"
+      ? "Loading cart items..."
+      : "Ladataan ostoskorin tuotteita...";
+  const emptyCartText =
+    lang === "en" ? "Your cart is empty." : "Ostoskori on tyhjä.";
+  const clearCartText = lang === "en" ? "Clear Cart" : "Tyhjennä ostoskori";
+  const orderButtonText = lang === "en" ? "Place Order" : "Tee tilaus";
+  const orderLoadingText =
+    lang === "en" ? "Placing Order..." : "Tilausta käsitellään...";
+
   return (
     <div>
-      <h1>Your Cart</h1>
+      <h1>{yourCartText}</h1>
       {itemsLoading ? (
-        <p>Loading cart items...</p>
+        <p>{itemsLoadingText}</p>
       ) : cartItems.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <p>{emptyCartText}</p>
       ) : (
         <>
           <ul>
@@ -95,12 +107,12 @@ const CartPage = () => {
       {itemsError && <p style={{color: "red"}}>{itemsError}</p>}
       {orderError && <p style={{color: "red"}}>{orderError}</p>}
 
-      <Button onClick={clearCart}>Clear Cart</Button>
+      <Button onClick={clearCart}>{clearCartText}</Button>
       <Button
         onClick={handlePlaceOrder}
         disabled={orderLoading || cart.length === 0}
       >
-        {orderLoading ? "Placing Order..." : "Place Order"}
+        {orderLoading ? orderLoadingText : orderButtonText}
       </Button>
     </div>
   );
