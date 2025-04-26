@@ -3,8 +3,11 @@ import {useCart} from "../context/CartContext";
 import useItemDetails from "../hooks/useItemDetails";
 import Button from "../components/Button";
 import useOrder from "../hooks/useOrder";
+import {useNavigate} from "react-router-dom";
 
 const CartPage = () => {
+  const lang = "en"; // Replace with actual language context or prop
+  const navigate = useNavigate();
   const {cart, clearCart} = useCart();
   const [cartItems, setCartItems] = useState([]);
   const itemIds = cart.map((item) => item.menu_item_id);
@@ -17,8 +20,9 @@ const CartPage = () => {
   const {
     placeOrder,
     isLoading: orderLoading,
-    error: orderError,
     orderSuccess,
+    orderId,
+    error: orderError,
   } = useOrder();
 
   const handlePlaceOrder = () => {
@@ -27,13 +31,11 @@ const CartPage = () => {
       amount: item.amount,
     }));
 
-    console.log("Cartpage order", orderCart);
     const customerId = 1; // Replace with actual customer ID
     const token = localStorage.getItem("token");
 
     placeOrder(orderCart, customerId, token);
   };
-
   useEffect(() => {
     if (itemsDetails.length > 0) {
       const itemsWithDetails = cart.map((item) => {
@@ -48,6 +50,19 @@ const CartPage = () => {
       setCartItems(itemsWithDetails);
     }
   }, [itemsDetails, cart]);
+
+  useEffect(() => {
+    if (orderSuccess) {
+      const successMessage =
+        lang === "en"
+          ? `Order placed successfully! Order ID: ${orderId}`
+          : `Tilauksesi on vastaanotettu! Tilauksen ID: ${orderId}`;
+      alert(successMessage);
+
+      clearCart();
+      navigate("/menu"); // Or your desired path
+    }
+  }, [orderSuccess]);
 
   return (
     <div>
@@ -68,10 +83,9 @@ const CartPage = () => {
           <div>
             <h3>
               Total:{" "}
-              {cartItems.reduce(
-                (total, item) => total + item.price * item.amount,
-                0
-              )}{" "}
+              {cartItems
+                .reduce((total, item) => total + item.price * item.amount, 0)
+                .toFixed(2)}{" "}
               €
             </h3>
           </div>
@@ -80,9 +94,6 @@ const CartPage = () => {
 
       {itemsError && <p style={{color: "red"}}>{itemsError}</p>}
       {orderError && <p style={{color: "red"}}>{orderError}</p>}
-      {orderSuccess && (
-        <p style={{color: "green"}}>Order placed successfully!</p>
-      )}
 
       <Button onClick={clearCart}>Clear Cart</Button>
       <Button

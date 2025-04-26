@@ -1,8 +1,10 @@
-import MenuCategory from "../components/MenuCategory";
 import useMenu from "../hooks/useMenu.js";
 import {useNavigate} from "react-router-dom";
+import MenuCategory from "../components/MenuCategory";
+import Loading from "../components/Loading.jsx";
+
 const Menu = () => {
-  const lang = "en";
+  const lang = localStorage.getItem("language") || "en";
 
   const navigate = useNavigate();
   const {menu, loading} = useMenu(lang);
@@ -10,16 +12,17 @@ const Menu = () => {
     navigate("/cart");
   };
 
+  const ourMenuText = lang === "en" ? "Our Menu" : "Meidän ruokalista";
   const buttonText =
     lang === "en" ? "Go to shopping cart" : "Siirry ostoskoriin";
 
   return (
     <div className="menu-page">
-      <h1>Our Menu</h1>
+      <h1>{ourMenuText}</h1>
 
       {/* Conditional Rendering for Loading or Menu Content */}
       {loading ? (
-        <p>Loading menu...</p>
+        <Loading />
       ) : menu && menu.length > 0 ? (
         (() => {
           const groupedItems = menu.reduce((acc, item) => {

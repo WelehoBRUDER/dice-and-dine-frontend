@@ -3,53 +3,53 @@ import {fetchData} from "../utils/fetchData.js";
 const API_URL = import.meta.env.VITE_API_URL;
 
 const useOrder = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [orderSuccess, setOrderSuccess] = useState(false);
+  const [orderId, setOrderId] = useState(null);
+  const [error, setError] = useState(null);
 
-  const placeOrder = async (cart, customerId, token) => {
-    setIsLoading(true);
+  const placeOrder = async (orderCart, customerId, token) => {
+    setLoading(true); // Ensure setIsLoading is declared properly
     setError(null);
     setOrderSuccess(false);
 
-    if (!token) {
-      setError("User not authenticated");
-      setIsLoading(false);
-      return;
-    }
-    const orderData = {
-      customer_id: customerId,
-      order: cart.map((item) => ({
+    try {
+      const formattedOrder = orderCart.map((item) => ({
         item_id: item.menu_item_id,
         quantity: item.amount,
-      })),
-    };
-
-    console.log("Order data:", orderData);
-
-    try {
-      const url = `${API_URL}/orders/janedoe`;
-      const response = await fetchData(url, {
+      }));
+      const data = await fetchData(`${API_URL}/orders/janedoe`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(orderData),
+        body: JSON.stringify({
+          customer_id: customerId,
+          order: formattedOrder,
+        }),
       });
 
-      // If the response was successful, update the order status
-      console.log("Order placed successfully:", response);
-      setOrderSuccess(true); // Order placed successfully
+      if (data && data.message === "Order created successfully") {
+        setOrderSuccess(true);
+        setOrderId(data.order_id);
+      } else {
+        setError(data?.message || "Unknown error");
+      }
     } catch (err) {
-      console.error("Error placing order:", err);
-      setError(err.message);
+      setError("Failed to place order: " + err.message);
     } finally {
-      setIsLoading(false);
+      setLoading(false);
     }
   };
 
-  return {placeOrder, isLoading, error, orderSuccess};
+  return {
+    placeOrder,
+    loading,
+    orderSuccess,
+    orderId,
+    error,
+  };
 };
 
 export default useOrder;

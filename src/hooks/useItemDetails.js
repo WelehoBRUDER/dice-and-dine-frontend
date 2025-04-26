@@ -10,7 +10,6 @@ const useItemDetails = (itemIds) => {
       try {
         setIsLoading(true);
 
-        // Fetch details for all items concurrently
         const items = await Promise.all(
           itemIds.map(async (itemId) => {
             const response = await fetch(
@@ -20,7 +19,7 @@ const useItemDetails = (itemIds) => {
               throw new Error(`Failed to fetch item with ID ${itemId}`);
             }
             const itemDetails = await response.json();
-            return {...itemDetails, id: itemId}; // Return details with itemId
+            return {...itemDetails, id: itemId};
           })
         );
 
