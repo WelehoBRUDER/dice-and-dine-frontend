@@ -12,23 +12,23 @@ const useOrder = () => {
     setError(null);
     setOrderSuccess(false);
 
-    // Check if token exists
     if (!token) {
       setError("User not authenticated");
       setIsLoading(false);
       return;
     }
-
     const orderData = {
       customer_id: customerId,
       order: cart.map((item) => ({
-        item_id: item.id,
-        quantity: item.quantity,
+        item_id: item.menu_item_id,
+        quantity: item.amount,
       })),
     };
 
+    console.log("Order data:", orderData);
+
     try {
-      const url = `${API_URL}/orders/bobdoe`;
+      const url = `${API_URL}/orders/janedoe`;
       const response = await fetchData(url, {
         method: "POST",
         headers: {
