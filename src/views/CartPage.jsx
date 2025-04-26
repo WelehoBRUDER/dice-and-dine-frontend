@@ -20,8 +20,9 @@ const CartPage = () => {
   const {
     placeOrder,
     isLoading: orderLoading,
-    error: orderError,
     orderSuccess,
+    orderId,
+    error: orderError,
   } = useOrder();
 
   const handlePlaceOrder = () => {
@@ -30,13 +31,11 @@ const CartPage = () => {
       amount: item.amount,
     }));
 
-    console.log("Cartpage order", orderCart);
     const customerId = 1; // Replace with actual customer ID
     const token = localStorage.getItem("token");
 
     placeOrder(orderCart, customerId, token);
   };
-
   useEffect(() => {
     if (itemsDetails.length > 0) {
       const itemsWithDetails = cart.map((item) => {
@@ -56,12 +55,12 @@ const CartPage = () => {
     if (orderSuccess) {
       const successMessage =
         lang === "en"
-          ? "Order placed successfully! Order ID: "
-          : "Tilauksesi on vastaanotettu! Tilauksen ID: ";
+          ? `Order placed successfully! Order ID: ${orderId}`
+          : `Tilauksesi on vastaanotettu! Tilauksen ID: ${orderId}`;
       alert(successMessage);
 
       clearCart();
-      navigate("/menu");
+      navigate("/menu"); // Or your desired path
     }
   }, [orderSuccess]);
 
