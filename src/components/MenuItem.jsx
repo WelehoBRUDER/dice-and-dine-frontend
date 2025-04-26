@@ -1,8 +1,11 @@
-import useCart from "../hooks/useCart";
+import {useCart} from "../context/CartContext";
 import Button from "./Button";
 
 const MenuItem = ({item, lang}) => {
-  const {addToCart} = useCart();
+  const {cart, addToCart, removeFromCart} = useCart();
+  const buttonTextAdd = lang === "en" ? "Add" : "Lisää";
+  const buttonTextRemove = lang === "en" ? "Remove" : "Poista";
+  const isInCart = cart.some((cartItem) => cartItem.menu_item_id === item.id);
   return (
     <>
       <div className="item">
@@ -17,9 +20,32 @@ const MenuItem = ({item, lang}) => {
             {item.allergens.join(", ")}
           </p>
         )}
-        <Button onClick={() => addToCart(item.id)} className="add-to-cart-btn">
-          Add to Cart
-        </Button>
+        <div className="button-container">
+          {/* Show both buttons side by side */}
+          {!isInCart ? (
+            <Button
+              onClick={() => addToCart(item.id)}
+              className="add-to-cart-btn"
+            >
+              ➕ {buttonTextAdd}
+            </Button>
+          ) : (
+            <>
+              <Button
+                onClick={() => addToCart(item.id)}
+                className="add-to-cart-btn"
+              >
+                ➕ {buttonTextAdd}
+              </Button>
+              <Button
+                onClick={() => removeFromCart(item.id)}
+                className="remove-from-cart-btn"
+              >
+                ➖ {buttonTextRemove}
+              </Button>
+            </>
+          )}
+        </div>
       </div>
     </>
   );
