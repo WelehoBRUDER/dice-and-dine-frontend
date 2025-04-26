@@ -1,39 +1,25 @@
 import MenuItem from "./MenuItem.jsx";
 
-const MenuCategory = ({categoryId, items, lang}) => {
-  const categoryLabels = {
-    en: {
-      1: "Starters",
-      2: "Mains",
-      3: "Desserts",
-      4: "Drinks",
-      5: "Snacks",
-    },
-    fi: {
-      1: "Alkuruoat",
-      2: "Pääruoat",
-      3: "Jälkiruoat",
-      4: "Juomat",
-      5: "Välipalat",
-    },
-  };
-
+const MenuCategory = ({categoryName, items, lang}) => {
   const categoryImages = {
-    1: "/images/starter.jpg",
-    2: "/images/main.jpg",
-    3: "/images/dessert.jpg",
-    4: "/images/beverages.jpg",
-    5: "/images/snacks.jpg",
+    Alkupala: "/images/starter.jpg",
+    Pääruoka: "/images/main.jpg",
+    Jälkiruoka: "/images/dessert.jpg",
+    Juomat: "/images/beverages.jpg",
+    Naposteltavat: "/images/snacks.jpg",
+    Starters: "/images/starter.jpg",
+    Mains: "/images/main.jpg",
+    Desserts: "/images/dessert.jpg",
+    Drinks: "/images/beverages.jpg",
+    Snacks: "/images/snacks.jpg",
   };
 
+  const imageSrc = categoryImages[categoryName];
   return (
     <div className="category">
-      <h2 className="category-title">{categoryLabels[lang][categoryId]}</h2>
+      <h2 className="category-title">{categoryName}</h2>
       <div className="category-image">
-        <img
-          src={categoryImages[categoryId]}
-          alt={categoryLabels[lang][categoryId]}
-        />
+        <img src={imageSrc} alt={categoryName} />
       </div>
 
       <div className="list-grid">
