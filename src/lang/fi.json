@@ -6,5 +6,17 @@
   "home_page": {
     "title": "Dice&Dine",
     "subtitle": "Tervetuloa etusivulle"
+  },
+  "authentication_page": {
+    "login": "kirjaudu sisään",
+    "register": "rekisteröidy",
+    "username_field": "Käyttäjänimi:",
+    "username_field_placeholder": "Syötä käyttäjänimesi",
+    "password_field": "Salasana:",
+    "password_field_placeholder": "Syötä salasanasi",
+    "email_field": "Sähköposti:",
+    "email_field_placeholder": "Syötä sähköpostiosoitteesi",
+    "login_button": "Kirjaudu sisään",
+    "register_button": "Rekisteröidy"
   }
 }

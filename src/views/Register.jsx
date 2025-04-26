@@ -1,10 +1,13 @@
+import Form from "../components/Form";
+import {useLanguage} from "../context/LanguageContext";
+import {useEffect} from "react";
+
 const Register = () => {
-  return (
-    <div>
-      <h1>Register</h1>
-      <p>This is the registration page.</p>
-    </div>
-  );
+  const {lang, setCurrentPage} = useLanguage();
+  useEffect(() => {
+    setCurrentPage("authentication_page");
+  }, []);
+  return <Form lang={lang} authentication="register"></Form>;
 };
 
 export default Register;
