@@ -5,6 +5,7 @@
   border: 0.25rem solid var(--theme-lighter);
   box-sizing: border-box;
   background: var(--theme-foreground);
+  margin: 0.4rem;
 
   &:hover {
     background: var(--theme-darker);
