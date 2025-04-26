@@ -59,6 +59,13 @@
   text-decoration: none;
 }
 
+#header h1 a {
+  font-size: 2.4rem;
+  padding: 2rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
 #header li a {
   padding: 2rem;
 }

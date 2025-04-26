@@ -1,12 +1,15 @@
 import {Link, NavLink} from "react-router-dom";
 import LanguageSelect from "./LanguageSelect";
+import {useLanguage} from "../context/LanguageContext";
 
 const Header = () => {
+  const {lang} = useLanguage();
+
   return (
     <header id="header">
       <div>
         <h1>
-          <Link to="/">home_page</Link>
+          <Link to="/">{lang("home_page_link")}</Link>
         </h1>
       </div>
       <div>
@@ -22,7 +25,7 @@ const Header = () => {
                 to="/about"
                 className={({isActive}) => (isActive ? "active-link" : "")}
               >
-                about_page
+                {lang("about_page_link")}
               </NavLink>
             </li>
             <li>
@@ -30,7 +33,7 @@ const Header = () => {
                 to="/forum"
                 className={({isActive}) => (isActive ? "active-link" : "")}
               >
-                forum_page
+                {lang("forum_page_link")}
               </NavLink>
             </li>
             <li>
@@ -38,7 +41,7 @@ const Header = () => {
                 to="/login"
                 className={({isActive}) => (isActive ? "active-link" : "")}
               >
-                login_page
+                {lang("login_page_link")}
               </NavLink>
             </li>
             <li>
@@ -46,7 +49,7 @@ const Header = () => {
                 to="/register"
                 className={({isActive}) => (isActive ? "active-link" : "")}
               >
-                register_page
+                {lang("register_page_link")}
               </NavLink>
             </li>
             <li>
@@ -54,7 +57,7 @@ const Header = () => {
                 to="/reservation"
                 className={({isActive}) => (isActive ? "active-link" : "")}
               >
-                reservation_page
+                {lang("reservation_page_link")}
               </NavLink>
             </li>
             <li>
@@ -62,7 +65,7 @@ const Header = () => {
                 to="/review"
                 className={({isActive}) => (isActive ? "active-link" : "")}
               >
-                review_page
+                {lang("review_page_link")}
               </NavLink>
             </li>
             <li>
@@ -70,7 +73,7 @@ const Header = () => {
                 to="/games"
                 className={({isActive}) => (isActive ? "active-link" : "")}
               >
-                games_page
+                {lang("games_page_link")}
               </NavLink>
             </li>
             <li>
@@ -78,7 +81,7 @@ const Header = () => {
                 to="/menu"
                 className={({isActive}) => (isActive ? "active-link" : "")}
               >
-                menu_page
+                {lang("menu_page_link")}
               </NavLink>
             </li>
           </ul>
