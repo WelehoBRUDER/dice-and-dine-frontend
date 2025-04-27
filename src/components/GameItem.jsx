@@ -1,8 +1,8 @@
 import React from "react";
 
 const GameItem = ({game}) => {
-  const imageSrc = game.img
-    ? game.img
+  const imageSrc = game.img_name
+    ? game.img_name
     : "https://placehold.co/160x160?text=No+image+available";
 
   return (
@@ -12,6 +12,7 @@ const GameItem = ({game}) => {
       </div>
       <img src={imageSrc} alt={game.name} className="game-image" />
       <h3 className="game-name">{game.name}</h3>
+      <p className="game-category">{game.category}</p>
       <p className="description">{game.description}</p>
     </div>
   );
