@@ -13,12 +13,9 @@ const UserProvider = ({children}) => {
 
   const handleLogin = async (credentials) => {
     try {
-      console.log("Login funktiota kutsuttu");
-      console.log(credentials);
       const loginResult = await postLogin(credentials);
       localStorage.setItem("token", loginResult.token);
       navigate("/");
-      console.log("User: " + loginResult.userWithNoPassword);
       setUser(loginResult.userWithNoPassword);
     } catch (e) {
       throw new Error(e.message);
@@ -27,7 +24,6 @@ const UserProvider = ({children}) => {
 
   const handleLogout = () => {
     try {
-      console.log("Logout funktiota kutsuttu");
       localStorage.removeItem("token");
       setUser(null);
       navigate("/");
@@ -40,9 +36,7 @@ const UserProvider = ({children}) => {
     try {
       const token = localStorage.getItem("token");
       if (token) {
-        console.log("handleAutoLogin funktiota kutsuttu");
         const userResult = await getUserByToken(token);
-        console.log("User: " + userResult.user);
         setUser(userResult.user);
         const origin = location.pathname || "/";
         navigate(origin);

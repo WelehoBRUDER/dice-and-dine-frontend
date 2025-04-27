@@ -1,8 +1,14 @@
+import {useEffect} from "react";
 import {useUserContext} from "../hooks/useUserContext";
 
 const Logout = () => {
   const {handleLogout} = useUserContext();
-  handleLogout();
+
+  useEffect(() => {
+    console.log("Logout function called");
+    handleLogout();
+  }, []);
+
   return null;
 };
 

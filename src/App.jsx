@@ -12,6 +12,7 @@ import Menu from "./views/Menu";
 import {CartProvider} from "./context/CartContext";
 import CartPage from "./views/CartPage";
 import {UserProvider} from "./context/UserContext";
+import Logout from "./components/Logout";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
               <Route path="/games" element={<Games />} />
               <Route path="/menu" element={<Menu />} />
               <Route path="/cart" element={<CartPage />} />
+              <Route path="/logout" element={<Logout />} />
             </Route>
           </Routes>
         </CartProvider>

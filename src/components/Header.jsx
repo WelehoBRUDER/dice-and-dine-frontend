@@ -78,7 +78,14 @@ const Header = () => {
                     {lang("reservation_page_link")}
                   </NavLink>
                 </li>
-                <Link to="/logout">{lang("logout_page_link")}</Link>
+                <li>
+                  <NavLink
+                    to="/logout"
+                    className={({isActive}) => (isActive ? "active-link" : "")}
+                  >
+                    {lang("logout_page_link")}
+                  </NavLink>
+                </li>
               </>
             ) : (
               <>
