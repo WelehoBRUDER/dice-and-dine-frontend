@@ -40,7 +40,9 @@ const UserProvider = ({children}) => {
     try {
       const token = localStorage.getItem("token");
       if (token) {
+        console.log("handleAutoLogin funktiota kutsuttu");
         const userResult = await getUserByToken(token);
+        console.log("User: " + userResult.user);
         setUser(userResult.user);
         const origin = location.pathname || "/";
         navigate(origin);
