@@ -5,9 +5,11 @@ import logo from "/restaurant_logo.png?url";
 
 const Home = () => {
   const {lang, setCurrentPage} = useLanguage();
+
   useEffect(() => {
     setCurrentPage("home_page");
   }, []);
+
   return (
     <>
       <div className="logo">
