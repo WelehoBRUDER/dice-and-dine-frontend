@@ -375,9 +375,10 @@ const Games = () => {
   const {games, loading} = useGames(lang);
   // const { lang } = useLanguage();
 
+  const gamesText = lang === "en" ? "Games" : "Pelit";
   return (
     <div>
-      <h1>Games</h1>
+      <h1>{gamesText}</h1>
       {loading ? (
         <Loading />
       ) : (
