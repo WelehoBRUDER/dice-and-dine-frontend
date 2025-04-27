@@ -33,7 +33,14 @@
     "login_button": "Login",
     "register_button": "Register"
   },
+
   "menu_link": "Menu",
   "games_link": "Games",
-  "about_link": "About"
+  "about_link": "About",
+
+  "menu_page": {
+    "title": "Our Menu",
+    "button_text": "Go to shopping cart",
+    "no_items": "No items available"
+  }
 }

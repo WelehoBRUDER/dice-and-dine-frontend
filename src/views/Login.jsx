@@ -6,6 +6,7 @@ const Login = () => {
   const {lang, setCurrentPage} = useLanguage();
   useEffect(() => {
     setCurrentPage("authentication_page");
+    console.log("Set assigned to authentication page");
   }, []);
   return <Form lang={lang} authentication="login"></Form>;
 };
