@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {fetchData} from "../utils/fetchData.js";
+import {useUserContext} from "./useUserContext.js";
 const API_URL = import.meta.env.VITE_API_URL;
 
 const useOrder = () => {
@@ -7,18 +8,20 @@ const useOrder = () => {
   const [orderSuccess, setOrderSuccess] = useState(false);
   const [orderId, setOrderId] = useState(null);
   const [error, setError] = useState(null);
+  const {user} = useUserContext();
 
   const placeOrder = async (orderCart, customerId, token) => {
-    setLoading(true); // Ensure setIsLoading is declared properly
+    setLoading(true);
     setError(null);
     setOrderSuccess(false);
+    console.log("cart user", user);
 
     try {
       const formattedOrder = orderCart.map((item) => ({
         item_id: item.menu_item_id,
         quantity: item.amount,
       }));
-      const data = await fetchData(`${API_URL}/orders/janedoe`, {
+      const data = await fetchData(`${API_URL}/orders/${user}`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

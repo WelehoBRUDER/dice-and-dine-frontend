@@ -130,3 +130,24 @@
   background-color: var(--theme-foreground);
   color: var(--theme-contrast);
 }
+
+.cart-table {
+  text-align: center;
+}
+
+.cart-table th,
+.cart-table td {
+  border: 1px solid var(--theme-contrast);
+  padding: 0.5rem;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}

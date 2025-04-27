@@ -60,7 +60,7 @@ const CartPage = () => {
       alert(successMessage);
 
       clearCart();
-      navigate("/menu"); // Or your desired path
+      navigate("/");
     }
   }, [orderSuccess]);
 
@@ -69,6 +69,11 @@ const CartPage = () => {
     lang === "en"
       ? "Loading cart items..."
       : "Ladataan ostoskorin tuotteita...";
+  const tableHeadings =
+    lang === "en"
+      ? ["Item Name", "Item Amount", "Item Price €", "Total €"]
+      : ["Tuotteen nimi", "Määrä", "Hinta €", "Yhteensä €"];
+  const totalText = lang === "en" ? "Total" : "Yhteensä";
   const emptyCartText =
     lang === "en" ? "Your cart is empty." : "Ostoskori on tyhjä.";
   const clearCartText = lang === "en" ? "Clear Cart" : "Tyhjennä ostoskori";
@@ -79,41 +84,56 @@ const CartPage = () => {
   return (
     <div>
       <h1>{yourCartText}</h1>
-      {itemsLoading ? (
-        <p>{itemsLoadingText}</p>
-      ) : cartItems.length === 0 ? (
-        <p>{emptyCartText}</p>
-      ) : (
-        <>
-          <ul>
-            {cartItems.map((item) => (
-              <li key={item.id}>
-                {item.name} - {item.amount} x {item.price} €
-              </li>
-            ))}
-          </ul>
-          <div>
-            <h3>
-              Total:{" "}
-              {cartItems
-                .reduce((total, item) => total + item.price * item.amount, 0)
-                .toFixed(2)}{" "}
-              €
-            </h3>
-          </div>
-        </>
-      )}
+      <div className="cart-items">
+        {itemsLoading ? (
+          <p>{itemsLoadingText}</p>
+        ) : cartItems.length === 0 ? (
+          <p>{emptyCartText}</p>
+        ) : (
+          <>
+            <table className="cart-table">
+              <thead>
+                <tr>
+                  {tableHeadings.map((heading, index) => (
+                    <th key={index}>{heading}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {cartItems.map((item) => (
+                  <tr key={item.id}>
+                    <td>{item.name}</td>
+                    <td>{item.amount}</td>
+                    <td>{Number(item.price).toFixed(2)}</td>
+                    <td>{(Number(item.price) * item.amount).toFixed(2)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <div>
+              <h3 className="cart-total">
+                {totalText}:{" "}
+                {cartItems
+                  .reduce((total, item) => total + item.price * item.amount, 0)
+                  .toFixed(2)}{" "}
+                €
+              </h3>
+            </div>
+          </>
+        )}
 
-      {itemsError && <p style={{color: "red"}}>{itemsError}</p>}
-      {orderError && <p style={{color: "red"}}>{orderError}</p>}
-
-      <Button onClick={clearCart}>{clearCartText}</Button>
-      <Button
-        onClick={handlePlaceOrder}
-        disabled={orderLoading || cart.length === 0}
-      >
-        {orderLoading ? orderLoadingText : orderButtonText}
-      </Button>
+        {itemsError && <p style={{color: "red"}}>{itemsError}</p>}
+        {orderError && <p style={{color: "red"}}>{orderError}</p>}
+        <div className="cart-buttons">
+          <Button onClick={clearCart}>{clearCartText}</Button>
+          <Button
+            onClick={handlePlaceOrder}
+            disabled={orderLoading || cart.length === 0}
+          >
+            {orderLoading ? orderLoadingText : orderButtonText}
+          </Button>
+        </div>
+      </div>
     </div>
   );
 };
