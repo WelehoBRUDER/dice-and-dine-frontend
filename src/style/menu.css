@@ -133,17 +133,18 @@
 
 .cart-table {
   text-align: center;
+  border-collapse: collapse;
 }
 
 .cart-table th,
 .cart-table td {
   border: 1px solid var(--theme-contrast);
-  padding: 0.5rem;
+  padding: 1rem;
 }
 
 .cart-total {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .cart-buttons {

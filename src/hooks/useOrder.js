@@ -21,7 +21,7 @@ const useOrder = () => {
         item_id: item.menu_item_id,
         quantity: item.amount,
       }));
-      const data = await fetchData(`${API_URL}/orders/${user}`, {
+      const data = await fetchData(`${API_URL}/orders/${user.username}`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

@@ -37,6 +37,14 @@ const Header = () => {
             </li>
             <li>
               <NavLink
+                to="/menu"
+                className={({isActive}) => (isActive ? "active-link" : "")}
+              >
+                {lang("menu_page_link")}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
                 to="/games"
                 className={({isActive}) => (isActive ? "active-link" : "")}
               >
@@ -51,14 +59,7 @@ const Header = () => {
                 {lang("review_page_link")}
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/menu"
-                className={({isActive}) => (isActive ? "active-link" : "")}
-              >
-                {lang("menu_page_link")}
-              </NavLink>
-            </li>
+
             {user ? (
               <>
                 <li>
