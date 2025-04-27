@@ -1,6 +1,9 @@
+import {useLanguage} from "../context/LanguageContext";
+
 function Loading() {
-  const lang = localStorage.getItem("language") || "en";
-  const loadingText = lang === "en" ? "Loading..." : "Ladataan...";
+  const {currentLanguage} = useLanguage();
+
+  const loadingText = currentLanguage === "en" ? "Loading..." : "Ladataan...";
   return <p>{loadingText}</p>;
 }
 
