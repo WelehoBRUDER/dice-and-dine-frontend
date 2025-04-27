@@ -3,17 +3,18 @@ import {fetchData} from "../utils/fetchData.js";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-export function useMenu(language) {
-  const [menu, setMenu] = useState([]);
+export function useGames(language) {
+  const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadMenu() {
       try {
-        const data = await fetchData(`${API_URL}/info/menu/${language}`);
-        setMenu(data);
+        const data = await fetchData(`${API_URL}/info/boardgames/${language}`);
+        console.log("Game data: ", data);
+        setGames(data);
       } catch (error) {
-        console.error("Error fetching menu:", error);
+        console.error("Error fetching games:", error);
       } finally {
         setLoading(false);
       }
@@ -22,7 +23,7 @@ export function useMenu(language) {
     loadMenu();
   }, [language]);
 
-  return {menu, loading};
+  return {games, loading};
 }
 
-export default useMenu;
+export default useGames;
