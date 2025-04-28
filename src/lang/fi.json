@@ -39,6 +39,9 @@
   "menu_page.title": "Meidän ruokalista",
   "menu_page.button_text": "Siirry ostoskoriin",
   "menu_page.no_items": "Ei ruokalistaa saatavilla",
+  "menu_page.add_button_text": "Lisää",
+  "menu_page.remove_button_text": "Poista",
+  "menu_page.allergens_text": "Allergeenit",
 
   "cart_page.order_success_message": "Tilaus onnistui! Tilausnumero: ",
   "cart_page.your_cart": "Ostoskori",

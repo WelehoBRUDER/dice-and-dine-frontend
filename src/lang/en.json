@@ -43,6 +43,7 @@
   "menu_page.no_items": "No menu items available",
   "menu_page.add_button_text": "Add",
   "menu_page.remove_button_text": "Remove",
+  "menu_page.allergens_text": "Allergens",
 
   "cart_page.order_success_message": "Order placed successfully! Order ID: ",
   "cart_page.your_cart": "Your Cart",

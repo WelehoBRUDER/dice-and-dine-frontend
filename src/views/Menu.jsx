@@ -48,7 +48,6 @@ const Menu = () => {
               key={categoryName}
               categoryName={categoryName}
               items={items}
-              lang={currentLanguage}
             />
           ));
         })()

@@ -1,6 +1,6 @@
 import MenuItem from "./MenuItem.jsx";
 
-const MenuCategory = ({categoryName, items, lang}) => {
+const MenuCategory = ({categoryName, items}) => {
   const categoryImages = {
     Alkupala: "/images/starter.jpg",
     Pääruoka: "/images/main.jpg",
@@ -24,7 +24,7 @@ const MenuCategory = ({categoryName, items, lang}) => {
 
       <div className="list-grid">
         {items.map((item, i) => (
-          <MenuItem key={i} item={item} lang={lang} />
+          <MenuItem key={i} item={item} />
         ))}
       </div>
     </div>
