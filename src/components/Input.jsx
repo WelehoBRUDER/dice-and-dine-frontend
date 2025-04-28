@@ -1,3 +1,5 @@
+import {icons} from "../variables/icons";
+
 /**
  * A reusable input container component, including both input and label.
  *
@@ -8,23 +10,42 @@
  * @param {String} value - starting value of the input field
  * @param {CallableFunction} onChange - callback function that triggers when the input value changes
  * @param {String} className - additional class names for styling (default: "input-container")
+ * @param {String} icon - URL of the icon to display in the input field (optional)
+ * @param {Boolean} noLabel - whether to display the label (default: true)
  * @returns
  */
-const Input = ({name, text, type, placeholder, value, onChange, className}) => {
+const Input = ({
+  name,
+  text,
+  type,
+  placeholder,
+  value,
+  onChange,
+  className,
+  icon = "user",
+  displayLabel = true,
+}) => {
   return (
     <div className={`input-container ${className}`}>
-      <label htmlFor={name} className="input-label">
-        {text}
-      </label>
-      <input
-        id={name}
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        className="input-field"
-      />
+      {displayLabel && (
+        <label htmlFor={name} className="input-label">
+          {text}
+        </label>
+      )}
+      <div className="input-and-icon flex-row">
+        {icon && (
+          <img src={icons[icon]} alt="input icon" className="input-icon" />
+        )}
+        <input
+          id={name}
+          name={name}
+          type={type}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          className="input-field"
+        />
+      </div>
     </div>
   );
 };

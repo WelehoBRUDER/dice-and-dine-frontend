@@ -49,14 +49,31 @@
     font-size: 2rem;
   }
 
-  .input-field {
-    font-size: 2rem;
+  .input-and-icon {
     padding: 0.8rem;
     border: 0.2rem solid var(--theme-contrast);
     background: var(--theme-background);
     border-radius: 0.5rem;
     width: var(--input-width);
+
+    .input-icon {
+      width: var(--icon-width);
+      height: var(--icon-width);
+    }
+
+    .input-field {
+      font-size: 2rem;
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+
+      &:focus {
+        outline: none
+      }
+    }
   }
+
 }
 
 .language-select {

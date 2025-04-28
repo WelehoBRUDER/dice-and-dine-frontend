@@ -12,5 +12,6 @@
   --max-content-width: 1200px;
   --text-content-width: 800px;
   --input-width: 300px;
-  --button-width: 300px
+  --button-width: 300px;
+  --icon-width: 2.5rem;
 }
