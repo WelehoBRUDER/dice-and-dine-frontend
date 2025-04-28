@@ -60,7 +60,8 @@ const useOrder = () => {
       });
 
       if (data) {
-        return data;
+        console.log("Order details fetched: ", data.order);
+        return data.order;
       } else {
         setError("Failed to fetch order details");
       }
