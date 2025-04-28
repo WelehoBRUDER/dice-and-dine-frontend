@@ -60,7 +60,7 @@
   "review_page": {
     "title": "Kirjoita arvostelu",
     "review": "Arvostelu",
-    "limit": "Enintään 150 merkkiä",
+    "limit_remain": "Merkkiä jäljellä",
     "email": "Sähköposti",
     "rating": "Arviointi",
     "type_here": "Kirjoita tähän",

@@ -63,7 +63,7 @@
   "review_page": {
     "title": "Write a review",
     "review": "Review",
-    "limit": "Up to 150 characters",
+    "limit_remain": "Characters remaining",
     "email": "Email",
     "rating": "Rating",
     "type_here": "Type here",

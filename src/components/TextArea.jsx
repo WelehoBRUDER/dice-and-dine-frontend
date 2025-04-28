@@ -17,6 +17,7 @@ const TextArea = ({
   subtext,
   placeholder,
   value,
+  maxLength = 150,
   onChange,
   className,
   displayLabel = true,
@@ -37,7 +38,7 @@ const TextArea = ({
           value={value}
           onChange={onChange}
           className="textarea-field"
-          resize
+          maxLength={maxLength}
         />
       </div>
     </div>
