@@ -62,6 +62,15 @@ const Header = () => {
 
             {user ? (
               <>
+                {" "}
+                <li>
+                  <NavLink
+                    to="/profile"
+                    className={({isActive}) => (isActive ? "active-link" : "")}
+                  >
+                    {lang("profile_page_link")}
+                  </NavLink>
+                </li>
                 <li>
                   <NavLink
                     to="/forum"
@@ -70,7 +79,6 @@ const Header = () => {
                     {lang("forum_page_link")}
                   </NavLink>
                 </li>
-
                 <li>
                   <NavLink
                     to="/reservation"
