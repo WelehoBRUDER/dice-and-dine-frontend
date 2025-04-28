@@ -51,5 +51,7 @@
   "cart_page.empty_cart": "Ostoskorisi on tyhjennetty",
   "cart_page.clear_cart": "Tyhjennä ostoskori",
   "cart_page.order_button": "Tee tilaus",
-  "cart_page.order_loading": "Tilausta käsitellään..."
+  "cart_page.order_loading": "Tilausta käsitellään...",
+
+  "games_page.title": "Pelit"
 }

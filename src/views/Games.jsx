@@ -1,13 +1,19 @@
 import Loading from "../components/Loading";
 import useGames from "../hooks/useGames";
 import GameItem from "../components/GameItem";
+import {useLanguage} from "../context/LanguageContext";
+import {useEffect} from "react";
 
 const Games = () => {
-  const lang = localStorage.getItem("language") || "en";
-  const {games, loading} = useGames(lang);
-  // const { lang } = useLanguage();
+  const {currentLanguage, lang, setCurrentPage} = useLanguage();
 
-  const gamesText = lang === "en" ? "Games" : "Pelit";
+  const {games, loading} = useGames(currentLanguage);
+
+  const gamesText = lang("games_page.title");
+  useEffect(() => {
+    setCurrentPage("games_page");
+  }, []);
+
   return (
     <div>
       <h1>{gamesText}</h1>

@@ -53,5 +53,7 @@
   "cart_page.empty_cart": "Your cart is empty",
   "cart_page.clear_cart": "Clear Cart",
   "cart_page.order_button": "Place Order",
-  "cart_page.order_loading": "Placing order..."
+  "cart_page.order_loading": "Placing order...",
+
+  "games_page.title": "Games"
 }
