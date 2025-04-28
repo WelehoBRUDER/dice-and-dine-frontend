@@ -79,6 +79,17 @@
   background-color: var(--theme-background);
 }
 
+table {
+  text-align: center;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid var(--theme-contrast);
+  padding: 1rem;
+}
+
 /*
 .input-wrapper {
   display: flex;

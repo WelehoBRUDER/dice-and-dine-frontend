@@ -5,11 +5,9 @@ import Button from "../components/Button";
 import useOrder from "../hooks/useOrder";
 import {useNavigate} from "react-router-dom";
 import {useLanguage} from "../context/LanguageContext";
-import {useUser} from "../hooks/userHooks";
 import {useUserContext} from "../hooks/useUserContext";
 
 const CartPage = () => {
-  // const lang = localStorage.getItem("language") || "en";
   const {lang, setCurrentPage} = useLanguage();
   const navigate = useNavigate();
   const {cart, clearCart} = useCart();

@@ -22,8 +22,13 @@ const Profile = () => {
         try {
           const details = await getUserDetails(user.id);
           setUserDetails(details);
-          const orders = await getOrderDetails(user.id);
-          setOrderDetails(orders);
+          const orders = await Promise.all(
+            details.orders.map(async (orderId) => {
+              const order = await getOrderDetails(orderId);
+              return order;
+            })
+          );
+          setOrderDetails(orders.flat());
         } catch (error) {
           console.error("Failed to fetch user details", error);
         } finally {
@@ -46,18 +51,21 @@ const Profile = () => {
       <p>Username: {userDetails.name}</p>
       <p>E-mail: {userDetails.email}</p>
       <p>User type: {userDetails.user_type}</p>
-      <p>Orders:{userDetails.orders.join(", ")}</p>
       <table>
         <thead>
-          <th>Order ID</th>
-          <th>Status</th>
+          <tr>
+            <th>Order ID</th>
+            <th>Order time</th>
+            <th>Status</th>
+          </tr>
         </thead>
         <tbody>
           {userDetails.orders.length > 0 ? (
             userDetails.orders.map((order, index) => (
               <tr key={index}>
                 <td>{order}</td>
-                <td>{orderDetails.status}</td>
+                <td>{new Date(orderDetails[index].time).toLocaleString()}</td>
+                <td>{orderDetails[index].status}</td>
               </tr>
             ))
           ) : (

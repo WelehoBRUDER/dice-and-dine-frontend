@@ -60,8 +60,12 @@ const useOrder = () => {
       });
 
       if (data) {
-        console.log("Order details fetched: ", data.order);
-        return data.order;
+        const ordersWithTime = data.order.map((orderItem) => ({
+          ...orderItem,
+          time: data.time,
+        }));
+
+        return ordersWithTime;
       } else {
         setError("Failed to fetch order details");
       }
