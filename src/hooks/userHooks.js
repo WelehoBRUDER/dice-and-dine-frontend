@@ -44,7 +44,13 @@ const useUser = () => {
     return userResult;
   };
 
-  return {getUserByToken, postUser};
+  const getUserDetails = async (userId) => {
+    const userDetails = await fetchData(`${apiURL}/users/${userId}`);
+    console.log("User details: ", userDetails);
+    return userDetails;
+  };
+
+  return {getUserByToken, postUser, getUserDetails};
 };
 
 export {useAuthentication, useUser};

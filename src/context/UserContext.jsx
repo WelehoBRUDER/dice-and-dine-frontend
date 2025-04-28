@@ -36,6 +36,7 @@ const UserProvider = ({children}) => {
       const token = localStorage.getItem("token");
       if (token) {
         const userResult = await getUserByToken(token);
+        console.log("User in user result: ", userResult.user);
         setUser(userResult.user);
         const origin = location.pathname || "/";
         navigate(origin);
