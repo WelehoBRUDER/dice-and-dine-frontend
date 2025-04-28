@@ -1,0 +1,10 @@
+#about-page {
+  margin-top: 8rem;
+  padding: 20px;
+  background-color: var(--theme-darker);
+  border-radius: 10px;
+}
+
+#about-page ul {
+  list-style: none;
+}
