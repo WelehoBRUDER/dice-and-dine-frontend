@@ -3,6 +3,7 @@
  *
  * @param {String} name - name of the textarea field (used for the label's htmlFor attribute)
  * @param {String} text - label text
+ * @param {String} subtext - additional text to display below the label (optional)
  * @param {String} placeholder - placeholder text for the textarea field
  * @param {String} value - starting value of the textarea field
  * @param {CallableFunction} onChange - callback function that triggers when the input value changes
@@ -13,6 +14,7 @@
 const TextArea = ({
   name,
   text,
+  subtext,
   placeholder,
   value,
   onChange,
@@ -26,6 +28,7 @@ const TextArea = ({
           {text}
         </label>
       )}
+      {subtext && <span>{subtext}</span>}
       <div className="textarea">
         <textarea
           id={name}

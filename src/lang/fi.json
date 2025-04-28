@@ -56,5 +56,14 @@
 
   "games_page.title": "Pelit",
 
-  "profile_page.title": "Profiili"
+  "profile_page.title": "Profiili",
+  "review_page": {
+    "title": "Kirjoita arvostelu",
+    "review": "Arvostelu",
+    "limit": "Enintään 150 merkkiä",
+    "email": "Sähköposti",
+    "rating": "Arviointi",
+    "type_here": "Kirjoita tähän",
+    "submit_review": "Lähetä arvostelu"
+  }
 }

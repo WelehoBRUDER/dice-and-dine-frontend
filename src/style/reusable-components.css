@@ -10,6 +10,7 @@
   font-weight: bold;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem 0.5rem rgba(0, 0, 0, 0.6);
+  margin: 0;
 
   &:hover {
     cursor: pointer;
@@ -44,6 +45,7 @@
   flex-direction: column;
   gap: 0.4rem;
   padding: 0.8rem;
+  margin: 0;
 
   .input-label {
     font-size: 2rem;
@@ -55,6 +57,7 @@
     background: var(--theme-background);
     border-radius: 0.5rem;
     width: var(--input-width);
+    margin: 0;
 
     .textarea-field {
       width: 100%;
@@ -74,6 +77,7 @@
       border: none;
       padding: 0;
       margin: 0;
+      font-family: "Roboto", sans-serif;
 
       &:focus {
         outline: none
