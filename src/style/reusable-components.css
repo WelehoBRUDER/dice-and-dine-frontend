@@ -49,19 +49,26 @@
     font-size: 2rem;
   }
 
-  .input-and-icon {
+  .input-and-icon, .textarea {
     padding: 0.8rem;
     border: 0.2rem solid var(--theme-contrast);
     background: var(--theme-background);
     border-radius: 0.5rem;
     width: var(--input-width);
 
+    .textarea-field {
+      width: 100%;
+      min-height: 10rem;
+      max-height: 50vh;
+      resize: vertical;
+    }
+
     .input-icon {
       width: var(--icon-width);
       height: var(--icon-width);
     }
 
-    .input-field {
+    .input-field, .textarea-field {
       font-size: 2rem;
       background: none;
       border: none;

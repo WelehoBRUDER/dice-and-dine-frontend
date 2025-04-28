@@ -58,5 +58,11 @@
 
   "games_page.title": "Games",
 
-  "profile_page.title": "Profile"
+  "profile_page.title": "Profile",
+
+  "review_page": {
+    "title": "Write a review",
+    "review": "Review",
+    "limit": "Up to 150 characters"
+  }
 }
