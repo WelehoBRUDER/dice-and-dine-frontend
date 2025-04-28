@@ -5,13 +5,13 @@ import {useLanguage} from "../context/LanguageContext";
  * * @returns {JSX.Element} - A select element with options for language selection.
  */
 const LanguageSelect = () => {
-  const {lang, setLanguage, languageList} = useLanguage();
+  const {setLanguage, languageList, currentLanguage} = useLanguage();
 
   return (
     <select
       className="language-select"
       onChange={(e) => setLanguage(e.target.value)}
-      defaultValue={lang.language}
+      value={currentLanguage}
     >
       {languageList.map((language) => (
         <option key={language.value} value={language.value}>
