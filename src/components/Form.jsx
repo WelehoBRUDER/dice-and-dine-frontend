@@ -2,8 +2,7 @@ import Input from "./Input";
 import Button from "./Button";
 import useForm from "../hooks/formHooks";
 import {useUserContext} from "../hooks/useUserContext";
-//import {useLanguage} from "../context/LanguageContext";
-//import {useEffect} from "react";
+import {useNavigate} from "react-router-dom";
 
 const Form = ({lang, authentication}) => {
   const initValues = {
@@ -11,19 +10,42 @@ const Form = ({lang, authentication}) => {
     password: "",
     email: "",
   };
-
-  const {handleLogin} = useUserContext();
+  const {handleLogin, handleRegister} = useUserContext();
+  const navigate = useNavigate();
 
   const doLogin = async () => {
     try {
       await handleLogin(inputs);
+      navigate("/");
+    } catch (e) {
+      alert(e.message);
+    }
+  };
+
+  const doRegister = async () => {
+    try {
+      await handleRegister(inputs);
+      alert("Registration successful! Please log in.");
+      navigate("/login");
+    } catch (e) {
+      alert(e.message);
+    }
+  };
+
+  const submitAction = async () => {
+    try {
+      if (authentication === "login") {
+        await doLogin(inputs);
+      } else if (authentication === "register") {
+        await doRegister(inputs);
+      }
     } catch (e) {
       alert(e.message);
     }
   };
 
   const {inputs, handleInputChange, handleSubmit} = useForm(
-    doLogin,
+    submitAction,
     initValues
   );
 
@@ -49,7 +71,7 @@ const Form = ({lang, authentication}) => {
       {authentication === "register" && (
         <Input
           name="email"
-          text="email_field"
+          text={`${lang("email_field")}`}
           type="text"
           placeholder={lang("email_field_placeholder")}
           value={inputs.email}

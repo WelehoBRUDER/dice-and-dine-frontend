@@ -7,7 +7,7 @@ const UserContext = createContext(null);
 const UserProvider = ({children}) => {
   const [user, setUser] = useState(null);
   const {postLogin} = useAuthentication();
-  const {getUserByToken} = useUser();
+  const {getUserByToken, postUser} = useUser();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -15,7 +15,6 @@ const UserProvider = ({children}) => {
     try {
       const loginResult = await postLogin(credentials);
       localStorage.setItem("token", loginResult.token);
-      navigate("/");
       setUser(loginResult.userWithNoPassword);
     } catch (e) {
       throw new Error(e.message);
@@ -46,9 +45,20 @@ const UserProvider = ({children}) => {
     }
   };
 
+  const handleRegister = async (credentials) => {
+    try {
+      //const registerResult =
+      await postUser(credentials);
+      //console.log("Registered user:", registerResult);
+      // setUser(registerResult);
+    } catch (e) {
+      throw new Error(e.message);
+    }
+  };
+
   return (
     <UserContext.Provider
-      value={{user, handleLogin, handleLogout, handleAutoLogin}}
+      value={{user, handleLogin, handleLogout, handleAutoLogin, handleRegister}}
     >
       {children}
     </UserContext.Provider>
