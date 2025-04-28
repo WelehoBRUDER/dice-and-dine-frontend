@@ -6,26 +6,25 @@ import {useLanguage} from "../context/LanguageContext.jsx";
 import {useEffect} from "react";
 
 const Menu = () => {
-  //const {currentLanguage: lang} = localStorage.getItem("language") || "en";
-  const {currentLanguage, setCurrentPage} = useLanguage();
-
+  const currentLanguage = localStorage.getItem("language") || "en";
+  const {setCurrentPage, lang} = useLanguage();
   const navigate = useNavigate();
-
   const {menu, loading} = useMenu(currentLanguage);
+  useEffect(() => {
+    setCurrentPage("menu_page");
+    console.log("Set assigned to menu_page");
+  }, []);
 
   const handleGoToCart = () => {
     navigate("/cart");
   };
-  useEffect(() => {
-    setCurrentPage("menu_page");
-    console.log("Set assigned to menu page");
-  }, []);
 
-  const ourMenuText =
-    currentLanguage === "en" ? "Our Menu" : "Meidän ruokalista";
-  // const ourMenuText = lang("menu_page.title");
-  const buttonText =
-    currentLanguage === "en" ? "Go to shopping cart" : "Siirry ostoskoriin";
+  // const ourMenuText =
+  //   currentLanguage === "en" ? "Our Menu" : "Meidän ruokalista";
+  const ourMenuText = lang("menu_page.title");
+  // const buttonText =
+  //   currentLanguage === "en" ? "Go to shopping cart" : "Siirry ostoskoriin";
+  const buttonText = lang("menu_page.button_text");
 
   return (
     <div className="menu-page">

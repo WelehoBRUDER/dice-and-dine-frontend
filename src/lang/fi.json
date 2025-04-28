@@ -36,9 +36,17 @@
   "games_link": "Pelit",
   "about_link": "Tietoa",
 
-  "menu_page": {
-    "title": "Meidän ruokalista",
-    "button_text": "Siirry ostoskoriin",
-    "no_items": "Ei ruokalistaa saatavilla"
-  }
+  "menu_page.title": "Meidän ruokalista",
+  "menu_page.button_text": "Siirry ostoskoriin",
+  "menu_page.no_items": "Ei ruokalistaa saatavilla",
+
+  "cart_page.order_success_message": "Tilaus onnistui! Tilausnumero: ",
+  "cart_page.your_cart": "Ostoskori",
+  "cart_page.items_loading": "Lataamme ostoskorin tuotteita...",
+  "cart_page.table_headings": ["Tuotteen nimi", "Määrä", "Hinta", "Yhteensä"],
+  "cart_page.total": "Yhteensä",
+  "cart_page.empty_cart": "Ostoskorisi on tyhjennetty",
+  "cart_page.clear_cart": "Tyhjennä ostoskori",
+  "cart_page.order_button": "Tee tilaus",
+  "cart_page.order_loading": "Tilausta käsitellään..."
 }

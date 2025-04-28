@@ -4,9 +4,11 @@ import useItemDetails from "../hooks/useItemDetails";
 import Button from "../components/Button";
 import useOrder from "../hooks/useOrder";
 import {useNavigate} from "react-router-dom";
+import {useLanguage} from "../context/LanguageContext";
 
 const CartPage = () => {
-  const lang = localStorage.getItem("language") || "en";
+  // const lang = localStorage.getItem("language") || "en";
+  const {lang, setCurrentPage} = useLanguage();
   const navigate = useNavigate();
   const {cart, clearCart} = useCart();
   const [cartItems, setCartItems] = useState([]);
@@ -36,6 +38,11 @@ const CartPage = () => {
 
     placeOrder(orderCart, customerId, token);
   };
+
+  useEffect(() => {
+    setCurrentPage("cart_page");
+  }, []);
+
   useEffect(() => {
     if (itemsDetails.length > 0) {
       const itemsWithDetails = cart.map((item) => {
@@ -53,10 +60,11 @@ const CartPage = () => {
 
   useEffect(() => {
     if (orderSuccess) {
-      const successMessage =
-        lang === "en"
-          ? `Order placed successfully! Order ID: ${orderId}`
-          : `Tilauksesi on vastaanotettu! Tilauksen ID: ${orderId}`;
+      // const successMessage =
+      //   lang === "en"
+      //     ? `Order placed successfully! Order ID: ${orderId}`
+      //     : `Tilauksesi on vastaanotettu! Tilauksen ID: ${orderId}`;
+      const successMessage = lang("cart_page.order_success_message") + orderId;
       alert(successMessage);
 
       clearCart();
@@ -64,22 +72,30 @@ const CartPage = () => {
     }
   }, [orderSuccess]);
 
-  const yourCartText = lang === "en" ? "Your Cart" : "Ostoskori";
-  const itemsLoadingText =
-    lang === "en"
-      ? "Loading cart items..."
-      : "Ladataan ostoskorin tuotteita...";
-  const tableHeadings =
-    lang === "en"
-      ? ["Item Name", "Item Amount", "Item Price €", "Total €"]
-      : ["Tuotteen nimi", "Määrä", "Hinta €", "Yhteensä €"];
-  const totalText = lang === "en" ? "Total" : "Yhteensä";
-  const emptyCartText =
-    lang === "en" ? "Your cart is empty." : "Ostoskori on tyhjä.";
-  const clearCartText = lang === "en" ? "Clear Cart" : "Tyhjennä ostoskori";
-  const orderButtonText = lang === "en" ? "Place Order" : "Tee tilaus";
-  const orderLoadingText =
-    lang === "en" ? "Placing Order..." : "Tilausta käsitellään...";
+  // const yourCartText = lang === "en" ? "Your Cart" : "Ostoskori";
+  // const itemsLoadingText =
+  //   lang === "en"
+  //     ? "Loading cart items..."
+  //     : "Ladataan ostoskorin tuotteita...";
+  // const tableHeadings =
+  //   lang === "en"
+  //     ? ["Item Name", "Item Amount", "Item Price €", "Total €"]
+  //     : ["Tuotteen nimi", "Määrä", "Hinta €", "Yhteensä €"];
+  // const totalText = lang === "en" ? "Total" : "Yhteensä";
+  // const emptyCartText =
+  //   lang === "en" ? "Your cart is empty." : "Ostoskori on tyhjä.";
+  // const clearCartText = lang === "en" ? "Clear Cart" : "Tyhjennä ostoskori";
+  // const orderButtonText = lang === "en" ? "Place Order" : "Tee tilaus";
+  // const orderLoadingText =
+  //   lang === "en" ? "Placing Order..." : "Tilausta käsitellään...";
+  const yourCartText = lang("cart_page.your_cart");
+  const itemsLoadingText = lang("cart_page.items_loading");
+  const tableHeadings = lang("cart_page.table_headings");
+  const totalText = lang("cart_page.total");
+  const emptyCartText = lang("cart_page.empty_cart");
+  const clearCartText = lang("cart_page.clear_cart");
+  const orderButtonText = lang("cart_page.order_button");
+  const orderLoadingText = lang("cart_page.order_loading");
 
   return (
     <div>
