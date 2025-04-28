@@ -53,11 +53,14 @@ const Review = () => {
           name="email"
           type="email"
           text={lang("email")}
+          required={true}
           onChange={handleInputChange}
         ></Input>
         <Input
           name="rating"
           type="number"
+          minMax={[1, 5]}
+          required={true}
           text={lang("rating")}
           onChange={handleInputChange}
         ></Input>
