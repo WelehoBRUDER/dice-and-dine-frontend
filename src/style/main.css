@@ -44,8 +44,20 @@ h2 {
 .flex-column {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+  margin: 1rem;
+
+  &.center {
+    justify-content: center;
+  }
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
   gap: 1rem;
   margin: 1rem;
+  align-items: center;
 
   &.center {
     justify-content: center;
