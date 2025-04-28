@@ -9,10 +9,12 @@ const Profile = () => {
   const {getUserDetails} = useUser();
   const {lang, setCurrentPage} = useLanguage();
   const [userDetails, setUserDetails] = useState(null);
+
   useEffect(() => {
     setCurrentPage("profile_page");
   }, []);
   console.log("user in profile: ", user);
+
   useEffect(() => {
     if (!user?.id) return;
     const fetchUserDetails = async () => {
@@ -33,6 +35,7 @@ const Profile = () => {
       <p>Username: {userDetails.name}</p>
       <p>E-mail: {userDetails.email}</p>
       <p>User type: {userDetails.user_type}</p>
+      <p>Orders:{userDetails.orders.join(", ")}</p>
     </div>
   );
 };
