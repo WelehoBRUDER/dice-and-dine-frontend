@@ -20,8 +20,8 @@
   "menu_page_link": "Ruokalista",
 
   "authentication_page": {
-    "login": "kirjaudu sisään",
-    "register": "rekisteröidy",
+    "login": "Kirjaudu sisään",
+    "register": "Rekisteröidy",
     "username_field": "Käyttäjänimi:",
     "username_field_placeholder": "Syötä käyttäjänimesi",
     "password_field": "Salasana:",
