@@ -57,6 +57,7 @@ export const LanguageProvider = ({children}) => {
         setLanguage,
         setCurrentPage,
         languageList,
+        currentLanguage,
       }}
     >
       {children}

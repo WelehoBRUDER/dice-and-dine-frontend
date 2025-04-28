@@ -30,5 +30,28 @@
     "email_field_placeholder": "Syötä sähköpostiosoitteesi",
     "login_button": "Kirjaudu sisään",
     "register_button": "Rekisteröidy"
-  }
+  },
+
+  "menu_link": "Ruokalista",
+  "games_link": "Pelit",
+  "about_link": "Tietoa",
+
+  "menu_page.title": "Meidän ruokalista",
+  "menu_page.button_text": "Siirry ostoskoriin",
+  "menu_page.no_items": "Ei ruokalistaa saatavilla",
+  "menu_page.add_button_text": "Lisää",
+  "menu_page.remove_button_text": "Poista",
+  "menu_page.allergens_text": "Allergeenit",
+
+  "cart_page.order_success_message": "Tilaus onnistui! Tilausnumero: ",
+  "cart_page.your_cart": "Ostoskori",
+  "cart_page.items_loading": "Lataamme ostoskorin tuotteita...",
+  "cart_page.table_headings": ["Tuotteen nimi", "Määrä", "Hinta", "Yhteensä"],
+  "cart_page.total": "Yhteensä",
+  "cart_page.empty_cart": "Ostoskorisi on tyhjennetty",
+  "cart_page.clear_cart": "Tyhjennä ostoskori",
+  "cart_page.order_button": "Tee tilaus",
+  "cart_page.order_loading": "Tilausta käsitellään...",
+
+  "games_page.title": "Pelit"
 }

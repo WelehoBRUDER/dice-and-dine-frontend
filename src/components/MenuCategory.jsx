@@ -1,16 +1,16 @@
 import MenuItem from "./MenuItem.jsx";
 
-const MenuCategory = ({categoryName, items, lang}) => {
+const MenuCategory = ({categoryName, items}) => {
   const categoryImages = {
     Alkupala: "/images/starter.jpg",
     Pääruoka: "/images/main.jpg",
     Jälkiruoka: "/images/dessert.jpg",
     Juomat: "/images/beverages.jpg",
     Naposteltavat: "/images/snacks.jpg",
-    Starters: "/images/starter.jpg",
-    Mains: "/images/main.jpg",
-    Desserts: "/images/dessert.jpg",
-    Drinks: "/images/beverages.jpg",
+    Starter: "/images/starter.jpg",
+    Main: "/images/main.jpg",
+    Dessert: "/images/dessert.jpg",
+    Beverages: "/images/beverages.jpg",
     Snacks: "/images/snacks.jpg",
   };
 
@@ -24,7 +24,7 @@ const MenuCategory = ({categoryName, items, lang}) => {
 
       <div className="list-grid">
         {items.map((item, i) => (
-          <MenuItem key={i} item={item} lang={lang} />
+          <MenuItem key={i} item={item} />
         ))}
       </div>
     </div>

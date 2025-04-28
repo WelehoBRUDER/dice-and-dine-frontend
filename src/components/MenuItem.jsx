@@ -1,10 +1,16 @@
 import {useCart} from "../context/CartContext";
 import Button from "./Button";
+import {useLanguage} from "../context/LanguageContext";
 
-const MenuItem = ({item, lang}) => {
+const MenuItem = ({item}) => {
+  const {lang} = useLanguage();
   const {cart, addToCart, removeFromCart} = useCart();
-  const buttonTextAdd = lang === "en" ? "Add" : "Lisää";
-  const buttonTextRemove = lang === "en" ? "Remove" : "Poista";
+  // const buttonTextAdd = lang === "en" ? "Add" : "Lisää";
+  // const buttonTextRemove = lang === "en" ? "Remove" : "Poista";
+
+  const buttonTextAdd = lang("menu_page.add_button_text");
+  const buttonTextRemove = lang("menu_page.remove_button_text");
+  const allergensText = lang("menu_page.allergens_text");
   const isInCart = cart.some((cartItem) => cartItem.menu_item_id === item.id);
   return (
     <>
@@ -16,8 +22,7 @@ const MenuItem = ({item, lang}) => {
         <p className="description">{item.description}</p>
         {item.allergens?.length > 0 && (
           <p className="allergens">
-            {lang === "en" ? "Allergens" : "Allergeenit"}:{" "}
-            {item.allergens.join(", ")}
+            {allergensText}: {item.allergens.join(", ")}
           </p>
         )}
         <div className="button-container">
