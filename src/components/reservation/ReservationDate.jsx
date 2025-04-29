@@ -1,7 +1,7 @@
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
-const ReservationDate = ({date}) => {
+const ReservationDate = ({date, setDate}) => {
   return (
     <div className="reservation-date">
       <h2>Reservation Date</h2>
@@ -11,6 +11,9 @@ const ReservationDate = ({date}) => {
         className="react-calendar"
         locale="en-US"
         minDate={new Date()}
+        onClickDay={(value) => {
+          setDate(value);
+        }}
       />
 
       <p>{date.toLocaleDateString("fi-FI")}</p>

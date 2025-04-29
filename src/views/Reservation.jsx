@@ -39,6 +39,7 @@ const Reservation = () => {
         length={reservationLength}
         setArrival={setReservationArrival}
         setLength={setReservationLength}
+        date={reservationDate}
         info={{reservationLengths, restaurantOpen}}
       />
     </div>
