@@ -169,3 +169,34 @@ td {
     }
   }
 }
+
+.react-calendar {
+  background: var(--theme-darker);
+
+  .react-calendar__navigation {
+    button:hover {
+      background: var(--theme-foreground) !important;
+    }
+  }
+
+  .react-calendar__navigation button:disabled {
+    background: var(--theme-darker);
+    opacity: 0.5;
+  }
+
+  .react-calendar__tile {
+    background: var(--theme-foreground);
+
+    &:focus {
+      background: var(--theme-darker) !important;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+
+    &:hover:not(:focus) {
+      background: var(--theme-background) !important;
+    }
+  }
+}

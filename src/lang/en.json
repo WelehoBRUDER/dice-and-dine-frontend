@@ -71,5 +71,9 @@
     "rating": "Rating",
     "type_here": "Type here",
     "submit_review": "Submit Review"
+  },
+
+  "reservation_page": {
+    "make_reservation": "Make a reservation"
   }
 }

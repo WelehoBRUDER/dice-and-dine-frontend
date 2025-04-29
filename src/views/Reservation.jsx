@@ -1,6 +1,8 @@
 import {useLanguage} from "../context/LanguageContext";
 import {useEffect, useState} from "react";
 import LoadingWheel from "../components/LoadingWheel";
+import useTables from "../hooks/useTables";
+import ReservationDate from "../components/reservation/ReservationDate";
 
 const Reservation = () => {
   const {lang, setCurrentPage} = useLanguage();
@@ -10,6 +12,7 @@ const Reservation = () => {
   const [reservationLength, setReservationLength] = useState();
   const [reservationDate, setReservationDate] = useState();
   const [reservationTables, setReservationTables] = useState([]);
+  const {loading, tables: fetchedTables} = useTables();
 
   // Move this somewhere else in the future
   // Time is measured in hours
@@ -18,10 +21,17 @@ const Reservation = () => {
   useEffect(() => {
     setCurrentPage("reservation_page");
   }, []);
+
+  useEffect(() => {
+    if (fetchedTables) {
+      setTables(fetchedTables);
+    }
+  }, [fetchedTables]);
   return (
     <div>
       <h1>{lang("make_reservation")}</h1>
-      <LoadingWheel loadingText="loading_reservation" />
+      {loading && <LoadingWheel loadingText="loading_reservation" />}
+      <ReservationDate date={new Date()} />
     </div>
   );
 };
