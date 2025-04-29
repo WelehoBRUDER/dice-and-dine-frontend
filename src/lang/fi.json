@@ -8,6 +8,9 @@
     "subtitle": "Tervetuloa etusivulle"
   },
 
+  "loading_text": "Ladataan sisältöä...",
+  "try_again": "Yritä uudelleen",
+
   "home_page_link": "Etusivu",
   "about_page_link": "Tietoa",
   "forum_page_link": "Foorumi",

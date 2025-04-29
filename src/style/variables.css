@@ -4,6 +4,7 @@
   --theme-foreground: #3a506b;
   --theme-lighter: #779cab;
   --theme-contrast: #f0eff4;
+  --loading-wheel: #433a6b;
   font-size: 62.5%; /* 1rem = 10px */
 
   font-family: "Roboto", sans-serif;
@@ -14,4 +15,5 @@
   --input-width: 300px;
   --button-width: 300px;
   --icon-width: 2.5rem;
+  --loading-wheel-size: 200px;
 }
