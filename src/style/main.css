@@ -70,10 +70,6 @@ h2 {
   }
 }
 
-.profile-image {
-  padding: 2rem;
-}
-
 .profile-image img {
   max-width: 200px;
   border-radius: 8px;
@@ -90,4 +86,9 @@ h2 {
 
 .profile-value {
   flex: 1;
+}
+
+.preview-image {
+  max-width: 200px;
+  border-radius: 8px;
 }

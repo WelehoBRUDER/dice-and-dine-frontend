@@ -50,7 +50,26 @@ const useUser = () => {
     return userDetails;
   };
 
-  return {getUserByToken, postUser, getUserDetails};
+  const uploadProfileImage = async (file, username, token) => {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    const fetchOptions = {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+      body: formData,
+    };
+
+    const result = await fetchData(
+      `${apiURL}/users/img/${username}`,
+      fetchOptions
+    );
+    return result;
+  };
+
+  return {getUserByToken, postUser, getUserDetails, uploadProfileImage};
 };
 
 export {useAuthentication, useUser};
