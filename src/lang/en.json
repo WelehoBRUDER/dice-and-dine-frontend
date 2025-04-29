@@ -74,6 +74,7 @@
   },
 
   "reservation_page": {
-    "make_reservation": "Make a reservation"
+    "make_reservation": "Make a reservation",
+    "loading_reservation": "Loading reservation..."
   }
 }
