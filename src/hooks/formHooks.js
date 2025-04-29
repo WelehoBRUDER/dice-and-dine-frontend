@@ -48,9 +48,10 @@ const useForm = (callback, initState) => {
 
     if (file && name) {
       try {
-        await uploadProfileImage(file, name, token);
+        const result = await uploadProfileImage(file, name, token);
         alert("Profile image uploaded!");
         resetForm();
+        return result.file.filename;
       } catch (err) {
         console.error("Upload failed:", err);
         alert("Upload failed.");

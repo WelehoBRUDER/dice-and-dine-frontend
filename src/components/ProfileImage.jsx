@@ -1,20 +1,31 @@
+import {useState} from "react";
 import useForm from "../hooks/formHooks";
+import useImage from "../hooks/useImage";
+import {useLanguage} from "../context/LanguageContext";
 
-const ProfileImage = ({userDetails}) => {
+const ProfileImage = ({userDetails, handleImageUpload}) => {
+  const {lang} = useLanguage();
   const {inputs, filePreview, handleFileChange, handleFileSubmit} = useForm();
-  //   const [refreshImage, setRefreshImage] = useState(0);
+  const [key, setKey] = useState(0);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    handleFileSubmit(inputs.profileImage, userDetails.name);
-    // setRefreshImage(Date.now());
+    handleFileSubmit(inputs.profileImage, userDetails.name).then(
+      (newImagePath) => {
+        if (newImagePath) {
+          handleImageUpload(newImagePath);
+          setKey(Date.now());
+        }
+      }
+    );
   };
-  //   const imgBlobUrl = useImage(userDetails.profile_image, refreshImage);
-  const imgURL = `http://localhost:3000/uploads/${userDetails.profile_image}`;
+  const imgBlobUrl = useImage(userDetails.profile_image, key);
+  //   const imgURL = `http://localhost:3000/uploads/${userDetails.profile_image}`;
   return (
     <div className="profile-image">
       <img
-        src={imgURL || "https://placehold.co/200x250?text=No+Picture"}
+        key={key}
+        src={imgBlobUrl || "https://placehold.co/200x250?text=No+Picture"}
         alt="Profile picture"
       />
       <form
@@ -39,7 +50,7 @@ const ProfileImage = ({userDetails}) => {
           </div>
         )}
         <button className="btn-smaller" type="submit">
-          Upload Image
+          {lang("profile_page.upload_button")}
         </button>
       </form>
     </div>

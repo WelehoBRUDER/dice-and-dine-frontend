@@ -61,5 +61,8 @@
   "profile_page.email": "Sähköposti:",
   "profile_page.usertype": "Käyttäjätyyppi:",
   "profile_page.edit_profile": "Muokkaa tietoja",
-  "profile_page.upload_button": "Lataa profiilikuva"
+  "profile_page.upload_button": "Lataa profiilikuva",
+  "profile_page.profile_picture": "Profiilikuva",
+  "profile_page.orders": "Tilauksesi",
+  "profile_page.details": "Tiedot"
 }

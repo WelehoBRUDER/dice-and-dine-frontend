@@ -37,10 +37,17 @@ const Profile = () => {
     }
   };
 
+  const handleImageUpload = (newImagePath) => {
+    setUserDetails((prevDetails) => ({
+      ...prevDetails,
+      profile_image: newImagePath,
+    }));
+  };
+
   useEffect(() => {
     setCurrentPage("profile_page");
     fetchUserAndOrderDetails();
-  }, [user]);
+  }, [user, loading]);
 
   if (loading) {
     return <Loading />;
@@ -55,7 +62,10 @@ const Profile = () => {
       <div className="flex-row top-align">
         <div className="profile-image-container">
           <h2>{lang("profile_page.profile_picture")}</h2>
-          <ProfileImage userDetails={userDetails} />
+          <ProfileImage
+            userDetails={userDetails}
+            handleImageUpload={handleImageUpload}
+          />
         </div>
         <div className="profile-details-container">
           <h2>{lang("profile_page.details")}</h2>
