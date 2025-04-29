@@ -46,7 +46,6 @@ const useForm = (callback, initState) => {
   const handleFileSubmit = async (file, name) => {
     const token = localStorage.getItem("token");
 
-    console.log("Inputs: ", file, name, token);
     if (file && name) {
       try {
         await uploadProfileImage(file, name, token);

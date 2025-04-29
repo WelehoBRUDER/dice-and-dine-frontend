@@ -30,6 +30,7 @@ h1 {
 
 h2 {
   font-size: 2rem; /* 20px */
+  text-align: center;
 }
 
 .main-content {
@@ -70,7 +71,28 @@ h2 {
   }
 }
 
+.flex-row.top-align {
+  align-items: flex-start;
+}
+
+.profile-image {
+  display: flex;
+  flex-direction: column;
+}
+
 .profile-image img {
+  max-width: 200px;
+  border-radius: 8px;
+  align-self: center;
+}
+
+.image-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-image {
   max-width: 200px;
   border-radius: 8px;
 }

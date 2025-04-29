@@ -16,7 +16,6 @@ const Profile = () => {
   const [orderDetails, setOrderDetails] = useState({});
   const {getOrderDetails} = useOrder();
   const {getUserDetails} = useUser();
-  const [imageUpdated, setImageUpdated] = useState(null);
 
   const fetchUserAndOrderDetails = async () => {
     if (user && user.id) {
@@ -41,28 +40,31 @@ const Profile = () => {
   useEffect(() => {
     setCurrentPage("profile_page");
     fetchUserAndOrderDetails();
-  }, [user, imageUpdated]);
+  }, [user]);
 
   if (loading) {
     return <Loading />;
   }
 
   return (
-    <div className="main-content">
-      <h1>{lang("profile_page.title")}</h1>
+    <div>
+      <h1>
+        {lang("profile_page.title")} : {userDetails.name}
+      </h1>
 
-      <div className="flex-row">
+      <div className="flex-row top-align">
         <div className="profile-image-container">
-          <h2>Profile picture</h2>
+          <h2>{lang("profile_page.profile_picture")}</h2>
           <ProfileImage userDetails={userDetails} />
         </div>
         <div className="profile-details-container">
-          <h2>User details</h2>
+          <h2>{lang("profile_page.details")}</h2>
           <ProfileDetails userDetails={userDetails} lang={lang} />
+
+          <h2>{lang("profile_page.orders")}</h2>
+          <OrderTable userDetails={userDetails} orderDetails={orderDetails} />
         </div>
       </div>
-      <h2>Orders</h2>
-      <OrderTable userDetails={userDetails} orderDetails={orderDetails} />
     </div>
   );
 };
