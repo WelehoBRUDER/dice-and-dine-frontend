@@ -5,6 +5,7 @@ import {useUser} from "../hooks/userHooks";
 import Loading from "../components/Loading";
 import useOrder from "../hooks/useOrder";
 import useForm from "../hooks/formHooks";
+import useImage from "../hooks/useImage";
 
 const Profile = () => {
   const {lang, setCurrentPage} = useLanguage();
@@ -13,10 +14,10 @@ const Profile = () => {
   const [loading, setLoading] = useState(true);
   const [orderDetails, setOrderDetails] = useState({});
   const {getOrderDetails} = useOrder();
-  const {getUserDetails, uploadProfileImage} = useUser();
-  const {inputs, filePreview, handleFileChange, resetForm} = useForm();
-  const [imgBlobUrl, setImgBlobUrl] = useState("");
+  const {getUserDetails} = useUser();
+  const {inputs, filePreview, handleFileChange, handleFileSubmit} = useForm();
   const [imageUpdated, setImageUpdated] = useState(null);
+  const imgBlobUrl = useImage(userDetails.profile_image);
 
   const fetchUserAndOrderDetails = async () => {
     if (user && user.id) {
@@ -38,58 +39,21 @@ const Profile = () => {
     }
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    const token = localStorage.getItem("token");
-
-    const file = inputs.profileImage;
-    console.log("Inputs: ", file, userDetails.name, token);
-    if (file && userDetails?.name) {
-      await uploadProfileImage(file, userDetails.name, token);
-      try {
-        await uploadProfileImage(file, userDetails.name, token);
-        alert("Profile image uploaded!");
-        await fetchUserAndOrderDetails();
-        resetForm();
-        setImageUpdated(Date.now());
-      } catch (err) {
-        console.error("Upload failed:", err);
-        alert("Upload failed.");
-      }
-    } else {
-      console.error("Missing file or username");
-    }
+    handleFileSubmit(inputs.profileImage, userDetails.name);
+    setImageUpdated(Date.now());
   };
 
   useEffect(() => {
     setCurrentPage("profile_page");
 
     fetchUserAndOrderDetails();
-  }, [user]);
-
-  useEffect(() => {
-    if (userDetails.profile_image) {
-      fetch(`http://localhost:3000/uploads/${userDetails.profile_image}`, {
-        cache: "no-store",
-      })
-        .then((res) => res.blob())
-        .then((blob) => {
-          const blobUrl = URL.createObjectURL(blob);
-          setImgBlobUrl(blobUrl);
-        });
-    }
-  }, [userDetails.profile_image, imageUpdated]);
+  }, [user, imageUpdated]);
 
   if (loading) {
     return <Loading />;
   }
-
-  console.log("User details setted:", userDetails);
-  // console.log("Order details setted:", orderDetails);
-
-  // const imgURL = userDetails.profile_image
-  //   ? `http://localhost:3000/uploads/${userDetails.profile_image}`
-  //   : "https://placehold.co/200x250?text=No+Picture";
 
   return (
     <div className="main-content">

@@ -1,9 +1,11 @@
 import {useState} from "react";
+import {useUser} from "./userHooks";
 
 const useForm = (callback, initState) => {
   const [inputs, setInputs] = useState(initState);
   const [file, setFile] = useState(null);
   const [filePreview, setFilePreview] = useState(null);
+  const {uploadProfileImage} = useUser();
 
   const handleSubmit = (event) => {
     if (event) {
@@ -39,13 +41,31 @@ const useForm = (callback, initState) => {
     setFilePreview(null);
   };
 
+  const handleFileSubmit = async (file, name) => {
+    const token = localStorage.getItem("token");
+
+    console.log("Inputs: ", file, name, token);
+    if (file && name) {
+      try {
+        await uploadProfileImage(file, name, token);
+        alert("Profile image uploaded!");
+        resetForm();
+      } catch (err) {
+        console.error("Upload failed:", err);
+        alert("Upload failed.");
+      }
+    } else {
+      console.error("Missing file or username");
+    }
+  };
+
   return {
     handleSubmit,
     handleInputChange,
     inputs,
     handleFileChange,
     filePreview,
-    resetForm,
+    handleFileSubmit,
   };
 };
 
