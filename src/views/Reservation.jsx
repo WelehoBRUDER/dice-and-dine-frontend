@@ -3,7 +3,8 @@ import {useEffect, useState} from "react";
 import LoadingWheel from "../components/LoadingWheel";
 import useTables from "../hooks/useTables";
 import ReservationDate from "../components/reservation/ReservationDate";
-import ReservationTime from "../components/reservation/ReservationTime";
+import ReservationArrival from "../components/reservation/ReservationArrival";
+import ReservationLength from "../components/reservation/ReservationLength";
 import Button from "../components/Button";
 import "../style/reservation.css";
 
@@ -38,6 +39,15 @@ const Reservation = () => {
     setCurrentPage("reservation_page");
   }, []);
 
+  useEffect(() => {
+    if (step < 0) {
+      setStep(0);
+    }
+    if (step > steps.length - 1) {
+      setStep(steps.length - 1);
+    }
+  }, [step]);
+
   return (
     <div className="reservation flex-column">
       <div className="reservation-header flex-row center">
@@ -60,24 +70,43 @@ const Reservation = () => {
           ))}
         </div>
       </div>
-      {loading && <LoadingWheel loadingText="loading_reservation" />}
-      {!loading && step === 0 && (
-        <ReservationDate
-          date={reservationDate}
-          setDate={setReservationDate}
-          title={lang(steps[step].name)}
-        />
-      )}
-      {!loading && step === 1 && (
-        <ReservationTime
-          arrival={reservationArrival}
-          length={reservationLength}
-          setArrival={setReservationArrival}
-          setLength={setReservationLength}
-          date={reservationDate}
-          info={{reservationLengths, restaurantOpen}}
-        />
-      )}
+      <div className="reservation-content">
+        {loading && <LoadingWheel loadingText="loading_reservation" />}
+        {!loading && step === 0 && (
+          <ReservationDate
+            date={reservationDate}
+            setDate={setReservationDate}
+            title={lang(steps[step].name)}
+          />
+        )}
+        {!loading && step === 1 && (
+          <ReservationArrival
+            arrival={reservationArrival}
+            length={reservationLength}
+            setArrival={setReservationArrival}
+            setLength={setReservationLength}
+            date={reservationDate}
+            info={{reservationLengths, restaurantOpen}}
+          />
+        )}
+        {!loading && step === 2 && <ReservationLength />}
+      </div>
+      <div className="navigation">
+        <Button
+          className="btn-old"
+          disabled={step === 0}
+          onClick={() => setStep(step - 1)}
+        >
+          {"<"}
+        </Button>
+        <Button
+          className="btn-old"
+          disabled={step === steps.length - 1}
+          onClick={() => setStep(step + 1)}
+        >
+          {">"}
+        </Button>
+      </div>
     </div>
   );
 };

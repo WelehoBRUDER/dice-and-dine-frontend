@@ -40,4 +40,8 @@
       }
     }
   }
+
+  .reservation-content {
+    height: min(50vh, 450px);
+  }
 }
