@@ -58,12 +58,10 @@
 
   "games_page.title": "Games",
 
-  "profile_page": {
-    "title": "Profile",
-    "username": "Username:",
-    "email": "Email:",
-    "usertype": "User Type:",
-    "edit_profile": "Edit Profile",
-    "upload_button": "Upload profile pic"
-  }
+  "profile_page.title": "Profile",
+  "profile_page.username": "Username:",
+  "profile_page.email": "Email:",
+  "profile_page.usertype": "User Type:",
+  "profile_page.edit_profile": "Edit information",
+  "profile_page.upload_button": "Upload profile picture"
 }

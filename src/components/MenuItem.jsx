@@ -26,7 +26,6 @@ const MenuItem = ({item}) => {
           </p>
         )}
         <div className="button-container">
-          {/* Show both buttons side by side */}
           {!isInCart ? (
             <Button
               onClick={() => addToCart(item.id)}

@@ -45,7 +45,9 @@ const Profile = () => {
   console.log("User details setted:", userDetails);
   // console.log("Order details setted:", orderDetails);
   const URL = import.meta.env.VITE_URL;
-  const imgURL = `http://localhost:3000/uploads/${userDetails.profile_image}`;
+  const imgURL = userDetails.profile_image
+    ? `http://localhost:3000/uploads/${userDetails.profile_image}`
+    : "https://placehold.co/200x250?text=No+Picture";
 
   return (
     <div className="main-content">
@@ -53,10 +55,7 @@ const Profile = () => {
 
       <div className="flex-row">
         <div className="profile-image">
-          <img
-            src={imgURL || "https://placehold.co/160x200?text=No+Picture"}
-            alt="Profile picture"
-          />
+          <img src={imgURL} alt="Profile picture" />
         </div>
         <div className="flex-column">
           <div className="profile-detail-row">
@@ -75,11 +74,14 @@ const Profile = () => {
             </span>
             <span className="profile-value">{userDetails.user_type}</span>
           </div>
-          <div className="profile-detail-row">
-            <button className="btn-old" onClick={() => alert("Edit profile")}>
+          <div className="flex-column">
+            <button
+              className="btn-smaller"
+              onClick={() => alert("Edit profile")}
+            >
               {lang("profile_page.edit_profile")}
             </button>
-            <button className="btn-old">
+            <button className="btn-smaller">
               {lang("profile_page.upload_button")}
             </button>
           </div>

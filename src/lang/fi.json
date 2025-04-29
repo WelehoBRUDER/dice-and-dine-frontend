@@ -60,6 +60,6 @@
   "profile_page.username": "Käyttäjänimi:",
   "profile_page.email": "Sähköposti:",
   "profile_page.usertype": "Käyttäjätyyppi:",
-  "profile_page.edit_profile": "Muokkaa profiilia",
-  "profile_page.upload_button": "Liitä kuva"
+  "profile_page.edit_profile": "Muokkaa tietoja",
+  "profile_page.upload_button": "Lataa profiilikuva"
 }

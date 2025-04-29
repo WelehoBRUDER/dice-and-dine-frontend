@@ -142,8 +142,11 @@ const CartPage = () => {
         {itemsError && <p style={{color: "red"}}>{itemsError}</p>}
         {orderError && <p style={{color: "red"}}>{orderError}</p>}
         <div className="cart-buttons">
-          <Button onClick={clearCart}>{clearCartText}</Button>
+          <Button className="btn-smaller" onClick={clearCart}>
+            {clearCartText}
+          </Button>
           <Button
+            className="btn-smaller"
             onClick={handlePlaceOrder}
             disabled={orderLoading || cart.length === 0}
           >
