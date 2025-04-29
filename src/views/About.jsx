@@ -1,23 +1,40 @@
-import {useEffect} from "react";
+import Loading from "../components/Loading";
+import useRestaurantInfo from "../hooks/useRestaurantInfo";
 import {useLanguage} from "../context/LanguageContext";
+import {useEffect} from "react";
 
 const About = () => {
-  const {lang, setCurrentPage} = useLanguage();
+  const {currentLanguage, lang, setCurrentPage} = useLanguage();
+
+  const {info, loading} = useRestaurantInfo(currentLanguage);
+
   useEffect(() => {
     setCurrentPage("about_page");
   }, []);
-
+  console.log("info", info[0]);
   return (
-    <div id="about-page">
-      <h1>Contact information</h1>
-      <ul>
-        <li>{String.fromCodePoint(0x260e) + lang("id")} +1012 3456 789</li>
-        <li>{String.fromCodePoint(0x2709)} demo@gmail.com</li>
-        <li>
-          {String.fromCodePoint(0x1f4cc)} 132 Darthmouth Street Boston,
-          Massachusetts 02156 United States
-        </li>
-      </ul>
+    <div>
+      <h1>{lang("about_page_title")}</h1>
+      {loading ? (
+        <Loading />
+      ) : (
+        <div>
+          <ul>
+            <li>
+              {lang("about_page_phone")}: {info[0].phone}
+            </li>
+            <li>
+              {lang("about_page_email")}: {info[0].email}
+            </li>
+            <li>
+              {lang("about_page_address")}: {info[0].address}
+            </li>
+            <li>
+              {lang("about_page_open_times")}:{info[0].open_times}
+            </li>
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
