@@ -46,11 +46,32 @@ const Profile = () => {
   console.log("Order details setted:", orderDetails);
 
   return (
-    <div>
+    <div className="main-content">
       <h1>{lang("profile_page.title")}</h1>
-      <p>Username: {userDetails.name}</p>
-      <p>E-mail: {userDetails.email}</p>
-      <p>User type: {userDetails.user_type}</p>
+
+      <div className="flex-row">
+        <div className="profile-image">
+          <img
+            src="https://placehold.co/160x200?text=No\nPicture"
+            alt="Profile"
+          />
+        </div>
+        <div className="flex-column">
+          <div class="profile-detail-row">
+            <span class="profile-label">Username:</span>
+            <span class="profile-value">{userDetails.name}</span>
+          </div>
+          <div class="profile-detail-row">
+            <span class="profile-label">E-mail:</span>
+            <span class="profile-value">{userDetails.email}</span>
+          </div>
+          <div class="profile-detail-row">
+            <span class="profile-label">User type:</span>
+            <span class="profile-value">{userDetails.user_type}</span>
+          </div>
+        </div>
+      </div>
+      <h2>Orders</h2>
       <table>
         <thead>
           <tr>
