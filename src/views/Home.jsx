@@ -2,6 +2,7 @@ import {useEffect} from "react";
 import {useLanguage} from "../context/LanguageContext";
 import Button from "../components/Button";
 import logo from "/restaurant_logo.png?url";
+import LoadingWheel from "../components/LoadingWheel";
 
 const Home = () => {
   const {lang, setCurrentPage} = useLanguage();
@@ -12,6 +13,7 @@ const Home = () => {
 
   return (
     <>
+      <LoadingWheel />
       <div className="logo">
         <img src={logo} alt={lang("restaurant_icon_alt")}></img>
       </div>
