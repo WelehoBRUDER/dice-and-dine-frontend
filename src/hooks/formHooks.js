@@ -26,13 +26,15 @@ const useForm = (callback, initState) => {
     event.persist();
     const selectedFile = event.target.files[0];
 
-    if (selectedFile) {
+    if (selectedFile && selectedFile.size < 5 * 1024 * 1024) {
       setFile(selectedFile);
       setInputs((inputs) => ({
         ...inputs,
         [event.target.name]: selectedFile,
       }));
       setFilePreview(URL.createObjectURL(selectedFile));
+    } else {
+      alert("File is too large. Please upload a file smaller than 5MB.");
     }
   };
 
@@ -64,6 +66,7 @@ const useForm = (callback, initState) => {
     handleInputChange,
     inputs,
     handleFileChange,
+    file,
     filePreview,
     handleFileSubmit,
   };
