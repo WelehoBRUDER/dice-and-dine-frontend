@@ -69,11 +69,10 @@
       margin: 0;
 
       &:focus {
-        outline: none
+        outline: none;
       }
     }
   }
-
 }
 
 .language-select {
@@ -124,6 +123,16 @@
 table {
   text-align: center;
   border-collapse: collapse;
+}
+
+thead {
+  background-color: var(--theme-darker);
+  font-weight: normal;
+}
+
+th {
+  font-weight: normal;
+  color: var(--theme-contrast);
 }
 
 th,

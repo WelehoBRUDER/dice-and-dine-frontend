@@ -43,7 +43,9 @@ const Profile = () => {
     return <Loading />;
   }
   console.log("User details setted:", userDetails);
-  console.log("Order details setted:", orderDetails);
+  // console.log("Order details setted:", orderDetails);
+  const URL = import.meta.env.VITE_URL;
+  const imgURL = `http://localhost:3000/uploads/${userDetails.profile_image}`;
 
   return (
     <div className="main-content">
@@ -52,22 +54,34 @@ const Profile = () => {
       <div className="flex-row">
         <div className="profile-image">
           <img
-            src="https://placehold.co/160x200?text=No\nPicture"
-            alt="Profile"
+            src={imgURL || "https://placehold.co/160x200?text=No+Picture"}
+            alt="Profile picture"
           />
         </div>
         <div className="flex-column">
-          <div class="profile-detail-row">
-            <span class="profile-label">Username:</span>
-            <span class="profile-value">{userDetails.name}</span>
+          <div className="profile-detail-row">
+            <span className="profile-label">
+              {lang("profile_page.username")}
+            </span>
+            <span className="profile-value">{userDetails.name}</span>
           </div>
-          <div class="profile-detail-row">
-            <span class="profile-label">E-mail:</span>
-            <span class="profile-value">{userDetails.email}</span>
+          <div className="profile-detail-row">
+            <span className="profile-label">{lang("profile_page.email")}</span>
+            <span className="profile-value">{userDetails.email}</span>
           </div>
-          <div class="profile-detail-row">
-            <span class="profile-label">User type:</span>
-            <span class="profile-value">{userDetails.user_type}</span>
+          <div className="profile-detail-row">
+            <span className="profile-label">
+              {lang("profile_page.usertype")}
+            </span>
+            <span className="profile-value">{userDetails.user_type}</span>
+          </div>
+          <div className="profile-detail-row">
+            <button className="btn-old" onClick={() => alert("Edit profile")}>
+              {lang("profile_page.edit_profile")}
+            </button>
+            <button className="btn-old">
+              {lang("profile_page.upload_button")}
+            </button>
           </div>
         </div>
       </div>

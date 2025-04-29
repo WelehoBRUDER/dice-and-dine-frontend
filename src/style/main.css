@@ -75,8 +75,7 @@ h2 {
 }
 
 .profile-image img {
-  width: 100%;
-  max-width: 300px;
+  max-width: 160px;
   border-radius: 8px;
 }
 

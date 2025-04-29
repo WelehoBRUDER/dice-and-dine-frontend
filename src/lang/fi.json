@@ -56,5 +56,10 @@
 
   "games_page.title": "Pelit",
 
-  "profile_page.title": "Profiili"
+  "profile_page.title": "Profiili",
+  "profile_page.username": "Käyttäjänimi:",
+  "profile_page.email": "Sähköposti:",
+  "profile_page.usertype": "Käyttäjätyyppi:",
+  "profile_page.edit_profile": "Muokkaa profiilia",
+  "profile_page.upload_button": "Liitä kuva"
 }
