@@ -8,6 +8,9 @@
     "subtitle": "Tervetuloa etusivulle"
   },
 
+  "loading_text": "Ladataan sisältöä...",
+  "try_again": "Yritä uudelleen",
+
   "home_page_link": "Etusivu",
   "about_page_link": "Tietoa",
   "forum_page_link": "Foorumi",
@@ -18,6 +21,7 @@
   "review_page_link": "Arvostelut",
   "games_page_link": "Pelit",
   "menu_page_link": "Ruokalista",
+  "profile_page_link": "Profiili",
 
   "authentication_page": {
     "login": "Kirjaudu sisään",
@@ -53,5 +57,7 @@
   "cart_page.order_button": "Tee tilaus",
   "cart_page.order_loading": "Tilausta käsitellään...",
 
-  "games_page.title": "Pelit"
+  "games_page.title": "Pelit",
+
+  "profile_page.title": "Profiili"
 }

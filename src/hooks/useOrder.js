@@ -46,12 +46,43 @@ const useOrder = () => {
     }
   };
 
+  const getOrderDetails = async (orderId) => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const data = await fetchData(`${API_URL}/orders/${orderId}`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (data) {
+        const ordersWithTime = data.order.map((orderItem) => ({
+          ...orderItem,
+          time: data.time,
+        }));
+
+        return ordersWithTime;
+      } else {
+        setError("Failed to fetch order details");
+      }
+    } catch (err) {
+      setError("Failed to fetch order details: " + err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return {
     placeOrder,
     loading,
     orderSuccess,
     orderId,
     error,
+    getOrderDetails,
   };
 };
 

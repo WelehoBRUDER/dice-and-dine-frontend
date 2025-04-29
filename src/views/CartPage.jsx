@@ -5,9 +5,9 @@ import Button from "../components/Button";
 import useOrder from "../hooks/useOrder";
 import {useNavigate} from "react-router-dom";
 import {useLanguage} from "../context/LanguageContext";
+import {useUserContext} from "../hooks/useUserContext";
 
 const CartPage = () => {
-  // const lang = localStorage.getItem("language") || "en";
   const {lang, setCurrentPage} = useLanguage();
   const navigate = useNavigate();
   const {cart, clearCart} = useCart();
@@ -18,6 +18,7 @@ const CartPage = () => {
     isLoading: itemsLoading,
     error: itemsError,
   } = useItemDetails(itemIds);
+  const {user} = useUserContext();
 
   const {
     placeOrder,
@@ -33,7 +34,7 @@ const CartPage = () => {
       amount: item.amount,
     }));
 
-    const customerId = 1; // Replace with actual customer ID
+    const customerId = user.id;
     const token = localStorage.getItem("token");
 
     placeOrder(orderCart, customerId, token);

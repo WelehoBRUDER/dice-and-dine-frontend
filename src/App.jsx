@@ -13,6 +13,7 @@ import {CartProvider} from "./context/CartContext";
 import CartPage from "./views/CartPage";
 import {UserProvider} from "./context/UserContext";
 import Logout from "./components/Logout";
+import Profile from "./views/Profile";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
               <Route path="/menu" element={<Menu />} />
               <Route path="/cart" element={<CartPage />} />
               <Route path="/logout" element={<Logout />} />
+              <Route path="/profile" element={<Profile />} />
             </Route>
           </Routes>
         </CartProvider>
