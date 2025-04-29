@@ -1,0 +1,43 @@
+.reservation {
+  background: var(--theme-darker);
+  width: min(100vw, var(--max-content-width));
+  align-items: center;
+  margin: 0;
+  box-sizing: border-box;
+  border: 0.2rem solid var(--theme-contrast);
+  border-top: none;
+
+  .reservation-header {
+    background: var(--theme-background);
+    box-sizing: border-box;
+    border: 0.2rem solid var(--theme-contrast);
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    margin: 0;
+
+    .reservation-steps {
+      .reservation-step {
+        width: 4rem;
+        height: 4rem;
+        color: var(--theme-darker);
+        background: var(--theme-contrast);
+        font-weight: bold;
+        font-size: 2.4rem;
+        border-radius: 50%;
+        user-select: none;
+
+        &:hover {
+          background: var(--theme-foreground);
+          color: var(--theme-contrast);
+          cursor: pointer;
+        }
+
+        &.active {
+          background: var(--theme-darker);
+          color: var(--theme-contrast);
+        }
+      }
+    }
+  }
+}

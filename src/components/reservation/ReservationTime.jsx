@@ -43,7 +43,7 @@ const ReservationTime = ({
       });
       setLengths(availableLengths);
     }
-  }, [arrivalTimes]);
+  }, [arrivalTimes, arrival]);
 
   return (
     <div className="reservation-time">
@@ -72,7 +72,7 @@ const ReservationTime = ({
             style={{backgroundColor: "black"}}
             onChange={(e) => setLength(e.target.value)}
           >
-            {len.map((length, index) => (
+            {lengths?.map((length, index) => (
               <option key={index} value={length}>
                 {length} hours
               </option>

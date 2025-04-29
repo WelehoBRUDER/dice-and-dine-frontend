@@ -1,10 +1,10 @@
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
-const ReservationDate = ({date, setDate}) => {
+const ReservationDate = ({date, setDate, title}) => {
   return (
     <div className="reservation-date">
-      <h2>Reservation Date</h2>
+      <h2>{title}</h2>
       <Calendar
         onChange={() => {}}
         value={new Date(date)}
