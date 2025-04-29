@@ -1,0 +1,15 @@
+.loading-wheel {
+  .spinner {
+    width: min(var(--loading-wheel-size), 80vw);
+    height: min(var(--loading-wheel-size), 80vw);
+    border: 1.6rem solid var(--loading-wheel); /* Light grey */
+    border-top: 1.6rem solid rgba(0, 0, 0, 0); /* Blue */
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
