@@ -61,5 +61,13 @@
 
   "games_page.title": "Games",
 
-  "profile_page.title": "Profile"
+  "profile_page.title": "Profile",
+  "profile_page.username": "Username:",
+  "profile_page.email": "Email:",
+  "profile_page.usertype": "User Type:",
+  "profile_page.edit_profile": "Edit information",
+  "profile_page.upload_button": "Upload profile picture",
+  "profile_page.profile_picture": "Profile Picture",
+  "profile_page.orders": "Your orders",
+  "profile_page.details": "Details"
 }

@@ -8,7 +8,6 @@ const Header = () => {
   const {lang} = useLanguage();
   const {user, handleAutoLogin} = useUserContext();
   useEffect(() => {
-    console.log("Autologin funktiota kutsuttu");
     handleAutoLogin();
   }, []);
 
