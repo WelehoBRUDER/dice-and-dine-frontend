@@ -139,3 +139,22 @@ td {
   align-items: center;
 }
 */
+
+.result-window {
+  align-items: center;
+  padding: 2.5rem;
+
+  .large-marker {
+    font-size: 15rem;
+    padding: 0;
+    margin: 0;
+  
+    &.success {
+      color: green;
+    }
+  
+    &.error {
+      color: red;
+    }
+  }
+}
