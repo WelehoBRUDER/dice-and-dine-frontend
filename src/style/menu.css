@@ -142,6 +142,17 @@
   gap: 1rem;
 }
 
+.cart-amount-display {
+  padding: 0.4em 0.7em;
+  background-color: var(--theme-contrast);
+  border-radius: 2px;
+  border: 1px solid var(--theme-foreground);
+  min-width: 2rem;
+  text-align: center;
+  font-weight: bold;
+  color: var(--theme-background);
+}
+
 .games-container {
   background-color: var(--theme-foreground);
   display: grid;

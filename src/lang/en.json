@@ -24,6 +24,7 @@
   "games_page_link": "Games",
   "menu_page_link": "Menu",
   "profile_page_link": "Profile",
+  "cart_page_link": "Shopping Cart",
 
   "authentication_page": {
     "login": "Login",
@@ -53,8 +54,8 @@
   "cart_page.your_cart": "Your Cart",
   "cart_page.items_loading": "Loading cart items...",
   "cart_page.table_headings": ["Item Name", "Quantity", "Price", "Total"],
-  "cart_page.total": "Total",
-  "cart_page.empty_cart": "Your cart is empty",
+  "cart_page.total": "Total: ",
+  "cart_page.empty_cart": "Your cart is now empty",
   "cart_page.clear_cart": "Clear Cart",
   "cart_page.order_button": "Place Order",
   "cart_page.order_loading": "Placing order...",

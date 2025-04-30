@@ -1,8 +1,8 @@
-import Loading from "../components/Loading";
 import useGames from "../hooks/useGames";
 import GameItem from "../components/GameItem";
 import {useLanguage} from "../context/LanguageContext";
 import {useEffect} from "react";
+import LoadingWheel from "../components/LoadingWheel";
 
 const Games = () => {
   const {currentLanguage, lang, setCurrentPage} = useLanguage();
@@ -18,7 +18,7 @@ const Games = () => {
     <div>
       <h1>{gamesText}</h1>
       {loading ? (
-        <Loading />
+        <LoadingWheel />
       ) : (
         <div className="games-container">
           <div className="games-list">
