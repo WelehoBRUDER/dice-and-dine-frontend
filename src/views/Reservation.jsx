@@ -5,6 +5,7 @@ import useTables from "../hooks/useTables";
 import ReservationDate from "../components/reservation/ReservationDate";
 import ReservationArrival from "../components/reservation/ReservationArrival";
 import ReservationLength from "../components/reservation/ReservationLength";
+import ReservationSummary from "../components/reservation/ReservationSummary";
 import Button from "../components/Button";
 import "../style/reservation.css";
 
@@ -70,7 +71,7 @@ const Reservation = () => {
           ))}
         </div>
       </div>
-      <div className="reservation-content">
+      <div className="reservation-content flex-column center">
         {loading && <LoadingWheel loadingText="loading_reservation" />}
         {!loading && step === 0 && (
           <ReservationDate
@@ -97,6 +98,15 @@ const Reservation = () => {
             setLength={setReservationLength}
             arrival={reservationArrival}
             info={{reservationLengths, restaurantOpen}}
+            title={lang(steps[step].name)}
+          />
+        )}
+        {!loading && step === 4 && (
+          <ReservationSummary
+            date={reservationDate}
+            arrival={reservationArrival}
+            length={reservationLength}
+            tables={reservationTables}
             title={lang(steps[step].name)}
           />
         )}

@@ -236,5 +236,14 @@ td {
     &:hover:not(:focus) {
       background: var(--theme-background) !important;
     }
+
+    &.react-calendar__tile--active {
+      background: var(--theme-darker) !important;
+      color: var(--theme-contrast) !important;
+    }
+
+    &.react-calendar__tile--now {
+      background: var(--theme-lighter);
+    }
   }
 }

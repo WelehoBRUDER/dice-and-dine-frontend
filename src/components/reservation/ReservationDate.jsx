@@ -6,17 +6,14 @@ const ReservationDate = ({date, setDate, title, locale}) => {
     <div className="reservation-date">
       <h2>{title}</h2>
       <Calendar
-        onChange={() => {}}
-        value={new Date(date)}
+        onChange={(value) => {
+          setDate(value);
+        }}
+        value={date}
         className="react-calendar"
         locale={locale}
         minDate={new Date()}
-        onClickDay={(value) => {
-          setDate(value);
-        }}
       />
-
-      <p>{date.toLocaleDateString("fi-FI")}</p>
     </div>
   );
 };

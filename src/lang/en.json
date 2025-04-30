@@ -81,7 +81,8 @@
     "reservation_date": "Which day would you like to reserve?",
     "reservation_arrival": "What time will you arrive?",
     "reservation_length": "How long will you stay?",
-    "reservation_tables": "Choose table(s) for your party"
+    "reservation_tables": "Choose table(s) for your party",
+    "reservation_summary": "Summary"
   },
 
   "profile_page.username": "Username:",
