@@ -66,12 +66,14 @@ const CartPage = () => {
       clearCart();
       navigate("/");
     }
+  }, [orderSuccess]);
 
-    if (cart.length === 0) {
+  useEffect(() => {
+    if (cart.length === 0 && !orderSuccess) {
       alert(lang("cart_page.empty_cart"));
-      navigate("/menu");
+      navigate("/");
     }
-  }, [orderSuccess, cart]);
+  }, [cart]);
 
   return (
     <div>
