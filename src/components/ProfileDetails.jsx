@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 const ProfileDetails = ({userDetails, lang}) => {
   return (
     <div className="flex-column">
@@ -9,9 +11,12 @@ const ProfileDetails = ({userDetails, lang}) => {
         <span className="profile-label">{lang("profile_page.email")}</span>
         <span className="profile-value">{userDetails.email}</span>
       </div>
-      <button className="btn-smaller" onClick={() => alert("Edit profile")}>
+      <Button className="btn-smaller" onClick={() => alert("Edit profile")}>
         {lang("profile_page.edit_profile")}
-      </button>
+      </Button>
+      <Button className="btn-smaller" onClick={() => alert("Change password")}>
+        {lang("profile_page.change_password")}
+      </Button>
     </div>
   );
 };

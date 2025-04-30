@@ -1,11 +1,13 @@
 import {useState} from "react";
 import {useUser} from "./userHooks";
+import {useLanguage} from "../context/LanguageContext";
 
 const useForm = (callback, initState) => {
   const [inputs, setInputs] = useState(initState);
   const [file, setFile] = useState(null);
   const [filePreview, setFilePreview] = useState(null);
   const {uploadProfileImage} = useUser();
+  const {lang} = useLanguage();
 
   const handleSubmit = (event) => {
     if (event) {
@@ -43,18 +45,18 @@ const useForm = (callback, initState) => {
     setFilePreview(null);
   };
 
-  const handleFileSubmit = async (file, name) => {
+  const handleFileSubmit = async (file, name, successAlert, errorAlert) => {
     const token = localStorage.getItem("token");
 
     if (file && name) {
       try {
         const result = await uploadProfileImage(file, name, token);
-        alert("Profile image uploaded!");
+        alert(successAlert);
         resetForm();
         return result.file.filename;
       } catch (err) {
         console.error("Upload failed:", err);
-        alert("Upload failed.");
+        alert(errorAlert);
       }
     } else {
       console.error("Missing file or username");

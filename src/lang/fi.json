@@ -112,5 +112,8 @@
   "profile_page.upload_button": "Lataa profiilikuva",
   "profile_page.profile_picture": "Profiilikuva",
   "profile_page.orders": "Tilauksesi",
-  "profile_page.details": "Tiedot"
+  "profile_page.details": "Tiedot",
+  "profile_page.change_password": "Vaihda salasana",
+  "profile_page.upload_success": "Profiilikuva ladattu onnistuneesti",
+  "profile_page.upload_error": "Profiilikuvan lataus epäonnistui"
 }
