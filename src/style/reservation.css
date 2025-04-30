@@ -22,16 +22,30 @@
     justify-content: center;
     border-bottom: 0.2rem solid var(--theme-contrast);
     margin: 0;
+    gap: 2.5rem;
     .reservation-step {
+      width: 12rem;
+      position: relative;
+      margin: 0;
+      align-items: center;
+      text-align: center;
+
+      &.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+      }
+
       .reservation-step-button {
         width: 5rem;
         height: 5rem;
         color: var(--theme-darker);
         background: var(--theme-contrast);
+        border: 0.2rem solid black;
         font-weight: bold;
         font-size: 2.4rem;
         border-radius: 50%;
         user-select: none;
+        margin: 0;
         
   
         &:hover {
@@ -39,11 +53,28 @@
           color: var(--theme-contrast);
           cursor: pointer;
         }
+
+        img {
+          filter: invert(100%);
+        }
   
         &.active {
           background: var(--theme-darker);
           color: var(--theme-contrast);
+          border: 0.2rem solid var(--theme-contrast);
+
+          img {
+            filter: none;
+          }
         }
+      }
+
+      .reservation-step-text {
+        margin: 0;
+        padding: 0;
+        height: 4rem;
+        /* position: absolute;
+        top: 6rem; */
       }
     }
   }

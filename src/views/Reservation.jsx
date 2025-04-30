@@ -1,7 +1,9 @@
 import {useLanguage} from "../context/LanguageContext";
 import {useEffect, useState} from "react";
+import {icons} from "../variables/icons";
 import LoadingWheel from "../components/LoadingWheel";
 import useTables from "../hooks/useTables";
+import ReservationSteps from "../components/reservation/ReservationSteps";
 import ReservationDate from "../components/reservation/ReservationDate";
 import ReservationArrival from "../components/reservation/ReservationArrival";
 import ReservationLength from "../components/reservation/ReservationLength";
@@ -26,11 +28,11 @@ const Reservation = () => {
   const [reservationTables, setReservationTables] = useState(values.tables);
   const {loading, tables, tableOrders} = useTables();
   const steps = [
-    {step: 0, name: "reservation_date"},
-    {step: 1, name: "reservation_arrival"},
-    {step: 2, name: "reservation_length"},
-    {step: 3, name: "reservation_tables"},
-    {step: 4, name: "reservation_summary"},
+    {step: 0, name: "reservation_date", icon: icons.calendar},
+    {step: 1, name: "reservation_arrival", icon: icons.calendar_clock},
+    {step: 2, name: "reservation_length", icon: icons.clock},
+    {step: 3, name: "reservation_tables", icon: icons.map},
+    {step: 4, name: "reservation_summary", icon: icons.overview},
   ];
 
   // Move this somewhere else in the future
@@ -57,20 +59,42 @@ const Reservation = () => {
   }, [step]);
 
   const reflectUserChoice = (name) => {
-    if (name === "reservation_date") {
-      return reservationDate.toLocaleDateString("fi-FI");
-    } else if (name === "reservation_arrival") {
-      return reservationArrival ? reservationArrival : lang("not_set_arrival");
-    } else if (name === "reservation_length") {
-      return reservationLength ? reservationLength : lang("not_set_length");
-    } else if (name === "reservation_tables") {
-      return reservationTables.length > 0
-        ? reservationTables.join(", ")
-        : lang("not_set_tables");
-    } else if (name === "reservation_summary") {
-      return lang("reservation_summary_text");
+    switch (name) {
+      case "reservation_date":
+        return reservationDate.toLocaleDateString("fi-FI");
+
+      case "reservation_arrival":
+        return reservationArrival || lang("not_set_arrival");
+
+      case "reservation_length":
+        return reservationLength
+          ? `${reservationLength} h`
+          : lang("not_set_length");
+
+      case "reservation_tables":
+        return reservationTables.length > 0
+          ? reservationTables.join(", ")
+          : lang("not_set_tables");
+
+      case "reservation_summary":
+        return lang("reservation_summary_text");
+
+      default:
+        return name;
     }
-    return name;
+  };
+  const changeStep = (newStep) => {
+    if (newStep < step) {
+      const rollbackActions = [
+        () => setReservationArrival(values.arrival),
+        () => setReservationLength(values.departure),
+        () => setReservationTables(values.tables),
+      ];
+
+      rollbackActions.slice(newStep).forEach((action) => action());
+    }
+
+    setStep(newStep);
   };
 
   return (
@@ -79,29 +103,12 @@ const Reservation = () => {
         <h1>{lang("reservation")}</h1>
       </div>
       <div className="reservation-content flex-column">
-        <div className="reservation-steps flex-row">
-          {steps.map((stepObj) => (
-            <div className="reservation-step flex-column center">
-              <Button
-                key={stepObj.step}
-                className={`reservation-step-button flex-row center ${
-                  step === stepObj.step ? "active" : ""
-                }`}
-                onClick={() => {
-                  if (stepObj.step !== step) {
-                    setStep(stepObj.step);
-                  }
-                }}
-                disabled={stepObj.step < step}
-              >
-                {stepObj.step + 1}
-              </Button>
-              <p className="reservation-step-text">
-                {reflectUserChoice(stepObj.name)}
-              </p>
-            </div>
-          ))}
-        </div>
+        <ReservationSteps
+          steps={steps}
+          step={step}
+          changeStep={changeStep}
+          reflectUserChoice={reflectUserChoice}
+        />
         {loading && <LoadingWheel loadingText="loading_reservation" />}
         {!loading && step === 0 && (
           <ReservationDate
@@ -145,14 +152,14 @@ const Reservation = () => {
         <Button
           className="btn-old"
           disabled={step === 0}
-          onClick={() => setStep(step - 1)}
+          onClick={() => changeStep(step - 1)}
         >
           {"<"}
         </Button>
         <Button
           className="btn-old"
           disabled={step === steps.length - 1}
-          onClick={() => setStep(step + 1)}
+          onClick={() => changeStep(step + 1)}
         >
           {">"}
         </Button>
