@@ -16,23 +16,30 @@
     width: 100%;
     margin: 0;
 
-    .reservation-steps {
-      .reservation-step {
-        width: 4rem;
-        height: 4rem;
+  }
+  .reservation-steps {
+    width: 100%;
+    justify-content: center;
+    border-bottom: 0.2rem solid var(--theme-contrast);
+    margin: 0;
+    .reservation-step {
+      .reservation-step-button {
+        width: 5rem;
+        height: 5rem;
         color: var(--theme-darker);
         background: var(--theme-contrast);
         font-weight: bold;
         font-size: 2.4rem;
         border-radius: 50%;
         user-select: none;
-
+        
+  
         &:hover {
           background: var(--theme-foreground);
           color: var(--theme-contrast);
           cursor: pointer;
         }
-
+  
         &.active {
           background: var(--theme-darker);
           color: var(--theme-contrast);
@@ -42,6 +49,7 @@
   }
 
   .reservation-content {
-    height: min(50vh, 450px);
+    width: 100%;
+    height: min(60vh, 55rem);
   }
 }

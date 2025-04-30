@@ -12,11 +12,18 @@ import "../style/reservation.css";
 const Reservation = () => {
   const {lang, setCurrentPage} = useLanguage();
 
+  const values = {
+    date: new Date(),
+    arrival: null,
+    departure: null,
+    tables: [],
+  };
+
   const [step, setStep] = useState(0);
-  const [reservationLength, setReservationLength] = useState();
-  const [reservationDate, setReservationDate] = useState(new Date());
-  const [reservationArrival, setReservationArrival] = useState();
-  const [reservationTables, setReservationTables] = useState([]);
+  const [reservationLength, setReservationLength] = useState(values.departure);
+  const [reservationDate, setReservationDate] = useState(values.date);
+  const [reservationArrival, setReservationArrival] = useState(values.arrival);
+  const [reservationTables, setReservationTables] = useState(values.tables);
   const {loading, tables, tableOrders} = useTables();
   const steps = [
     {step: 0, name: "reservation_date"},
@@ -49,29 +56,52 @@ const Reservation = () => {
     }
   }, [step]);
 
+  const reflectUserChoice = (name) => {
+    if (name === "reservation_date") {
+      return reservationDate.toLocaleDateString("fi-FI");
+    } else if (name === "reservation_arrival") {
+      return reservationArrival ? reservationArrival : lang("not_set_arrival");
+    } else if (name === "reservation_length") {
+      return reservationLength ? reservationLength : lang("not_set_length");
+    } else if (name === "reservation_tables") {
+      return reservationTables.length > 0
+        ? reservationTables.join(", ")
+        : lang("not_set_tables");
+    } else if (name === "reservation_summary") {
+      return lang("reservation_summary_text");
+    }
+    return name;
+  };
+
   return (
     <div className="reservation flex-column">
       <div className="reservation-header flex-row center">
         <h1>{lang("reservation")}</h1>
+      </div>
+      <div className="reservation-content flex-column">
         <div className="reservation-steps flex-row">
           {steps.map((stepObj) => (
-            <Button
-              key={stepObj.step}
-              className={`reservation-step flex-row center ${
-                step === stepObj.step ? "active" : ""
-              }`}
-              onClick={() => {
-                if (stepObj.step !== step) {
-                  setStep(stepObj.step);
-                }
-              }}
-            >
-              {stepObj.step + 1}
-            </Button>
+            <div className="reservation-step flex-column center">
+              <Button
+                key={stepObj.step}
+                className={`reservation-step-button flex-row center ${
+                  step === stepObj.step ? "active" : ""
+                }`}
+                onClick={() => {
+                  if (stepObj.step !== step) {
+                    setStep(stepObj.step);
+                  }
+                }}
+                disabled={stepObj.step < step}
+              >
+                {stepObj.step + 1}
+              </Button>
+              <p className="reservation-step-text">
+                {reflectUserChoice(stepObj.name)}
+              </p>
+            </div>
           ))}
         </div>
-      </div>
-      <div className="reservation-content flex-column center">
         {loading && <LoadingWheel loadingText="loading_reservation" />}
         {!loading && step === 0 && (
           <ReservationDate

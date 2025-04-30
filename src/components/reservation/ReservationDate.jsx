@@ -13,6 +13,7 @@ const ReservationDate = ({date, setDate, title, locale}) => {
         className="react-calendar"
         locale={locale}
         minDate={new Date()}
+        maxDate={new Date(new Date().setFullYear(new Date().getFullYear() + 1))}
       />
     </div>
   );

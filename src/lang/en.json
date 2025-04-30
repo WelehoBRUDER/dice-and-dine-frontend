@@ -82,7 +82,11 @@
     "reservation_arrival": "What time will you arrive?",
     "reservation_length": "How long will you stay?",
     "reservation_tables": "Choose table(s) for your party",
-    "reservation_summary": "Summary"
+    "reservation_summary": "Summary",
+    "reservation_summary_text": "View summary",
+    "not_set_arrival": "Pick arrival time",
+    "not_set_length": "Pick length of stay",
+    "not_set_tables": "Pick table(s)"
   },
 
   "profile_page.username": "Username:",
