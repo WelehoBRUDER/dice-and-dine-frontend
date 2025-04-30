@@ -16,6 +16,10 @@ body {
   color: var(--theme-contrast);
 }
 
+#root {
+  width: 100%;
+}
+
 /* Fix default font size */
 p,
 span,
@@ -31,6 +35,12 @@ h1 {
 h2 {
   font-size: 2rem; /* 20px */
   text-align: center;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main-content {
