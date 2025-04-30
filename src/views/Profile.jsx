@@ -2,11 +2,11 @@ import {useEffect, useState} from "react";
 import {useLanguage} from "../context/LanguageContext";
 import {useUserContext} from "../hooks/useUserContext";
 import {useUser} from "../hooks/userHooks";
-import Loading from "../components/Loading";
 import useOrder from "../hooks/useOrder";
 import OrderTable from "../components/OrderTable";
 import ProfileImage from "../components/ProfileImage";
 import ProfileDetails from "../components/ProfileDetails";
+import LoadingWheel from "../components/LoadingWheel";
 
 const Profile = () => {
   const {lang, setCurrentPage} = useLanguage();
@@ -50,7 +50,7 @@ const Profile = () => {
   }, [user, loading]);
 
   if (loading) {
-    return <Loading />;
+    return <LoadingWheel />;
   }
 
   return (
