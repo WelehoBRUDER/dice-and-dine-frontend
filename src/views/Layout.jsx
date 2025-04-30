@@ -4,8 +4,8 @@ import {LanguageProvider} from "../context/LanguageContext";
 const Layout = () => {
   return (
     <LanguageProvider>
+      <Header />
       <div className="layout">
-        <Header />
         <main className="main-content">
           <Outlet />
         </main>
