@@ -11,7 +11,7 @@ const ReservationSummary = ({date, arrival, length, tables, title}) => {
   return (
     <div className="summary">
       <h2>{title}</h2>
-      <div className="summary-details">
+      <div className="summary-details flex-column center">
         <p>Date: {date.toLocaleDateString("fi-FI")}</p>
         <p>Arrival Time: {arrival}</p>
         <p>Length: {length} hours</p>

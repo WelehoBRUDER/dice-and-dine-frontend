@@ -21,7 +21,7 @@ const ReservationTime = ({arrival, setArrival, date, info, title}) => {
     let end = openTimes.close;
 
     if (date.toDateString() === new Date().toDateString()) {
-      start = date.getHours() + 1; // Start from the next hour
+      start = date.getHours() + 2; // Give the restaurant at least a ~2 hour buffer
     }
     for (let i = start; i < end; i += 0.5) {
       viableTimes.push(i);

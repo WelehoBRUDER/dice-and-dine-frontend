@@ -3,7 +3,7 @@ import "react-calendar/dist/Calendar.css";
 
 const ReservationDate = ({date, setDate, title, locale}) => {
   return (
-    <div className="reservation-date">
+    <div className="reservation-date flex-column center">
       <h2>{title}</h2>
       <Calendar
         onChange={(value) => {

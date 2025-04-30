@@ -15,8 +15,31 @@
     border-right: none;
     width: 100%;
     margin: 0;
-
   }
+  .tables {
+    .table-checkbox {
+      flex-direction: row;
+      align-items: center;
+      padding: 0.8rem;
+      border: 0.2rem solid var(--theme-contrast);
+      background: var(--theme-background);
+      border-radius: 0.5rem;
+      width: var(--input-width);
+      margin: 0;
+
+      .input-and-icon {
+        width: auto;
+        height: 2rem;
+      }
+
+
+      input {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+  
   .reservation-steps {
     width: 100%;
     justify-content: center;
@@ -83,4 +106,22 @@
     width: 100%;
     height: min(60vh, 55rem);
   }
+}
+.reservation-date {
+  align-items: center;
+}
+
+.scrollable {
+  overflow: hidden;
+  overflow-y: auto;
+  max-height: 40vh;
+}
+
+button.selected {
+  border: 0.2rem solid var(--theme-contrast);
+  background: var(--theme-darker);
+}
+
+.summary-details {
+  align-items: center;
 }

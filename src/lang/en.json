@@ -86,7 +86,9 @@
     "reservation_summary_text": "View summary",
     "not_set_arrival": "Pick arrival time",
     "not_set_length": "Pick length of stay",
-    "not_set_tables": "Pick table(s)"
+    "not_set_tables": "Pick table(s)",
+    "table": "Table",
+    "seats": "Seats"
   },
 
   "profile_page.username": "Username:",

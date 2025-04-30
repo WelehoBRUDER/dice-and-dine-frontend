@@ -7,6 +7,7 @@ import ReservationSteps from "../components/reservation/ReservationSteps";
 import ReservationDate from "../components/reservation/ReservationDate";
 import ReservationArrival from "../components/reservation/ReservationArrival";
 import ReservationLength from "../components/reservation/ReservationLength";
+import ReservationTables from "../components/reservation/ReservationTables";
 import ReservationSummary from "../components/reservation/ReservationSummary";
 import Button from "../components/Button";
 import "../style/reservation.css";
@@ -138,6 +139,14 @@ const Reservation = () => {
             title={lang(steps[step].name)}
           />
         )}
+        {!loading && step === 3 && (
+          <ReservationTables
+            tables={reservationTables}
+            tablesAvailable={tables}
+            setTables={setReservationTables}
+            title={lang(steps[step].name)}
+          />
+        )}
         {!loading && step === 4 && (
           <ReservationSummary
             date={reservationDate}
@@ -148,16 +157,16 @@ const Reservation = () => {
           />
         )}
       </div>
-      <div className="navigation">
+      <div className="navigation flex-row center">
         <Button
-          className="btn-old"
+          className="btn"
           disabled={step === 0}
           onClick={() => changeStep(step - 1)}
         >
           {"<"}
         </Button>
         <Button
-          className="btn-old"
+          className="btn"
           disabled={step === steps.length - 1}
           onClick={() => changeStep(step + 1)}
         >
