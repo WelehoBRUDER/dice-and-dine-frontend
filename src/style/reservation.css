@@ -114,7 +114,7 @@
 .scrollable {
   overflow: hidden;
   overflow-y: auto;
-  max-height: 40vh;
+  max-height: 50vh;
 }
 
 button.selected {
@@ -124,4 +124,8 @@ button.selected {
 
 .summary-details {
   align-items: center;
+  
+  p {
+    margin: 0;
+  }
 }
