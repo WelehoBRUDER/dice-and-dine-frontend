@@ -19,25 +19,17 @@ const About = () => {
         <Loading />
       ) : (
         <div id="about-page">
-          <ul>
-            <li>
-              {String.fromCodePoint(0x260e)}
-              {lang("about_page_phone")}: {info[0].phone}
-            </li>
-            <li>
-              {/*String.fromCodePoint(0x2709)*/}
-              ✉️
-              {lang("about_page_email")}: {info[0].email}
-            </li>
-            <li>
-              {String.fromCodePoint(0x1f4cc)}
-              {lang("about_page_address")}: {info[0].address}
-            </li>
-            <li>
-              {String.fromCodePoint(0x1f553)}
-              {lang("about_page_open_times")}:{info[0].open_times}
-            </li>
-          </ul>
+          <div>☎{lang("about_page_phone")}:</div>
+          <div>{info[0].phone}</div>
+
+          <div>✉️{lang("about_page_email")}: </div>
+          <div>{info[0].email}</div>
+
+          <div>📌{lang("about_page_address")}:</div>
+          <div>{info[0].address}</div>
+
+          <div>🕓{lang("about_page_open_times")}:</div>
+          <div>{info[0].open_times}</div>
         </div>
       )}
     </div>
