@@ -26,6 +26,13 @@
   "profile_page_link": "Profile",
   "cart_page_link": "Shopping Cart",
 
+  "about_page": {
+    "about_page_title": "About us",
+  "about_page_phone": "Phone",
+  "about_page_email": "Email",
+  "about_page_address": "Address",
+  "about_page_open_times": "Open times"},
+
   "authentication_page": {
     "login": "Login",
     "register": "Register",

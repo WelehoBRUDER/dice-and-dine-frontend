@@ -5,6 +5,7 @@ import "./style/variables.css";
 import "./style/reusable-components.css";
 import "./style/main.css";
 import "./style/menu.css";
+import "./style/about.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

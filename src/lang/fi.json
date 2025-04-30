@@ -24,6 +24,13 @@
   "profile_page_link": "Profiili",
   "cart_page_link": "Ostoskori",
 
+  "about_page": {
+    "about_page_title": "Tietoa meistä",
+  "about_page_phone": "Puhelin",
+  "about_page_email": "Sähköposti",
+  "about_page_address": "Osoite",
+  "about_page_open_times": "Aukioloajat"},
+
   "authentication_page": {
     "login": "Kirjaudu sisään",
     "register": "Rekisteröidy",
