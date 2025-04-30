@@ -24,6 +24,7 @@
   "games_page_link": "Games",
   "menu_page_link": "Menu",
   "profile_page_link": "Profile",
+  "cart_page_link": "Shopping Cart",
 
   "authentication_page": {
     "login": "Login",

@@ -11,7 +11,9 @@ const MenuItem = ({item}) => {
   const buttonTextAdd = lang("menu_page.add_button_text");
   const buttonTextRemove = lang("menu_page.remove_button_text");
   const allergensText = lang("menu_page.allergens_text");
-  const isInCart = cart.some((cartItem) => cartItem.menu_item_id === item.id);
+  const cartItem = cart.find(
+    (cartItem) => Number(cartItem.menu_item_id) === Number(item.id)
+  );
   return (
     <>
       <div className="item">
@@ -26,27 +28,28 @@ const MenuItem = ({item}) => {
           </p>
         )}
         <div className="button-container">
-          {!isInCart ? (
+          {!cartItem ? (
             <Button
-              onClick={() => addToCart(item.id)}
               className="add-to-cart-btn"
+              onClick={() => addToCart(item.id)}
             >
               ➕ {buttonTextAdd}
             </Button>
           ) : (
             <>
               <Button
-                onClick={() => addToCart(item.id)}
                 className="add-to-cart-btn"
+                onClick={() => addToCart(item.id)}
               >
                 ➕ {buttonTextAdd}
               </Button>
               <Button
-                onClick={() => removeFromCart(item.id)}
                 className="remove-from-cart-btn"
+                onClick={() => removeFromCart(item.id)}
               >
                 ➖ {buttonTextRemove}
               </Button>
+              <span>{cartItem.amount}</span>
             </>
           )}
         </div>

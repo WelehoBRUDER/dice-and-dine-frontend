@@ -4,15 +4,17 @@ import MenuCategory from "../components/MenuCategory";
 import Loading from "../components/Loading.jsx";
 import {useLanguage} from "../context/LanguageContext.jsx";
 import {useEffect} from "react";
+import {useCart} from "../context/CartContext.jsx";
 
 const Menu = () => {
   const currentLanguage = localStorage.getItem("language") || "en";
   const {setCurrentPage, lang} = useLanguage();
   const navigate = useNavigate();
   const {menu, loading} = useMenu(currentLanguage);
+  const {clearCart} = useCart();
   useEffect(() => {
     setCurrentPage("menu_page");
-    console.log("Set assigned to menu_page");
+    clearCart();
   }, []);
 
   const handleGoToCart = () => {
