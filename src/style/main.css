@@ -16,14 +16,21 @@ body {
   color: var(--theme-contrast);
 }
 
-
 /* Fix default font size */
-p, span, div {
+p,
+span,
+div {
   font-size: 1.6rem; /* 16px */
 }
 
+h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
 h2 {
-  font-size: 2.0rem; /* 20px */
+  font-size: 2rem; /* 20px */
+  text-align: center;
 }
 
 .main-content {
@@ -64,12 +71,50 @@ h2 {
   }
 }
 
-h1 {
-  font-size: 3rem;
-  text-align: center;
+.flex-row.top-align {
+  align-items: flex-start;
 }
 
 span {
   font-size: 1.4rem;
   opacity: 0.8;
+}
+.profile-image {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-image img {
+  max-width: 200px;
+  border-radius: 8px;
+  align-self: center;
+}
+
+.image-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-image {
+  max-width: 200px;
+  border-radius: 8px;
+}
+
+.profile-detail-row {
+  display: flex;
+}
+
+.profile-label {
+  width: 120px;
+  font-weight: bold;
+}
+
+.profile-value {
+  flex: 1;
+}
+
+.preview-image {
+  max-width: 200px;
+  border-radius: 8px;
 }

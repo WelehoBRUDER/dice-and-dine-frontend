@@ -28,7 +28,6 @@ const useOrder = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          customer_id: customerId,
           order: formattedOrder,
         }),
       });

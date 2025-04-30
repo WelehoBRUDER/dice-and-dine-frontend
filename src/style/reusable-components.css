@@ -44,6 +44,19 @@ button:disabled {
   opacity: 0.5;
   pointer-events: none;
 }
+.btn-smaller {
+  padding: 0.8rem 1.6rem;
+  font-size: 1.5rem;
+  border-radius: 1.2rem;
+  border: 0.25rem solid var(--theme-lighter);
+  box-sizing: border-box;
+  background: var(--theme-foreground);
+
+  &:hover {
+    background: var(--theme-darker);
+    cursor: pointer;
+  }
+}
 
 .input-container {
   display: flex;
@@ -85,11 +98,10 @@ button:disabled {
       font-family: "Roboto", sans-serif;
 
       &:focus {
-        outline: none
+        outline: none;
       }
     }
   }
-
 }
 
 .language-select {
@@ -140,6 +152,16 @@ button:disabled {
 table {
   text-align: center;
   border-collapse: collapse;
+}
+
+thead {
+  background-color: var(--theme-darker);
+  font-weight: normal;
+}
+
+th {
+  font-weight: normal;
+  color: var(--theme-contrast);
 }
 
 th,
