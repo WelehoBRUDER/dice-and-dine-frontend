@@ -1,7 +1,7 @@
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
-const ReservationDate = ({date, setDate, title}) => {
+const ReservationDate = ({date, setDate, title, locale}) => {
   return (
     <div className="reservation-date">
       <h2>{title}</h2>
@@ -9,7 +9,7 @@ const ReservationDate = ({date, setDate, title}) => {
         onChange={() => {}}
         value={new Date(date)}
         className="react-calendar"
-        locale="en-US"
+        locale={locale}
         minDate={new Date()}
         onClickDay={(value) => {
           setDate(value);

@@ -57,6 +57,10 @@ h2 {
   &.center {
     justify-content: center;
   }
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
 }
 
 .flex-row {
@@ -68,6 +72,10 @@ h2 {
 
   &.center {
     justify-content: center;
+  }
+
+  &.wrap {
+    flex-wrap: wrap;
   }
 }
 

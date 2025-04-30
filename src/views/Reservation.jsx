@@ -77,6 +77,7 @@ const Reservation = () => {
             date={reservationDate}
             setDate={setReservationDate}
             title={lang(steps[step].name)}
+            locale={lang("id")}
           />
         )}
         {!loading && step === 1 && (
@@ -87,9 +88,18 @@ const Reservation = () => {
             setLength={setReservationLength}
             date={reservationDate}
             info={{reservationLengths, restaurantOpen}}
+            title={lang(steps[step].name)}
           />
         )}
-        {!loading && step === 2 && <ReservationLength />}
+        {!loading && step === 2 && (
+          <ReservationLength
+            length={reservationLength}
+            setLength={setReservationLength}
+            arrival={reservationArrival}
+            info={{reservationLengths, restaurantOpen}}
+            title={lang(steps[step].name)}
+          />
+        )}
       </div>
       <div className="navigation">
         <Button

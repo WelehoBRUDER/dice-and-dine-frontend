@@ -78,7 +78,10 @@
     "make_reservation": "Make a reservation",
     "loading_reservation": "Loading reservation...",
     "reservation": "Reservation",
-    "reservation_date": "Reservation Date"
+    "reservation_date": "Which day would you like to reserve?",
+    "reservation_arrival": "What time will you arrive?",
+    "reservation_length": "How long will you stay?",
+    "reservation_tables": "Choose table(s) for your party"
   },
 
   "profile_page.username": "Username:",

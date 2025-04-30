@@ -1,16 +1,18 @@
 import {useEffect, useState} from "react";
+import Button from "../Button";
 
-const ReservationTime = ({
-  arrival,
-  length,
-  setArrival,
-  setLength,
-  date,
-  info,
-}) => {
-  const {reservationLengths: len, restaurantOpen: openTimes} = info;
+/**
+ *
+ * @param {number} arrival - The selected arrival time.
+ * @param {function} setArrival - Function to set the arrival time.
+ * @param {Date} date - The selected date for the reservation.
+ * @param {object} info - Object containing restaurant open times.
+ * @param {string} title - The title for the reservation time selection.
+ * @returns
+ */
+const ReservationTime = ({arrival, setArrival, date, info, title}) => {
+  const {restaurantOpen: openTimes} = info;
   const [arrivalTimes, setArrivalTimes] = useState(null);
-  const [lengths, setLengths] = useState(null);
 
   useEffect(() => {
     const viableTimes = [];
@@ -34,36 +36,27 @@ const ReservationTime = ({
     );
   }, [date]);
 
-  useEffect(() => {
-    if (arrivalTimes) {
-      const availableLengths = len.filter((length) => {
-        const arrivalTime = parseFloat(arrival);
-        const endTime = arrivalTime + length;
-        return arrivalTime >= openTimes.open && endTime <= openTimes.close;
-      });
-      setLengths(availableLengths);
-    }
-  }, [arrivalTimes, arrival]);
-
   return (
     <div className="reservation-time">
-      <h2>Reservation Time</h2>
-      {arrivalTimes && arrivalTimes.length === 0 && <p>No times available</p>}
+      <h2>{title}</h2>
+      {arrivalTimes && arrivalTimes.length === 0 && (
+        <p>No times available for selected day</p>
+      )}
       {arrivalTimes && arrivalTimes.length > 0 && (
-        <div className="time-selection">
-          <label htmlFor="arrival-time">Arrival Time:</label>
-          <select
-            id="arrival-time"
-            value={arrival}
-            style={{backgroundColor: "black"}}
-            onChange={(e) => setArrival(e.target.value)}
-          >
-            {arrivalTimes.map((time, index) => (
-              <option key={index} value={time}>
-                {time}
-              </option>
-            ))}
-          </select>
+        <div className="time-selection flex-row center wrap">
+          {arrivalTimes.map((time, index) => (
+            <Button
+              key={index}
+              className={`btn-smaller uniform ${
+                arrival === time ? "selected" : ""
+              }`}
+              onClick={() => {
+                setArrival(time);
+              }}
+            >
+              {time}
+            </Button>
+          ))}
         </div>
       )}
     </div>
