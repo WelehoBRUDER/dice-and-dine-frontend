@@ -5,12 +5,11 @@ import {useLanguage} from "../context/LanguageContext";
 const MenuItem = ({item}) => {
   const {lang} = useLanguage();
   const {cart, addToCart, removeFromCart} = useCart();
-  // const buttonTextAdd = lang === "en" ? "Add" : "Lisää";
-  // const buttonTextRemove = lang === "en" ? "Remove" : "Poista";
 
   const buttonTextAdd = lang("menu_page.add_button_text");
   const buttonTextRemove = lang("menu_page.remove_button_text");
   const allergensText = lang("menu_page.allergens_text");
+
   const cartItem = cart.find(
     (cartItem) => Number(cartItem.menu_item_id) === Number(item.id)
   );
@@ -49,7 +48,7 @@ const MenuItem = ({item}) => {
               >
                 ➖ {buttonTextRemove}
               </Button>
-              <span>{cartItem.amount}</span>
+              <span className="cart-amount-display">{cartItem.amount}</span>
             </>
           )}
         </div>

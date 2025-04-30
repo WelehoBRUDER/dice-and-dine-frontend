@@ -1,32 +1,18 @@
 import useMenu from "../hooks/useMenu.js";
-import {useNavigate} from "react-router-dom";
 import MenuCategory from "../components/MenuCategory";
-import Loading from "../components/Loading.jsx";
+import LoadingWheel from "../components/LoadingWheel.jsx";
 import {useLanguage} from "../context/LanguageContext.jsx";
 import {useEffect} from "react";
-import {useCart} from "../context/CartContext.jsx";
 
 const Menu = () => {
-  const currentLanguage = localStorage.getItem("language") || "en";
-  const {setCurrentPage, lang} = useLanguage();
-  const navigate = useNavigate();
+  const {setCurrentPage, lang, currentLanguage} = useLanguage();
   const {menu, loading} = useMenu(currentLanguage);
-  const {clearCart} = useCart();
+
   useEffect(() => {
     setCurrentPage("menu_page");
-    clearCart();
   }, []);
 
-  const handleGoToCart = () => {
-    navigate("/cart");
-  };
-
-  // const ourMenuText =
-  //   currentLanguage === "en" ? "Our Menu" : "Meidän ruokalista";
   const ourMenuText = lang("menu_page.title");
-  // const buttonText =
-  //   currentLanguage === "en" ? "Go to shopping cart" : "Siirry ostoskoriin";
-  const buttonText = lang("menu_page.button_text");
 
   return (
     <div className="menu-page">
@@ -34,7 +20,7 @@ const Menu = () => {
 
       {/* Conditional Rendering for Loading or Menu Content */}
       {loading ? (
-        <Loading />
+        <LoadingWheel />
       ) : menu && menu.length > 0 ? (
         (() => {
           const groupedItems = menu.reduce((acc, item) => {
@@ -56,10 +42,6 @@ const Menu = () => {
       ) : (
         <p>No menu items available.</p>
       )}
-
-      <button onClick={handleGoToCart} className="order-button">
-        {buttonText}
-      </button>
     </div>
   );
 };

@@ -52,7 +52,7 @@
   "cart_page.your_cart": "Ostoskori",
   "cart_page.items_loading": "Lataamme ostoskorin tuotteita...",
   "cart_page.table_headings": ["Tuotteen nimi", "Määrä", "Hinta", "Yhteensä"],
-  "cart_page.total": "Yhteensä",
+  "cart_page.total": "Yhteensä: ",
   "cart_page.empty_cart": "Ostoskorisi on tyhjennetty",
   "cart_page.clear_cart": "Tyhjennä ostoskori",
   "cart_page.order_button": "Tee tilaus",
