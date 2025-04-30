@@ -3,7 +3,7 @@ import ResultWindow from "../ResultWindow";
 import TextArea from "../TextArea";
 import Button from "../Button.jsx";
 import {useLanguage} from "../../context/LanguageContext";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import useReservation from "../../hooks/useReservation";
 
 /**
@@ -17,7 +17,8 @@ import useReservation from "../../hooks/useReservation";
  */
 const ReservationSummary = ({date, arrival, length, tables, title}) => {
   const {lang} = useLanguage();
-  const {makeReservation, loading} = useReservation();
+  const {makeReservation, loading, reservationSuccess, reservationId} =
+    useReservation();
   const [result, setResult] = useState(null);
   const [message, setMessage] = useState("");
 
@@ -33,47 +34,53 @@ const ReservationSummary = ({date, arrival, length, tables, title}) => {
     const departureDate = new Date(date);
     departureDate.setHours(arrivalHours + length);
 
+    const toMySQLDateTime = (date) => {
+      const pad = (n) => n.toString().padStart(2, "0");
+
+      const year = date.getFullYear();
+      const month = pad(date.getMonth() + 1); // Months are zero-indexed
+      const day = pad(date.getDate());
+      const hours = pad(date.getHours());
+      const minutes = pad(date.getMinutes());
+      const seconds = pad(date.getSeconds());
+
+      return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+    };
+
     // These values will be sent to the backend
     const values = {
-      arrival_time: arrivalDate,
-      departure_time: departureDate,
+      arrival_time: toMySQLDateTime(arrivalDate),
+      departure_time: toMySQLDateTime(departureDate),
       tables: tables,
       additional_information: message,
+      reservation_size: 1,
     };
     const token = localStorage.getItem("token");
 
-    makeReservation(values, token)
-      .then((response) => {
-        console.log(response);
-        if (response?.success) {
-          setResult({
-            success: true,
-            title: "reservation_success",
-            desc: "reservation_success_desc",
-          });
-        } else {
-          setResult({
-            success: false,
-            title: "reservation_failed",
-            desc: "reservation_failed_desc",
-            tryAgainCallback: () => {
-              setResult(null);
-            },
-          });
-        }
-      })
-      .catch((error) => {
-        console.error("Error making reservation:", error);
-        setResult({
-          success: false,
-          title: "reservation_failed",
-          desc: "reservation_failed_desc",
-          tryAgainCallback: () => {
-            setResult(null);
-          },
-        });
-      });
+    makeReservation(values, token);
   };
+
+  useEffect(() => {
+    if (reservationSuccess) {
+      setResult({
+        success: true,
+        title: "reservation_success",
+        desc: "reservation_success_desc",
+        continueCallback: () => {
+          window.location.href = "/reservations";
+        },
+      });
+    } else if (reservationId) {
+      setResult({
+        success: false,
+        title: "reservation_failed",
+        desc: "reservation_failed_desc",
+        tryAgainCallback: () => {
+          window.location.reload();
+        },
+      });
+    }
+  }, [reservationSuccess, reservationId]);
   return (
     <div className="summary scrollable">
       <h2>{title}</h2>

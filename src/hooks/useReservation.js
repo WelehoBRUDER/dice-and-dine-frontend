@@ -14,7 +14,6 @@ const useReservation = () => {
     setLoading(true);
     setError(null);
     setReservationSuccess(false);
-    console.log("cart user", user);
 
     try {
       const data = await fetchData(
