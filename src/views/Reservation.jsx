@@ -28,6 +28,7 @@ const Reservation = () => {
   const [reservationArrival, setReservationArrival] = useState(values.arrival);
   const [reservationTables, setReservationTables] = useState(values.tables);
   const {loading, tables, tableOrders} = useTables();
+  const [availableTables, setAvailableTables] = useState([]);
   const steps = [
     {step: 0, name: "reservation_date", icon: icons.calendar},
     {step: 1, name: "reservation_arrival", icon: icons.calendar_clock},
@@ -98,6 +99,47 @@ const Reservation = () => {
     setStep(newStep);
   };
 
+  // Filter out tables that are already reserved
+  useEffect(() => {
+    const isSameDate = (date1, date2) =>
+      date1.toDateString() === date2.toDateString();
+
+    const isTimeOverlap = (start1, end1, start2, end2) =>
+      start1 < end2 && start2 < end1;
+
+    const getHours = (dateStr) => new Date(dateStr).getHours();
+
+    const filteredTables = tables.filter((table) => {
+      return !tableOrders.some((order) => {
+        if (!isSameDate(new Date(order.date), reservationDate)) return false;
+
+        const orderStart = getHours(order.arrival_time);
+        const orderEnd = getHours(order.departure_time);
+
+        const arrival = reservationArrival?.getHours();
+        const departure = reservationLength
+          ? arrival + reservationLength
+          : null;
+
+        const overlaps =
+          (arrival !== undefined &&
+            isTimeOverlap(arrival, arrival + 1, orderStart, orderEnd)) ||
+          (departure !== null &&
+            isTimeOverlap(arrival, departure, orderStart, orderEnd));
+
+        return overlaps && order.tables.includes(table.id);
+      });
+    });
+
+    setAvailableTables(filteredTables);
+  }, [
+    reservationDate,
+    reservationArrival,
+    reservationLength,
+    tables,
+    tableOrders,
+  ]);
+
   return (
     <div className="reservation flex-column">
       <div className="reservation-header flex-row center">
@@ -142,7 +184,7 @@ const Reservation = () => {
         {!loading && step === 3 && (
           <ReservationTables
             tables={reservationTables}
-            tablesAvailable={tables}
+            tablesAvailable={availableTables}
             setTables={setReservationTables}
             title={lang(steps[step].name)}
           />

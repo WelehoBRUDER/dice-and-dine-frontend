@@ -1,3 +1,8 @@
+import LoadingWheel from "../LoadingWheel";
+import ResultWindow from "../ResultWindow";
+import Button from "../Button.jsx";
+import {useLanguage} from "../../context/LanguageContext.jsx";
+
 /**
  *
  * @param {Date} date - The selected date for the reservation.
@@ -8,14 +13,23 @@
  * @returns
  */
 const ReservationSummary = ({date, arrival, length, tables, title}) => {
+  const {lang} = useLanguage();
   return (
     <div className="summary">
       <h2>{title}</h2>
       <div className="summary-details flex-column center">
-        <p>Date: {date.toLocaleDateString("fi-FI")}</p>
-        <p>Arrival Time: {arrival}</p>
-        <p>Length: {length} hours</p>
-        <p>Tables: {tables.join(", ")}</p>
+        <p>
+          {lang("date")}: {date.toLocaleDateString("fi-FI")}
+        </p>
+        <p>
+          {lang("arrival_time")}: {arrival}
+        </p>
+        <p>
+          {lang("length_of_stay")}: {length} h
+        </p>
+        <p>
+          {lang("tables")}: {tables.join(", ")}
+        </p>
       </div>
     </div>
   );
