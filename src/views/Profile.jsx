@@ -2,8 +2,11 @@ import {useEffect, useState} from "react";
 import {useLanguage} from "../context/LanguageContext";
 import {useUserContext} from "../hooks/useUserContext";
 import {useUser} from "../hooks/userHooks";
-import Loading from "../components/Loading";
 import useOrder from "../hooks/useOrder";
+import OrderTable from "../components/OrderTable";
+import ProfileImage from "../components/ProfileImage";
+import ProfileDetails from "../components/ProfileDetails";
+import LoadingWheel from "../components/LoadingWheel";
 
 const Profile = () => {
   const {lang, setCurrentPage} = useLanguage();
@@ -14,67 +17,64 @@ const Profile = () => {
   const {getOrderDetails} = useOrder();
   const {getUserDetails} = useUser();
 
+  const fetchUserAndOrderDetails = async () => {
+    if (user && user.id) {
+      try {
+        const details = await getUserDetails(user.id);
+        setUserDetails(details);
+        const orders = await Promise.all(
+          details.orders.map(async (orderId) => {
+            const order = await getOrderDetails(orderId);
+            return order;
+          })
+        );
+        setOrderDetails(orders.flat());
+      } catch (error) {
+        console.error("Failed to fetch user details", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+  };
+
+  const handleImageUpload = (newImagePath) => {
+    setUserDetails((prevDetails) => ({
+      ...prevDetails,
+      profile_image: newImagePath,
+    }));
+  };
+
   useEffect(() => {
     setCurrentPage("profile_page");
-
-    const fetchUserAndOrderDetails = async () => {
-      if (user && user.id) {
-        try {
-          const details = await getUserDetails(user.id);
-          setUserDetails(details);
-          const orders = await Promise.all(
-            details.orders.map(async (orderId) => {
-              const order = await getOrderDetails(orderId);
-              return order;
-            })
-          );
-          setOrderDetails(orders.flat());
-        } catch (error) {
-          console.error("Failed to fetch user details", error);
-        } finally {
-          setLoading(false);
-        }
-      }
-    };
     fetchUserAndOrderDetails();
-  }, [user]);
+  }, [user, loading]);
 
   if (loading) {
-    return <Loading />;
+    return <LoadingWheel />;
   }
-  console.log("User details setted:", userDetails);
-  console.log("Order details setted:", orderDetails);
 
   return (
     <div>
-      <h1>{lang("profile_page.title")}</h1>
-      <p>Username: {userDetails.name}</p>
-      <p>E-mail: {userDetails.email}</p>
-      <p>User type: {userDetails.user_type}</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Order ID</th>
-            <th>Order time</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {userDetails.orders.length > 0 ? (
-            userDetails.orders.map((order, index) => (
-              <tr key={index}>
-                <td>{order}</td>
-                <td>{new Date(orderDetails[index].time).toLocaleString()}</td>
-                <td>{orderDetails[index].status}</td>
-              </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="2">No orders available</td>
-            </tr>
-          )}
-        </tbody>
-      </table>
+      <h1>
+        {lang("profile_page.title")} : {userDetails.name}
+      </h1>
+
+      <div className="flex-row top-align">
+        <div className="profile-image-container">
+          <h2>{lang("profile_page.profile_picture")}</h2>
+          <ProfileImage
+            userDetails={userDetails}
+            handleImageUpload={handleImageUpload}
+          />
+        </div>
+        <div className="profile-details-container">
+          <h2>{lang("profile_page.details")}</h2>
+          <ProfileDetails userDetails={userDetails} lang={lang} />
+
+          <h2>{lang("profile_page.orders")}</h2>
+          <OrderTable userDetails={userDetails} orderDetails={orderDetails} />
+        </div>
+      </div>
     </div>
   );
 };

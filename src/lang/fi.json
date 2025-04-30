@@ -22,6 +22,7 @@
   "games_page_link": "Pelit",
   "menu_page_link": "Ruokalista",
   "profile_page_link": "Profiili",
+  "cart_page_link": "Ostoskori",
 
   "about_page": {
     "about_page_title": "Tietoa meistä",
@@ -58,7 +59,7 @@
   "cart_page.your_cart": "Ostoskori",
   "cart_page.items_loading": "Lataamme ostoskorin tuotteita...",
   "cart_page.table_headings": ["Tuotteen nimi", "Määrä", "Hinta", "Yhteensä"],
-  "cart_page.total": "Yhteensä",
+  "cart_page.total": "Yhteensä: ",
   "cart_page.empty_cart": "Ostoskorisi on tyhjennetty",
   "cart_page.clear_cart": "Tyhjennä ostoskori",
   "cart_page.order_button": "Tee tilaus",
@@ -66,5 +67,13 @@
 
   "games_page.title": "Pelit",
 
-  "profile_page.title": "Profiili"
+  "profile_page.title": "Profiili",
+  "profile_page.username": "Käyttäjänimi:",
+  "profile_page.email": "Sähköposti:",
+  "profile_page.usertype": "Käyttäjätyyppi:",
+  "profile_page.edit_profile": "Muokkaa tietoja",
+  "profile_page.upload_button": "Lataa profiilikuva",
+  "profile_page.profile_picture": "Profiilikuva",
+  "profile_page.orders": "Tilauksesi",
+  "profile_page.details": "Tiedot"
 }
