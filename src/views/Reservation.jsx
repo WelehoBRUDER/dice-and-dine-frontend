@@ -111,12 +111,18 @@ const Reservation = () => {
 
     const filteredTables = tables.filter((table) => {
       return !tableOrders.some((order) => {
-        if (!isSameDate(new Date(order.date), reservationDate)) return false;
+        if (!isSameDate(new Date(order.arrival_time), reservationDate))
+          return false;
+        if (!reservationArrival || !reservationLength) return false;
+        console.log("starting comparison", order.arrival_time, reservationDate);
 
         const orderStart = getHours(order.arrival_time);
         const orderEnd = getHours(order.departure_time);
 
-        const arrival = reservationArrival?.getHours();
+        const [hours, minutes] = reservationArrival.split(":").map(Number);
+        const arrivalHours = hours + minutes / 60;
+
+        const arrival = arrivalHours;
         const departure = reservationLength
           ? arrival + reservationLength
           : null;
