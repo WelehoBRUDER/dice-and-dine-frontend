@@ -70,6 +70,44 @@
   "games_page.title": "Games",
 
   "profile_page.title": "Profile",
+
+  "review_page": {
+    "title": "Write a review",
+    "review": "Review",
+    "limit_remain": "Characters remaining",
+    "email": "Email",
+    "rating": "Rating",
+    "type_here": "Type here",
+    "submit_review": "Submit Review"
+  },
+
+  "reservation_page": {
+    "make_reservation": "Make a reservation",
+    "loading_reservation": "Loading reservation...",
+    "reservation": "Reservation",
+    "reservation_date": "Which day would you like to reserve?",
+    "reservation_arrival": "What time will you arrive?",
+    "reservation_length": "How long will you stay?",
+    "reservation_tables": "Choose table(s) for your party",
+    "reservation_summary": "Summary",
+    "reservation_summary_text": "View summary",
+    "not_set_arrival": "Pick arrival time",
+    "not_set_length": "Pick length of stay",
+    "not_set_tables": "Pick table(s)",
+    "table": "Table",
+    "seats": "Seats",
+    "reservation_success": "Reservation made successfully!",
+    "reservation_success_desc": "Your reservation has been made successfully. You can view reservations on your profile page.",
+    "reservation_failed": "Failed to make reservation",
+    "reservation_failed_desc": "There was an error while making the reservation. Please try again later.",
+    "date": "Date",
+    "arrival_time": "Arrival time",
+    "length_of_stay": "Length of stay",
+    "tables": "Tables reserved"
+  },
+
+  "additional_info": "Additional Information",
+
   "profile_page.username": "Username:",
   "profile_page.email": "Email:",
   "profile_page.usertype": "User Type:",

@@ -10,6 +10,7 @@
   font-weight: bold;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem 0.5rem rgba(0, 0, 0, 0.6);
+  margin: 0;
 
   &:hover {
     cursor: pointer;
@@ -39,6 +40,11 @@
   }
 }
 
+button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .btn-smaller {
   padding: 0.8rem 1.6rem;
   font-size: 1.5rem;
@@ -51,6 +57,16 @@
     background: var(--theme-darker);
     cursor: pointer;
   }
+
+  &.selected {
+    background: var(--theme-background);
+    color: var(--theme-contrast);
+    border: 0.25rem solid var(--theme-contrast);
+  }
+
+  &.uniform {
+    width: 8rem;
+  }
 }
 
 .input-container {
@@ -58,29 +74,39 @@
   flex-direction: column;
   gap: 0.4rem;
   padding: 0.8rem;
+  margin: 0;
 
   .input-label {
     font-size: 2rem;
   }
 
-  .input-and-icon {
+  .input-and-icon, .textarea {
     padding: 0.8rem;
     border: 0.2rem solid var(--theme-contrast);
     background: var(--theme-background);
     border-radius: 0.5rem;
     width: var(--input-width);
+    margin: 0;
+
+    .textarea-field {
+      width: 100%;
+      min-height: 10rem;
+      max-height: 50vh;
+      resize: vertical;
+    }
 
     .input-icon {
       width: var(--icon-width);
       height: var(--icon-width);
     }
 
-    .input-field {
+    .input-field, .textarea-field {
       font-size: 2rem;
       background: none;
       border: none;
       padding: 0;
       margin: 0;
+      font-family: "Roboto", sans-serif;
 
       &:focus {
         outline: none;
@@ -145,4 +171,49 @@ td {
       color: red;
     }
   }
+}
+
+.react-calendar {
+  background: var(--theme-darker);
+
+  .react-calendar__navigation {
+    button:hover {
+      background: var(--theme-foreground) !important;
+    }
+  }
+
+  .react-calendar__navigation button:disabled {
+    background: var(--theme-darker);
+    opacity: 0.5;
+  }
+
+  .react-calendar__tile {
+    background: var(--theme-foreground);
+
+    &:focus {
+      background: var(--theme-darker) !important;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+
+    &:hover:not(:focus) {
+      background: var(--theme-background) !important;
+    }
+
+    &.react-calendar__tile--active {
+      background: var(--theme-darker) !important;
+      color: var(--theme-contrast) !important;
+    }
+
+    &.react-calendar__tile--now {
+      background: var(--theme-lighter);
+    }
+  }
+}
+
+.react-calendar__navigation button:enabled:hover, .react-calendar__navigation button:enabled:focus {
+  background: var(--theme-foreground) !important;
+  color: var(--theme-contrast) !important;
 }
