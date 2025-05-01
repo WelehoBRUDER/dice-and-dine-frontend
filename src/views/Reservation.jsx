@@ -149,6 +149,11 @@ const Reservation = () => {
 
   return (
     <div className="reservation flex-column">
+      <article>
+        <title>{lang("reservation_title")}</title>
+        <meta name="description" content={lang("reservation_description")} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </article>
       <div className="reservation-header flex-row center">
         <h1>{lang("reservation")}</h1>
       </div>

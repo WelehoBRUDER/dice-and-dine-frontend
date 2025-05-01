@@ -2,8 +2,6 @@ import {useEffect} from "react";
 import {useLanguage} from "../context/LanguageContext";
 import Button from "../components/Button";
 import logo from "/restaurant_logo.png?url";
-import LoadingWheel from "../components/LoadingWheel";
-import ResultWindow from "../components/ResultWindow";
 
 const Home = () => {
   const {lang, setCurrentPage} = useLanguage();
@@ -14,17 +12,13 @@ const Home = () => {
 
   return (
     <>
-      <ResultWindow
-        title="Review submitted!"
-        desc="Your review was successfully submitted. It is safe to leave this page."
-      />
-      <ResultWindow
-        success={false}
-        title="Failed to submit review"
-        desc="Your review could not submitted due to an error. You can try to submit again or leave the page."
-        tryAgainCallback={() => alert("Try again")}
-      />
-      <LoadingWheel />
+      <article>
+        <title>{lang("home_title")}</title>
+        <meta name="description" content={lang("home_description")} />
+        <meta name="keywords" content={lang("home_keywords")} />
+        <meta name="author" content={lang("home_author")} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </article>
       <div className="logo">
         <img src={logo} alt={lang("restaurant_icon_alt")}></img>
       </div>

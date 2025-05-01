@@ -55,6 +55,11 @@ const Profile = () => {
 
   return (
     <div>
+      <article>
+        <title>{lang("profile_page.title")}</title>
+        <meta name="description" content={lang("profile_description")} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </article>
       <h1>
         {lang("profile_page.title")} : {userDetails.name}
       </h1>
