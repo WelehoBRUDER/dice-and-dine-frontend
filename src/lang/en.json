@@ -91,6 +91,8 @@
     "seats": "Seats",
     "reservation_success": "Reservation made successfully!",
     "reservation_success_desc": "Your reservation has been made successfully. You can view reservations on your profile page.",
+    "reservation_failed": "Failed to make reservation",
+    "reservation_failed_desc": "There was an error while making the reservation. Please try again later.",
     "date": "Date",
     "arrival_time": "Arrival time",
     "length_of_stay": "Length of stay",

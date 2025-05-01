@@ -88,6 +88,8 @@
     "seats": "Istuma paikkaa",
     "reservation_success": "Varauksen teko onnistui!",
     "reservation_success_desc": "Varauksesi on vahvistettu. Voit katsoa tekemiäsi varauksia profiilisivulla..",
+    "reservation_failed": "Varauksen teko epäonnistui",
+    "reservation_failed_desc": "Varausta tehdessä tapahtui virhe. Yritä uudelleen myöhemmin.",
     "date": "Päivämäärä",
     "arrival_time": "Saapumisaika",
     "length_of_stay": "Varauksen kesto",

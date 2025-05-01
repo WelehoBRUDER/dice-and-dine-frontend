@@ -4,8 +4,9 @@ import TextArea from "../TextArea";
 import Button from "../Button.jsx";
 import {useLanguage} from "../../context/LanguageContext";
 import {useEffect, useState} from "react";
-import useReservation from "../../hooks/useReservation";
 import {useNavigate} from "react-router-dom";
+import {icons} from "../../variables/icons";
+import useReservation from "../../hooks/useReservation";
 
 /**
  *
@@ -92,23 +93,41 @@ const ReservationSummary = ({
     }
   }, [reservationSuccess, reservationId]);
   return (
-    <div className="summary scrollable">
+    <div className="summary">
       <h2>{title}</h2>
       {loading && <LoadingWheel loadingText="making_reservation" />}
       {!loading && !result && (
         <div className="summary-details flex-column">
-          <p>
-            {lang("date")}: {date.toLocaleDateString("fi-FI")}
-          </p>
-          <p>
-            {lang("arrival_time")}: {arrival}
-          </p>
-          <p>
-            {lang("length_of_stay")}: {length} h
-          </p>
-          <p>
-            {lang("tables")}: {tables.join(", ")}
-          </p>
+          <div className="prev-details flex-column">
+            <div className="flex-row between">
+              <div className="flex-row center">
+                <img src={icons.calendar}></img>
+                <p>{lang("date")}</p>{" "}
+              </div>
+              <span>{date.toLocaleDateString("fi-FI")}</span>
+            </div>
+            <div className="flex-row between">
+              <div className="flex-row center">
+                <img src={icons.calendar_clock}></img>
+                <p>{lang("arrival_time")}</p>
+              </div>
+              <span> {arrival}</span>
+            </div>
+            <div className="flex-row between">
+              <div className="flex-row center">
+                <img src={icons.clock}></img>
+                <p>{lang("length_of_stay")}</p>
+              </div>
+              <span>{length} h</span>
+            </div>
+            <div className="flex-row between">
+              <div className="flex-row center">
+                <img src={icons.map}></img>
+                <p>{lang("tables")}</p>
+              </div>
+              <span>{tables.join(", ")}</span>
+            </div>
+          </div>
           <TextArea
             name="info"
             text={lang("additional_info")}

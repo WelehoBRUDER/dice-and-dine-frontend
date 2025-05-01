@@ -3,12 +3,13 @@
 
   background: var(--theme-darker);
   width: min(100vw, var(--max-content-width));
-  height: calc(100vh - var(--header-height));
+  min-height: calc(100vh - var(--header-height));
   align-items: center;
   margin: 0;
   box-sizing: border-box;
   border: 0.2rem solid var(--theme-contrast);
   border-top: none;
+  overflow: hidden;
 
   .reservation-header {
     background: var(--theme-background);
@@ -117,7 +118,6 @@
 .scrollable {
   overflow: hidden;
   overflow-y: auto;
-  max-height: 100%;
 }
 
 button.selected {
@@ -130,5 +130,10 @@ button.selected {
   
   p {
     margin: 0;
+  }
+
+  .prev-details {
+    gap: 0;
+    width: min(100%, var(--medium-content-width));
   }
 }

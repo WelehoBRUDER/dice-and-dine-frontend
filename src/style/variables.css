@@ -10,10 +10,11 @@
   font-family: "Roboto", sans-serif;
 
   /* Content width */
-  --max-content-width: 1200px;
-  --text-content-width: 800px;
-  --input-width: 300px;
-  --button-width: 300px;
+  --max-content-width: 120rem;
+  --text-content-width: 80rem;
+  --medium-content-width: 40rem;
+  --input-width: 30rem;
+  --button-width: 30rem;
   --icon-width: 2.5rem;
-  --loading-wheel-size: 200px;
+  --loading-wheel-size: 20rem;
 }
