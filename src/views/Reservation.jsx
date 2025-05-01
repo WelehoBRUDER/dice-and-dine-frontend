@@ -23,6 +23,7 @@ const Reservation = () => {
   };
 
   const [step, setStep] = useState(0);
+  const [success, setSuccess] = useState(false);
   const [reservationLength, setReservationLength] = useState(values.departure);
   const [reservationDate, setReservationDate] = useState(values.date);
   const [reservationArrival, setReservationArrival] = useState(values.arrival);
@@ -152,12 +153,15 @@ const Reservation = () => {
         <h1>{lang("reservation")}</h1>
       </div>
       <div className="reservation-content flex-column">
-        <ReservationSteps
-          steps={steps}
-          step={step}
-          changeStep={changeStep}
-          reflectUserChoice={reflectUserChoice}
-        />
+        {!success && (
+          <ReservationSteps
+            steps={steps}
+            step={step}
+            changeStep={changeStep}
+            reflectUserChoice={reflectUserChoice}
+          />
+        )}
+
         {loading && <LoadingWheel loadingText="loading_reservation" />}
         {!loading && step === 0 && (
           <ReservationDate
@@ -202,25 +206,28 @@ const Reservation = () => {
             length={reservationLength}
             tables={reservationTables}
             title={lang(steps[step].name)}
+            setSuccess={setSuccess}
           />
         )}
       </div>
-      <div className="navigation flex-row center">
-        <Button
-          className="btn"
-          disabled={step === 0}
-          onClick={() => changeStep(step - 1)}
-        >
-          {"<"}
-        </Button>
-        <Button
-          className="btn"
-          disabled={step === steps.length - 1}
-          onClick={() => changeStep(step + 1)}
-        >
-          {">"}
-        </Button>
-      </div>
+      {!success && (
+        <div className="navigation flex-row center">
+          <Button
+            className="btn"
+            disabled={step === 0}
+            onClick={() => changeStep(step - 1)}
+          >
+            {"<"}
+          </Button>
+          <Button
+            className="btn"
+            disabled={step === steps.length - 1}
+            onClick={() => changeStep(step + 1)}
+          >
+            {">"}
+          </Button>
+        </div>
+      )}
     </div>
   );
 };

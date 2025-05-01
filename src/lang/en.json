@@ -88,8 +88,16 @@
     "not_set_length": "Pick length of stay",
     "not_set_tables": "Pick table(s)",
     "table": "Table",
-    "seats": "Seats"
+    "seats": "Seats",
+    "reservation_success": "Reservation made successfully!",
+    "reservation_success_desc": "Your reservation has been made successfully. You can view reservations on your profile page.",
+    "date": "Date",
+    "arrival_time": "Arrival time",
+    "length_of_stay": "Length of stay",
+    "tables": "Tables reserved"
   },
+
+  "additional_info": "Additional Information",
 
   "profile_page.username": "Username:",
   "profile_page.email": "Email:",

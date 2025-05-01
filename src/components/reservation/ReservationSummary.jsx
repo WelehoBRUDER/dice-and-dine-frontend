@@ -5,6 +5,7 @@ import Button from "../Button.jsx";
 import {useLanguage} from "../../context/LanguageContext";
 import {useEffect, useState} from "react";
 import useReservation from "../../hooks/useReservation";
+import {useNavigate} from "react-router-dom";
 
 /**
  *
@@ -15,12 +16,20 @@ import useReservation from "../../hooks/useReservation";
  * @param {string} title - The title for the reservation summary.
  * @returns
  */
-const ReservationSummary = ({date, arrival, length, tables, title}) => {
+const ReservationSummary = ({
+  date,
+  arrival,
+  length,
+  tables,
+  title,
+  setSuccess,
+}) => {
   const {lang} = useLanguage();
   const {makeReservation, loading, reservationSuccess, reservationId} =
     useReservation();
   const [result, setResult] = useState(null);
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   const canMakeReservation = () => {
     return date && arrival && length && tables.length > 0;
@@ -62,12 +71,13 @@ const ReservationSummary = ({date, arrival, length, tables, title}) => {
 
   useEffect(() => {
     if (reservationSuccess) {
+      setSuccess(true);
       setResult({
         success: true,
         title: "reservation_success",
         desc: "reservation_success_desc",
         continueCallback: () => {
-          window.location.href = "/reservations";
+          navigate("/");
         },
       });
     } else if (reservationId) {
@@ -76,7 +86,7 @@ const ReservationSummary = ({date, arrival, length, tables, title}) => {
         title: "reservation_failed",
         desc: "reservation_failed_desc",
         tryAgainCallback: () => {
-          window.location.reload();
+          setResult(null);
         },
       });
     }

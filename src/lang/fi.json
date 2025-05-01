@@ -70,6 +70,32 @@
     "type_here": "Kirjoita tähän",
     "submit_review": "Lähetä arvostelu"
   },
+
+  "reservation_page": {
+    "make_reservation": "Tee varaus",
+    "loading_reservation": "Ladataan varausikkunaa...",
+    "reservation": "Varaus",
+    "reservation_date": "Minkä päivän haluaisit varata?",
+    "reservation_arrival": "Mihin aikaan tulette saapumaan?",
+    "reservation_length": "Kuinka pitkän varauksen haluatte tehdä?",
+    "reservation_tables": "Valitse yksi tai useampi pöytä ryhmällesi",
+    "reservation_summary": "Yhteenveto",
+    "reservation_summary_text": "Tutki yhteenvetoa",
+    "not_set_arrival": "Valitse saapumisaika",
+    "not_set_length": "Valitse varauksen kesto",
+    "not_set_tables": "Valitse pöydät",
+    "table": "Pöytä",
+    "seats": "Istuma paikkaa",
+    "reservation_success": "Varauksen teko onnistui!",
+    "reservation_success_desc": "Varauksesi on vahvistettu. Voit katsoa tekemiäsi varauksia profiilisivulla..",
+    "date": "Päivämäärä",
+    "arrival_time": "Saapumisaika",
+    "length_of_stay": "Varauksen kesto",
+    "tables": "Pöydät varattu"
+  },
+
+  "additional_info": "Lisätiedot",
+
   "profile_page.username": "Käyttäjänimi:",
   "profile_page.email": "Sähköposti:",
   "profile_page.usertype": "Käyttäjätyyppi:",
