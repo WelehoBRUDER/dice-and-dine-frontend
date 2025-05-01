@@ -16,6 +16,11 @@ const Games = () => {
 
   return (
     <div>
+      <article>
+        <title>{gamesText}</title>
+        <meta name="description" content={lang("games_description")} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </article>
       <h1>{gamesText}</h1>
       {loading ? (
         <LoadingWheel />

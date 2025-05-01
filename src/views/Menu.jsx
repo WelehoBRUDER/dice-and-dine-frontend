@@ -16,6 +16,11 @@ const Menu = () => {
 
   return (
     <div className="menu-page">
+      <article>
+        <title>{ourMenuText}</title>
+        <meta name="description" content={lang("menu_description")} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </article>
       <h1>{ourMenuText}</h1>
 
       {/* Conditional Rendering for Loading or Menu Content */}
