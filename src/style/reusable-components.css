@@ -69,6 +69,22 @@ button:disabled {
   }
 }
 
+button.star {
+  transition: ease-out 0.2s;
+  background: none;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    filter: drop-shadow(0 0 0.5rem var(--theme-contrast));
+  }
+
+  .btn-icon {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
 .input-container {
   display: flex;
   flex-direction: column;

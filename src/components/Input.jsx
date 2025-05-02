@@ -25,7 +25,7 @@ const Input = ({
   minMax,
   required = false,
   onChange,
-  className,
+  className = "",
   icon = "user",
   displayLabel = true,
 }) => {

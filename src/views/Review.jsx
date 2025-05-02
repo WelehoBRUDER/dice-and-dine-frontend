@@ -20,7 +20,6 @@ const Review = () => {
   const [success, setSuccess] = useState(false);
 
   const submitAction = async () => {
-    console.log("Review submitted:", inputs);
     setLoading(true);
   };
 

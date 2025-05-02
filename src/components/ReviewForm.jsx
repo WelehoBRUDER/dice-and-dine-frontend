@@ -1,4 +1,6 @@
 import {useLanguage} from "../context/LanguageContext";
+import {useState} from "react";
+import ReviewStars from "./ReviewStars";
 import TextArea from "./TextArea";
 import Input from "./Input";
 import Button from "./Button";
@@ -11,8 +13,12 @@ const ReviewForm = ({
   inputs,
 }) => {
   const {lang} = useLanguage();
+  const [rating, setRating] = useState(0);
   return (
-    <form onSubmit={handleSubmit} className="review-area flex-column center">
+    <form
+      onSubmit={handleSubmit}
+      className="review-area flex-column center align"
+    >
       <TextArea
         name="review"
         text={lang("title")}
@@ -29,14 +35,13 @@ const ReviewForm = ({
         required={true}
         onChange={handleInputChange}
       ></Input>
-      <Input
-        name="rating"
-        type="number"
-        minMax={[1, 5]}
-        required={true}
-        text={lang("rating")}
+      {/* Bow down before my ultimate hack */}
+      <input
+        style={{display: "none"}}
+        value={rating}
         onChange={handleInputChange}
-      ></Input>
+      />
+      <ReviewStars rating={rating} setRating={setRating}></ReviewStars>
       <Button type="submit">{lang("submit_review")}</Button>
     </form>
   );
