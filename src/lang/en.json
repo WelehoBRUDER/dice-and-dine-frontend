@@ -58,7 +58,7 @@
   "menu_page.remove_button_text": "Remove",
   "menu_page.allergens_text": "Allergens",
 
-  "cart_page.order_success_message": "Order placed successfully! Order ID: ",
+  "cart_page.order_success_message": "Order placed successfully! You can follow the status of your order in your profilepage. Order ID: ",
   "cart_page.your_cart": "Your Cart",
   "cart_page.items_loading": "Loading cart items...",
   "cart_page.table_headings": ["Item Name", "Quantity", "Price", "Total"],
@@ -67,6 +67,7 @@
   "cart_page.clear_cart": "Clear Cart",
   "cart_page.order_button": "Place Order",
   "cart_page.order_loading": "Placing order...",
+  "cart_page.order_success_title": "Order placed successfully",
 
   "games_page.title": "Games",
 
