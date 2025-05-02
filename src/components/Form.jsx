@@ -18,7 +18,7 @@ const Form = ({lang, authentication}) => {
       await handleLogin(inputs);
       navigate("/");
     } catch (e) {
-      console.error("Login failed:", e);
+      console.error("Login error:", e);
       alert("Login failed. Please check your credentials.");
     }
   };
@@ -29,7 +29,7 @@ const Form = ({lang, authentication}) => {
       alert("Registration successful! Please log in.");
       navigate("/login");
     } catch (e) {
-      console.error("Registration failed:", e);
+      console.error("Registration error:", e);
       alert("Registration failed. Please try again.");
     }
   };
@@ -37,12 +37,16 @@ const Form = ({lang, authentication}) => {
   const submitAction = async () => {
     try {
       if (authentication === "login") {
-        await doLogin(inputs);
+        const success = await doLogin(inputs); // Await the login function to ensure it's resolved
+        console.log("Success:", success);
+        return success; // Return true/false depending on the result
       } else if (authentication === "register") {
         await doRegister(inputs);
+        return true; // Indicate success after registration
       }
     } catch (e) {
-      alert(e.message);
+      alert(e.message); // Catch any errors and show them
+      return false; // Indicate failure if an error occurs
     }
   };
 
