@@ -225,3 +225,12 @@ td {
   background: var(--theme-foreground) !important;
   color: var(--theme-contrast) !important;
 }
+
+.error {
+  background-color: var(--theme-foreground);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  margin: 0.4rem;
+  margin-bottom: 1rem;
+}

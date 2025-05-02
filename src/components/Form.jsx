@@ -3,6 +3,7 @@ import Button from "./Button";
 import useForm from "../hooks/formHooks";
 import {useUserContext} from "../hooks/useUserContext";
 import {useNavigate} from "react-router-dom";
+import {useState} from "react";
 
 const Form = ({lang, authentication}) => {
   const initValues = {
@@ -12,6 +13,48 @@ const Form = ({lang, authentication}) => {
   };
   const {handleLogin, handleRegister} = useUserContext();
   const navigate = useNavigate();
+  const [errors, setErrors] = useState({});
+
+  const validateInputs = (inputs) => {
+    const errors = {};
+    if (!inputs.username) errors.username = "Username is required.";
+    if (!inputs.password) errors.password = "Password is required.";
+    if (authentication === "register") {
+      if (!inputs.email) {
+        errors.email = "Email is required.";
+      } else if (!/\S+@\S+\.\S+/.test(inputs.email)) {
+        errors.email = "Email address is invalid.";
+      }
+    }
+    return errors;
+  };
+
+  const submitAction = async () => {
+    const validationErrors = validateInputs(inputs);
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length > 0) {
+      return false;
+    }
+
+    try {
+      if (authentication === "login") {
+        const success = await doLogin(inputs);
+        return success;
+      } else if (authentication === "register") {
+        await doRegister(inputs);
+        return true;
+      }
+    } catch (e) {
+      alert(e.message);
+      return false;
+    }
+  };
+
+  const {inputs, handleInputChange, handleSubmit} = useForm(
+    submitAction,
+    initValues
+  );
 
   const doLogin = async () => {
     try {
@@ -34,27 +77,6 @@ const Form = ({lang, authentication}) => {
     }
   };
 
-  const submitAction = async () => {
-    try {
-      if (authentication === "login") {
-        const success = await doLogin(inputs); // Await the login function to ensure it's resolved
-        console.log("Success:", success);
-        return success; // Return true/false depending on the result
-      } else if (authentication === "register") {
-        await doRegister(inputs);
-        return true; // Indicate success after registration
-      }
-    } catch (e) {
-      alert(e.message); // Catch any errors and show them
-      return false; // Indicate failure if an error occurs
-    }
-  };
-
-  const {inputs, handleInputChange, handleSubmit} = useForm(
-    submitAction,
-    initValues
-  );
-
   return (
     <form onSubmit={handleSubmit} className="form-container">
       <h1>{lang(authentication)}</h1>
@@ -66,6 +88,7 @@ const Form = ({lang, authentication}) => {
         value={inputs.username}
         onChange={handleInputChange}
       />
+      {errors.username && <div className="error">{errors.username}</div>}
       <Input
         name="password"
         text={`${lang("password_field")}`}
@@ -74,15 +97,20 @@ const Form = ({lang, authentication}) => {
         value={inputs.password}
         onChange={handleInputChange}
       />
+      {errors.password && <div className="error">{errors.password}</div>}
       {authentication === "register" && (
-        <Input
-          name="email"
-          text={`${lang("email_field")}`}
-          type="text"
-          placeholder={lang("email_field_placeholder")}
-          value={inputs.email}
-          onChange={handleInputChange}
-        />
+        <>
+          <Input
+            name="email"
+            text={`${lang("email_field")}`}
+            type="text"
+            placeholder={lang("email_field_placeholder")}
+            value={inputs.email}
+            onChange={handleInputChange}
+          />
+
+          {errors.email && <div className="error">{errors.email}</div>}
+        </>
       )}
       <Button>{lang(`${authentication}_button`)}</Button>
     </form>
