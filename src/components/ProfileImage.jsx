@@ -10,14 +10,17 @@ const ProfileImage = ({userDetails, handleImageUpload}) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    handleFileSubmit(inputs.profileImage, userDetails.name).then(
-      (newImagePath) => {
-        if (newImagePath) {
-          handleImageUpload(newImagePath);
-          setKey(Date.now());
-        }
+    handleFileSubmit(
+      inputs.profileImage,
+      userDetails.name,
+      lang("profile_page.upload_success"),
+      lang("profile_page.upload_error")
+    ).then((newImagePath) => {
+      if (newImagePath) {
+        handleImageUpload(newImagePath);
+        setKey(Date.now());
       }
-    );
+    });
   };
   const imgBlobUrl = useImage(userDetails.profile_image, key);
   //   const imgURL = `http://localhost:3000/uploads/${userDetails.profile_image}`;

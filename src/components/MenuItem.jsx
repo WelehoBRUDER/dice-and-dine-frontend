@@ -1,13 +1,11 @@
 import {useCart} from "../context/CartContext";
 import Button from "./Button";
 import {useLanguage} from "../context/LanguageContext";
+import CartItemControls from "./CartItemControls";
 
 const MenuItem = ({item}) => {
   const {lang} = useLanguage();
-  const {cart, addToCart, removeFromCart} = useCart();
-
-  const buttonTextAdd = lang("menu_page.add_button_text");
-  const buttonTextRemove = lang("menu_page.remove_button_text");
+  const {cart} = useCart();
   const allergensText = lang("menu_page.allergens_text");
 
   const cartItem = cart.find(
@@ -26,32 +24,11 @@ const MenuItem = ({item}) => {
             {allergensText}: {item.allergens.join(", ")}
           </p>
         )}
-        <div className="button-container">
-          {!cartItem ? (
-            <Button
-              className="add-to-cart-btn"
-              onClick={() => addToCart(item.id)}
-            >
-              ➕ {buttonTextAdd}
-            </Button>
-          ) : (
-            <>
-              <Button
-                className="add-to-cart-btn"
-                onClick={() => addToCart(item.id)}
-              >
-                ➕ {buttonTextAdd}
-              </Button>
-              <Button
-                className="remove-from-cart-btn"
-                onClick={() => removeFromCart(item.id)}
-              >
-                ➖ {buttonTextRemove}
-              </Button>
-              <span className="cart-amount-display">{cartItem.amount}</span>
-            </>
-          )}
-        </div>
+
+        <CartItemControls
+          itemId={item.id}
+          currentAmount={cartItem?.amount || 0}
+        />
       </div>
     </>
   );
