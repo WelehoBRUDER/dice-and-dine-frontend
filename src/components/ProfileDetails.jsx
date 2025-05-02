@@ -10,11 +10,37 @@ const ProfileDetails = ({userDetails, lang}) => {
   const {handleLogout} = useUserContext();
   const navigate = useNavigate();
   const [mode, setMode] = useState("view"); // view | edit | password
+  const [errors, setErrors] = useState({});
 
   const {putUser} = useUser();
   const token = localStorage.getItem("token");
-
   const submitAction = async (inputs) => {
+    const validationErrors = {};
+
+    if (mode === "password") {
+      if (!inputs.oldpassword) {
+        validationErrors.oldpassword = "Old password is required.";
+      }
+      if (!inputs.password) {
+        validationErrors.password = "New password is required.";
+      }
+    } else {
+      if (!inputs.username) {
+        validationErrors.username = "Username is required.";
+      }
+      if (!inputs.email) {
+        validationErrors.email = "Email is required.";
+      } else if (!/\S+@\S+\.\S+/.test(inputs.email)) {
+        validationErrors.email = "Invalid email format.";
+      }
+    }
+
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length > 0) {
+      return false;
+    }
+
     try {
       const payload =
         mode === "password"
@@ -27,7 +53,6 @@ const ProfileDetails = ({userDetails, lang}) => {
               email: inputs.email,
             };
 
-      console.log("Updating user details:", payload);
       await putUser(userDetails.id, payload, token);
       return true;
     } catch (error) {
@@ -42,6 +67,7 @@ const ProfileDetails = ({userDetails, lang}) => {
     oldpassword: "",
     password: "",
   });
+
   const handleEditClick = async (e) => {
     e.preventDefault();
     console.log("Edit button clicked");
@@ -96,6 +122,9 @@ const ProfileDetails = ({userDetails, lang}) => {
             placeholder={lang("profile_page.old_password_placeholder")}
             onChange={handleInputChange}
           />
+          {errors.oldpassword && (
+            <div className="error">{errors.oldpassword}</div>
+          )}
           <Input
             name="password"
             text={lang("profile_page.new_password")}
@@ -104,6 +133,7 @@ const ProfileDetails = ({userDetails, lang}) => {
             placeholder={lang("profile_page.new_password_placeholder")}
             onChange={handleInputChange}
           />
+          {errors.password && <div className="error">{errors.password}</div>}
         </>
       ) : (
         <>
@@ -115,6 +145,7 @@ const ProfileDetails = ({userDetails, lang}) => {
             onChange={handleInputChange}
             disabled={mode !== "edit"}
           />
+          {errors.username && <div className="error">{errors.username}</div>}
           <Input
             name="email"
             text={lang("profile_page.email")}
@@ -123,6 +154,7 @@ const ProfileDetails = ({userDetails, lang}) => {
             onChange={handleInputChange}
             disabled={mode !== "edit"}
           />
+          {errors.email && <div className="error">{errors.email}</div>}
         </>
       )}
 
