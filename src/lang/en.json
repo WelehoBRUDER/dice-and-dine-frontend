@@ -12,6 +12,7 @@
 
   "loading_text": "Loading content...",
   "try_again": "Try again",
+  "continue": "Continue",
 
   "home_page_link": "Home",
   "about_page_link": "About",
@@ -28,10 +29,11 @@
 
   "about_page": {
     "about_page_title": "About us",
-  "about_page_phone": "Phone",
-  "about_page_email": "Email",
-  "about_page_address": "Address",
-  "about_page_open_times": "Open times"},
+    "about_page_phone": "Phone",
+    "about_page_email": "Email",
+    "about_page_address": "Address",
+    "about_page_open_times": "Open times"
+  },
 
   "authentication_page": {
     "login": "Login",
@@ -72,13 +74,19 @@
   "profile_page.title": "Profile",
 
   "review_page": {
+    "review_title": "Reviews",
     "title": "Write a review",
     "review": "Review",
     "limit_remain": "Characters remaining",
     "email": "Email",
     "rating": "Rating",
     "type_here": "Type here",
-    "submit_review": "Submit Review"
+    "submit_review": "Submit Review",
+    "review_submitted": "Review submitted!",
+    "review_submitted_desc": "Your review has been submitted successfully. Thank you for your feedback!",
+    "review_failed": "Failed to submit review",
+    "review_failed_desc": "There was an error while submitting your review. Please try again later.",
+    "review_description": "Restaurant reviews"
   },
 
   "reservation_page": {

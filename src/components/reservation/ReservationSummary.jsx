@@ -133,7 +133,11 @@ const ReservationSummary = ({
             text={lang("additional_info")}
             onChange={(e) => setMessage(e.target.value)}
           ></TextArea>
-          <Button onClick={handleSubmit} disabled={!canMakeReservation()}>
+          <Button
+            onClick={handleSubmit}
+            disabled={!canMakeReservation()}
+            type="submit"
+          >
             {lang("make_reservation")}
           </Button>
         </div>

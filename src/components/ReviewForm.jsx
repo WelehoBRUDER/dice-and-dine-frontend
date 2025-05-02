@@ -13,7 +13,8 @@ const ReviewForm = ({
   inputs,
 }) => {
   const {lang} = useLanguage();
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(inputs.rating);
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -28,13 +29,6 @@ const ReviewForm = ({
         maxLength={charactersLimit}
         onChange={handleInputChange}
       ></TextArea>
-      <Input
-        name="email"
-        type="email"
-        text={lang("email")}
-        required={true}
-        onChange={handleInputChange}
-      ></Input>
       {/* Bow down before my ultimate hack */}
       <input
         style={{display: "none"}}
@@ -42,7 +36,9 @@ const ReviewForm = ({
         onChange={handleInputChange}
       />
       <ReviewStars rating={rating} setRating={setRating}></ReviewStars>
-      <Button type="submit">{lang("submit_review")}</Button>
+      <Button type="submit" disabled={inputs.review.length < 5}>
+        {lang("submit_review")}
+      </Button>
     </form>
   );
 };

@@ -10,6 +10,7 @@
 
   "loading_text": "Ladataan sisältöä...",
   "try_again": "Yritä uudelleen",
+  "continue": "Jatka eteenpäin",
 
   "home_page_link": "Etusivu",
   "about_page_link": "Tietoa",
@@ -26,10 +27,11 @@
 
   "about_page": {
     "about_page_title": "Tietoa meistä",
-  "about_page_phone": "Puhelin",
-  "about_page_email": "Sähköposti",
-  "about_page_address": "Osoite",
-  "about_page_open_times": "Aukioloajat"},
+    "about_page_phone": "Puhelin",
+    "about_page_email": "Sähköposti",
+    "about_page_address": "Osoite",
+    "about_page_open_times": "Aukioloajat"
+  },
 
   "authentication_page": {
     "login": "Kirjaudu sisään",
@@ -69,13 +71,19 @@
 
   "profile_page.title": "Profiili",
   "review_page": {
+    "review_title": "Arvostelut",
     "title": "Kirjoita arvostelu",
     "review": "Arvostelu",
     "limit_remain": "Merkkiä jäljellä",
     "email": "Sähköposti",
     "rating": "Arviointi",
     "type_here": "Kirjoita tähän",
-    "submit_review": "Lähetä arvostelu"
+    "submit_review": "Lähetä arvostelu",
+    "review_submitted": "Arvostelu lähetetty!",
+    "review_submitted_desc": "Arvostelusi on lähetetty onnistuneesti. Kiitos palautteestanne!",
+    "review_failed": "Arvostelun lähetys epäonnistui",
+    "review_failed_desc": "Arvostelun lähetyksessä tapahtui virhe. Yrittäkää uudeelleen myöhemmin.",
+    "review_description": "Ravintolan arvostelut"
   },
 
   "reservation_page": {
@@ -96,7 +104,7 @@
     "reservation_success": "Varauksen teko onnistui!",
     "reservation_success_desc": "Varauksesi on vahvistettu. Voit katsoa tekemiäsi varauksia profiilisivulla..",
     "reservation_failed": "Varauksen teko epäonnistui",
-    "reservation_failed_desc": "Varausta tehdessä tapahtui virhe. Yritä uudelleen myöhemmin.",
+    "reservation_failed_desc": "Varausta tehdessä tapahtui virhe. Yrittäkää uudelleen myöhemmin.",
     "date": "Päivämäärä",
     "arrival_time": "Saapumisaika",
     "length_of_stay": "Varauksen kesto",

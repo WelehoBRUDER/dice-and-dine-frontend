@@ -10,6 +10,7 @@ const ReviewStars = ({rating, setRating}) => {
       {stars.map((_star) => (
         <Button
           className={"star"}
+          key={_star}
           icon={rating >= _star ? star_filled : star}
           onClick={() => {
             setRating(_star);

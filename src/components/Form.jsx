@@ -15,6 +15,7 @@ const Form = ({lang, authentication}) => {
 
   const doLogin = async () => {
     try {
+      console.log("doLogin", inputs);
       await handleLogin(inputs);
       navigate("/");
     } catch (e) {
@@ -33,6 +34,7 @@ const Form = ({lang, authentication}) => {
   };
 
   const submitAction = async () => {
+    console.log("submitAction", inputs);
     try {
       if (authentication === "login") {
         await doLogin(inputs);
@@ -78,7 +80,7 @@ const Form = ({lang, authentication}) => {
           onChange={handleInputChange}
         />
       )}
-      <Button>{lang(`${authentication}_button`)}</Button>
+      <Button type="submit">{lang(`${authentication}_button`)}</Button>
     </form>
   );
 };
