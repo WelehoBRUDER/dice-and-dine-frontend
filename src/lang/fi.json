@@ -122,6 +122,9 @@
   "profile_page.cancel": "Peruuta",
   "profile_page.username_placeholder": "Syötä uusi käyttäjänimi",
   "profile_page.email_placeholder": "Syötä uusi sähköposti",
+  "profile_page.old_password_placeholder": "Syötä vanha salasana",
+  "profile_page.new_password_placeholder": "Syötä uusi salasana",
   "profile_page.new_password": "Uusi salasana",
+  "profile_page.old_password": "Vanha salasana",
   "profile_page.save_password": "Tallenna salasana"
 }

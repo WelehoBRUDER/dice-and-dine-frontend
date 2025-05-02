@@ -11,7 +11,8 @@ const useForm = (callback, initState) => {
     if (event) {
       event.preventDefault();
     }
-    callback(inputs);
+    const success = callback(inputs);
+    return success;
   };
 
   const handleInputChange = (event) => {
