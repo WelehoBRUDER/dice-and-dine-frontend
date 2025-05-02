@@ -117,7 +117,11 @@
   "profile_page.change_password": "Vaihda salasana",
   "profile_page.upload_success": "Profiilikuva ladattu onnistuneesti",
   "profile_page.upload_error": "Profiilikuvan lataus epäonnistui",
-  "profile_page.save": "Tallenna",
+  "profile_page.save_profile": "Tallenna",
   "profile_page.edit": "Muokkaa",
-  "profile_page.cancel": "Peruuta"
+  "profile_page.cancel": "Peruuta",
+  "profile_page.username_placeholder": "Syötä uusi käyttäjänimi",
+  "profile_page.email_placeholder": "Syötä uusi sähköposti",
+  "profile_page.new_password": "Uusi salasana",
+  "profile_page.save_password": "Tallenna salasana"
 }

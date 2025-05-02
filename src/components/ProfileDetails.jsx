@@ -1,13 +1,16 @@
 import {useState} from "react";
 import useForm from "../hooks/formHooks";
 import Button from "./Button";
-
-import EditProfile from "./EditProfile";
 import Input from "./Input";
 import {useUser} from "../hooks/userHooks";
+import {useUserContext} from "../hooks/useUserContext";
+import {useNavigate} from "react-router-dom";
 
 const ProfileDetails = ({userDetails, lang}) => {
-  const [isEditable, setIsEditable] = useState(false);
+  const {handleLogout} = useUserContext();
+  navigate = useNavigate();
+  const [mode, setMode] = useState("view"); // view | edit | password
+
   const {putUser} = useUser();
   const token = localStorage.getItem("token");
 
@@ -24,75 +27,104 @@ const ProfileDetails = ({userDetails, lang}) => {
   const {inputs, handleSubmit, handleInputChange} = useForm(submitAction, {
     username: userDetails?.name || "",
     email: userDetails?.email || "",
+    password: "",
   });
-
-  const handleEditClick = (e) => {
+  const handleEditClick = async (e) => {
     e.preventDefault();
-    if (isEditable) {
-      console.log("User details: " + userDetails);
-      console.log("Inputs: " + inputs);
-      handleSubmit();
-      setIsEditable(false);
+    console.log("Edit button clicked");
+    if (mode === "edit") {
+      await handleSubmit();
+      setMode("view");
     } else {
-      setIsEditable(true);
+      setMode("edit");
     }
+  };
+
+  const handleChangePasswordClick = async (e) => {
+    console.log("Change password button clicked");
+    e.preventDefault();
+    if (mode === "password") {
+      setMode("view");
+      alert("You will be logged out after changing your password.");
+      await handleSubmit();
+      handleLogout();
+      navigate("/login");
+    } else {
+      setMode("password");
+    }
+  };
+
+  const handleCancelClick = (e) => {
+    e.preventDefault();
+    setMode("view");
   };
 
   const usernameValue = inputs.username ?? userDetails?.name ?? "";
   const emailValue = inputs.email ?? userDetails?.email ?? "";
 
   return (
-    <form className={isEditable ? "editing" : ""}>
-      <Input
-        name="username"
-        text={lang("profile_page.username")}
-        type="text"
-        value={usernameValue}
-        onChange={handleInputChange}
-        disabled={!isEditable}
-      />
-      <Input
-        name="email"
-        text={lang("profile_page.email")}
-        type="text"
-        value={emailValue}
-        onChange={handleInputChange}
-        disabled={!isEditable}
-      />
+    <form className={mode === "edit" ? "editing" : ""}>
+      {mode === "password" ? (
+        <Input
+          name="password"
+          text={lang("profile_page.new_password")}
+          type="password"
+          value={inputs.password}
+          onChange={handleInputChange}
+        />
+      ) : (
+        <>
+          <Input
+            name="username"
+            text={lang("profile_page.username")}
+            type="text"
+            value={usernameValue}
+            onChange={handleInputChange}
+            disabled={mode !== "edit"}
+          />
+          <Input
+            name="email"
+            text={lang("profile_page.email")}
+            type="text"
+            value={emailValue}
+            onChange={handleInputChange}
+            disabled={mode !== "edit"}
+          />
+        </>
+      )}
+
       <div className="flex-column">
-        <Button className="btn-smaller" onClick={handleEditClick}>
-          {isEditable
-            ? lang("profile_page.save_profile")
-            : lang("profile_page.edit_profile")}
-        </Button>
-        <Button
-          className="btn-smaller"
-          onClick={() => alert("Change password")}
-        >
-          {lang("profile_page.change_password")}
-        </Button>
+        {mode === "view" && (
+          <>
+            <Button className="btn-smaller" onClick={handleEditClick}>
+              {lang("profile_page.edit_profile")}
+            </Button>
+            <Button className="btn-smaller" onClick={handleChangePasswordClick}>
+              {lang("profile_page.change_password")}
+            </Button>
+          </>
+        )}
+
+        {mode === "edit" && (
+          <Button className="btn-smaller" onClick={handleEditClick}>
+            {lang("profile_page.save_profile")}
+          </Button>
+        )}
+
+        {mode === "password" && (
+          <Button className="btn-smaller" onClick={handleChangePasswordClick}>
+            {lang("profile_page.save_password")}
+          </Button>
+        )}
+
+        {mode !== "view" && (
+          <Button className="btn-smaller" onClick={handleCancelClick}>
+            {lang("profile_page.cancel")}
+          </Button>
+        )}
       </div>
     </form>
   );
 };
 
 export default ProfileDetails;
-
-{
-  /*
-
-  /* <div className="profile-detail-row">
-<span className="profile-label">{lang("profile_page.username")}</span>
-<span className="profile-value">{userDetails.name}</span>
-</div>
-<div className="profile-detail-row">
-<span className="profile-label">{lang("profile_page.email")}</span>
-<span className="profile-value">{userDetails.email}</span>
-</div>
-<Button className="btn-smaller" onClick={() => alert("Change password")}>
-{lang("profile_page.edit_profile")}
-</Button>
-<Button className="btn-smaller" onClick={() => alert("Change password")}>
-{lang("profile_page.change_password")}
-</Button> */
-}

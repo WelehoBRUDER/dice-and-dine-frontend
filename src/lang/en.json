@@ -124,5 +124,8 @@
 
   "profile_page.cancel": "Cancel",
   "profile_page.username_placeholder": "Enter new username",
-  "profile_page.email_placeholder": "Enter new email"
+  "profile_page.email_placeholder": "Enter new email",
+  "profile_page.new_password": "New Password",
+
+  "profile_page.save_password": "Save Password"
 }
