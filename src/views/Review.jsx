@@ -43,6 +43,11 @@ const Review = () => {
 
   return (
     <>
+      <article>
+        <title>{lang("review_title")}</title>
+        <meta name="description" content={lang("review_description")} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </article>
       {!loading && !submitted && (
         <ReviewForm
           handleSubmit={handleSubmit}

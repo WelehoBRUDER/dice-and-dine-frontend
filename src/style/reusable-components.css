@@ -40,6 +40,35 @@
   }
 }
 
+button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.btn-smaller {
+  padding: 0.8rem 1.6rem;
+  font-size: 1.5rem;
+  border-radius: 1.2rem;
+  border: 0.25rem solid var(--theme-lighter);
+  box-sizing: border-box;
+  background: var(--theme-foreground);
+
+  &:hover {
+    background: var(--theme-darker);
+    cursor: pointer;
+  }
+
+  &.selected {
+    background: var(--theme-background);
+    color: var(--theme-contrast);
+    border: 0.25rem solid var(--theme-contrast);
+  }
+
+  &.uniform {
+    width: 8rem;
+  }
+}
+
 .input-container {
   display: flex;
   flex-direction: column;
@@ -80,52 +109,16 @@
       font-family: "Roboto", sans-serif;
 
       &:focus {
-        outline: none
+        outline: none;
       }
     }
   }
-
 }
 
 .language-select {
   background: var(--theme-foreground);
   font-size: 2rem;
   padding: 0.4rem;
-}
-
-#header {
-  display: flex;
-  justify-content: space-between;
-  /*align-items: stretch;
-  padding: 0rem 2rem;
-  */
-  background: var(--theme-foreground);
-  font-size: 1.5rem;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-#header * {
-  display: flex;
-  align-items: stretch;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-}
-
-#header h1 a {
-  font-size: 2.4rem;
-  padding: 2rem 2rem;
-  display: flex;
-  align-items: center;
-}
-
-#header li a {
-  padding: 2rem;
-}
-
-#header li:hover {
-  background-color: var(--theme-background);
 }
 
 .active-link {
@@ -135,6 +128,16 @@
 table {
   text-align: center;
   border-collapse: collapse;
+}
+
+thead {
+  background-color: var(--theme-darker);
+  font-weight: normal;
+}
+
+th {
+  font-weight: normal;
+  color: var(--theme-contrast);
 }
 
 th,
@@ -159,13 +162,58 @@ td {
     font-size: 15rem;
     padding: 0;
     margin: 0;
-  
+
     &.success {
       color: green;
     }
-  
+
     &.error {
       color: red;
     }
   }
+}
+
+.react-calendar {
+  background: var(--theme-darker);
+
+  .react-calendar__navigation {
+    button:hover {
+      background: var(--theme-foreground) !important;
+    }
+  }
+
+  .react-calendar__navigation button:disabled {
+    background: var(--theme-darker);
+    opacity: 0.5;
+  }
+
+  .react-calendar__tile {
+    background: var(--theme-foreground);
+
+    &:focus {
+      background: var(--theme-darker) !important;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+
+    &:hover:not(:focus) {
+      background: var(--theme-background) !important;
+    }
+
+    &.react-calendar__tile--active {
+      background: var(--theme-darker) !important;
+      color: var(--theme-contrast) !important;
+    }
+
+    &.react-calendar__tile--now {
+      background: var(--theme-lighter);
+    }
+  }
+}
+
+.react-calendar__navigation button:enabled:hover, .react-calendar__navigation button:enabled:focus {
+  background: var(--theme-foreground) !important;
+  color: var(--theme-contrast) !important;
 }

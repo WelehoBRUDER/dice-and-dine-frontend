@@ -7,7 +7,16 @@ const Login = () => {
   useEffect(() => {
     setCurrentPage("authentication_page");
   }, []);
-  return <Form lang={lang} authentication="login"></Form>;
+  return (
+    <>
+      <article>
+        <title>{lang("login_title")}</title>
+        <meta name="description" content={lang("login_description")} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </article>
+      <Form lang={lang} authentication="login"></Form>
+    </>
+  );
 };
 
 export default Login;

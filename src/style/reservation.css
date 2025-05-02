@@ -1,0 +1,139 @@
+.reservation {
+  --header-height: 10rem;
+
+  background: var(--theme-darker);
+  width: min(100vw, var(--max-content-width));
+  min-height: calc(100vh - var(--header-height));
+  align-items: center;
+  margin: 0;
+  box-sizing: border-box;
+  border: 0.2rem solid var(--theme-contrast);
+  border-top: none;
+  overflow: hidden;
+
+  .reservation-header {
+    background: var(--theme-background);
+    box-sizing: border-box;
+    border: 0.2rem solid var(--theme-contrast);
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    margin: 0;
+  }
+  .tables {
+    .table-checkbox {
+      flex-direction: row;
+      align-items: center;
+      padding: 0.8rem;
+      border: 0.2rem solid var(--theme-contrast);
+      background: var(--theme-background);
+      border-radius: 0.5rem;
+      width: var(--input-width);
+      margin: 0;
+
+      .input-and-icon {
+        width: auto;
+        height: 2rem;
+      }
+
+
+      input {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+  
+  .reservation-steps {
+    width: 100%;
+    justify-content: center;
+    border-bottom: 0.2rem solid var(--theme-contrast);
+    margin: 0;
+    gap: 2.5rem;
+    .reservation-step {
+      width: 12rem;
+      position: relative;
+      margin: 0;
+      align-items: center;
+      text-align: center;
+
+      &.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+      }
+
+      .reservation-step-button {
+        width: 5rem;
+        height: 5rem;
+        color: var(--theme-darker);
+        background: var(--theme-contrast);
+        border: 0.2rem solid black;
+        font-weight: bold;
+        font-size: 2.4rem;
+        border-radius: 50%;
+        user-select: none;
+        margin: 0;
+        
+  
+        &:hover {
+          background: var(--theme-foreground);
+          color: var(--theme-contrast);
+          cursor: pointer;
+        }
+
+        img {
+          filter: invert(100%);
+        }
+  
+        &.active {
+          background: var(--theme-darker);
+          color: var(--theme-contrast);
+          border: 0.2rem solid var(--theme-contrast);
+
+          img {
+            filter: none;
+          }
+        }
+      }
+
+      .reservation-step-text {
+        margin: 0;
+        padding: 0;
+        height: 4rem;
+        /* position: absolute;
+        top: 6rem; */
+      }
+    }
+  }
+
+  .reservation-content {
+    width: 100%;
+    height: 80%;
+  }
+}
+.reservation-date {
+  align-items: center;
+}
+
+.scrollable {
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+button.selected {
+  border: 0.2rem solid var(--theme-contrast);
+  background: var(--theme-darker);
+}
+
+.summary-details {
+  align-items: center;
+  
+  p {
+    margin: 0;
+  }
+
+  .prev-details {
+    gap: 0;
+    width: min(100%, var(--medium-content-width));
+  }
+}

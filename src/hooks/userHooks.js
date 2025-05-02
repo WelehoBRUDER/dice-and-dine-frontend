@@ -11,7 +11,6 @@ const useAuthentication = () => {
       body: JSON.stringify(inputs),
     };
     const loginResult = await fetchData(apiURL + "/auth/login", fetchOptions);
-    console.log("loginresult", loginResult);
 
     return loginResult;
   };
@@ -29,7 +28,6 @@ const useUser = () => {
       body: JSON.stringify(inputs),
     };
     const registerResult = await fetchData(apiURL + "/users", fetchOptions);
-    console.log("Post user results:  ", registerResult);
     return registerResult;
   };
 
@@ -40,17 +38,34 @@ const useUser = () => {
       },
     };
     const userResult = await fetchData(apiURL + "/auth/me", fetchOptions);
-    console.log("userResult: ", userResult);
     return userResult;
   };
 
   const getUserDetails = async (userId) => {
     const userDetails = await fetchData(`${apiURL}/users/${userId}`);
-    console.log("User details: ", userDetails);
     return userDetails;
   };
 
-  return {getUserByToken, postUser, getUserDetails};
+  const uploadProfileImage = async (file, username, token) => {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    const fetchOptions = {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+      body: formData,
+    };
+
+    const result = await fetchData(
+      `${apiURL}/users/img/${username}`,
+      fetchOptions
+    );
+    return result;
+  };
+
+  return {getUserByToken, postUser, getUserDetails, uploadProfileImage};
 };
 
 export {useAuthentication, useUser};

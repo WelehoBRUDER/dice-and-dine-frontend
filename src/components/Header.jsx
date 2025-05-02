@@ -3,12 +3,14 @@ import LanguageSelect from "./LanguageSelect";
 import {useLanguage} from "../context/LanguageContext";
 import {useEffect} from "react";
 import {useUserContext} from "../hooks/useUserContext";
+import {useCart} from "../context/CartContext";
 
 const Header = () => {
   const {lang} = useLanguage();
   const {user, handleAutoLogin} = useUserContext();
+  const {cart} = useCart();
+
   useEffect(() => {
-    console.log("Autologin funktiota kutsuttu");
     handleAutoLogin();
   }, []);
 
@@ -59,7 +61,6 @@ const Header = () => {
                 {lang("review_page_link")}
               </NavLink>
             </li>
-
             {user ? (
               <>
                 {" "}
@@ -115,6 +116,16 @@ const Header = () => {
                   </NavLink>
                 </li>
               </>
+            )}
+            {cart.length > 0 && (
+              <li>
+                <NavLink
+                  to="/cart"
+                  className={({isActive}) => (isActive ? "active-link" : "")}
+                >
+                  {lang("cart_page_link")}
+                </NavLink>
+              </li>
             )}
           </ul>
         </nav>

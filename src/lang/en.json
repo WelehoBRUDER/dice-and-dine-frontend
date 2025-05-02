@@ -24,6 +24,14 @@
   "games_page_link": "Games",
   "menu_page_link": "Menu",
   "profile_page_link": "Profile",
+  "cart_page_link": "Shopping Cart",
+
+  "about_page": {
+    "about_page_title": "About us",
+  "about_page_phone": "Phone",
+  "about_page_email": "Email",
+  "about_page_address": "Address",
+  "about_page_open_times": "Open times"},
 
   "authentication_page": {
     "login": "Login",
@@ -53,8 +61,8 @@
   "cart_page.your_cart": "Your Cart",
   "cart_page.items_loading": "Loading cart items...",
   "cart_page.table_headings": ["Item Name", "Quantity", "Price", "Total"],
-  "cart_page.total": "Total",
-  "cart_page.empty_cart": "Your cart is empty",
+  "cart_page.total": "Total: ",
+  "cart_page.empty_cart": "Your cart is now empty",
   "cart_page.clear_cart": "Clear Cart",
   "cart_page.order_button": "Place Order",
   "cart_page.order_loading": "Placing order...",
@@ -71,5 +79,41 @@
     "rating": "Rating",
     "type_here": "Type here",
     "submit_review": "Submit Review"
-  }
+  },
+
+  "reservation_page": {
+    "make_reservation": "Make a reservation",
+    "loading_reservation": "Loading reservation...",
+    "reservation": "Reservation",
+    "reservation_date": "Which day would you like to reserve?",
+    "reservation_arrival": "What time will you arrive?",
+    "reservation_length": "How long will you stay?",
+    "reservation_tables": "Choose table(s) for your party",
+    "reservation_summary": "Summary",
+    "reservation_summary_text": "View summary",
+    "not_set_arrival": "Pick arrival time",
+    "not_set_length": "Pick length of stay",
+    "not_set_tables": "Pick table(s)",
+    "table": "Table",
+    "seats": "Seats",
+    "reservation_success": "Reservation made successfully!",
+    "reservation_success_desc": "Your reservation has been made successfully. You can view reservations on your profile page.",
+    "reservation_failed": "Failed to make reservation",
+    "reservation_failed_desc": "There was an error while making the reservation. Please try again later.",
+    "date": "Date",
+    "arrival_time": "Arrival time",
+    "length_of_stay": "Length of stay",
+    "tables": "Tables reserved"
+  },
+
+  "additional_info": "Additional Information",
+
+  "profile_page.username": "Username:",
+  "profile_page.email": "Email:",
+  "profile_page.usertype": "User Type:",
+  "profile_page.edit_profile": "Edit information",
+  "profile_page.upload_button": "Upload profile picture",
+  "profile_page.profile_picture": "Profile Picture",
+  "profile_page.orders": "Your orders",
+  "profile_page.details": "Details"
 }

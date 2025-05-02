@@ -1,8 +1,8 @@
-import Loading from "../components/Loading";
 import useGames from "../hooks/useGames";
 import GameItem from "../components/GameItem";
 import {useLanguage} from "../context/LanguageContext";
 import {useEffect} from "react";
+import LoadingWheel from "../components/LoadingWheel";
 
 const Games = () => {
   const {currentLanguage, lang, setCurrentPage} = useLanguage();
@@ -16,9 +16,14 @@ const Games = () => {
 
   return (
     <div>
+      <article>
+        <title>{gamesText}</title>
+        <meta name="description" content={lang("games_description")} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </article>
       <h1>{gamesText}</h1>
       {loading ? (
-        <Loading />
+        <LoadingWheel />
       ) : (
         <div className="games-container">
           <div className="games-list">
