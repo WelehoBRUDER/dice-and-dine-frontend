@@ -63,11 +63,12 @@
   "cart_page.items_loading": "Loading cart items...",
   "cart_page.table_headings": ["Item Name", "Quantity", "Price", "Total"],
   "cart_page.total": "Total: ",
-  "cart_page.empty_cart": "Your cart is now empty",
+  "cart_page.empty_cart": "Your cart is now empty. Go to the menu to add items and make a order.",
   "cart_page.clear_cart": "Clear Cart",
   "cart_page.order_button": "Place Order",
   "cart_page.order_loading": "Placing order...",
   "cart_page.order_success_title": "Order placed successfully",
+  "cart_page.empty_cart_title": "Cart empty!",
 
   "games_page.title": "Games",
 

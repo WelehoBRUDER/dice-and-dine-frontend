@@ -61,11 +61,12 @@
   "cart_page.items_loading": "Lataamme ostoskorin tuotteita...",
   "cart_page.table_headings": ["Tuotteen nimi", "Määrä", "Hinta", "Yhteensä"],
   "cart_page.total": "Yhteensä: ",
-  "cart_page.empty_cart": "Ostoskorisi on tyhjennetty",
+  "cart_page.empty_cart": "Ostoskorisi on tyhjennetty. Mene ruokalistalle tehdäksesi uusi tilaus.",
   "cart_page.clear_cart": "Tyhjennä ostoskori",
   "cart_page.order_button": "Tee tilaus",
   "cart_page.order_loading": "Tilausta käsitellään...",
   "cart_page.order_success_title": "Tilaus onnistui",
+  "cart_page.empty_cart_title": "Ostoskorisi on tyhjennetty!",
 
   "games_page.title": "Pelit",
 

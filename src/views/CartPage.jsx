@@ -8,6 +8,7 @@ import {useLanguage} from "../context/LanguageContext";
 import {useUserContext} from "../hooks/useUserContext";
 import ResultWindow from "../components/ResultWindow";
 import LoadingWheel from "../components/LoadingWheel";
+import CartItemControls from "../components/CartItemControls";
 
 const CartPage = () => {
   const {lang, setCurrentPage} = useLanguage();
@@ -15,6 +16,7 @@ const CartPage = () => {
   const {cart, clearCart} = useCart();
   const [cartItems, setCartItems] = useState([]);
   const [showResult, setShowResult] = useState(false);
+  const [showEmptyCartResult, setShowEmptyCartResult] = useState(false);
   const itemIds = cart.map((item) => item.menu_item_id);
   const {
     itemsDetails,
@@ -72,15 +74,22 @@ const CartPage = () => {
 
   useEffect(() => {
     if (cart.length === 0 && !orderSuccess) {
-      alert(lang("cart_page.empty_cart"));
-      navigate("/");
+      setShowEmptyCartResult(true);
     }
   }, [cart]);
 
   return (
     <div>
-      {itemsLoading && <LoadingWheel />}
-      {showResult ? (
+      {itemsLoading ? (
+        <LoadingWheel />
+      ) : showEmptyCartResult ? (
+        <ResultWindow
+          success={true}
+          title={lang("cart_page.empty_cart_title")}
+          desc={lang("cart_page.empty_cart")}
+          continueCallback={() => navigate("/menu")}
+        />
+      ) : showResult ? (
         <ResultWindow
           success={true}
           title={lang("cart_page.order_success_title")}
@@ -104,7 +113,12 @@ const CartPage = () => {
                   {cartItems.map((item) => (
                     <tr key={item.id}>
                       <td>{item.name}</td>
-                      <td>{item.amount}</td>
+                      <td>
+                        <CartItemControls
+                          itemId={item.id}
+                          currentAmount={item.amount}
+                        />
+                      </td>
                       <td>{Number(item.price).toFixed(2)}</td>
                       <td>{(Number(item.price) * item.amount).toFixed(2)}</td>
                     </tr>
