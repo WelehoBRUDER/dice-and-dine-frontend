@@ -14,7 +14,7 @@ const Login = () => {
         <meta name="description" content={lang("login_description")} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </article>
-      <Form lang={lang} authentication="login"></Form>;
+      <Form lang={lang} authentication="login"></Form>
     </>
   );
 };
