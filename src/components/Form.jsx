@@ -18,7 +18,8 @@ const Form = ({lang, authentication}) => {
       await handleLogin(inputs);
       navigate("/");
     } catch (e) {
-      alert(e.message);
+      console.error("Login failed:", e);
+      alert("Login failed. Please check your credentials.");
     }
   };
 
@@ -28,7 +29,8 @@ const Form = ({lang, authentication}) => {
       alert("Registration successful! Please log in.");
       navigate("/login");
     } catch (e) {
-      alert(e.message);
+      console.error("Registration failed:", e);
+      alert("Registration failed. Please try again.");
     }
   };
 
