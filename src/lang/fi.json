@@ -26,10 +26,11 @@
 
   "about_page": {
     "about_page_title": "Tietoa meistä",
-  "about_page_phone": "Puhelin",
-  "about_page_email": "Sähköposti",
-  "about_page_address": "Osoite",
-  "about_page_open_times": "Aukioloajat"},
+    "about_page_phone": "Puhelin",
+    "about_page_email": "Sähköposti",
+    "about_page_address": "Osoite",
+    "about_page_open_times": "Aukioloajat"
+  },
 
   "authentication_page": {
     "login": "Kirjaudu sisään",
@@ -115,5 +116,8 @@
   "profile_page.details": "Tiedot",
   "profile_page.change_password": "Vaihda salasana",
   "profile_page.upload_success": "Profiilikuva ladattu onnistuneesti",
-  "profile_page.upload_error": "Profiilikuvan lataus epäonnistui"
+  "profile_page.upload_error": "Profiilikuvan lataus epäonnistui",
+  "profile_page.save": "Tallenna",
+  "profile_page.edit": "Muokkaa",
+  "profile_page.cancel": "Peruuta"
 }

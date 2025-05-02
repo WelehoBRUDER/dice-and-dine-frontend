@@ -1,19 +1,17 @@
 import {useState} from "react";
 import {useUser} from "./userHooks";
-import {useLanguage} from "../context/LanguageContext";
 
 const useForm = (callback, initState) => {
   const [inputs, setInputs] = useState(initState);
   const [file, setFile] = useState(null);
   const [filePreview, setFilePreview] = useState(null);
   const {uploadProfileImage} = useUser();
-  const {lang} = useLanguage();
 
   const handleSubmit = (event) => {
     if (event) {
       event.preventDefault();
     }
-    callback();
+    callback(inputs);
   };
 
   const handleInputChange = (event) => {

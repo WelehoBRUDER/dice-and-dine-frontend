@@ -80,7 +80,8 @@ button:disabled {
     font-size: 2rem;
   }
 
-  .input-and-icon, .textarea {
+  .input-and-icon,
+  .textarea {
     padding: 0.8rem;
     border: 0.2rem solid var(--theme-contrast);
     background: var(--theme-background);
@@ -100,7 +101,8 @@ button:disabled {
       height: var(--icon-width);
     }
 
-    .input-field, .textarea-field {
+    .input-field,
+    .textarea-field {
       font-size: 2rem;
       background: none;
       border: none;
@@ -113,6 +115,11 @@ button:disabled {
       }
     }
   }
+}
+
+.editing .input-and-icon {
+  background: var(--theme-foreground); /* light blue background when editing */
+  border: 0.25rem solid var(--theme-lighter); /* blue border */
 }
 
 .language-select {
@@ -213,7 +220,8 @@ td {
   }
 }
 
-.react-calendar__navigation button:enabled:hover, .react-calendar__navigation button:enabled:focus {
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
   background: var(--theme-foreground) !important;
   color: var(--theme-contrast) !important;
 }
