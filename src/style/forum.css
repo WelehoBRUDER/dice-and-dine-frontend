@@ -1,11 +1,22 @@
 #forum-section {
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: var(--theme-foreground);
+  border-radius: 1rem;
+  overflow: hidden;
+  min-width: 60vw;
 }
 
 .forum-article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   margin: 2rem;
+  padding: 1rem;
   background-color: var(--theme-background);
+  border-radius: 1rem;
+}
+
+.clicked-article {
+  background-color: var(--theme-lighter);
 }
