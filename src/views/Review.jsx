@@ -6,6 +6,7 @@ import useForm from "../hooks/formHooks";
 import ReviewForm from "../components/ReviewForm";
 import LoadingWheel from "../components/LoadingWheel";
 import ResultWindow from "../components/ResultWindow";
+import {useUserContext} from "../hooks/useUserContext";
 
 const Review = () => {
   const initValues = {
@@ -14,6 +15,7 @@ const Review = () => {
   };
   const {lang, setCurrentPage} = useLanguage();
   const navigate = useNavigate();
+  const {user} = useUserContext();
 
   const charactersLimit = 150;
   const [chars, setChars] = useState(0);
@@ -22,12 +24,33 @@ const Review = () => {
   const {loading, submitReview, submitAnonymousReview} = useReview();
 
   const submitAction = async () => {
-    const response = await submitAnonymousReview(inputs);
-    setSubmitted(true);
-    if (response?.id) {
-      setSuccess(true);
+    if (user && user.id) {
+      try {
+        const token = localStorage.getItem("token");
+        const response = await submitReview(inputs, token, user.username);
+        setSubmitted(true);
+        if (response?.id) {
+          setSuccess(true);
+        } else {
+          setSuccess(false);
+        }
+      } catch {
+        setSubmitted(true);
+        setSuccess(false);
+      }
     } else {
-      setSuccess(false);
+      try {
+        const response = await submitAnonymousReview(inputs);
+        setSubmitted(true);
+        if (response?.id) {
+          setSuccess(true);
+        } else {
+          setSuccess(false);
+        }
+      } catch {
+        setSubmitted(true);
+        setSuccess(false);
+      }
     }
   };
 
