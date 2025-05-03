@@ -10,6 +10,25 @@ const useOrder = () => {
   const [error, setError] = useState(null);
   const {user} = useUserContext();
 
+  const getAllOrders = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const data = await fetchData(`${API_URL}/orders`, {
+        method: "GET",
+      });
+      if (data) {
+        return data;
+      } else {
+        setError("Failed to fetch orders");
+      }
+    } catch (err) {
+      setError("Failed to fetch orders: " + err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const placeOrder = async (orderCart, customerId, token) => {
     setLoading(true);
     setError(null);
@@ -75,6 +94,36 @@ const useOrder = () => {
     }
   };
 
+  const postOrderStatus = async (orderId, status) => {
+    setLoading(true);
+    setError(null);
+    const token = localStorage.getItem("token");
+    try {
+      const data = await fetchData(`${API_URL}/orders/status`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          order_id: orderId,
+          status: status,
+        }),
+      });
+      if (data && data.message === "Order status updated successfully") {
+        return true;
+      } else {
+        setError(data?.message || "Unknown error");
+        return false;
+      }
+    } catch (err) {
+      setError("Failed to update order status: " + err.message);
+      return false;
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return {
     placeOrder,
     loading,
@@ -82,6 +131,8 @@ const useOrder = () => {
     orderId,
     error,
     getOrderDetails,
+    getAllOrders,
+    postOrderStatus,
   };
 };
 
