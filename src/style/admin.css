@@ -5,7 +5,9 @@
   font-size: 1.8rem;
   width: 100%;
   position: sticky;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .adminbar * {
@@ -22,7 +24,8 @@
   padding: 2rem;
 }
 
-.adminbar li a:hover {
+.adminbar li a:hover,
+.adminbar li a.active-link {
   background-color: var(--theme-background);
   color: var(--theme-contrast);
 }

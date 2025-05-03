@@ -9,7 +9,7 @@ const AdminBar = () => {
       <ul>
         <li>
           <NavLink
-            to="/orders"
+            to="/admin/orders"
             className={({isActive}) => (isActive ? "active-link" : "")}
           >
             {lang("admin_page.orders_page_link")}
@@ -17,7 +17,7 @@ const AdminBar = () => {
         </li>
         <li>
           <NavLink
-            to="/users"
+            to="/admin/users"
             className={({isActive}) => (isActive ? "active-link" : "")}
           >
             {lang("admin_page.users_page_link")}
@@ -25,7 +25,7 @@ const AdminBar = () => {
         </li>
         <li>
           <NavLink
-            to="/editmenu"
+            to="/admin/editmenu"
             className={({isActive}) => (isActive ? "active-link" : "")}
           >
             {lang("admin_page.editmenu_page_link")}
@@ -33,7 +33,7 @@ const AdminBar = () => {
         </li>
         <li>
           <NavLink
-            to="/reservations"
+            to="/admin/reservations"
             className={({isActive}) => (isActive ? "active-link" : "")}
           >
             {lang("admin_page.reservations_page_link")}
@@ -42,7 +42,7 @@ const AdminBar = () => {
 
         <li>
           <NavLink
-            to="/users"
+            to="/admin/users"
             className={({isActive}) => (isActive ? "active-link" : "")}
           >
             {lang("admin_page.users_page_link")}
@@ -50,7 +50,7 @@ const AdminBar = () => {
         </li>
         <li>
           <NavLink
-            to="/editabout"
+            to="/admin/editabout"
             className={({isActive}) => (isActive ? "active-link" : "")}
           >
             {lang("admin_page.editabout_page_link")}
@@ -58,7 +58,7 @@ const AdminBar = () => {
         </li>
         <li>
           <NavLink
-            to="/reviews"
+            to="/admin/reviews"
             className={({isActive}) => (isActive ? "active-link" : "")}
           >
             {lang("admin_page.reviews_page_link")}

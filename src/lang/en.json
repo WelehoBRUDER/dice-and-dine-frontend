@@ -140,5 +140,6 @@
   "admin_page.editmenu_page_link": "Edit Menu",
   "admin_page.editabout_page_link": "Edit About",
   "admin_page.reviews_page_link": "Reviews",
-  "admin_page.reservations_page_link": "Table Reservations"
+  "admin_page.reservations_page_link": "Table Reservations",
+  "admin_page.description": "Admin page for managing the restaurant's operations. Here you can manage orders, users, menu items, reviews, and table reservations. You can also edit the restaurant's information."
 }

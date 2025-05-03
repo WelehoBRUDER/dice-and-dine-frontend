@@ -11,7 +11,7 @@ const Admin = () => {
   return (
     <div className="admin-page">
       <h1>{lang("admin_page.title")}</h1>
-      <p>Admin page default view?</p>
+      <p>{lang("admin_page.description")}</p>
     </div>
   );
 };

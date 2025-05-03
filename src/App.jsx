@@ -15,13 +15,13 @@ import {UserProvider} from "./context/UserContext";
 import Logout from "./components/Logout";
 import Profile from "./views/Profile";
 import Admin from "./views/Admin";
-import Users from "./views/adminviews/Users";
-import EditMenu from "./views/adminviews/EditMenu";
-import Reservations from "./views/adminviews/Reservations";
-import EditAbout from "./views/adminviews/EditAbout";
-import Reviews from "./views/adminviews/Reviews";
-import Orders from "./views/adminviews/Orders";
-import AdminLayout from "./views/adminviews/AdminLayout";
+import Users from "./views/admin/Users";
+import EditMenu from "./views/admin/EditMenu";
+import Reservations from "./views/admin/Reservations";
+import EditAbout from "./views/admin/EditAbout";
+import Reviews from "./views/admin/Reviews";
+import Orders from "./views/admin/Orders";
+import AdminLayout from "./views/admin/AdminLayout";
 import {LanguageProvider} from "./context/LanguageContext";
 
 const App = () => {
@@ -46,13 +46,13 @@ const App = () => {
                 <Route path="/profile" element={<Profile />} />
               </Route>
               <Route path="/admin" element={<AdminLayout />}>
-                <Route path="/admin" element={<Admin />} />
-                <Route path="/admin/orders" element={<Admin />} />
-                <Route path="/admin/users" element={<Users />} />
-                <Route path="/admin/editmenu" element={<EditMenu />} />
-                <Route path="/admin/reservations" element={<Reservations />} />
-                <Route path="/admin/editabout" element={<EditAbout />} />
-                <Route path="/admin/reviews" element={<Reviews />} />
+                <Route index element={<Admin />} />
+                <Route path="orders" element={<Orders />} />
+                <Route path="users" element={<Users />} />
+                <Route path="editmenu" element={<EditMenu />} />
+                <Route path="reservations" element={<Reservations />} />
+                <Route path="editabout" element={<EditAbout />} />
+                <Route path="reviews" element={<Reviews />} />
               </Route>
             </Routes>
           </CartProvider>

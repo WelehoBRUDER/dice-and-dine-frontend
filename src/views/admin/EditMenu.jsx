@@ -2,7 +2,7 @@ const EditMenu = () => {
   return (
     <div>
       <h1>Edit Restaurant Menu</h1>
-      <p>This page is for editing restaurant´s menu.</p>
+      <p>This page is for editing content in restaurant´s menu.</p>
     </div>
   );
 };
