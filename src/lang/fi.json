@@ -10,6 +10,7 @@
 
   "loading_text": "Ladataan sisältöä...",
   "try_again": "Yritä uudelleen",
+  "continue": "Jatka eteenpäin",
 
   "home_page_link": "Etusivu",
   "about_page_link": "Tietoa",
@@ -23,13 +24,15 @@
   "menu_page_link": "Ruokalista",
   "profile_page_link": "Profiili",
   "cart_page_link": "Ostoskori",
+  "admin_page_link": "Ylläpito",
 
   "about_page": {
     "about_page_title": "Tietoa meistä",
-  "about_page_phone": "Puhelin",
-  "about_page_email": "Sähköposti",
-  "about_page_address": "Osoite",
-  "about_page_open_times": "Aukioloajat"},
+    "about_page_phone": "Puhelin",
+    "about_page_email": "Sähköposti",
+    "about_page_address": "Osoite",
+    "about_page_open_times": "Aukioloajat"
+  },
 
   "authentication_page": {
     "login": "Kirjaudu sisään",
@@ -55,27 +58,35 @@
   "menu_page.remove_button_text": "Poista",
   "menu_page.allergens_text": "Allergeenit",
 
-  "cart_page.order_success_message": "Tilaus onnistui! Tilausnumero: ",
+  "cart_page.order_success_message": "Tilaus onnistui! Voit seurata tilauksen tilaa profiilissasi. Tilausnumero: ",
   "cart_page.your_cart": "Ostoskori",
   "cart_page.items_loading": "Lataamme ostoskorin tuotteita...",
   "cart_page.table_headings": ["Tuotteen nimi", "Määrä", "Hinta", "Yhteensä"],
   "cart_page.total": "Yhteensä: ",
-  "cart_page.empty_cart": "Ostoskorisi on tyhjennetty",
+  "cart_page.empty_cart": "Ostoskorisi on tyhjennetty. Mene ruokalistalle tehdäksesi uusi tilaus.",
   "cart_page.clear_cart": "Tyhjennä ostoskori",
   "cart_page.order_button": "Tee tilaus",
   "cart_page.order_loading": "Tilausta käsitellään...",
+  "cart_page.order_success_title": "Tilaus onnistui",
+  "cart_page.empty_cart_title": "Ostoskorisi on tyhjennetty!",
 
   "games_page.title": "Pelit",
 
   "profile_page.title": "Profiili",
   "review_page": {
+    "review_title": "Arvostelut",
     "title": "Kirjoita arvostelu",
     "review": "Arvostelu",
     "limit_remain": "Merkkiä jäljellä",
     "email": "Sähköposti",
     "rating": "Arviointi",
     "type_here": "Kirjoita tähän",
-    "submit_review": "Lähetä arvostelu"
+    "submit_review": "Lähetä arvostelu",
+    "review_submitted": "Arvostelu lähetetty!",
+    "review_submitted_desc": "Arvostelusi on lähetetty onnistuneesti. Kiitos palautteestanne!",
+    "review_failed": "Arvostelun lähetys epäonnistui",
+    "review_failed_desc": "Arvostelun lähetyksessä tapahtui virhe. Yrittäkää uudeelleen myöhemmin.",
+    "review_description": "Ravintolan arvostelut"
   },
 
   "reservation_page": {
@@ -96,7 +107,7 @@
     "reservation_success": "Varauksen teko onnistui!",
     "reservation_success_desc": "Varauksesi on vahvistettu. Voit katsoa tekemiäsi varauksia profiilisivulla..",
     "reservation_failed": "Varauksen teko epäonnistui",
-    "reservation_failed_desc": "Varausta tehdessä tapahtui virhe. Yritä uudelleen myöhemmin.",
+    "reservation_failed_desc": "Varausta tehdessä tapahtui virhe. Yrittäkää uudelleen myöhemmin.",
     "date": "Päivämäärä",
     "arrival_time": "Saapumisaika",
     "length_of_stay": "Varauksen kesto",
@@ -112,5 +123,38 @@
   "profile_page.upload_button": "Lataa profiilikuva",
   "profile_page.profile_picture": "Profiilikuva",
   "profile_page.orders": "Tilauksesi",
-  "profile_page.details": "Tiedot"
+  "profile_page.details": "Tiedot",
+
+  "reviews_page": {
+    "title": "Kaikki arvostelut",
+    "anon": "Anonyymi",
+    "review_title": "Arvostelun otsikko",
+    "leave_review": "Jätä arvostelu",
+    "read_more": "Lisää⠀↓"
+  },
+  "profile_page.change_password": "Vaihda salasana",
+  "profile_page.upload_success": "Profiilikuva ladattu onnistuneesti",
+  "profile_page.upload_error": "Profiilikuvan lataus epäonnistui",
+  "profile_page.save_profile": "Tallenna",
+  "profile_page.edit": "Muokkaa",
+  "profile_page.cancel": "Peruuta",
+  "profile_page.username_placeholder": "Syötä uusi käyttäjänimi",
+  "profile_page.email_placeholder": "Syötä uusi sähköposti",
+  "profile_page.old_password_placeholder": "Syötä vanha salasana",
+  "profile_page.new_password_placeholder": "Syötä uusi salasana",
+  "profile_page.new_password": "Uusi salasana",
+  "profile_page.old_password": "Vanha salasana",
+  "profile_page.save_password": "Tallenna salasana",
+
+  "admin_page.title": "Ylläpitosivu",
+  "admin_page.orders_page_link": "Tilaukset",
+  "admin_page.users_page_link": "Käyttäjät",
+  "admin_page.editmenu_page_link": "Muokkaa ruokalistaa",
+  "admin_page.editabout_page_link": "Muokkaa tietoja",
+  "admin_page.reviews_page_link": "Arvostelut",
+  "admin_page.reservations_page_link": "Pöytävaraukset",
+  "admin_page.description": "Ylläpitosivulla voit hallita ravintolan toimintoja. Voit tarkastella ja hallita tilauksia, käyttäjiä ruokalistaa, arvosteluja ja pöytävarauksia. Voit myös muokata ravintolan tietoja.",
+
+  "unauthorized_page.title": "403 - Pääsy kielletty",
+  "unauthorized_page.description": "Sinulla ei ole oikeuksia käyttää tätä sivua."
 }

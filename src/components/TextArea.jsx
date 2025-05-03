@@ -19,7 +19,7 @@ const TextArea = ({
   value,
   maxLength = 150,
   onChange,
-  className,
+  className = "",
   displayLabel = true,
 }) => {
   return (

@@ -68,6 +68,10 @@ h2 {
     justify-content: center;
   }
 
+  &.align {
+    align-items: center;
+  }
+
   &.wrap {
     flex-wrap: wrap;
   }
@@ -100,43 +104,4 @@ h2 {
 span {
   font-size: 1.4rem;
   opacity: 0.8;
-}
-.profile-image {
-  display: flex;
-  flex-direction: column;
-}
-
-.profile-image img {
-  max-width: 200px;
-  border-radius: 8px;
-  align-self: center;
-}
-
-.image-preview {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.preview-image {
-  max-width: 200px;
-  border-radius: 8px;
-}
-
-.profile-detail-row {
-  display: flex;
-}
-
-.profile-label {
-  width: 120px;
-  font-weight: bold;
-}
-
-.profile-value {
-  flex: 1;
-}
-
-.preview-image {
-  max-width: 200px;
-  border-radius: 8px;
 }

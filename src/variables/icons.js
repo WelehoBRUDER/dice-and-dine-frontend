@@ -5,6 +5,8 @@ import clock from "../assets/icons/schedule.svg";
 import map from "../assets/icons/map.svg";
 import calendar_clock from "../assets/icons/calendar_clock.svg";
 import overview from "../assets/icons/overview.svg";
+import star from "../assets/icons/star.svg";
+import star_filled from "../assets/icons/star_gold.svg";
 
 export const icons = {
   user,
@@ -14,4 +16,6 @@ export const icons = {
   map,
   calendar_clock,
   overview,
+  star,
+  star_filled,
 };

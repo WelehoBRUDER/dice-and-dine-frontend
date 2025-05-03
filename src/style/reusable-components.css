@@ -48,6 +48,7 @@ button:disabled {
 .btn-smaller {
   padding: 0.8rem 1.6rem;
   font-size: 1.5rem;
+  font-weight: bold;
   border-radius: 1.2rem;
   border: 0.25rem solid var(--theme-lighter);
   box-sizing: border-box;
@@ -69,6 +70,22 @@ button:disabled {
   }
 }
 
+button.star {
+  transition: ease-out 0.2s;
+  background: none;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    filter: drop-shadow(0 0 0.5rem var(--theme-contrast));
+  }
+
+  .btn-icon {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
 .input-container {
   display: flex;
   flex-direction: column;
@@ -80,7 +97,8 @@ button:disabled {
     font-size: 2rem;
   }
 
-  .input-and-icon, .textarea {
+  .input-and-icon,
+  .textarea {
     padding: 0.8rem;
     border: 0.2rem solid var(--theme-contrast);
     background: var(--theme-background);
@@ -100,7 +118,8 @@ button:disabled {
       height: var(--icon-width);
     }
 
-    .input-field, .textarea-field {
+    .input-field,
+    .textarea-field {
       font-size: 2rem;
       background: none;
       border: none;
@@ -113,6 +132,11 @@ button:disabled {
       }
     }
   }
+}
+
+.editing .input-and-icon {
+  background: var(--theme-foreground); /* light blue background when editing */
+  border: 0.25rem solid var(--theme-lighter); /* blue border */
 }
 
 .language-select {
@@ -213,7 +237,17 @@ td {
   }
 }
 
-.react-calendar__navigation button:enabled:hover, .react-calendar__navigation button:enabled:focus {
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
   background: var(--theme-foreground) !important;
   color: var(--theme-contrast) !important;
+}
+
+.error {
+  background-color: var(--theme-foreground);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  margin: 0.4rem;
+  margin-bottom: 1rem;
 }
