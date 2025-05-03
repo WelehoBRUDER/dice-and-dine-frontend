@@ -1,5 +1,5 @@
-import {icons} from "../variables/icons";
-import Button from "./Button";
+import {icons} from "../../variables/icons";
+import Button from "../Button";
 
 const ReviewStars = ({rating, setRating}) => {
   const stars = [1, 2, 3, 4, 5];

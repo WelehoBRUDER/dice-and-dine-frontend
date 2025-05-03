@@ -2,7 +2,7 @@ import {useLanguage} from "../context/LanguageContext";
 import {useEffect} from "react";
 import useReview from "../hooks/useReview";
 import Button from "../components/Button";
-import Review from "../components/Review";
+import Review from "../components/review/Review";
 import LoadingWheel from "../components/LoadingWheel";
 
 const Reviews = () => {
@@ -17,15 +17,17 @@ const Reviews = () => {
     <div>
       <h1>{lang("title")}</h1>
       <h2>{lang("reviews")}</h2>
-      {loading ? (
-        <LoadingWheel />
-      ) : (
-        <div className="reviews-list">
-          {reviews.map((review) => (
-            <Review key={review.id} review={review} />
-          ))}
-        </div>
-      )}
+      <div className="reviews flex-row wrap">
+        {loading ? (
+          <LoadingWheel />
+        ) : (
+          <div className="reviews-list">
+            {reviews.map((review) => (
+              <Review key={review.id} review={review} />
+            ))}
+          </div>
+        )}
+      </div>
       <Button>{lang("leave_review")}</Button>
     </div>
   );

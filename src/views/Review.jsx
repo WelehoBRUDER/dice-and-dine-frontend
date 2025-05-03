@@ -3,7 +3,7 @@ import {useLanguage} from "../context/LanguageContext";
 import {useNavigate} from "react-router-dom";
 import useReview from "../hooks/useReview";
 import useForm from "../hooks/formHooks";
-import ReviewForm from "../components/ReviewForm";
+import ReviewForm from "../components/review/ReviewForm";
 import LoadingWheel from "../components/LoadingWheel";
 import ResultWindow from "../components/ResultWindow";
 import {useUserContext} from "../hooks/useUserContext";

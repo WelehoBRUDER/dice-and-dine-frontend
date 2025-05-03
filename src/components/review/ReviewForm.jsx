@@ -1,9 +1,8 @@
-import {useLanguage} from "../context/LanguageContext";
+import {useLanguage} from "../../context/LanguageContext";
 import {useState} from "react";
 import ReviewStars from "./ReviewStars";
-import TextArea from "./TextArea";
-import Input from "./Input";
-import Button from "./Button";
+import TextArea from "../TextArea";
+import Button from "../Button";
 
 const ReviewForm = ({
   handleSubmit,

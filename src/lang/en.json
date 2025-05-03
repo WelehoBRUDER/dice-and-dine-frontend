@@ -123,5 +123,10 @@
   "profile_page.upload_button": "Upload profile picture",
   "profile_page.profile_picture": "Profile Picture",
   "profile_page.orders": "Your orders",
-  "profile_page.details": "Details"
+  "profile_page.details": "Details",
+
+  "reviews_page": {
+    "title": "Reviews",
+    "anon": "Anonymous"
+  }
 }
