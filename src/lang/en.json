@@ -25,6 +25,7 @@
   "menu_page_link": "Menu",
   "profile_page_link": "Profile",
   "cart_page_link": "Shopping Cart",
+  "admin_page_link": "Admin",
 
   "about_page": {
     "about_page_title": "About us",
@@ -114,7 +115,7 @@
   "profile_page.username": "Username:",
   "profile_page.email": "Email:",
   "profile_page.usertype": "User Type:",
-  "profile_page.edit_profile": "Edit information",
+  "profile_page.edit_profile": "Edit Information",
   "profile_page.upload_button": "Upload profile picture",
   "profile_page.profile_picture": "Profile Picture",
   "profile_page.orders": "Your orders",
@@ -131,5 +132,17 @@
   "profile_page.new_password_placeholder": "Enter new password",
   "profile_page.new_password": "New Password",
   "profile_page.old_password": "Old Password",
-  "profile_page.save_password": "Save Password"
+  "profile_page.save_password": "Save Password",
+
+  "admin_page.title": "Admin Page",
+  "admin_page.orders_page_link": "Orders",
+  "admin_page.users_page_link": "Users",
+  "admin_page.editmenu_page_link": "Edit Menu",
+  "admin_page.editabout_page_link": "Edit About",
+  "admin_page.reviews_page_link": "Reviews",
+  "admin_page.reservations_page_link": "Table Reservations",
+  "admin_page.description": "Admin page for managing the restaurant's operations. Here you can manage orders, users, menu items, reviews, and table reservations. You can also edit the restaurant's information.",
+
+  "unauthorized_page.title": "403 - Not Authorized",
+  "unauthorized_page.description": "You do not have permission to access this page."
 }

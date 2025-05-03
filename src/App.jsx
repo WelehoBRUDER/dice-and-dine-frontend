@@ -14,30 +14,61 @@ import CartPage from "./views/CartPage";
 import {UserProvider} from "./context/UserContext";
 import Logout from "./components/Logout";
 import Profile from "./views/Profile";
+import Admin from "./views/Admin";
+import Users from "./views/admin/Users";
+import EditMenu from "./views/admin/EditMenu";
+import Reservations from "./views/admin/Reservations";
+import EditAbout from "./views/admin/EditAbout";
+import Reviews from "./views/admin/Reviews";
+import Orders from "./views/admin/Orders";
+import AdminLayout from "./views/admin/AdminLayout";
+import {LanguageProvider} from "./context/LanguageContext";
+import AdminRoute from "./components/AdminRoute";
+import Unauthorized from "./views/Unauthorized";
 
 const App = () => {
   return (
     <Router basename={import.meta.env.BASE_URL}>
-      <UserProvider>
-        <CartProvider>
-          <Routes>
-            <Route element={<Layout />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/forum" element={<Forum />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/reservation" element={<Reservation />} />
-              <Route path="/review" element={<Review />} />
-              <Route path="/games" element={<Games />} />
-              <Route path="/menu" element={<Menu />} />
-              <Route path="/cart" element={<CartPage />} />
-              <Route path="/logout" element={<Logout />} />
-              <Route path="/profile" element={<Profile />} />
-            </Route>
-          </Routes>
-        </CartProvider>
-      </UserProvider>
+      <LanguageProvider>
+        <UserProvider>
+          <CartProvider>
+            <Routes>
+              <Route element={<Layout />}>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/forum" element={<Forum />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/reservation" element={<Reservation />} />
+                <Route path="/review" element={<Review />} />
+                <Route path="/games" element={<Games />} />
+                <Route path="/menu" element={<Menu />} />
+                <Route path="/cart" element={<CartPage />} />
+                <Route path="/logout" element={<Logout />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/unauthorized" element={<Unauthorized />} />
+              </Route>
+
+              <Route
+                path="/admin"
+                element={
+                  <AdminRoute>
+                    <AdminLayout />
+                  </AdminRoute>
+                }
+              >
+                <Route index element={<Admin />} />
+                <Route path="orders" element={<Orders />} />
+                <Route path="users" element={<Users />} />
+                <Route path="editmenu" element={<EditMenu />} />
+                <Route path="reservations" element={<Reservations />} />
+                <Route path="editabout" element={<EditAbout />} />
+                <Route path="reviews" element={<Reviews />} />
+              </Route>
+            </Routes>
+          </CartProvider>
+        </UserProvider>
+      </LanguageProvider>
     </Router>
   );
 };
