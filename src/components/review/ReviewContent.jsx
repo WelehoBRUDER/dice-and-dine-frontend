@@ -1,12 +1,11 @@
 import {useLanguage} from "../../context/LanguageContext";
 import {icons} from "../../variables/icons";
 
-const ReviewContent = ({review_text, user, stars}) => {
+const ReviewContent = ({reviewText, user, stars}) => {
   const {lang} = useLanguage();
   if (user) {
-    console.log(user);
     return (
-      <div className="review__content flex-row wrap">
+      <div className="review__content">
         <div className="review__user flex-row wrap">
           <img
             src={user.profile_image ? user.profile_image : icons.user}
@@ -21,12 +20,12 @@ const ReviewContent = ({review_text, user, stars}) => {
             <img key={index} src={star} alt="star" />
           ))}
         </div>
-        <p>{review_text}</p>
+        <p className="review-text">{reviewText}</p>
       </div>
     );
   } else {
     return (
-      <div className="review__content flex-row wrap">
+      <div className="review__content">
         <div className="review__user flex-row wrap">
           <img
             src={icons.user}
@@ -40,7 +39,7 @@ const ReviewContent = ({review_text, user, stars}) => {
             <img key={index} src={star} alt="star" />
           ))}
         </div>
-        <p>{review_text}</p>
+        <p className="review-text">{reviewText}</p>
       </div>
     );
   }

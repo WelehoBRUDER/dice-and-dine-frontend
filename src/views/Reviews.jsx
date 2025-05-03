@@ -4,6 +4,7 @@ import useReview from "../hooks/useReview";
 import Button from "../components/Button";
 import Review from "../components/review/Review";
 import LoadingWheel from "../components/LoadingWheel";
+import "../style/reviews.css";
 
 const Reviews = () => {
   const {lang, setCurrentPage} = useLanguage();
@@ -17,18 +18,22 @@ const Reviews = () => {
     <div>
       <h1>{lang("title")}</h1>
       <h2>{lang("reviews")}</h2>
-      <div className="reviews flex-row wrap">
+      <div className="reviews flex-column wrap">
         {loading ? (
           <LoadingWheel />
         ) : (
-          <div className="reviews-list">
+          <div className="reviews-list flex-row wrap">
             {reviews.map((review) => (
               <Review key={review.id} review={review} />
             ))}
           </div>
         )}
       </div>
-      <Button>{lang("leave_review")}</Button>
+      <div className="container corner-sticky">
+        <Button to="/make-review" className="btn">
+          {lang("leave_review")}
+        </Button>
+      </div>
     </div>
   );
 };

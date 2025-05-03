@@ -96,7 +96,7 @@ const Review = () => {
             success ? lang("review_submitted_desc") : lang("review_failed_desc")
           }
           continueCallback={() => {
-            navigate("/");
+            navigate("/review");
           }}
           tryAgainCallback={() => {
             setSubmitted(false);
