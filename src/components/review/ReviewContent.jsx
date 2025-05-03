@@ -1,15 +1,37 @@
 import {useLanguage} from "../../context/LanguageContext";
 import {icons} from "../../variables/icons";
+import {useState} from "react";
+import ProfilePicture from "../ProfilePicture";
 
 const ReviewContent = ({reviewText, user, stars}) => {
   const {lang} = useLanguage();
+  const [collapsed, setCollapsed] = useState(true);
+
+  const toggleCollapse = () => {
+    setCollapsed(!collapsed);
+  };
+
+  const TextArea = ({text}) => {
+    return (
+      <div
+        className={`review-text ${collapsed ? "collapsed" : ""}`}
+        onClick={toggleCollapse}
+      >
+        <p>{text.length > 150 ? text.slice(0, 150) + "..." : text}</p>
+        {collapsed && (
+          <span className="review-text__more">{lang("read_more")}</span>
+        )}
+      </div>
+    );
+  };
+
   if (user) {
     return (
       <div className="review__content">
         <div className="review__user flex-row wrap">
-          <img
-            src={user.profile_image ? user.profile_image : icons.user}
-            alt={user.name}
+          <ProfilePicture
+            imageUrl={user.profile_image}
+            altText={user.name}
             className="review__user-image"
           />
 
@@ -20,7 +42,7 @@ const ReviewContent = ({reviewText, user, stars}) => {
             <img key={index} src={star} alt="star" />
           ))}
         </div>
-        <p className="review-text">{reviewText}</p>
+        <TextArea text={reviewText} />
       </div>
     );
   } else {
@@ -39,7 +61,7 @@ const ReviewContent = ({reviewText, user, stars}) => {
             <img key={index} src={star} alt="star" />
           ))}
         </div>
-        <p className="review-text">{reviewText}</p>
+        <TextArea text={reviewText} />
       </div>
     );
   }

@@ -120,5 +120,13 @@
   "profile_page.upload_button": "Lataa profiilikuva",
   "profile_page.profile_picture": "Profiilikuva",
   "profile_page.orders": "Tilauksesi",
-  "profile_page.details": "Tiedot"
+  "profile_page.details": "Tiedot",
+
+  "reviews_page": {
+    "title": "Kaikki arvostelut",
+    "anon": "Anonyymi",
+    "review_title": "Arvostelun otsikko",
+    "leave_review": "Jätä arvostelu",
+    "read_more": "Lisää⠀↓"
+  }
 }

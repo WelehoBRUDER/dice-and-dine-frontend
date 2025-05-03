@@ -86,7 +86,8 @@
     "review_submitted_desc": "Your review has been submitted successfully. Thank you for your feedback!",
     "review_failed": "Failed to submit review",
     "review_failed_desc": "There was an error while submitting your review. Please try again later.",
-    "review_description": "Restaurant reviews"
+    "review_description": "Restaurant reviews",
+    "loading_review": "Loading review..."
   },
 
   "reservation_page": {
@@ -126,7 +127,10 @@
   "profile_page.details": "Details",
 
   "reviews_page": {
-    "title": "Reviews",
-    "anon": "Anonymous"
+    "title": "All Reviews",
+    "anon": "Anonymous",
+    "review_title": "Review title",
+    "leave_review": "Leave a review",
+    "read_more": "More⠀↓"
   }
 }

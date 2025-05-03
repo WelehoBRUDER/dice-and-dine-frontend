@@ -17,7 +17,6 @@ const Reviews = () => {
   return (
     <div>
       <h1>{lang("title")}</h1>
-      <h2>{lang("reviews")}</h2>
       <div className="reviews flex-column wrap">
         {loading ? (
           <LoadingWheel />

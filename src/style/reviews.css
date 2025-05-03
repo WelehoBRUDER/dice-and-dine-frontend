@@ -12,6 +12,7 @@
   width: var(--input-width);
   background: var(--theme-darker);
   border-radius: 1rem;
+  margin: 1rem;
 
   .review__user {
     .review__user-image {
@@ -25,11 +26,34 @@
 
   .review-text {
     padding: 1rem;
-    font-size: 1.4rem;
-    color: var(--theme-contrast);
-    line-height: 1.5;
     background: var(--theme-background);
     margin-bottom: 0;
     border-radius: 0rem 0rem 1rem 1rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    
+    &.collapsed {
+      height: 2rem;
+
+
+      p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    
+    p {
+      word-break: break-word;
+      white-space: normal;
+      font-size: 1.4rem;
+      color: var(--theme-contrast);
+      line-height: 1.5;
+      margin: 0;
+      width: 100%;
+    }
   }
 }
