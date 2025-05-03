@@ -18,12 +18,14 @@ const Review = () => {
   const {user} = useUserContext();
 
   const charactersLimit = 150;
+  const [rating, setRating] = useState(3);
   const [chars, setChars] = useState(0);
   const [submitted, setSubmitted] = useState(false);
   const [success, setSuccess] = useState(false);
   const {loading, submitReview, submitAnonymousReview} = useReview();
 
   const submitAction = async () => {
+    inputs.rating = rating;
     if (user && user.id) {
       try {
         const token = localStorage.getItem("token");
@@ -85,6 +87,8 @@ const Review = () => {
           chars={chars}
           handleInputChange={handleInputChange}
           inputs={inputs}
+          rating={rating}
+          setRating={setRating}
         ></ReviewForm>
       )}
       {loading && <LoadingWheel loadingText="loading_review" />}
