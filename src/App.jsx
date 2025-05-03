@@ -7,6 +7,7 @@ import Login from "./views/login";
 import Register from "./views/Register";
 import Reservation from "./views/Reservation";
 import Review from "./views/Review";
+import Reviews from "./views/Reviews";
 import Games from "./views/Games";
 import Menu from "./views/Menu";
 import {CartProvider} from "./context/CartContext";
@@ -28,7 +29,8 @@ const App = () => {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/reservation" element={<Reservation />} />
-              <Route path="/review" element={<Review />} />
+              <Route path="/review" element={<Reviews />} />
+              <Route path="/make-review" element={<Review />} />
               <Route path="/games" element={<Games />} />
               <Route path="/menu" element={<Menu />} />
               <Route path="/cart" element={<CartPage />} />
