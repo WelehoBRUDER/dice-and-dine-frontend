@@ -9,6 +9,7 @@ import "./style/menu.css";
 import "./style/about.css";
 import "./style/profile.css";
 import "./style/admin.css";
+import "./style/forum.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

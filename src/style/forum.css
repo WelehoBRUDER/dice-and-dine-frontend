@@ -1,0 +1,11 @@
+#forum-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--theme-foreground);
+}
+
+.forum-article {
+  margin: 2rem;
+  background-color: var(--theme-background);
+}
