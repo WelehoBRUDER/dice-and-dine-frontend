@@ -23,6 +23,7 @@
   "menu_page_link": "Ruokalista",
   "profile_page_link": "Profiili",
   "cart_page_link": "Ostoskori",
+  "admin_page_link": "Ylläpito",
 
   "about_page": {
     "about_page_title": "Tietoa meistä",
@@ -128,5 +129,13 @@
   "profile_page.new_password_placeholder": "Syötä uusi salasana",
   "profile_page.new_password": "Uusi salasana",
   "profile_page.old_password": "Vanha salasana",
-  "profile_page.save_password": "Tallenna salasana"
+  "profile_page.save_password": "Tallenna salasana",
+
+  "admin_page.title": "Ylläpitosivu",
+  "admin_page.orders_page_link": "Tilaukset",
+  "admin_page.users_page_link": "Käyttäjät",
+  "admin_page.editmenu_page_link": "Muokkaa ruokalistaa",
+  "admin_page.editabout_page_link": "Muokkaa tietoja",
+  "admin_page.reviews_page_link": "Arvostelut",
+  "admin_page.reservations_page_link": "Pöytävaraukset"
 }

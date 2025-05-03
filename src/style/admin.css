@@ -1,0 +1,33 @@
+.adminbar {
+  display: flex;
+  justify-content: center;
+  background: var(--theme-lighter);
+  font-size: 1.8rem;
+  width: 100%;
+  position: sticky;
+  margin-top: 3rem;
+}
+
+.adminbar * {
+  display: flex;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: var(--theme-background);
+  font-weight: bold;
+}
+
+.adminbar li a {
+  padding: 2rem;
+}
+
+.adminbar li a:hover {
+  background-color: var(--theme-background);
+  color: var(--theme-contrast);
+}
+
+.admin-content {
+  display: flex;
+  flex-direction: column;
+}

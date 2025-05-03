@@ -31,6 +31,14 @@ const Header = () => {
           */}
             <li>
               <NavLink
+                to="/admin"
+                className={({isActive}) => (isActive ? "active-link" : "")}
+              >
+                {lang("admin_page_link")}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
                 to="/about"
                 className={({isActive}) => (isActive ? "active-link" : "")}
               >
