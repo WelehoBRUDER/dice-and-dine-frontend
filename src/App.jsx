@@ -50,6 +50,23 @@ const App = () => {
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/unauthorized" element={<Unauthorized />} />
               </Route>
+
+              <Route
+                path="/admin"
+                element={
+                  <AdminRoute>
+                    <AdminLayout />
+                  </AdminRoute>
+                }
+              >
+                <Route index element={<Admin />} />
+                <Route path="orders" element={<Orders />} />
+                <Route path="users" element={<Users />} />
+                <Route path="editmenu" element={<EditMenu />} />
+                <Route path="reservations" element={<Reservations />} />
+                <Route path="editabout" element={<EditAbout />} />
+                <Route path="reviews" element={<Reviews />} />
+              </Route>
             </Routes>
           </CartProvider>
         </UserProvider>
