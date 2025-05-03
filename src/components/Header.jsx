@@ -13,7 +13,7 @@ const Header = () => {
   useEffect(() => {
     handleAutoLogin();
   }, []);
-
+  console.log("User in Header", user);
   return (
     <header id="header">
       <div>
@@ -29,14 +29,16 @@ const Header = () => {
             <Link to="/">Main</Link>
           </li>
           */}
-            <li>
-              <NavLink
-                to="/admin"
-                className={({isActive}) => (isActive ? "active-link" : "")}
-              >
-                {lang("admin_page_link")}
-              </NavLink>
-            </li>
+            {user && user.user_type === "admin" && (
+              <li>
+                <NavLink
+                  to="/admin"
+                  className={({isActive}) => (isActive ? "active-link" : "")}
+                >
+                  {lang("admin_page_link")}
+                </NavLink>
+              </li>
+            )}
             <li>
               <NavLink
                 to="/about"
