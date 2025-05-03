@@ -30,28 +30,30 @@ import Unauthorized from "./views/Unauthorized";
 const App = () => {
   return (
     <Router basename={import.meta.env.BASE_URL}>
-      <UserProvider>
-        <CartProvider>
-          <Routes>
-            <Route element={<Layout />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/forum" element={<Forum />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/reservation" element={<Reservation />} />
-              <Route path="/review" element={<Reviews />} />
-              <Route path="/make-review" element={<Review />} />
-              <Route path="/games" element={<Games />} />
-              <Route path="/menu" element={<Menu />} />
-              <Route path="/cart" element={<CartPage />} />
-              <Route path="/logout" element={<Logout />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/unauthorized" element={<Unauthorized />} />
-            </Route>
-          </Routes>
-        </CartProvider>
-      </UserProvider>
+      <LanguageProvider>
+        <UserProvider>
+          <CartProvider>
+            <Routes>
+              <Route element={<Layout />}>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/forum" element={<Forum />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/reservation" element={<Reservation />} />
+                <Route path="/review" element={<Reviews />} />
+                <Route path="/make-review" element={<Review />} />
+                <Route path="/games" element={<Games />} />
+                <Route path="/menu" element={<Menu />} />
+                <Route path="/cart" element={<CartPage />} />
+                <Route path="/logout" element={<Logout />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/unauthorized" element={<Unauthorized />} />
+              </Route>
+            </Routes>
+          </CartProvider>
+        </UserProvider>
+      </LanguageProvider>
     </Router>
   );
 };
