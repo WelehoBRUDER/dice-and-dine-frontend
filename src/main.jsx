@@ -7,6 +7,8 @@ import "./style/header.css";
 import "./style/main.css";
 import "./style/menu.css";
 import "./style/about.css";
+import "./style/profile.css";
+import "./style/admin.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

@@ -15,6 +15,17 @@ import CartPage from "./views/CartPage";
 import {UserProvider} from "./context/UserContext";
 import Logout from "./components/Logout";
 import Profile from "./views/Profile";
+import Admin from "./views/Admin";
+import Users from "./views/admin/Users";
+import EditMenu from "./views/admin/EditMenu";
+import Reservations from "./views/admin/Reservations";
+import EditAbout from "./views/admin/EditAbout";
+import AdminReviews from "./views/admin/Reviews";
+import Orders from "./views/admin/Orders";
+import AdminLayout from "./views/admin/AdminLayout";
+import {LanguageProvider} from "./context/LanguageContext";
+import AdminRoute from "./components/AdminRoute";
+import Unauthorized from "./views/Unauthorized";
 
 const App = () => {
   return (
@@ -36,6 +47,7 @@ const App = () => {
               <Route path="/cart" element={<CartPage />} />
               <Route path="/logout" element={<Logout />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/unauthorized" element={<Unauthorized />} />
             </Route>
           </Routes>
         </CartProvider>

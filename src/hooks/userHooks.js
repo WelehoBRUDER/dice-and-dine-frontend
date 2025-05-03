@@ -65,7 +65,31 @@ const useUser = () => {
     return result;
   };
 
-  return {getUserByToken, postUser, getUserDetails, uploadProfileImage};
+  const putUser = async (userId, inputs, token) => {
+    const fetchOptions = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+      body: JSON.stringify(inputs),
+    };
+
+    const userResult = await fetchData(
+      `${apiURL}/users/${userId}`,
+      fetchOptions
+    );
+
+    return userResult;
+  };
+
+  return {
+    getUserByToken,
+    postUser,
+    getUserDetails,
+    uploadProfileImage,
+    putUser,
+  };
 };
 
 export {useAuthentication, useUser};

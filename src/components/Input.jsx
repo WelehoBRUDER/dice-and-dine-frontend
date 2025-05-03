@@ -14,6 +14,7 @@ import {icons} from "../variables/icons";
  * @param {String} className - additional class names for styling (default: "input-container")
  * @param {String} icon - URL of the icon to display in the input field (optional)
  * @param {Boolean} noLabel - whether to display the label (default: true)
+ * @param {Boolean} disabled - whether the input is disabled (default: false)
  * @returns
  */
 const Input = ({
@@ -28,6 +29,7 @@ const Input = ({
   className = "",
   icon = "user",
   displayLabel = true,
+  disabled = false,
 }) => {
   return (
     <div className={`input-container ${className}`}>
@@ -51,6 +53,7 @@ const Input = ({
           value={value}
           onChange={onChange}
           className="input-field"
+          disabled={disabled}
         />
       </div>
     </div>

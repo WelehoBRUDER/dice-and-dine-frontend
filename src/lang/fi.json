@@ -24,6 +24,7 @@
   "menu_page_link": "Ruokalista",
   "profile_page_link": "Profiili",
   "cart_page_link": "Ostoskori",
+  "admin_page_link": "Ylläpito",
 
   "about_page": {
     "about_page_title": "Tietoa meistä",
@@ -57,15 +58,17 @@
   "menu_page.remove_button_text": "Poista",
   "menu_page.allergens_text": "Allergeenit",
 
-  "cart_page.order_success_message": "Tilaus onnistui! Tilausnumero: ",
+  "cart_page.order_success_message": "Tilaus onnistui! Voit seurata tilauksen tilaa profiilissasi. Tilausnumero: ",
   "cart_page.your_cart": "Ostoskori",
   "cart_page.items_loading": "Lataamme ostoskorin tuotteita...",
   "cart_page.table_headings": ["Tuotteen nimi", "Määrä", "Hinta", "Yhteensä"],
   "cart_page.total": "Yhteensä: ",
-  "cart_page.empty_cart": "Ostoskorisi on tyhjennetty",
+  "cart_page.empty_cart": "Ostoskorisi on tyhjennetty. Mene ruokalistalle tehdäksesi uusi tilaus.",
   "cart_page.clear_cart": "Tyhjennä ostoskori",
   "cart_page.order_button": "Tee tilaus",
   "cart_page.order_loading": "Tilausta käsitellään...",
+  "cart_page.order_success_title": "Tilaus onnistui",
+  "cart_page.empty_cart_title": "Ostoskorisi on tyhjennetty!",
 
   "games_page.title": "Pelit",
 
@@ -128,5 +131,30 @@
     "review_title": "Arvostelun otsikko",
     "leave_review": "Jätä arvostelu",
     "read_more": "Lisää⠀↓"
-  }
+  },
+  "profile_page.change_password": "Vaihda salasana",
+  "profile_page.upload_success": "Profiilikuva ladattu onnistuneesti",
+  "profile_page.upload_error": "Profiilikuvan lataus epäonnistui",
+  "profile_page.save_profile": "Tallenna",
+  "profile_page.edit": "Muokkaa",
+  "profile_page.cancel": "Peruuta",
+  "profile_page.username_placeholder": "Syötä uusi käyttäjänimi",
+  "profile_page.email_placeholder": "Syötä uusi sähköposti",
+  "profile_page.old_password_placeholder": "Syötä vanha salasana",
+  "profile_page.new_password_placeholder": "Syötä uusi salasana",
+  "profile_page.new_password": "Uusi salasana",
+  "profile_page.old_password": "Vanha salasana",
+  "profile_page.save_password": "Tallenna salasana",
+
+  "admin_page.title": "Ylläpitosivu",
+  "admin_page.orders_page_link": "Tilaukset",
+  "admin_page.users_page_link": "Käyttäjät",
+  "admin_page.editmenu_page_link": "Muokkaa ruokalistaa",
+  "admin_page.editabout_page_link": "Muokkaa tietoja",
+  "admin_page.reviews_page_link": "Arvostelut",
+  "admin_page.reservations_page_link": "Pöytävaraukset",
+  "admin_page.description": "Ylläpitosivulla voit hallita ravintolan toimintoja. Voit tarkastella ja hallita tilauksia, käyttäjiä ruokalistaa, arvosteluja ja pöytävarauksia. Voit myös muokata ravintolan tietoja.",
+
+  "unauthorized_page.title": "403 - Pääsy kielletty",
+  "unauthorized_page.description": "Sinulla ei ole oikeuksia käyttää tätä sivua."
 }
