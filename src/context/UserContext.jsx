@@ -15,7 +15,6 @@ const UserProvider = ({children}) => {
     try {
       const loginResult = await postLogin(credentials);
       localStorage.setItem("token", loginResult.token);
-      console.log("Login result:", loginResult);
       setUser(loginResult.userWithNoPassword);
     } catch (e) {
       throw new Error(e.message);
@@ -37,7 +36,6 @@ const UserProvider = ({children}) => {
       const token = localStorage.getItem("token");
       if (token) {
         const userResult = await getUserByToken(token);
-        console.log("User result:", userResult);
         setUser(userResult.user);
         const origin = location.pathname || "/";
         navigate(origin);
@@ -60,7 +58,14 @@ const UserProvider = ({children}) => {
 
   return (
     <UserContext.Provider
-      value={{user, handleLogin, handleLogout, handleAutoLogin, handleRegister}}
+      value={{
+        user,
+        handleLogin,
+        handleLogout,
+        handleAutoLogin,
+        handleRegister,
+        setUser,
+      }}
     >
       {children}
     </UserContext.Provider>

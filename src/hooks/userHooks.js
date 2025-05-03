@@ -74,12 +74,11 @@ const useUser = () => {
       },
       body: JSON.stringify(inputs),
     };
-    console.log("Put user inputs", inputs);
+
     const userResult = await fetchData(
       `${apiURL}/users/${userId}`,
       fetchOptions
     );
-    console.log("Put user result", userResult);
 
     return userResult;
   };

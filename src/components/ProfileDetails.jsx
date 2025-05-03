@@ -1,13 +1,13 @@
-import {useState} from "react";
 import useForm from "../hooks/formHooks";
 import Button from "./Button";
 import Input from "./Input";
 import {useUser} from "../hooks/userHooks";
 import {useUserContext} from "../hooks/useUserContext";
 import {useNavigate} from "react-router-dom";
+import {useState} from "react";
 
 const ProfileDetails = ({userDetails, lang}) => {
-  const {handleLogout} = useUserContext();
+  const {handleLogout, setUser} = useUserContext();
   const navigate = useNavigate();
   const [mode, setMode] = useState("view"); // view | edit | password
   const [errors, setErrors] = useState({});
@@ -70,12 +70,16 @@ const ProfileDetails = ({userDetails, lang}) => {
 
   const handleEditClick = async (e) => {
     e.preventDefault();
-    console.log("Edit button clicked");
     if (mode === "edit") {
       const success = await handleSubmit();
       if (success) {
         alert("Profile updated successfully!");
         setMode("view");
+        setUser((prev) => ({
+          ...prev,
+          username: inputs.username,
+          email: inputs.email,
+        }));
       }
     } else {
       setMode("edit");
@@ -83,7 +87,6 @@ const ProfileDetails = ({userDetails, lang}) => {
   };
 
   const handleChangePasswordClick = async (e) => {
-    console.log("Change password button clicked");
     e.preventDefault();
     if (mode === "password") {
       const success = await handleSubmit();

@@ -13,7 +13,7 @@ const Header = () => {
   useEffect(() => {
     handleAutoLogin();
   }, []);
-  console.log("User in Header", user);
+
   return (
     <header id="header">
       <div>
