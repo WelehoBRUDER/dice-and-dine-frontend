@@ -23,6 +23,8 @@ import Reviews from "./views/admin/Reviews";
 import Orders from "./views/admin/Orders";
 import AdminLayout from "./views/admin/AdminLayout";
 import {LanguageProvider} from "./context/LanguageContext";
+import AdminRoute from "./components/AdminRoute";
+import Unauthorized from "./views/Unauthorized";
 
 const App = () => {
   return (
@@ -44,8 +46,17 @@ const App = () => {
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="/logout" element={<Logout />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/unauthorized" element={<Unauthorized />} />
               </Route>
-              <Route path="/admin" element={<AdminLayout />}>
+
+              <Route
+                path="/admin"
+                element={
+                  <AdminRoute>
+                    <AdminLayout />
+                  </AdminRoute>
+                }
+              >
                 <Route index element={<Admin />} />
                 <Route path="orders" element={<Orders />} />
                 <Route path="users" element={<Users />} />

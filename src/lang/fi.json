@@ -138,5 +138,8 @@
   "admin_page.editabout_page_link": "Muokkaa tietoja",
   "admin_page.reviews_page_link": "Arvostelut",
   "admin_page.reservations_page_link": "Pöytävaraukset",
-  "admin_page.description": "Ylläpitosivulla voit hallita ravintolan toimintoja. Voit tarkastella ja hallita tilauksia, käyttäjiä ruokalistaa, arvosteluja ja pöytävarauksia. Voit myös muokata ravintolan tietoja."
+  "admin_page.description": "Ylläpitosivulla voit hallita ravintolan toimintoja. Voit tarkastella ja hallita tilauksia, käyttäjiä ruokalistaa, arvosteluja ja pöytävarauksia. Voit myös muokata ravintolan tietoja.",
+
+  "unauthorized_page.title": "403 - Pääsy kielletty",
+  "unauthorized_page.description": "Sinulla ei ole oikeuksia käyttää tätä sivua."
 }
