@@ -10,6 +10,7 @@
 
   "loading_text": "Ladataan sisältöä...",
   "try_again": "Yritä uudelleen",
+  "continue": "Jatka eteenpäin",
 
   "home_page_link": "Etusivu",
   "about_page_link": "Tietoa",
@@ -73,13 +74,19 @@
 
   "profile_page.title": "Profiili",
   "review_page": {
+    "review_title": "Arvostelut",
     "title": "Kirjoita arvostelu",
     "review": "Arvostelu",
     "limit_remain": "Merkkiä jäljellä",
     "email": "Sähköposti",
     "rating": "Arviointi",
     "type_here": "Kirjoita tähän",
-    "submit_review": "Lähetä arvostelu"
+    "submit_review": "Lähetä arvostelu",
+    "review_submitted": "Arvostelu lähetetty!",
+    "review_submitted_desc": "Arvostelusi on lähetetty onnistuneesti. Kiitos palautteestanne!",
+    "review_failed": "Arvostelun lähetys epäonnistui",
+    "review_failed_desc": "Arvostelun lähetyksessä tapahtui virhe. Yrittäkää uudeelleen myöhemmin.",
+    "review_description": "Ravintolan arvostelut"
   },
 
   "reservation_page": {
@@ -100,7 +107,7 @@
     "reservation_success": "Varauksen teko onnistui!",
     "reservation_success_desc": "Varauksesi on vahvistettu. Voit katsoa tekemiäsi varauksia profiilisivulla..",
     "reservation_failed": "Varauksen teko epäonnistui",
-    "reservation_failed_desc": "Varausta tehdessä tapahtui virhe. Yritä uudelleen myöhemmin.",
+    "reservation_failed_desc": "Varausta tehdessä tapahtui virhe. Yrittäkää uudelleen myöhemmin.",
     "date": "Päivämäärä",
     "arrival_time": "Saapumisaika",
     "length_of_stay": "Varauksen kesto",
@@ -117,6 +124,14 @@
   "profile_page.profile_picture": "Profiilikuva",
   "profile_page.orders": "Tilauksesi",
   "profile_page.details": "Tiedot",
+
+  "reviews_page": {
+    "title": "Kaikki arvostelut",
+    "anon": "Anonyymi",
+    "review_title": "Arvostelun otsikko",
+    "leave_review": "Jätä arvostelu",
+    "read_more": "Lisää⠀↓"
+  },
   "profile_page.change_password": "Vaihda salasana",
   "profile_page.upload_success": "Profiilikuva ladattu onnistuneesti",
   "profile_page.upload_error": "Profiilikuvan lataus epäonnistui",

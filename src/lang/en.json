@@ -12,6 +12,7 @@
 
   "loading_text": "Loading content...",
   "try_again": "Try again",
+  "continue": "Continue",
 
   "home_page_link": "Home",
   "about_page_link": "About",
@@ -20,7 +21,7 @@
   "logout_page_link": "Logout",
   "register_page_link": "Register",
   "reservation_page_link": "Reservation",
-  "review_page_link": "Review",
+  "review_page_link": "Reviews",
   "games_page_link": "Games",
   "menu_page_link": "Menu",
   "profile_page_link": "Profile",
@@ -76,13 +77,20 @@
   "profile_page.title": "Profile",
 
   "review_page": {
+    "review_title": "Reviews",
     "title": "Write a review",
     "review": "Review",
     "limit_remain": "Characters remaining",
     "email": "Email",
     "rating": "Rating",
     "type_here": "Type here",
-    "submit_review": "Submit Review"
+    "submit_review": "Submit Review",
+    "review_submitted": "Review submitted!",
+    "review_submitted_desc": "Your review has been submitted successfully. Thank you for your feedback!",
+    "review_failed": "Failed to submit review",
+    "review_failed_desc": "There was an error while submitting your review. Please try again later.",
+    "review_description": "Restaurant reviews",
+    "loading_review": "Loading review..."
   },
 
   "reservation_page": {
@@ -120,6 +128,14 @@
   "profile_page.profile_picture": "Profile Picture",
   "profile_page.orders": "Your orders",
   "profile_page.details": "Details",
+
+  "reviews_page": {
+    "title": "All Reviews",
+    "anon": "Anonymous",
+    "review_title": "Review title",
+    "leave_review": "Leave a review",
+    "read_more": "More⠀↓"
+  },
   "profile_page.change_password": "Change Password",
   "profile_page.upload_success": "Profile picture uploaded successfully",
   "profile_page.upload_error": "Error uploading profile picture",

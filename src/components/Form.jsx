@@ -58,6 +58,7 @@ const Form = ({lang, authentication}) => {
 
   const doLogin = async () => {
     try {
+      console.log("doLogin", inputs);
       await handleLogin(inputs);
       navigate("/");
     } catch (e) {
@@ -112,7 +113,7 @@ const Form = ({lang, authentication}) => {
           {errors.email && <div className="error">{errors.email}</div>}
         </>
       )}
-      <Button>{lang(`${authentication}_button`)}</Button>
+      <Button type="submit">{lang(`${authentication}_button`)}</Button>
     </form>
   );
 };

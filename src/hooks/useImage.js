@@ -11,6 +11,7 @@ const useImage = (imagePath, refreshKey = null) => {
       fetch(url, {cache: "no-store"})
         .then((res) => res.blob())
         .then((blob) => {
+          console.log("Blob URL:", URL.createObjectURL(blob));
           if (!active) return;
           const blobUrl = URL.createObjectURL(blob);
           if (currentBlobUrl) URL.revokeObjectURL(currentBlobUrl);

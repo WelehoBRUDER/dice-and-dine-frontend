@@ -1,27 +1,59 @@
 import {useEffect, useState} from "react";
 import {useLanguage} from "../context/LanguageContext";
+import {useNavigate} from "react-router-dom";
+import useReview from "../hooks/useReview";
 import useForm from "../hooks/formHooks";
-import ReviewForm from "../components/ReviewForm";
+import ReviewForm from "../components/review/ReviewForm";
 import LoadingWheel from "../components/LoadingWheel";
 import ResultWindow from "../components/ResultWindow";
+import {useUserContext} from "../hooks/useUserContext";
 
 const Review = () => {
   const initValues = {
     review: "",
-    email: "",
-    rating: 0,
+    rating: 3,
   };
   const {lang, setCurrentPage} = useLanguage();
+  const navigate = useNavigate();
+  const {user} = useUserContext();
 
   const charactersLimit = 150;
+  const [rating, setRating] = useState(3);
   const [chars, setChars] = useState(0);
-  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [success, setSuccess] = useState(false);
+  const {loading, submitReview, submitAnonymousReview} = useReview();
 
   const submitAction = async () => {
-    console.log("Review submitted:", inputs);
-    setLoading(true);
+    inputs.rating = rating;
+    if (user && user.id) {
+      try {
+        const token = localStorage.getItem("token");
+        const response = await submitReview(inputs, token, user.username);
+        setSubmitted(true);
+        if (response?.id) {
+          setSuccess(true);
+        } else {
+          setSuccess(false);
+        }
+      } catch {
+        setSubmitted(true);
+        setSuccess(false);
+      }
+    } else {
+      try {
+        const response = await submitAnonymousReview(inputs);
+        setSubmitted(true);
+        if (response?.id) {
+          setSuccess(true);
+        } else {
+          setSuccess(false);
+        }
+      } catch {
+        setSubmitted(true);
+        setSuccess(false);
+      }
+    }
   };
 
   const {inputs, handleInputChange, handleSubmit} = useForm(
@@ -55,6 +87,8 @@ const Review = () => {
           chars={chars}
           handleInputChange={handleInputChange}
           inputs={inputs}
+          rating={rating}
+          setRating={setRating}
         ></ReviewForm>
       )}
       {loading && <LoadingWheel loadingText="loading_review" />}
@@ -65,6 +99,13 @@ const Review = () => {
           desc={
             success ? lang("review_submitted_desc") : lang("review_failed_desc")
           }
+          continueCallback={() => {
+            navigate("/review");
+          }}
+          tryAgainCallback={() => {
+            setSubmitted(false);
+            setSuccess(false);
+          }}
         />
       )}
     </>
