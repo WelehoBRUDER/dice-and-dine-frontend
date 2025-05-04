@@ -1,4 +1,8 @@
+import {useLanguage} from "../../context/LanguageContext";
+
 const OrderTable = ({userDetails, orderDetails}) => {
+  const {lang} = useLanguage();
+
   return (
     <table>
       <thead>
@@ -14,7 +18,11 @@ const OrderTable = ({userDetails, orderDetails}) => {
             <tr key={index}>
               <td>{order}</td>
               <td>{new Date(orderDetails[index].time).toLocaleString()}</td>
-              <td>{orderDetails[index].order[0].status}</td>
+              <td>
+                {lang(
+                  `admin_orders_page.status_${orderDetails[index].order[0].status}`
+                )}
+              </td>
             </tr>
           ))
         ) : (

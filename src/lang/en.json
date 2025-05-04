@@ -160,5 +160,21 @@
   "admin_page.description": "Admin page for managing the restaurant's operations. Here you can manage orders, users, menu items, reviews, and table reservations. You can also edit the restaurant's information.",
 
   "unauthorized_page.title": "403 - Not Authorized",
-  "unauthorized_page.description": "You do not have permission to access this page."
+  "unauthorized_page.description": "You do not have permission to access this page.",
+
+  "admin_orders_page.title": "Manage Orders",
+  "admin_orders_page.filter_by_status": "Filter by status",
+  "admin_orders_page.filter_by_date": "Filter by date",
+  "admin_orders_page.status_all": "All",
+  "admin_orders_page.status_pending": "Pending",
+  "admin_orders_page.status_confirmed": "Confirmed",
+  "admin_orders_page.status_ready": "Ready",
+  "admin_orders_page.status_completed": "Completed",
+  "admin_orders_page.status_cancelled": "Cancelled",
+  "admin_orders_page.th_order_id": "Order ID",
+  "admin_orders_page.th_customer": "Customer",
+  "admin_orders_page.th_items": "Items",
+  "admin_orders_page.th_status": "Status",
+  "admin_orders_page.th_date": "Date",
+  "admin_orders_page.th_actions": "Actions"
 }
