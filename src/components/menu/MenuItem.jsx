@@ -1,6 +1,5 @@
-import {useCart} from "../context/CartContext";
-import Button from "./Button";
-import {useLanguage} from "../context/LanguageContext";
+import {useCart} from "../../context/CartContext";
+import {useLanguage} from "../../context/LanguageContext";
 import CartItemControls from "./CartItemControls";
 
 const MenuItem = ({item}) => {

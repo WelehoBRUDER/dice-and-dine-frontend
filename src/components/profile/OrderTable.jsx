@@ -14,7 +14,7 @@ const OrderTable = ({userDetails, orderDetails}) => {
             <tr key={index}>
               <td>{order}</td>
               <td>{new Date(orderDetails[index].time).toLocaleString()}</td>
-              <td>{orderDetails[index].status}</td>
+              <td>{orderDetails[index].order[0].status}</td>
             </tr>
           ))
         ) : (

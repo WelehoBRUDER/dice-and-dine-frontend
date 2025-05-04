@@ -20,7 +20,7 @@ import Users from "./views/admin/Users";
 import EditMenu from "./views/admin/EditMenu";
 import Reservations from "./views/admin/Reservations";
 import EditAbout from "./views/admin/EditAbout";
-import AdminReviews from "./views/admin/Reviews";
+import AdminReviews from "./views/admin/AdminReviews";
 import Orders from "./views/admin/Orders";
 import AdminLayout from "./views/admin/AdminLayout";
 import {LanguageProvider} from "./context/LanguageContext";
@@ -65,7 +65,7 @@ const App = () => {
                 <Route path="editmenu" element={<EditMenu />} />
                 <Route path="reservations" element={<Reservations />} />
                 <Route path="editabout" element={<EditAbout />} />
-                <Route path="reviews" element={<Reviews />} />
+                <Route path="adminreviews" element={<AdminReviews />} />
               </Route>
             </Routes>
           </CartProvider>
