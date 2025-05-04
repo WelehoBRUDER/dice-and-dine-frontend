@@ -66,6 +66,14 @@ const Header = () => {
             </li>
             <li>
               <NavLink
+                to="/forum"
+                className={({isActive}) => (isActive ? "active-link" : "")}
+              >
+                {lang("forum_page_link")}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
                 to="/review"
                 className={({isActive}) => (isActive ? "active-link" : "")}
               >
