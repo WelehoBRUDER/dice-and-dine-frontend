@@ -1,8 +1,8 @@
-import useForm from "../hooks/formHooks";
-import Button from "./Button";
-import Input from "./Input";
-import {useUser} from "../hooks/userHooks";
-import {useUserContext} from "../hooks/useUserContext";
+import useForm from "../../hooks/formHooks";
+import Button from "../Button";
+import Input from "../Input";
+import {useUser} from "../../hooks/userHooks";
+import {useUserContext} from "../../hooks/useUserContext";
 import {useNavigate} from "react-router-dom";
 import {useState} from "react";
 
@@ -124,6 +124,7 @@ const ProfileDetails = ({userDetails, lang}) => {
             value={inputs.oldpassword}
             placeholder={lang("profile_page.old_password_placeholder")}
             onChange={handleInputChange}
+            autoComplete="current-password"
           />
           {errors.oldpassword && (
             <div className="error">{errors.oldpassword}</div>
@@ -135,6 +136,7 @@ const ProfileDetails = ({userDetails, lang}) => {
             value={inputs.password}
             placeholder={lang("profile_page.new_password_placeholder")}
             onChange={handleInputChange}
+            autoComplete="new-password"
           />
           {errors.password && <div className="error">{errors.password}</div>}
         </>

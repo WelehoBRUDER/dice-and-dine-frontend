@@ -3,9 +3,9 @@ import {useLanguage} from "../context/LanguageContext";
 import {useUserContext} from "../hooks/useUserContext";
 import {useUser} from "../hooks/userHooks";
 import useOrder from "../hooks/useOrder";
-import OrderTable from "../components/OrderTable";
-import ProfileImage from "../components/ProfileImage";
-import ProfileDetails from "../components/ProfileDetails";
+import OrderTable from "../components/profile/OrderTable";
+import ProfileImage from "../components/profile/ProfileImage";
+import ProfileDetails from "../components/profile/ProfileDetails";
 import LoadingWheel from "../components/LoadingWheel";
 
 const Profile = () => {
@@ -28,7 +28,8 @@ const Profile = () => {
             return order;
           })
         );
-        setOrderDetails(orders.flat());
+
+        setOrderDetails(orders);
       } catch (error) {
         console.error("Failed to fetch user details", error);
       } finally {

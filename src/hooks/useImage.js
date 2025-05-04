@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 
+// Use blob URLs to display images in a React component to rerender them
 const useImage = (imagePath, refreshKey = null) => {
   const [imgBlobUrl, setImgBlobUrl] = useState("");
   useEffect(() => {
@@ -11,7 +12,6 @@ const useImage = (imagePath, refreshKey = null) => {
       fetch(url, {cache: "no-store"})
         .then((res) => res.blob())
         .then((blob) => {
-          console.log("Blob URL:", URL.createObjectURL(blob));
           if (!active) return;
           const blobUrl = URL.createObjectURL(blob);
           if (currentBlobUrl) URL.revokeObjectURL(currentBlobUrl);

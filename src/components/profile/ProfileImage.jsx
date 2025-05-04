@@ -1,7 +1,7 @@
 import {useState} from "react";
-import useForm from "../hooks/formHooks";
-import useImage from "../hooks/useImage";
-import {useLanguage} from "../context/LanguageContext";
+import useForm from "../../hooks/formHooks";
+import useImage from "../../hooks/useImage";
+import {useLanguage} from "../../context/LanguageContext";
 
 const ProfileImage = ({userDetails, handleImageUpload}) => {
   const {lang} = useLanguage();
