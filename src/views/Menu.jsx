@@ -1,5 +1,5 @@
 import useMenu from "../hooks/useMenu.js";
-import MenuCategory from "../components/MenuCategory";
+import MenuCategory from "../components/menu/MenuCategory";
 import LoadingWheel from "../components/LoadingWheel.jsx";
 import {useLanguage} from "../context/LanguageContext.jsx";
 import {useEffect} from "react";

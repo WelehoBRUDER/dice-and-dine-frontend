@@ -1,5 +1,5 @@
-import {useCart} from "../context/CartContext";
-import Button from "./Button";
+import {useCart} from "../../context/CartContext";
+import Button from "../Button";
 
 const CartItemControls = ({itemId, currentAmount}) => {
   const {addToCart, removeFromCart} = useCart();

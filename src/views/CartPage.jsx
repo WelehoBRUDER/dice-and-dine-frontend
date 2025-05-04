@@ -8,7 +8,7 @@ import {useLanguage} from "../context/LanguageContext";
 import {useUserContext} from "../hooks/useUserContext";
 import ResultWindow from "../components/ResultWindow";
 import LoadingWheel from "../components/LoadingWheel";
-import CartItemControls from "../components/CartItemControls";
+import CartItemControls from "../components/menu/CartItemControls";
 
 const CartPage = () => {
   const {lang, setCurrentPage} = useLanguage();

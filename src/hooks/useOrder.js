@@ -72,7 +72,6 @@ const useOrder = () => {
       const data = await fetchData(`${API_URL}/orders/${orderId}`, {
         method: "GET",
       });
-      console.log("Fetched order data:", data);
 
       if (data) {
         return data;
