@@ -14,9 +14,14 @@ export const ForumsArticle = ({item}) => {
       <Button className="btn-smaller" onClick={() => handleItemClick(null)}>
         {String.fromCodePoint(0x274c)}
       </Button>
-      <h2>id: {item?.id}</h2>
-      <p>by_user_id: {item?.by_user_id}</p>
-      <ForumReplyMenu replies={item.replies}></ForumReplyMenu>
+      <h2>{item?.title}</h2>
+      <p>{item?.message}</p>
+      <p>{item?.time}</p>
+      <div>
+        <h4>replies:</h4>
+        <ForumReplyMenu replies={item.replies}></ForumReplyMenu>
+        <Button>reply</Button>
+      </div>
     </article>
   ) : (
     <article
@@ -24,8 +29,9 @@ export const ForumsArticle = ({item}) => {
       key={item.id}
       onClick={() => handleItemClick(item)}
     >
-      <h2>id: {item?.id}</h2>
-      <p>by_user_id: {item?.by_user_id}</p>
+      <h2>{item?.title}</h2>
+      <p>{item?.message}</p>
+      <p>{item?.time}</p>
     </article>
   );
 };

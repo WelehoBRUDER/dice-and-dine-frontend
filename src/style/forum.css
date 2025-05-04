@@ -15,8 +15,14 @@
   padding: 1rem;
   background-color: var(--theme-background);
   border-radius: 1rem;
+  border-style: solid;
 }
 
 .clicked-article {
   background-color: var(--theme-lighter);
+}
+
+.forum-reply {
+  list-style: none;
+  border-style: solid;
 }
