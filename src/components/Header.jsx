@@ -4,6 +4,7 @@ import {useLanguage} from "../context/LanguageContext";
 import {useEffect} from "react";
 import {useUserContext} from "../hooks/useUserContext";
 import {useCart} from "../context/CartContext";
+import {icons} from "../variables/icons";
 
 const Header = () => {
   const {lang} = useLanguage();
@@ -133,7 +134,11 @@ const Header = () => {
                   to="/cart"
                   className={({isActive}) => (isActive ? "active-link" : "")}
                 >
-                  {lang("cart_page_link")}
+                  <img
+                    src={icons.cart}
+                    alt="Shopping Cart"
+                    className="cart-icon"
+                  />
                 </NavLink>
               </li>
             )}

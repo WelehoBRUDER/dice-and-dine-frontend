@@ -35,3 +35,8 @@
 #header li:hover {
   background-color: var(--theme-background);
 }
+
+.cart-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
