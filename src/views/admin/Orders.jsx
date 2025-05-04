@@ -6,16 +6,21 @@ import useMenu from "../../hooks/useMenu";
 const Orders = () => {
   const {getAllOrders, loading, postOrderStatus} = useOrder();
   const [orders, setOrders] = useState([]);
-  const {menu, loading: menuLoading} = useMenu();
+  const {menu: menuFi, loading: loadingFi} = useMenu("fi");
+  const {menu: menuEn, loading: loadingEn} = useMenu("en");
   const [filterStatus, setFilterStatus] = useState("all");
   const [filterDate, setFilterDate] = useState("");
   const menuMap = useMemo(() => {
     const map = {};
-    menu.forEach((item) => {
-      map[item.id] = item.name;
+
+    [...menuFi, ...menuEn].forEach((item) => {
+      if (!map[item.id]) {
+        map[item.id] = item.name;
+      }
     });
+
     return map;
-  }, [menu]);
+  }, [menuFi, menuEn]);
 
   useEffect(() => {
     const fetchOrders = async () => {
@@ -54,7 +59,7 @@ const Orders = () => {
     return isStatusMatch && isDateMatch;
   });
 
-  if (loading || menuLoading) {
+  if (loading || loadingFi || loadingEn) {
     return <LoadingWheel />;
   }
 

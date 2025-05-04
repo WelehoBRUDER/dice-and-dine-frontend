@@ -1,11 +1,9 @@
 import {useState, useEffect} from "react";
 import {fetchData} from "../utils/fetchData.js";
-import {useLanguage} from "../context/LanguageContext";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-export function useMenu() {
-  const {currentLanguage} = useLanguage();
+export function useMenu(language) {
   const [menu, setMenu] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -13,7 +11,7 @@ export function useMenu() {
     async function loadMenu() {
       setLoading(true);
       try {
-        const data = await fetchData(`${API_URL}/info/menu/${currentLanguage}`);
+        const data = await fetchData(`${API_URL}/info/menu/${language}`);
         setMenu(data);
       } catch (error) {
         console.error("Error fetching menu:", error);
@@ -23,7 +21,7 @@ export function useMenu() {
     }
 
     loadMenu();
-  }, [currentLanguage]);
+  }, [language]);
 
   return {menu, loading};
 }
