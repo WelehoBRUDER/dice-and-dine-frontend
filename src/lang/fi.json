@@ -156,5 +156,21 @@
   "admin_page.description": "Ylläpitosivulla voit hallita ravintolan toimintoja. Voit tarkastella ja hallita tilauksia, käyttäjiä ruokalistaa, arvosteluja ja pöytävarauksia. Voit myös muokata ravintolan tietoja.",
 
   "unauthorized_page.title": "403 - Pääsy kielletty",
-  "unauthorized_page.description": "Sinulla ei ole oikeuksia käyttää tätä sivua."
+  "unauthorized_page.description": "Sinulla ei ole oikeuksia käyttää tätä sivua.",
+
+  "admin_orders_page.title": "Hallitse tilauksia",
+  "admin_orders_page.filter_by_status": "Suodata tilan mukaan",
+  "admin_orders_page.filter_by_date": "Suodata päivämäärän mukaan",
+  "admin_orders_page.status_all": "Kaikki",
+  "admin_orders_page.status_pending": "Odottaa",
+  "admin_orders_page.status_confirmed": "Vahvistettu",
+  "admin_orders_page.status_ready": "Valmistettu",
+  "admin_orders_page.status_completed": "Valmis",
+  "admin_orders_page.status_cancelled": "Peruttu",
+  "admin_orders_page.th_order_id": "Tilausnumero",
+  "admin_orders_page.th_customer": "Asiakas",
+  "admin_orders_page.th_items": "Tuotteet",
+  "admin_orders_page.th_status": "Tila",
+  "admin_orders_page.th_date": "Päivämäärä",
+  "admin_orders_page.th_actions": "Toimenpiteet"
 }

@@ -2,6 +2,7 @@ import {useEffect, useMemo, useState} from "react";
 import useOrder from "../../hooks/useOrder";
 import LoadingWheel from "../../components/LoadingWheel";
 import useMenu from "../../hooks/useMenu";
+import {useLanguage} from "../../context/LanguageContext";
 
 const Orders = () => {
   const {getAllOrders, loading, postOrderStatus} = useOrder();
@@ -10,6 +11,7 @@ const Orders = () => {
   const {menu: menuEn, loading: loadingEn} = useMenu("en");
   const [filterStatus, setFilterStatus] = useState("all");
   const [filterDate, setFilterDate] = useState("");
+  const {lang, setCurrentPage} = useLanguage();
   const menuMap = useMemo(() => {
     const map = {};
 
@@ -59,32 +61,46 @@ const Orders = () => {
     return isStatusMatch && isDateMatch;
   });
 
+  useEffect(() => {
+    setCurrentPage("admin_orders_page");
+  }, []);
+
   if (loading || loadingFi || loadingEn) {
     return <LoadingWheel />;
   }
 
   return (
     <div>
-      <h1>Manage Orders</h1>
+      <h1>{lang("admin_orders_page.title")}</h1>
       <div className="flex-row">
         <label htmlFor="status-filter-label" className="status-filter-label">
-          Filter by Status:
+          {lang("admin_orders_page.filter_by_status")}:
         </label>
         <select
           className="status-filter"
           value={filterStatus}
           onChange={(e) => setFilterStatus(e.target.value)} // Update filter status on change
         >
-          <option value="all">All</option>
-          <option value="pending">Pending</option>
-          <option value="confirmed">Confirmed</option>
-          <option value="ready">Ready</option>
-          <option value="completed">Completed</option>
-          <option value="cancelled">Cancelled</option>
+          <option value="all">{lang("admin_orders_page.status_all")}</option>
+          <option value="pending">
+            {lang("admin_orders_page.status_pending")}
+          </option>
+          <option value="confirmed">
+            {lang("admin_orders_page.status_confirmed")}
+          </option>
+          <option value="ready">
+            {lang("admin_orders_page.status_ready")}
+          </option>
+          <option value="completed">
+            {lang("admin_orders_page.status_completed")}
+          </option>
+          <option value="cancelled">
+            {lang("admin_orders_page.status_cancelled")}
+          </option>
         </select>
 
         <label htmlFor="date-filter-label" className="status-filter-label">
-          Filter by Date:
+          {lang("admin_orders_page.filter_by_date")}:
         </label>
         <input
           type="date"
@@ -97,12 +113,12 @@ const Orders = () => {
       <table>
         <thead>
           <tr>
-            <th>Order ID</th>
-            <th>Customer</th>
-            <th>Items</th>
-            <th>Status</th>
-            <th>Date</th>
-            <th>Actions</th>
+            <th>{lang("admin_orders_page.th_order_id")}</th>
+            <th>{lang("admin_orders_page.th_customer")}</th>
+            <th>{lang("admin_orders_page.th_items")}</th>
+            <th>{lang("admin_orders_page.th_status")}</th>
+            <th>{lang("admin_orders_page.th_date")}</th>
+            <th>{lang("admin_orders_page.th_actions")}</th>
           </tr>
         </thead>
         <tbody>
@@ -121,7 +137,10 @@ const Orders = () => {
                   ))}
                 </ul>
               </td>
-              <td>{group.order[0].status}</td>
+
+              <td>
+                {lang(`admin_orders_page.status_${group.order[0].status}`)}
+              </td>
               <td>{new Date(group.time).toLocaleString()}</td>
               <td>
                 <select
@@ -131,11 +150,21 @@ const Orders = () => {
                   }
                   className="status-select"
                 >
-                  <option value="pending">Pending</option>
-                  <option value="confirmed">Confirmed</option>
-                  <option value="ready">Ready</option>
-                  <option value="completed">Completed</option>
-                  <option value="cancelled">Cancelled</option>
+                  <option value="pending">
+                    {lang("admin_orders_page.status_pending")}
+                  </option>
+                  <option value="confirmed">
+                    {lang("admin_orders_page.status_confirmed")}
+                  </option>
+                  <option value="ready">
+                    {lang("admin_orders_page.status_ready")}
+                  </option>
+                  <option value="completed">
+                    {lang("admin_orders_page.status_completed")}
+                  </option>
+                  <option value="cancelled">
+                    {lang("admin_orders_page.status_cancelled")}
+                  </option>
                 </select>
               </td>
             </tr>
