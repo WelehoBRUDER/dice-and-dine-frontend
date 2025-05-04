@@ -71,19 +71,11 @@ const useOrder = () => {
     try {
       const data = await fetchData(`${API_URL}/orders/${orderId}`, {
         method: "GET",
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-          "Content-Type": "application/json",
-        },
       });
+      console.log("Fetched order data:", data);
 
       if (data) {
-        const ordersWithTime = data.order.map((orderItem) => ({
-          ...orderItem,
-          time: data.time,
-        }));
-
-        return ordersWithTime;
+        return data;
       } else {
         setError("Failed to fetch order details");
       }

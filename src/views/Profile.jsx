@@ -28,7 +28,8 @@ const Profile = () => {
             return order;
           })
         );
-        setOrderDetails(orders.flat());
+
+        setOrderDetails(orders);
       } catch (error) {
         console.error("Failed to fetch user details", error);
       } finally {
@@ -52,7 +53,7 @@ const Profile = () => {
   if (loading) {
     return <LoadingWheel />;
   }
-
+  console.log("Order details", orderDetails);
   return (
     <div>
       <article>

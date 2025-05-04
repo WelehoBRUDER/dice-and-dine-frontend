@@ -30,6 +30,7 @@ const Input = ({
   icon = "user",
   displayLabel = true,
   disabled = false,
+  ...rest // other props to be passed to the input element
 }) => {
   return (
     <div className={`input-container ${className}`}>
@@ -54,6 +55,7 @@ const Input = ({
           onChange={onChange}
           className="input-field"
           disabled={disabled}
+          {...rest} //
         />
       </div>
     </div>
