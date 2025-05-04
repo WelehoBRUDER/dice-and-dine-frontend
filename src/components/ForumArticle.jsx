@@ -2,7 +2,7 @@ import {useState} from "react";
 import Button from "../components/Button";
 import ForumReplyMenu from "./ForumReplyMenu";
 
-export const ForumsArticle = ({item}) => {
+export const ForumsArticle = ({item, lang}) => {
   const [clickedItem, setClickedItem] = useState([]);
   const handleItemClick = (item) => {
     //console.log("item", item);
@@ -18,9 +18,9 @@ export const ForumsArticle = ({item}) => {
       <p>{item?.message}</p>
       <p>{item?.time}</p>
       <div>
-        <h4>replies:</h4>
+        <h4>{lang("forum_page_replies")}:</h4>
         <ForumReplyMenu replies={item.replies}></ForumReplyMenu>
-        <Button>reply</Button>
+        <Button>{lang("forum_page_reply_button")}</Button>
       </div>
     </article>
   ) : (

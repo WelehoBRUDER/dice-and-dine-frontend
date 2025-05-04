@@ -6,8 +6,8 @@ import Button from "../components/Button";
 import ForumArticle from "../components/ForumArticle";
 
 const Forum = () => {
-  const {lang, setCurrentPage} = useLanguage();
-  const {forum, loading} = useForum(lang);
+  const {currentLanguage, lang, setCurrentPage} = useLanguage();
+  const {forum, loading} = useForum(currentLanguage);
 
   //console.log("forum", forum);
 
@@ -21,13 +21,13 @@ const Forum = () => {
         <meta name="description" content={lang("forum_description")} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </article>
-      <h1>Forum</h1>
+      <h1>{lang("forum_page_title")}</h1>
       {loading ? (
         <LoadingWheel />
       ) : (
         <section id="forum-section">
           {forum.map((item) => (
-            <ForumArticle item={item}></ForumArticle>
+            <ForumArticle item={item} lang={lang}></ForumArticle>
           ))}
         </section>
       )}

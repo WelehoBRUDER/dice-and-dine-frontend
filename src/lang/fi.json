@@ -34,6 +34,12 @@
     "about_page_open_times": "Aukioloajat"
   },
 
+    "forum_page": {
+    "forum_page_title": "Foorumi",
+    "forum_page_replies": "Vastaukset",
+    "forum_page_reply_button": "Vastaa"
+  },
+
   "authentication_page": {
     "login": "Kirjaudu sisään",
     "register": "Rekisteröidy",
