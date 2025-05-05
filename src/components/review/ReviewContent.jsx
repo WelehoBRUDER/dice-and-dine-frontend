@@ -3,6 +3,14 @@ import {icons} from "../../variables/icons";
 import {useState} from "react";
 import ProfilePicture from "../ProfilePicture";
 
+/**
+ * Component that displays the content of a review, including the review text, user information, and star rating.
+ *
+ * @param {String} reviewText - The text of the review.
+ * @param {Object} user - The user object containing the user's details.
+ * @param {Array} stars - An array of star icons representing the rating.
+ * @returns
+ */
 const ReviewContent = ({reviewText, user, stars}) => {
   const {lang} = useLanguage();
   const [collapsed, setCollapsed] = useState(true);

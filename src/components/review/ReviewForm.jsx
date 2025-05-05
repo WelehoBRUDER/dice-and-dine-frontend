@@ -3,6 +3,19 @@ import ReviewStars from "./ReviewStars";
 import TextArea from "../TextArea";
 import Button from "../Button";
 
+/**
+ * Component for the review form.
+ * Includes a text area for the review, a star rating system, and a submit button.
+ *
+ * @param {Function} handleSubmit - Function to handle the form submission.
+ * @param {Number} charactersLimit - The maximum number of characters allowed in the review.
+ * @param {Number} chars - The current number of characters in the review.
+ * @param {Function} handleInputChange - Function to handle input changes.
+ * @param {Object} inputs - The current input values.
+ * @param {Number} rating - The current rating value.
+ * @param {Function} setRating - Function to set the rating value.
+ * @returns
+ */
 const ReviewForm = ({
   handleSubmit,
   charactersLimit,

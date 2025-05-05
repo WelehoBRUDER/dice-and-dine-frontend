@@ -24,12 +24,15 @@ const Review = () => {
   const [success, setSuccess] = useState(false);
   const {loading, submitReview, submitAnonymousReview} = useReview();
 
+  // Anonymous and logged in users have different endpoints, which is why the split is needed.
   const submitAction = async () => {
     inputs.rating = rating;
+    // Check if the user object exists and has the id property (since "user" could be anything)
     if (user && user.id) {
       try {
         const token = localStorage.getItem("token");
         const response = await submitReview(inputs, token, user.username);
+        // Mark the form as submitted and set the success state based on the response
         setSubmitted(true);
         if (response?.id) {
           setSuccess(true);
@@ -43,6 +46,7 @@ const Review = () => {
     } else {
       try {
         const response = await submitAnonymousReview(inputs);
+        // Mark the form as submitted and set the success state based on the response
         setSubmitted(true);
         if (response?.id) {
           setSuccess(true);

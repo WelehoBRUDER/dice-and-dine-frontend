@@ -9,12 +9,16 @@ import {icons} from "../../variables/icons";
 import useReservation from "../../hooks/useReservation";
 
 /**
+ * Component that displays the reservation summary and allows the user to confirm the reservation.
+ * It shows the selected date, arrival time, length of stay, and selected tables.
+ * It also provides a text area for additional information and a button to make the reservation.
  *
  * @param {Date} date - The selected date for the reservation.
  * @param {string} arrival - The selected arrival time for the reservation.
  * @param {number} length - The length of the reservation in hours.
  * @param {Array} tables - The selected tables for the reservation.
  * @param {string} title - The title for the reservation summary.
+ * @param {function} setSuccess - Function to set the success state.
  * @returns
  */
 const ReservationSummary = ({
@@ -36,6 +40,12 @@ const ReservationSummary = ({
     return date && arrival && length && tables.length > 0;
   };
 
+  /*
+   * Function to handle the reservation submission.
+   * It calculates the arrival and departure times based on the selected date, arrival time, and length of stay.
+   * It formats the dates to MySQL datetime format and sends the reservation data to the backend.
+   * It also handles the success or failure of the reservation and updates the UI accordingly.
+   */
   const handleSubmit = () => {
     const arrivalDate = new Date(date);
     const [hours, minutes] = arrival.split(":").map(Number);
@@ -44,6 +54,7 @@ const ReservationSummary = ({
     const departureDate = new Date(date);
     departureDate.setHours(arrivalHours + length);
 
+    // Format the date to MySQL datetime format
     const toMySQLDateTime = (date) => {
       const pad = (n) => n.toString().padStart(2, "0");
 
@@ -70,6 +81,7 @@ const ReservationSummary = ({
     makeReservation(values, token);
   };
 
+  // Check if the reservation was successful or failed and update the result state accordingly
   useEffect(() => {
     if (reservationSuccess) {
       setSuccess(true);

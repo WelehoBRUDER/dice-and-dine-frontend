@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import Button from "../Button";
 
 /**
+ * Component to select the arrival time for a reservation.
  *
  * @param {number} arrival - The selected arrival time.
  * @param {function} setArrival - Function to set the arrival time.
@@ -14,6 +15,7 @@ const ReservationTime = ({arrival, setArrival, date, info, title}) => {
   const {restaurantOpen: openTimes} = info;
   const [arrivalTimes, setArrivalTimes] = useState(null);
 
+  // Updates the arrival times based on the selected date and restaurant open times
   useEffect(() => {
     const viableTimes = [];
 

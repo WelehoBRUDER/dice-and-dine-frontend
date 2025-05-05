@@ -1,5 +1,15 @@
 import Button from "../Button";
 
+/**
+ * Component that displays reservation steps with buttons and icons.
+ * It allows users to navigate through different steps of the reservation process and track their progress.
+ *
+ * @param {Array} steps - Array of step objects containing step number, name, and icon.
+ * @param {number} step - The current step number.
+ * @param {function} changeStep - Function to change the current step.
+ * @param {function} reflectUserChoice - Function to show user choices in the step name.
+ * @returns
+ */
 const ReservationSteps = ({steps, step, changeStep, reflectUserChoice}) => {
   return (
     <div className="reservation-steps flex-row">

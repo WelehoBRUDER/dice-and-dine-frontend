@@ -4,7 +4,13 @@ import {useLanguage} from "../context/LanguageContext";
 import useRestaurantInfo from "../hooks/useRestaurantInfo";
 import LoadingWheel from "./LoadingWheel";
 import MapInvalidator from "./MapInvalidator";
-
+/**
+ * Component that renders a Leaflet map with a marker and popup.
+ * It fetches the restaurant's latitude and longitude from the API and displays it on the map.
+ *
+ * @param {any} children - Child elements to be rendered inside the map component.
+ * @returns
+ */
 const LeafletMap = ({children}) => {
   const [position, setPosition] = useState(null); // Default position (latitude, longitude)
   const {lang} = useLanguage();
