@@ -44,9 +44,11 @@ const Profile = () => {
         const sortedOrders = [...orders].sort(
           (a, b) => (b.id || 0) - (a.id || 0)
         );
-        console.log("sortedOrders:", sortedOrders);
-        console.log("Orders:", orders);
-        setReservationDetails(reservations);
+        const sortedReservations = [...reservations].sort(
+          (a, b) => (b.id || 0) - (a.id || 0)
+        );
+
+        setReservationDetails(sortedReservations);
         console.log("Reservation details:", reservationDetails);
         setOrderDetails(sortedOrders);
       } catch (error) {
@@ -72,7 +74,7 @@ const Profile = () => {
   if (loading) {
     return <LoadingWheel />;
   }
-  console.log("Order details in profile:", orderDetails);
+
   return (
     <div>
       <article>
