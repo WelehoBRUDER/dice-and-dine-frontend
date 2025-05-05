@@ -7,7 +7,7 @@ import LoadingWheel from "../../components/LoadingWheel";
 import Input from "../../components/Input";
 
 const AddToMenu = () => {
-  const {lang, setCurrentPage} = useLanguage();
+  const {lang, setCurrentPage, currentLanguage} = useLanguage();
   const {categories: fiCategories, loading: fiCategoriesLoading} =
     useCategory("fi");
   const {allergens: fiAllergens, loading: fiAllergensLoading} =
@@ -16,10 +16,47 @@ const AddToMenu = () => {
     useCategory("en");
   const {allergens: enAllergens, loading: enAllergensLoading} =
     useAllergens("en");
+
+  const mapCategoryIdsByIndex = (selectedEnIds, enCategories, fiCategories) => {
+    return selectedEnIds
+      .map((enId) => {
+        const index = enCategories.findIndex((cat) => cat.id === enId);
+        return index !== -1 ? fiCategories[index].id : null;
+      })
+      .filter((id) => id !== null);
+  };
+
+  const mapAllergenIdsByIndex = (selectedEnIds, enAllergens, fiAllergens) => {
+    return selectedEnIds
+      .map((enId) => {
+        const index = enAllergens.findIndex((allergen) => allergen.id === enId);
+        return index !== -1 ? fiAllergens[index].id : null;
+      })
+      .filter((id) => id !== null);
+  };
   const onSubmit = () => {
-    // Here, you can handle the form submission logic
-    console.log(inputs); // Example: log the form data
-    // Perform your POST request or other logic here
+    const fiCategoryIds = mapCategoryIdsByIndex(
+      inputs.en.categories,
+      enCategories,
+      fiCategories
+    );
+    const fiAllergenIds = mapAllergenIdsByIndex(
+      inputs.en.allergens,
+      enAllergens,
+      fiAllergens
+    );
+
+    const payload = {
+      en: inputs.en,
+      fi: {
+        ...inputs.fi,
+        categories: fiCategoryIds,
+        allergens: fiAllergenIds,
+      },
+    };
+
+    console.log(payload);
+    // You can now post `payload` to your backend
   };
 
   const {handleSubmit, handleInputChange, inputs} = useForm(onSubmit, {
@@ -48,6 +85,9 @@ const AddToMenu = () => {
     setCurrentPage("addtomenu_page");
   }, []);
 
+  const displayCategories =
+    currentLanguage === "fi" ? fiCategories : enCategories;
+  const displayAllergens = currentLanguage === "fi" ? fiAllergens : enAllergens;
   if (
     fiCategoriesLoading ||
     fiAllergensLoading ||
@@ -75,30 +115,30 @@ const AddToMenu = () => {
 
       <div className="flex-column">
         <label className="admin-label">
-          {lang("addtomenu_page.encategory")}:
+          {lang("addtomenu_page.category")}:
         </label>
         <select
           className="admin-filter"
           value={inputs.en.categories[0] || ""}
           onChange={(e) => handleCategoryChange("en", e)}
         >
-          {enCategories.map((cat) => (
-            <option key={cat.id} value={cat.id}>
+          {displayCategories.map((cat, idx) => (
+            <option key={cat.id} value={enCategories[idx].id}>
               {cat.name}
             </option>
           ))}
         </select>
 
         <label className="admin-label">
-          {lang("addtomenu_page.enallergens")}:
+          {lang("addtomenu_page.allergens")}:
         </label>
         <div className="checkbox-group">
-          {enAllergens.map((allergen) => (
+          {displayAllergens.map((allergen, idx) => (
             <label key={allergen.id}>
               <input
                 type="checkbox"
-                checked={inputs.en.allergens.includes(allergen.id)}
-                onChange={() => handleAllergenChange("en", allergen.id)}
+                checked={inputs.en.allergens.includes(enAllergens[idx].id)}
+                onChange={() => handleAllergenChange("en", enAllergens[idx].id)}
               />
               {allergen.name}
             </label>
@@ -135,38 +175,6 @@ const AddToMenu = () => {
         onChange={(e) => handleInputChange("fi", e)}
         icon={null}
       />
-      <div className="flex-column">
-        <label className="admin-label">
-          {lang("addtomenu_page.ficategory")}:
-        </label>
-        <select
-          className="admin-filter"
-          value={inputs.fi.categories[0] || ""}
-          onChange={(e) => handleCategoryChange("fi", e)}
-        >
-          {fiCategories.map((cat) => (
-            <option key={cat.id} value={cat.id}>
-              {cat.name}
-            </option>
-          ))}
-        </select>
-
-        <label className="admin-label">
-          {lang("addtomenu_page.fiallergens")}:
-        </label>
-        <div className="checkbox-group">
-          {fiAllergens.map((allergen) => (
-            <label key={allergen.id}>
-              <input
-                type="checkbox"
-                checked={inputs.fi.allergens.includes(allergen.id)}
-                onChange={() => handleAllergenChange("fi", allergen.id)}
-              />
-              {allergen.name}
-            </label>
-          ))}
-        </div>
-      </div>
 
       <Input
         name="description"
