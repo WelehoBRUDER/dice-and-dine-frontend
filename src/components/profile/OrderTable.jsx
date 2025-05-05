@@ -2,7 +2,9 @@ import {useLanguage} from "../../context/LanguageContext";
 
 const OrderTable = ({orderDetails}) => {
   const {lang} = useLanguage();
-  console.log("Order details:", orderDetails);
+  if (!orderDetails || orderDetails.length === 0) {
+    return <p>{lang("profile_page.no_orders")}</p>;
+  }
 
   return (
     <table>

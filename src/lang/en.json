@@ -149,6 +149,8 @@
   "profile_page.password_changed": "Password changed successfully! Please log in again.",
   "profile_page.password_error": "Error changing password. Please try again.",
   "profile_page.update_error": "Error updating profile. Please try again.",
+  "profile_page.no_orders": "No orders",
+  "profile_page.no_reservations": "No reservations",
 
   "reviews_page": {
     "title": "All Reviews",
