@@ -35,7 +35,8 @@
     "about_page_phone": "Phone",
     "about_page_email": "Email",
     "about_page_address": "Address",
-    "about_page_open_times": "Open times"
+    "about_page_open_times": "Open times",
+    "location": "Our location"
   },
 
   "authentication_page": {
