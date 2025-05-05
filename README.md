@@ -47,3 +47,6 @@ They are structured as follows:
    ```
 - The **id** is used to identify the language, the **language** is the name of the language, and the **icon** is the flag emoji representing the language.  
 This level is the "root" of the localization file. It can be used for common strings that are used across multiple pages.
+
+### Attributions
+- Hero image from [Unsplash](https://unsplash.com/photos/a-man-sitting-at-a-table-playing-a-board-game-7gagNAbWocg?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
