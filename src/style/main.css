@@ -124,6 +124,23 @@ span {
     }
   }
 
+  .material-icon-wrapper {
+    background: var(--theme-darker);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.blue {
+      background: var(--hsl-blue);
+    }
+
+    &.gold {
+      background: var(--hsl-gold);
+    }
+  }
+
 }
 
 .large-text {
