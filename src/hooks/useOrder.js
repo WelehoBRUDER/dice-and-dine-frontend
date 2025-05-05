@@ -33,7 +33,6 @@ const useOrder = () => {
     setLoading(true);
     setError(null);
     setOrderSuccess(false);
-    console.log("cart user", user);
 
     try {
       const formattedOrder = orderCart.map((item) => ({

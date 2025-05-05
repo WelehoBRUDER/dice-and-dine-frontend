@@ -63,9 +63,10 @@
   "menu_page.add_button_text": "Lisää",
   "menu_page.remove_button_text": "Poista",
   "menu_page.allergens_text": "Allergeenit",
+  "menu_page.description": "Löydä meidän herkulliset vaihtoehdot ruokalistalta. Alkupaloista pääruokiin ja jälkiruokiin, meiltä löytyy jokaiselle jotakin! Tilaa noudettavaksi tai tule nauttimaan ravintolaan.",
 
   "cart_page.order_success_message": "Tilaus onnistui! Voit seurata tilauksen tilaa profiilissasi. Tilausnumero: ",
-  "cart_page.your_cart": "Ostoskori",
+  "cart_page.title": "Ostoskori",
   "cart_page.items_loading": "Lataamme ostoskorin tuotteita...",
   "cart_page.table_headings": ["Tuotteen nimi", "Määrä", "Hinta", "Yhteensä"],
   "cart_page.total": "Yhteensä: ",
@@ -75,8 +76,10 @@
   "cart_page.order_loading": "Tilausta käsitellään...",
   "cart_page.order_success_title": "Tilaus onnistui",
   "cart_page.empty_cart_title": "Ostoskorisi on tyhjennetty!",
+  "cart_page.description": "Ostoskorisivulla voit tarkastella ja hallita valitsemiasi tuotteita ennen tilausta. Voit lisätä tai poistaa tuotteita, tarkistaa yhteissumman ja tehdä tilauksen.",
 
   "games_page.title": "Pelit",
+  "games_page.description": "Pelisivulla voit tutustua erilaisiin lautapeleihin ja roolipeleihin, joita tarjoamme ravintolassamme. Voit varata pelisession ystäviesi kanssa tai liittyä muihin pelaajiin. Meillä on laaja valikoima pelejä eri genreistä ja vaikeustasoista, joten jokaiselle löytyy jotakin!",
 
   "profile_page.title": "Profiili",
   "review_page": {
@@ -130,6 +133,8 @@
   "profile_page.profile_picture": "Profiilikuva",
   "profile_page.orders": "Tilauksesi",
   "profile_page.details": "Tiedot",
+
+  "profile_page.description": "Profiilisivusi, jolta voit hallita tiliäsi. Täällä voit tarkastella ja muokata henkilökohtaisia tietojasi, tarkastella tilauksiasi ja varauksiasi. Voit myös vaihtaa salasanaasi ja ladata profiilikuva.",
 
   "reviews_page": {
     "title": "Kaikki arvostelut",

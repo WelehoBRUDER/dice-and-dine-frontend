@@ -65,9 +65,10 @@
   "menu_page.add_button_text": "Add",
   "menu_page.remove_button_text": "Remove",
   "menu_page.allergens_text": "Allergens",
+  "menu_page.description": "Explore our menu and discover a variety of delicious dishes. From appetizers to desserts, we have something for everyone! Order take away or come dine in at our restaurant.",
 
   "cart_page.order_success_message": "Order placed successfully! You can follow the status of your order in your profilepage. Order ID: ",
-  "cart_page.your_cart": "Your Cart",
+  "cart_page.title": "Your Cart",
   "cart_page.items_loading": "Loading cart items...",
   "cart_page.table_headings": ["Item Name", "Quantity", "Price", "Total"],
   "cart_page.total": "Total: ",
@@ -77,8 +78,10 @@
   "cart_page.order_loading": "Placing order...",
   "cart_page.order_success_title": "Order placed successfully",
   "cart_page.empty_cart_title": "Cart empty!",
+  "cart_page.description": "Here is your shopping cart. You can view the items you have added, change the quantity, and place your order. If you want to remove an item from the cart, click on the '-' button. If you want to clear the entire cart, click on the 'Clear Cart' button. To place your order, click on the 'Place Order' button.",
 
   "games_page.title": "Games",
+  "games_page.description": "Explore our collection of games. From board games to card games, we have something for everyone! Join us for a fun night of gaming with friends and family.",
 
   "profile_page.title": "Profile",
 
@@ -126,6 +129,7 @@
 
   "additional_info": "Additional Information",
 
+  "profile_page.description": "Profile page for managing your account. Here you can view and edit your personal information, view your orders and reservations. You can also change your password and upload a profile picture.",
   "profile_page.username": "Username:",
   "profile_page.email": "Email:",
   "profile_page.usertype": "User Type:",
