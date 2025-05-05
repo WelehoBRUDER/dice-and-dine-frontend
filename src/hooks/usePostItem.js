@@ -43,7 +43,7 @@ export function usePostItem() {
     }
 
     try {
-      const data = await fetchData(`${API_URL}/orders/${itemid}`, {
+      const data = await fetchData(`${API_URL}/orders/menu/${itemid}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
