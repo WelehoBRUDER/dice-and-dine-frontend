@@ -2,6 +2,9 @@ import {useState} from "react";
 import Button from "../Button";
 import ForumReplyMenu from "./ForumReplyMenu";
 import Input from "../Input";
+import useForum from "../../hooks/useForum";
+import {useUserContext} from "../../hooks/useUserContext";
+import {useNavigate} from "react-router-dom";
 
 export const ForumsArticle = ({item, lang}) => {
   const [clickedItem, setClickedItem] = useState([]);
@@ -9,9 +12,18 @@ export const ForumsArticle = ({item, lang}) => {
     setClickedItem(item);
   };
   const [message, setMessage] = useState("");
+  const {postReplyMessage} = useForum();
+  const {user} = useUserContext();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(user);
+    postReplyMessage(message, item.id, user.username).then((res) => {
+      console.log(res);
+      setMessage("");
+      navigate("/forum");
+    });
   };
 
   return clickedItem?.id == item.id ? (

@@ -23,11 +23,13 @@ function useForum(language) {
   }, [language]);
 
   const postMessage = async (title, message, username) => {
+    const token = localStorage.getItem("token");
     try {
-      const response = await fetch(`${API_URL}/forum/${username}`, {
+      const response = await fetch(`${API_URL}/forum/post/${username}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({message, title}),
       });
@@ -43,14 +45,19 @@ function useForum(language) {
 
   const postReplyMessage = async (message, replyTo, username) => {
     const title = "";
+    const token = localStorage.getItem("token");
     try {
-      const response = await fetch(`${API_URL}/forum/${replyTo}/${username}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({message, replyTo, title}),
-      });
+      const response = await fetch(
+        `${API_URL}/forum/post/${replyTo}/${username}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({message, replyTo, title}),
+        }
+      );
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
