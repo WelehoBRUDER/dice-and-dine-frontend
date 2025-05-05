@@ -17,18 +17,18 @@ const AdminBar = () => {
         </li>
         <li>
           <NavLink
-            to="/admin/users"
-            className={({isActive}) => (isActive ? "active-link" : "")}
-          >
-            {lang("admin_page.users_page_link")}
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
             to="/admin/editmenu"
             className={({isActive}) => (isActive ? "active-link" : "")}
           >
             {lang("admin_page.editmenu_page_link")}
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/admin/addtomenu"
+            className={({isActive}) => (isActive ? "active-link" : "")}
+          >
+            {lang("admin_page.addtomenu_page_link")}
           </NavLink>
         </li>
         <li>

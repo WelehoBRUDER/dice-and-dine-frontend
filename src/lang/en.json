@@ -63,6 +63,7 @@
   "menu_page.remove_button_text": "Remove",
   "menu_page.allergens_text": "Allergens",
   "menu_page.description": "Explore our menu and discover a variety of delicious dishes. From appetizers to desserts, we have something for everyone! Order take away or come dine in at our restaurant.",
+  "menu_page.not_available": "Menu items not available",
 
   "cart_page.order_success_message": "Order placed successfully! You can follow the status of your order in your profilepage. Order ID: ",
   "cart_page.title": "Your Cart",
@@ -79,7 +80,7 @@
 
   "games_page.title": "Games",
   "games_page.description": "Explore our collection of games. From board games to card games, we have something for everyone! Join us for a fun night of gaming with friends and family.",
-
+  "games_page.no_games": "No games available",
   "profile_page.title": "Profile",
 
   "review_page": {
@@ -160,7 +161,7 @@
   "admin_page.title": "Admin Page",
   "admin_page.orders_page_link": "Orders",
   "admin_page.users_page_link": "Users",
-  "admin_page.editmenu_page_link": "Edit Menu",
+  "admin_page.editmenu_page_link": "Delete From Menu",
   "admin_page.editabout_page_link": "Edit About",
   "admin_page.reviews_page_link": "Reviews",
   "admin_page.reservations_page_link": "Table Reservations",
@@ -183,5 +184,38 @@
   "admin_orders_page.th_items": "Items",
   "admin_orders_page.th_status": "Status",
   "admin_orders_page.th_date": "Date",
-  "admin_orders_page.th_actions": "Actions"
+  "admin_orders_page.th_actions": "Actions",
+  "admin_page.addtomenu_page_link": "Add To Menu",
+
+  "editmenu_page.title": "Delete Menu Item",
+  "editmenu_page.filter": "Filter By Category",
+  "editmenu_page.all": "All",
+  "editmenu_page.itemid": "Item ID",
+  "editmenu_page.name": "Name",
+  "editmenu_page.price": "Price",
+  "editmenu_page.category": "Category",
+  "editmenu_page.delete": "Delete",
+
+  "addtomenu_page.title": "Add to Menu",
+  "addtomenu_page.enTitle": "English",
+  "addtomenu_page.fiTitle": "Suomeksi",
+  "addtomenu_page.enname": "Name in English",
+  "addtomenu_page.namePlaceholder": "Enter name",
+  "addtomenu_page.price": "Price",
+  "addtomenu_page.pricePlaceholder": "Enter price in euros",
+  "addtomenu_page.category": "Choose category",
+  "addtomenu_page.allergens": "Allergens",
+  "addtomenu_page.endescription": "Description in English",
+  "addtomenu_page.descriptionPlaceholder": "Enter item description",
+  "addtomenu_page.finame": "Name in Finnish",
+  "addtomenu_page.fidescription": "Description in Finnish",
+
+  "addtomenu_page.enname_required": "English name is required",
+  "addtomenu_page.price_required": "Price is required",
+  "addtomenu_page.finame_required": "Finnish name is required",
+  "addtomenu_page.fidescription_required": "Finnish description is required",
+  "addtomenu_page.endescription_required": "English description is required",
+  "addtomenu_page.category_required": "Category is required",
+  "addtomenu_page.success_title": "Menu item added",
+  "addtomenu_page.success_desc": "The menu item has been added successfully. You can view it in the menu."
 }

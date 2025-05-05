@@ -25,7 +25,7 @@ const Games = () => {
       <h1>{gamesText}</h1>
       {loading ? (
         <LoadingWheel />
-      ) : (
+      ) : games && games.length > 0 ? (
         <div className="games-container">
           <div className="games-list">
             {games.map((game) => (
@@ -33,6 +33,8 @@ const Games = () => {
             ))}
           </div>
         </div>
+      ) : (
+        <p>{lang("games_page.no_games")}</p>
       )}
     </div>
   );

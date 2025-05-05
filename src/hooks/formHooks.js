@@ -2,29 +2,39 @@ import {useState} from "react";
 import {useUser} from "./userHooks";
 
 const useForm = (callback, initState) => {
-  const [inputs, setInputs] = useState(initState);
+  const [inputs, setInputs] = useState(() => ({...initState}));
   const [file, setFile] = useState(null);
   const [filePreview, setFilePreview] = useState(null);
   const {uploadProfileImage} = useUser();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     if (event) {
       event.preventDefault();
     }
-    const success = callback(inputs);
+    const success = await callback(inputs);
     return success;
   };
 
   const handleInputChange = (event) => {
-    event.persist();
     setInputs((inputs) => ({
       ...inputs,
       [event.target.name]: event.target.value,
     }));
   };
 
+  const handleInputChangeMenu = (language, event) => {
+    const {name, value} = event.target;
+
+    setInputs((prevInputs) => ({
+      ...prevInputs,
+      [language]: {
+        ...prevInputs[language],
+        [name]: value, // dynamically updating the language-specific field
+      },
+    }));
+  };
+
   const handleFileChange = (event) => {
-    event.persist();
     const selectedFile = event.target.files[0];
 
     if (selectedFile && selectedFile.size < 5 * 1024 * 1024) {
@@ -40,7 +50,7 @@ const useForm = (callback, initState) => {
   };
 
   const resetForm = () => {
-    setInputs({});
+    setInputs(() => initState);
     setFilePreview(null);
   };
 
@@ -70,6 +80,8 @@ const useForm = (callback, initState) => {
     file,
     filePreview,
     handleFileSubmit,
+    resetForm,
+    handleInputChangeMenu,
   };
 };
 
