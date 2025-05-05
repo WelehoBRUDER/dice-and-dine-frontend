@@ -47,7 +47,11 @@ const MapTransportationMarkers = ({data}) => {
         if (!lat || !lon) return null; // Skip if coords are not defined
         return (
           <Marker key={node.distance} position={[lat, lon]} icon={LBusIcon}>
-            <Popup>{node.place.name}</Popup>
+            <Popup>
+              {node.place.name}
+              <br></br>
+              {node.place.code}
+            </Popup>
           </Marker>
         );
       })}
