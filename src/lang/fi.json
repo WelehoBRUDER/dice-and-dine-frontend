@@ -192,7 +192,7 @@
   "addtomenu_page.title": "Lisää ruokalistalle",
   "addtomenu_page.enTitle": "Englanti",
   "addtomenu_page.fiTitle": "Suomi",
-  "addtomenu_page.finame": "Nimi",
+  "addtomenu_page.finame": "Nimi suomeksi",
   "addtomenu_page.namePlaceholder": "Anna nimi",
   "addtomenu_page.price": "Hinta",
   "addtomenu_page.pricePlaceholder": "Anna hinta euroina",
@@ -201,5 +201,13 @@
   "addtomenu_page.fidescription": "Kuvaus suomeksi",
   "addtomenu_page.descriptionPlaceholder": "Anna annoksen kuvaus",
   "addtomenu_page.enname": "Nimi englanniksi",
-  "addtomenu_page.endescription": "Kuvaus englanniksi"
+  "addtomenu_page.endescription": "Kuvaus englanniksi",
+  "addtomenu_page.enname_required": "Englanninkielinen nimi on pakollinen",
+  "addtomenu_page.price_required": "Hinta on pakollinen",
+  "addtomenu_page.finame_required": "Suomenkielinen nimi on pakollinen",
+  "addtomenu_page.fidescription_required": "Suomenkielinen kuvaus on pakollinen",
+  "addtomenu_page.endescription_required": "Englanninkielinen kuvaus on pakollinen",
+  "addtomenu_page.category_required": "Kategoria on pakollinen",
+  "addtomenu_page.success_title": "Tuote lisätty onnistuneesti",
+  "addtomenu_page.success_desc": "Tuote on lisätty onnistuneesti ruokalistalle. Voit tarkastella sitä ruokalistalla."
 }

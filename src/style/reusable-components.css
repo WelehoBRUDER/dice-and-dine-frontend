@@ -53,6 +53,7 @@ button:disabled {
   border: 0.25rem solid var(--theme-lighter);
   box-sizing: border-box;
   background: var(--theme-foreground);
+  margin-bottom: 1rem;
 
   &:hover {
     background: var(--theme-darker);

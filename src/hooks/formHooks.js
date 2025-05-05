@@ -2,36 +2,36 @@ import {useState} from "react";
 import {useUser} from "./userHooks";
 
 const useForm = (callback, initState) => {
-  const [inputs, setInputs] = useState(initState);
+  const [inputs, setInputs] = useState(() => ({...initState}));
   const [file, setFile] = useState(null);
   const [filePreview, setFilePreview] = useState(null);
   const {uploadProfileImage} = useUser();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     if (event) {
       event.preventDefault();
     }
-    const success = callback(inputs);
+    const success = await callback(inputs);
     return success;
   };
 
-  const handleInputChange = (language, event) => {
+  const handleInputChange = (event) => {
+    setInputs((inputs) => ({
+      ...inputs,
+      [event.target.name]: event.target.value,
+    }));
+  };
+
+  const handleInputChangeMenu = (language, event) => {
     const {name, value} = event.target;
 
-    if (language) {
-      setInputs((inputs) => ({
-        ...inputs,
-        [language]: {
-          ...inputs[language],
-          [name]: value,
-        },
-      }));
-    } else {
-      setInputs((inputs) => ({
-        ...inputs,
-        [name]: value,
-      }));
-    }
+    setInputs((prevInputs) => ({
+      ...prevInputs,
+      [language]: {
+        ...prevInputs[language],
+        [name]: value, // dynamically updating the language-specific field
+      },
+    }));
   };
 
   const handleFileChange = (event) => {
@@ -50,7 +50,7 @@ const useForm = (callback, initState) => {
   };
 
   const resetForm = () => {
-    setInputs({});
+    setInputs(() => initState);
     setFilePreview(null);
   };
 
@@ -80,6 +80,8 @@ const useForm = (callback, initState) => {
     file,
     filePreview,
     handleFileSubmit,
+    resetForm,
+    handleInputChangeMenu,
   };
 };
 

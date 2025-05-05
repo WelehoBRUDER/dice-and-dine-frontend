@@ -195,14 +195,23 @@
   "addtomenu_page.title": "Add to Menu",
   "addtomenu_page.enTitle": "English",
   "addtomenu_page.fiTitle": "Suomeksi",
-  "addtomenu_page.enname": "Name",
+  "addtomenu_page.enname": "Name in English",
   "addtomenu_page.namePlaceholder": "Enter name",
   "addtomenu_page.price": "Price",
   "addtomenu_page.pricePlaceholder": "Enter price in euros",
   "addtomenu_page.category": "Choose category",
   "addtomenu_page.allergens": "Allergens",
-  "addtomenu_page.endescription": "Description",
+  "addtomenu_page.endescription": "Description in English",
   "addtomenu_page.descriptionPlaceholder": "Enter item description",
   "addtomenu_page.finame": "Name in Finnish",
-  "addtomenu_page.fidescription": "Description in Finnish"
+  "addtomenu_page.fidescription": "Description in Finnish",
+
+  "addtomenu_page.enname_required": "English name is required",
+  "addtomenu_page.price_required": "Price is required",
+  "addtomenu_page.finame_required": "Finnish name is required",
+  "addtomenu_page.fidescription_required": "Finnish description is required",
+  "addtomenu_page.endescription_required": "English description is required",
+  "addtomenu_page.category_required": "Category is required",
+  "addtomenu_page.success_title": "Menu item added",
+  "addtomenu_page.success_desc": "The menu item has been added successfully. You can view it in the menu."
 }
