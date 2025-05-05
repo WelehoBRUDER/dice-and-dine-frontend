@@ -7,17 +7,8 @@ import useForm from "../../hooks/formHooks";
 export const ForumsArticle = ({item, lang}) => {
   const [clickedItem, setClickedItem] = useState([]);
   const handleItemClick = (item) => {
-    //console.log("item", item);
     setClickedItem(item);
   };
-
-  const {inputs, handleSubmit, handleInputChange} =
-    useForm(/*submitAction, {
-    username: userDetails?.name || "",
-    email: userDetails?.email || "",
-    oldpassword: "",
-    password: "",
-  }*/);
 
   return clickedItem?.id == item.id ? (
     <article className="forum-article clicked-article" key={item.id}>
@@ -30,10 +21,10 @@ export const ForumsArticle = ({item, lang}) => {
       <div>
         <h4>{lang("forum_page_replies")}:</h4>
         <ForumReplyMenu replies={item.replies} lang={lang} />
-        <div>
-          <Input type="text" onChange={handleInputChange} />
+        <form>
+          <Input type="text" onChange={() => {}} />
           <Button>{lang("forum_page_reply_button")}</Button>
-        </div>
+        </form>
       </div>
     </article>
   ) : (
