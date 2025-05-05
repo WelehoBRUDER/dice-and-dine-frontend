@@ -11,7 +11,6 @@ export function useGames(language) {
     async function loadMenu() {
       try {
         const data = await fetchData(`${API_URL}/info/boardgames/${language}`);
-        console.log("Game data: ", data);
         setGames(data);
       } catch (error) {
         console.error("Error fetching games:", error);
