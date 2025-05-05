@@ -45,7 +45,7 @@ const Menu = () => {
           ));
         })()
       ) : (
-        <p>No menu items available.</p>
+        <p>{lang("menu_page.not_available")}</p>
       )}
     </div>
   );

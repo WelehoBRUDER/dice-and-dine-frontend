@@ -58,6 +58,7 @@
   "menu_page.remove_button_text": "Poista",
   "menu_page.allergens_text": "Allergeenit",
   "menu_page.description": "Löydä meidän herkulliset vaihtoehdot ruokalistalta. Alkupaloista pääruokiin ja jälkiruokiin, meiltä löytyy jokaiselle jotakin! Tilaa noudettavaksi tai tule nauttimaan ravintolaan.",
+  "menu_page.not_available": "Ruokalista ei saatavilla",
 
   "cart_page.order_success_message": "Tilaus onnistui! Voit seurata tilauksen tilaa profiilissasi. Tilausnumero: ",
   "cart_page.title": "Ostoskori",
@@ -74,7 +75,7 @@
 
   "games_page.title": "Pelit",
   "games_page.description": "Pelisivulla voit tutustua erilaisiin lautapeleihin ja roolipeleihin, joita tarjoamme ravintolassamme. Voit varata pelisession ystäviesi kanssa tai liittyä muihin pelaajiin. Meillä on laaja valikoima pelejä eri genreistä ja vaikeustasoista, joten jokaiselle löytyy jotakin!",
-
+  "games_page.no_games": "Ei pelejä saatavilla",
   "profile_page.title": "Profiili",
   "review_page": {
     "review_title": "Arvostelut",
