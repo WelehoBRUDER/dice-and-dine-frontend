@@ -5,8 +5,9 @@ import Input from "../Input";
 import useForum from "../../hooks/useForum";
 import {useUserContext} from "../../hooks/useUserContext";
 import {useNavigate} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
-export const ForumArticle = ({item, lang}) => {
+export const ForumPostArticle = ({item, lang}) => {
   const [clickedItem, setClickedItem] = useState([]);
   const handleItemClick = (item) => {
     setClickedItem(item);
@@ -26,11 +27,13 @@ export const ForumArticle = ({item, lang}) => {
     });
   };
 
-  return clickedItem?.id == item.id ? (
+  return (
     <article className="forum-article clicked-article" key={item.id}>
+      {/*
       <Button className="btn-smaller" onClick={() => handleItemClick(null)}>
         {String.fromCodePoint(0x274c)}
       </Button>
+      */}
       <h2>{item?.title}</h2>
       <p>{item?.message}</p>
       <p>{item?.time}</p>
@@ -48,18 +51,7 @@ export const ForumArticle = ({item, lang}) => {
         </form>
       </div>
     </article>
-  ) : (
-    <article
-      className="forum-article"
-      key={item.id}
-      //onClick={() => handleItemClick(item)}
-      onClick={() => navigate(`/forum/${item.id}`)}
-    >
-      <h2>{item?.title}</h2>
-      <p>{item?.message}</p>
-      <p>{item?.time}</p>
-    </article>
   );
 };
 
-export default ForumArticle;
+export default ForumPostArticle;
