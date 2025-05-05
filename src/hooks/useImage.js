@@ -3,12 +3,13 @@ import {useState, useEffect} from "react";
 // Use blob URLs to display images in a React component to rerender them
 const useImage = (imagePath, refreshKey = null) => {
   const [imgBlobUrl, setImgBlobUrl] = useState("");
+  const baseURL = import.meta.env.VITE_API_URL.replace(/\/api\/v1\/?$/, "");
   useEffect(() => {
     let active = true;
     let currentBlobUrl = null;
 
     if (imagePath) {
-      const url = `http://localhost:3000/uploads/${imagePath}?t=${Date.now()}`;
+      const url = `${baseURL}/uploads/${imagePath}?t=${Date.now()}`;
       fetch(url, {cache: "no-store"})
         .then((res) => res.blob())
         .then((blob) => {
