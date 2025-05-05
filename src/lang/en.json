@@ -5,14 +5,16 @@
   "restaurant_title": "Dice & Dine",
   "restaurant_icon_alt": "Restaurant icon",
   "home_page": {
-    "title": "Dice&Dine",
-    "subtitle": "Welcome to the homepage",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "title": "Dice & Dine",
+    "subtitle": "Great food. Great games.",
+    "description": "We are a restaurant that specializes in board games and delicious food. Our goal is to create a fun and welcoming environment for everyone. Whether you're a board game enthusiast or just looking for a great meal, we have something for you!",
+    "find_us_here": "Find us here"
   },
 
   "loading_text": "Loading content...",
   "try_again": "Try again",
   "continue": "Continue",
+  "home_title": "Dice & Dine",
 
   "home_page_link": "Home",
   "about_page_link": "About",
@@ -33,7 +35,8 @@
     "about_page_phone": "Phone",
     "about_page_email": "Email",
     "about_page_address": "Address",
-    "about_page_open_times": "Open times"
+    "about_page_open_times": "Open times",
+    "location": "Our location"
   },
 
   "forum_page": {

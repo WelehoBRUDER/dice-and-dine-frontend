@@ -1,0 +1,36 @@
+.home {
+  align-items: center;
+  width: 100vw;
+  margin: 0 !important;
+  padding: 0;
+
+  .hero-image {
+    width: 100%;
+    aspect-ratio: 8 / 3;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-image: url("/images/2h-media-7gagNAbWocg-unsplash.jpg");
+  }
+
+  .map-embed {
+    width: 100%;
+    background: var(--theme-foreground);
+    padding: 2rem;
+    align-items: center;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .home {
+    
+    .hero-image {
+      aspect-ratio: 4 / 3; /* Taller crop for mobile */
+    }
+  }
+}

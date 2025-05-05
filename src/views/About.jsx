@@ -1,6 +1,7 @@
 import useRestaurantInfo from "../hooks/useRestaurantInfo";
 import {useLanguage} from "../context/LanguageContext";
 import {useEffect} from "react";
+import LeafletMap from "../components/LeafletMap";
 import LoadingWheel from "../components/LoadingWheel";
 
 const About = () => {
@@ -39,6 +40,9 @@ const About = () => {
           <div>{info[0]?.open_times}</div>
         </div>
       )}
+      <LeafletMap>
+        <h2>{lang("location")}</h2>
+      </LeafletMap>
     </div>
   );
 };
