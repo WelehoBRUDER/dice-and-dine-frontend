@@ -58,14 +58,14 @@ const Profile = () => {
     <div>
       <article>
         <title>{lang("profile_page.title")}</title>
-        <meta name="description" content={lang("profile_description")} />
+        <meta name="description" content={lang("profile_page.description")} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </article>
       <h1>
         {lang("profile_page.title")} : {userDetails.name}
       </h1>
 
-      <div className="flex-row top-align">
+      <div className="profile-container">
         <div className="profile-image-container">
           <h2>{lang("profile_page.profile_picture")}</h2>
           <ProfileImage

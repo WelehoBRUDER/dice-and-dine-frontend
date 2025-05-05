@@ -1,3 +1,9 @@
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
 .profile-image {
   display: flex;
   flex-direction: column;
@@ -38,6 +44,8 @@
   border-radius: 8px;
 }
 
-.editable-input {
-  background-color: brown;
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+  }
 }

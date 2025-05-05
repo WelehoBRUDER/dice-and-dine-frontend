@@ -10,6 +10,7 @@ const Games = () => {
   const {games, loading} = useGames(currentLanguage);
 
   const gamesText = lang("games_page.title");
+
   useEffect(() => {
     setCurrentPage("games_page");
   }, []);
@@ -18,7 +19,7 @@ const Games = () => {
     <div>
       <article>
         <title>{gamesText}</title>
-        <meta name="description" content={lang("games_description")} />
+        <meta name="description" content={lang("games_page.description")} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </article>
       <h1>{gamesText}</h1>
