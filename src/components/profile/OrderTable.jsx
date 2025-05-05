@@ -8,9 +8,9 @@ const OrderTable = ({orderDetails}) => {
     <table>
       <thead>
         <tr>
-          <th>Order ID</th>
-          <th>Order time</th>
-          <th>Status</th>
+          <th>{lang("profile_page.orderid")}</th>
+          <th>{lang("profile_page.ordertime")}</th>
+          <th>{lang("profile_page.orderstatus")}</th>
         </tr>
       </thead>
       <tbody>

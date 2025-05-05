@@ -31,7 +31,7 @@ const ReservationTable = ({reservationDetails}) => {
     <table className="reservation-table">
       <thead>
         <tr>
-          <th>ID</th>
+          <th>{lang("profile_page.reservationid")}</th>
           <th>{lang("profile_page.arrival")}</th>
           <th>{lang("profile_page.time_range")}</th>
           <th>{lang("profile_page.size")}</th>

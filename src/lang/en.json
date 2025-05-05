@@ -141,6 +141,10 @@
   "profile_page.size": "Reservation size",
   "profile_page.tables": "Table reserved",
   "profile_page.reservations": "Your reservations",
+  "profile_page.orderid": "Order ID",
+  "profile_page.ordertime": "Order time",
+  "profile_page.orderstatus": "Order status",
+  "profile_page.reservationid": "Reservation ID",
 
   "reviews_page": {
     "title": "All Reviews",

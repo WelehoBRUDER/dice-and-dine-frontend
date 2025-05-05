@@ -131,6 +131,15 @@
   "profile_page.profile_picture": "Profiilikuva",
   "profile_page.orders": "Tilauksesi",
   "profile_page.details": "Tiedot",
+  "profile_page.arrival": "Saapumisaika",
+  "profile_page.time_range": "Aika",
+  "profile_page.size": "Varauksen koko",
+  "profile_page.tables": "Varatut pöydät",
+  "profile_page.reservations": "Varauksesi",
+  "profile_page.orderid": "Tilausnumero",
+  "profile_page.ordertime": "Tilausaika",
+  "profile_page.orderstatus": "Tila",
+  "profile_page.reservationid": "Varausnumero",
 
   "profile_page.description": "Profiilisivusi, jolta voit hallita tiliäsi. Täällä voit tarkastella ja muokata henkilökohtaisia tietojasi, tarkastella tilauksiasi ja varauksiasi. Voit myös vaihtaa salasanaasi ja ladata profiilikuva.",
 
