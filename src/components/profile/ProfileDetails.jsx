@@ -73,7 +73,7 @@ const ProfileDetails = ({userDetails, lang}) => {
     if (mode === "edit") {
       const success = await handleSubmit();
       if (success) {
-        alert("Profile updated successfully!");
+        alert(lang("profile_page.updated_succesfully"));
         setMode("view");
         setUser((prev) => ({
           ...prev,
@@ -88,17 +88,25 @@ const ProfileDetails = ({userDetails, lang}) => {
 
   const handleChangePasswordClick = async (e) => {
     e.preventDefault();
+
     if (mode === "password") {
-      const success = await handleSubmit();
-      inputs.oldpassword = "";
-      inputs.password = "";
-      if (success) {
-        alert("Password changed successfully! Please log in again.");
-        setMode("view");
-        handleLogout();
-        navigate("/login");
-      } else {
-        alert("Error changing password. Please try again.");
+      try {
+        const success = await handleSubmit();
+
+        inputs.oldpassword = "";
+        inputs.password = "";
+
+        if (success) {
+          alert(lang("profile_page.password_changed"));
+          setMode("view");
+          handleLogout();
+          navigate("/login");
+        } else {
+          alert(lang("profile_page.password_error"));
+        }
+      } catch (error) {
+        console.error("Password change failed:", error);
+        alert(lang("profile_page.password_error"));
       }
     } else {
       setMode("password");
