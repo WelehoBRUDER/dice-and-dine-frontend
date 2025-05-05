@@ -1,7 +1,8 @@
 import {useLanguage} from "../../context/LanguageContext";
 
-const OrderTable = ({userDetails, orderDetails}) => {
+const OrderTable = ({orderDetails}) => {
   const {lang} = useLanguage();
+  console.log("Order details:", orderDetails);
 
   return (
     <table>
@@ -13,15 +14,13 @@ const OrderTable = ({userDetails, orderDetails}) => {
         </tr>
       </thead>
       <tbody>
-        {userDetails.orders.length > 0 ? (
-          userDetails.orders.map((order, index) => (
-            <tr key={index}>
-              <td>{order}</td>
-              <td>{new Date(orderDetails[index].time).toLocaleString()}</td>
+        {orderDetails.length > 0 ? (
+          orderDetails.map((order, index) => (
+            <tr key={order.id || index}>
+              <td>{order.id}</td>
+              <td>{new Date(order.time).toLocaleString()}</td>
               <td>
-                {lang(
-                  `admin_orders_page.status_${orderDetails[index].order[0].status}`
-                )}
+                {lang(`admin_orders_page.status_${order.order[0].status}`)}
               </td>
             </tr>
           ))

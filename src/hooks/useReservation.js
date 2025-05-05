@@ -42,36 +42,26 @@ const useReservation = () => {
       setLoading(false);
     }
   };
+  const getReservationDetails = async (reservationId) => {
+    setLoading(true);
+    setError(null);
 
-  // const getOrderDetails = async (orderId) => {
-  //   setLoading(true);
-  //   setError(null);
+    try {
+      const data = await fetchData(`${API_URL}/tables/${reservationId}`, {
+        method: "GET",
+      });
 
-  //   try {
-  //     const data = await fetchData(`${API_URL}/orders/${orderId}`, {
-  //       method: "GET",
-  //       headers: {
-  //         Authorization: `Bearer ${user.token}`,
-  //         "Content-Type": "application/json",
-  //       },
-  //     });
-
-  //     if (data) {
-  //       const ordersWithTime = data.order.map((orderItem) => ({
-  //         ...orderItem,
-  //         time: data.time,
-  //       }));
-
-  //       return ordersWithTime;
-  //     } else {
-  //       setError("Failed to fetch order details");
-  //     }
-  //   } catch (err) {
-  //     setError("Failed to fetch order details: " + err.message);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+      if (data) {
+        return data;
+      } else {
+        setError("Failed to fetch reservation details");
+      }
+    } catch (err) {
+      setError("Failed to fetch reservation details: " + err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return {
     makeReservation,
@@ -79,6 +69,7 @@ const useReservation = () => {
     reservationSuccess,
     reservationId,
     error,
+    getReservationDetails,
   };
 };
 

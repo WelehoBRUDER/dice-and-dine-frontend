@@ -136,6 +136,11 @@
   "profile_page.profile_picture": "Profile Picture",
   "profile_page.orders": "Your orders",
   "profile_page.details": "Details",
+  "profile_page.arrival": "Arrival",
+  "profile_page.time_range": "Time",
+  "profile_page.size": "Reservation size",
+  "profile_page.tables": "Table reserved",
+  "profile_page.reservations": "Your reservations",
 
   "reviews_page": {
     "title": "All Reviews",
