@@ -1,6 +1,8 @@
 import {useState} from "react";
-import Button from "../components/Button";
+import Button from "../Button";
 import ForumReplyMenu from "./ForumReplyMenu";
+import Input from "../Input";
+import useForm from "../../hooks/formHooks";
 
 export const ForumsArticle = ({item, lang}) => {
   const [clickedItem, setClickedItem] = useState([]);
@@ -8,6 +10,14 @@ export const ForumsArticle = ({item, lang}) => {
     //console.log("item", item);
     setClickedItem(item);
   };
+
+  const {inputs, handleSubmit, handleInputChange} =
+    useForm(/*submitAction, {
+    username: userDetails?.name || "",
+    email: userDetails?.email || "",
+    oldpassword: "",
+    password: "",
+  }*/);
 
   return clickedItem?.id == item.id ? (
     <article className="forum-article clicked-article" key={item.id}>
@@ -19,8 +29,11 @@ export const ForumsArticle = ({item, lang}) => {
       <p>{item?.time}</p>
       <div>
         <h4>{lang("forum_page_replies")}:</h4>
-        <ForumReplyMenu replies={item.replies}></ForumReplyMenu>
-        <Button>{lang("forum_page_reply_button")}</Button>
+        <ForumReplyMenu replies={item.replies} lang={lang} />
+        <div>
+          <Input type="text" onChange={handleInputChange} />
+          <Button>{lang("forum_page_reply_button")}</Button>
+        </div>
       </div>
     </article>
   ) : (

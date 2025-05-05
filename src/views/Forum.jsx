@@ -3,7 +3,7 @@ import {useLanguage} from "../context/LanguageContext";
 import {useEffect} from "react";
 import LoadingWheel from "../components/LoadingWheel";
 import Button from "../components/Button";
-import ForumArticle from "../components/ForumArticle";
+import ForumArticle from "../components/forum/ForumArticle";
 
 const Forum = () => {
   const {currentLanguage, lang, setCurrentPage} = useLanguage();
@@ -27,7 +27,7 @@ const Forum = () => {
       ) : (
         <section id="forum-section">
           {forum.map((item) => (
-            <ForumArticle item={item} lang={lang}></ForumArticle>
+            <ForumArticle item={item} lang={lang} />
           ))}
         </section>
       )}
