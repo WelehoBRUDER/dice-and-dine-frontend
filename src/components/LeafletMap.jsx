@@ -9,6 +9,7 @@ import MapTransportationMarkers from "./MapTransportationMarkers";
  * Component that renders a Leaflet map with a marker and popup.
  * It fetches the restaurant's latitude and longitude from the API and displays it on the map.
  *
+ * @param {Object} transportationInfo - Information about transportation to be displayed on the map.
  * @param {any} children - Child elements to be rendered inside the map component.
  * @returns
  */

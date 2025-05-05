@@ -34,7 +34,8 @@
     "about_page_phone": "Puhelin",
     "about_page_email": "Sähköposti",
     "about_page_address": "Osoite",
-    "about_page_open_times": "Aukioloajat"
+    "about_page_open_times": "Aukioloajat",
+    "location": "Ravintolan sijainti kartalla"
   },
 
   "authentication_page": {

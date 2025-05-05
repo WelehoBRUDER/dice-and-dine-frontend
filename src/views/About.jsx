@@ -1,18 +1,28 @@
 import useRestaurantInfo from "../hooks/useRestaurantInfo";
 import {useLanguage} from "../context/LanguageContext";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import LeafletMap from "../components/LeafletMap";
 import LoadingWheel from "../components/LoadingWheel";
 
 const About = () => {
   const {currentLanguage, lang, setCurrentPage} = useLanguage();
+  const [transportationInfo, setTransportationInfo] = useState(null);
 
-  const {info, loading} = useRestaurantInfo(currentLanguage);
+  const {info, loading, getTransportationInfo} =
+    useRestaurantInfo(currentLanguage);
 
   useEffect(() => {
     setCurrentPage("about_page");
   }, []);
-  console.log("info", info[0]);
+
+  useEffect(() => {
+    const fetchTransportationInfo = async () => {
+      const info = await getTransportationInfo();
+      setTransportationInfo(info);
+    };
+    fetchTransportationInfo();
+  }, []);
+
   return (
     <div>
       <article>
@@ -40,7 +50,7 @@ const About = () => {
           <div>{info[0]?.open_times}</div>
         </div>
       )}
-      <LeafletMap>
+      <LeafletMap transportationInfo={transportationInfo}>
         <h2>{lang("location")}</h2>
       </LeafletMap>
     </div>
