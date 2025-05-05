@@ -31,10 +31,9 @@ const Home = () => {
           <Button to="/games">{lang("games_link")}</Button>
           <Button to="/about">{lang("about_link")}</Button>
         </nav>
-        <div className="map-embed flex-column center">
+        <LeafletMap>
           <h2>{lang("find_us_here")}</h2>
-          <LeafletMap />
-        </div>
+        </LeafletMap>
       </div>
     </>
   );
