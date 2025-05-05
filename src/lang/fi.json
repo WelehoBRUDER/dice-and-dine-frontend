@@ -178,5 +178,14 @@
   "admin_orders_page.th_status": "Tila",
   "admin_orders_page.th_date": "Päivämäärä",
   "admin_orders_page.th_actions": "Toimenpiteet",
-  "admin_page.addtomenu_page_link": "Lisää ruokalistalle"
+  "admin_page.addtomenu_page_link": "Lisää ruokalistalle",
+
+  "editmenu_page.title": "Ruokalistalta poisto",
+  "editmenu_page.filter": "Suodata kategorian mukaan",
+  "editmenu_page.all": "Kaikki",
+  "editmenu_page.itemid": "Tuotteen ID",
+  "editmenu_page.name": "Nimi",
+  "editmenu_page.price": "Hinta",
+  "editmenu_page.category": "Kategoria",
+  "editmenu_page.delete": "Poista"
 }

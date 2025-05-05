@@ -43,7 +43,7 @@
 }
 
 .status-select,
-.status-filter {
+.admin-filter {
   width: 20rem;
   background: var(--theme-foreground);
   font-size: 2rem;
@@ -55,4 +55,8 @@
   display: flex;
   padding: 0.5rem;
   width: 15rem;
+}
+
+.delete-menu-item-btn {
+  background-color: var(--theme-foreground);
 }

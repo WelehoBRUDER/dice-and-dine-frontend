@@ -77,7 +77,7 @@ const Orders = () => {
           {lang("admin_orders_page.filter_by_status")}:
         </label>
         <select
-          className="status-filter"
+          className="admin-filter"
           value={filterStatus}
           onChange={(e) => setFilterStatus(e.target.value)} // Update filter status on change
         >
@@ -104,7 +104,7 @@ const Orders = () => {
         </label>
         <input
           type="date"
-          className="status-filter"
+          className="admin-filter"
           value={filterDate}
           onChange={(e) => setFilterDate(e.target.value)}
         />

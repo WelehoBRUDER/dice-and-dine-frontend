@@ -181,5 +181,14 @@
   "admin_orders_page.th_status": "Status",
   "admin_orders_page.th_date": "Date",
   "admin_orders_page.th_actions": "Actions",
-  "admin_page.addtomenu_page_link": "Add To Menu"
+  "admin_page.addtomenu_page_link": "Add To Menu",
+
+  "editmenu_page.title": "Delete Menu Item",
+  "editmenu_page.filter": "Filter By Category",
+  "editmenu_page.all": "All",
+  "editmenu_page.itemid": "Item ID",
+  "editmenu_page.name": "Name",
+  "editmenu_page.price": "Price",
+  "editmenu_page.category": "Category",
+  "editmenu_page.delete": "Delete"
 }
