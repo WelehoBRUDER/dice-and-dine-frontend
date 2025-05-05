@@ -15,16 +15,26 @@ const useForm = (callback, initState) => {
     return success;
   };
 
-  const handleInputChange = (event) => {
-    event.persist();
-    setInputs((inputs) => ({
-      ...inputs,
-      [event.target.name]: event.target.value,
-    }));
+  const handleInputChange = (language, event) => {
+    const {name, value} = event.target;
+
+    if (language) {
+      setInputs((inputs) => ({
+        ...inputs,
+        [language]: {
+          ...inputs[language],
+          [name]: value,
+        },
+      }));
+    } else {
+      setInputs((inputs) => ({
+        ...inputs,
+        [name]: value,
+      }));
+    }
   };
 
   const handleFileChange = (event) => {
-    event.persist();
     const selectedFile = event.target.files[0];
 
     if (selectedFile && selectedFile.size < 5 * 1024 * 1024) {

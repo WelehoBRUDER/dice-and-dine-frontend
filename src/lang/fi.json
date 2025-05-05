@@ -187,5 +187,21 @@
   "editmenu_page.name": "Nimi",
   "editmenu_page.price": "Hinta",
   "editmenu_page.category": "Kategoria",
-  "editmenu_page.delete": "Poista"
+  "editmenu_page.delete": "Poista",
+
+  "addtomenu_page.title": "Lisää ruokalistalle",
+  "addtomenu_page.enTitle": "Englanti",
+  "addtomenu_page.fiTitle": "Suomi",
+  "addtomenu_page.finame": "Nimi",
+  "addtomenu_page.namePlaceholder": "Anna nimi",
+  "addtomenu_page.price": "Hinta",
+  "addtomenu_page.pricePlaceholder": "Anna hinta euroina",
+  "addtomenu_page.ficategory": "Valitse kategoria",
+  "addtomenu_page.fiallergens": "Allergeenit",
+  "addtomenu_page.fidescription": "Kuvaus",
+  "addtomenu_page.descriptionPlaceholder": "Anna annoksen kuvaus",
+  "addtomenu_page.enname": "Name",
+  "addtomenu_page.endescription": "Description",
+  "addtomenu_page.enallergens": "Allergens",
+  "addtomenu_page.encategory": "Categories"
 }

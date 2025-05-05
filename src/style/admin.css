@@ -60,3 +60,30 @@
 .delete-menu-item-btn {
   background-color: var(--theme-foreground);
 }
+
+.admin-checkbox {
+  gap: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px; /* Spacing between checkboxes */
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-item label {
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+.admin-label {
+  font-size: 2rem;
+}
