@@ -4,6 +4,7 @@ import {useLanguage} from "../context/LanguageContext";
 import useRestaurantInfo from "../hooks/useRestaurantInfo";
 import LoadingWheel from "./LoadingWheel";
 import MapInvalidator from "./MapInvalidator";
+import MapTransportationMarkers from "./MapTransportationMarkers";
 /**
  * Component that renders a Leaflet map with a marker and popup.
  * It fetches the restaurant's latitude and longitude from the API and displays it on the map.
@@ -11,7 +12,7 @@ import MapInvalidator from "./MapInvalidator";
  * @param {any} children - Child elements to be rendered inside the map component.
  * @returns
  */
-const LeafletMap = ({children}) => {
+const LeafletMap = ({transportationInfo, children}) => {
   const [position, setPosition] = useState(null); // Default position (latitude, longitude)
   const {lang} = useLanguage();
   const {info, loading} = useRestaurantInfo("en"); // Fetch restaurant info in English
@@ -19,7 +20,6 @@ const LeafletMap = ({children}) => {
   useEffect(() => {
     if (info.length > 0) {
       const {latitude, longitude} = info[0];
-      console.log(latitude, longitude);
       setPosition([latitude, longitude]); // Update position with fetched coordinates
     }
   }, [info]);
@@ -39,6 +39,9 @@ const LeafletMap = ({children}) => {
             <Popup>{lang("restaurant_title")}</Popup>
           </Marker>
           <MapInvalidator position={position} />
+          {transportationInfo && (
+            <MapTransportationMarkers data={transportationInfo} />
+          )}
         </MapContainer>
       )}
     </div>

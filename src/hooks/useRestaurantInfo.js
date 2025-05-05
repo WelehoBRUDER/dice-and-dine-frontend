@@ -23,7 +23,20 @@ export function useRestaurantInfo(language) {
     loadMenu();
   }, [language]);
 
-  return {info, loading};
+  const getTransportationInfo = async () => {
+    setLoading(true);
+    try {
+      const data = await fetchData(`${API_URL}/info/getPublicTransport`);
+      console.log("Transportation data: ", data);
+      return data;
+    } catch (error) {
+      console.error("Error fetching transportation info:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return {info, loading, getTransportationInfo};
 }
 
 export default useRestaurantInfo;
