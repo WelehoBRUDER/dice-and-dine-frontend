@@ -26,6 +26,7 @@ import AdminLayout from "./views/admin/AdminLayout";
 import {LanguageProvider} from "./context/LanguageContext";
 import AdminRoute from "./components/AdminRoute";
 import Unauthorized from "./views/Unauthorized";
+import AddToMenu from "./views/admin/AddToMenu";
 
 const App = () => {
   return (
@@ -66,6 +67,7 @@ const App = () => {
                 <Route path="reservations" element={<Reservations />} />
                 <Route path="editabout" element={<EditAbout />} />
                 <Route path="adminreviews" element={<AdminReviews />} />
+                <Route path="addtomenu" element={<AddToMenu />} />
               </Route>
             </Routes>
           </CartProvider>

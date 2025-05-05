@@ -157,7 +157,7 @@
   "admin_page.title": "Admin Page",
   "admin_page.orders_page_link": "Orders",
   "admin_page.users_page_link": "Users",
-  "admin_page.editmenu_page_link": "Edit Menu",
+  "admin_page.editmenu_page_link": "Delete From Menu",
   "admin_page.editabout_page_link": "Edit About",
   "admin_page.reviews_page_link": "Reviews",
   "admin_page.reservations_page_link": "Table Reservations",
@@ -180,5 +180,6 @@
   "admin_orders_page.th_items": "Items",
   "admin_orders_page.th_status": "Status",
   "admin_orders_page.th_date": "Date",
-  "admin_orders_page.th_actions": "Actions"
+  "admin_orders_page.th_actions": "Actions",
+  "admin_page.addtomenu_page_link": "Add To Menu"
 }
