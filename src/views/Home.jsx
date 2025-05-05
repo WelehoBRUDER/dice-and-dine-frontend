@@ -3,6 +3,7 @@ import {useLanguage} from "../context/LanguageContext";
 import Button from "../components/Button";
 import logo from "/restaurant_logo.png?url";
 import LeafletMap from "../components/LeafletMap";
+import HeroImage from "/images/2h-media-7gagNAbWocg-unsplash.jpg";
 import "../style/home.css";
 
 const Home = () => {
@@ -22,6 +23,10 @@ const Home = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </article>
       <div className="home flex-column center">
+        <div className="hero-image flex-column center">
+          <h1 className="large-text">{lang("title")}</h1>
+          <span className="large-text">{lang("subtitle")}</span>
+        </div>
         <div className="logo">
           <img src={logo} alt={lang("restaurant_icon_alt")}></img>
         </div>

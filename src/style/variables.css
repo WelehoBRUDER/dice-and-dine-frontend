@@ -5,6 +5,7 @@
   --theme-lighter: #779cab;
   --theme-contrast: #f0eff4;
   --loading-wheel: #433a6b;
+  --loading-wheel-lighter: rgb(107, 92, 175);
   font-size: 62.5%; /* 1rem = 10px */
 
   font-family: "Roboto", sans-serif;

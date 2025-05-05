@@ -112,7 +112,25 @@ span {
   height: min(50vh, 40rem);
   width: min(100%, 75rem);
 
-  .leaflet-popup-content {
-    color: var(--theme-background);
+  * {
+    color: var(--theme-darker);
   }
+
+  .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    background: var(--theme-darker);
+
+    .leaflet-popup-content {
+      color: var(--loading-wheel-lighter);
+    }
+  }
+
+}
+
+.large-text {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+h1.large-text  {
+  font-size: 7rem;
 }
