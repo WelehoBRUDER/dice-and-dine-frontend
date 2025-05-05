@@ -2,12 +2,16 @@ import {useState} from "react";
 import Button from "../Button";
 import ForumReplyMenu from "./ForumReplyMenu";
 import Input from "../Input";
-import useForm from "../../hooks/formHooks";
 
 export const ForumsArticle = ({item, lang}) => {
   const [clickedItem, setClickedItem] = useState([]);
   const handleItemClick = (item) => {
     setClickedItem(item);
+  };
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
   };
 
   return clickedItem?.id == item.id ? (
@@ -21,9 +25,13 @@ export const ForumsArticle = ({item, lang}) => {
       <div>
         <h4>{lang("forum_page_replies")}:</h4>
         <ForumReplyMenu replies={item.replies} lang={lang} />
-        <form>
-          <Input type="text" onChange={() => {}} />
-          <Button>{lang("forum_page_reply_button")}</Button>
+        <form onSubmit={handleSubmit}>
+          <Input
+            type="text"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
+          <Button type="submit">{lang("forum_page_reply_button")}</Button>
         </form>
       </div>
     </article>
