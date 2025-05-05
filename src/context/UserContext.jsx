@@ -25,7 +25,6 @@ const UserProvider = ({children}) => {
     try {
       localStorage.removeItem("token");
       setUser(null);
-      navigate("/");
     } catch (e) {
       console.log(e.message);
     }

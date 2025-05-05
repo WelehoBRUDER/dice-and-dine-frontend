@@ -13,7 +13,7 @@ import Menu from "./views/Menu";
 import {CartProvider} from "./context/CartContext";
 import CartPage from "./views/CartPage";
 import {UserProvider} from "./context/UserContext";
-import Logout from "./components/Logout";
+import Logout from "./views/Logout";
 import Profile from "./views/Profile";
 import Admin from "./views/Admin";
 import Users from "./views/admin/Users";

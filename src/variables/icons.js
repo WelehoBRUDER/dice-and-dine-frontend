@@ -8,6 +8,7 @@ import overview from "../assets/icons/overview.svg";
 import star from "../assets/icons/star.svg";
 import star_filled from "../assets/icons/star_gold.svg";
 import cart from "../assets/icons/cart.svg";
+import mail from "../assets/icons/mail.svg";
 
 export const icons = {
   user,
@@ -20,4 +21,5 @@ export const icons = {
   star,
   star_filled,
   cart,
+  mail,
 };

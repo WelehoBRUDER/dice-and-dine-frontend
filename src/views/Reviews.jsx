@@ -15,8 +15,13 @@ const Reviews = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <h1>{lang("title")}</h1>
+      <div className="container corner-sticky">
+        <Button to="/make-review" className="btn">
+          {lang("leave_review")}
+        </Button>
+      </div>
       <div className="reviews flex-column wrap">
         {loading ? (
           <LoadingWheel />
@@ -28,12 +33,7 @@ const Reviews = () => {
           </div>
         )}
       </div>
-      <div className="container corner-sticky">
-        <Button to="/make-review" className="btn">
-          {lang("leave_review")}
-        </Button>
-      </div>
-    </div>
+    </>
   );
 };
 

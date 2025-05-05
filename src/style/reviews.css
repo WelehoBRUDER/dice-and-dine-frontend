@@ -7,6 +7,14 @@
   }
 }
 
+.reviews-list {
+  max-height: 80vh;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+
+
 .review__container {
   border: 0.2rem solid var(--theme-contrast);
   width: var(--input-width);

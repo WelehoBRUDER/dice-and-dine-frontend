@@ -97,6 +97,7 @@ const Form = ({lang, authentication}) => {
         placeholder={lang("password_field_placeholder")}
         value={inputs.password}
         onChange={handleInputChange}
+        icon="lock"
       />
       {errors.password && <div className="error">{errors.password}</div>}
       {authentication === "register" && (
@@ -108,6 +109,7 @@ const Form = ({lang, authentication}) => {
             placeholder={lang("email_field_placeholder")}
             value={inputs.email}
             onChange={handleInputChange}
+            icon="mail"
           />
 
           {errors.email && <div className="error">{errors.email}</div>}
