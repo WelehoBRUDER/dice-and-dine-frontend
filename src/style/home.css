@@ -1,0 +1,13 @@
+.home {
+  align-items: center;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+
+  .map-embed {
+    width: 100%;
+    background: var(--theme-foreground);
+    padding: 2rem;
+    align-items: center;
+  }
+}

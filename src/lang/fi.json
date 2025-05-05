@@ -5,12 +5,15 @@
   "restaurant_title": "Dice & Dine",
   "home_page": {
     "title": "Dice&Dine",
-    "subtitle": "Tervetuloa etusivulle"
+    "subtitle": "Tervetuloa etusivulle",
+    "description": "Olemme ravintola, joka yhdistää lautapelit ja herkullisen ruoan. Meillä voit nauttia maukkaista annoksista samalla kun pelaat suosikkilautapelejäsi ystäviesi kanssa. Meidän valikoimastamme löydät laajan valikoiman pelejä eri genreistä ja vaikeustasoista, joten jokaiselle löytyy jotakin! Tule ja koe unohtumaton ilta meillä!",
+    "find_us_here": "Täältä löydät meidät"
   },
 
   "loading_text": "Ladataan sisältöä...",
   "try_again": "Yritä uudelleen",
   "continue": "Jatka eteenpäin",
+  "home_title": "Dice & Dine",
 
   "home_page_link": "Etusivu",
   "about_page_link": "Tietoa",

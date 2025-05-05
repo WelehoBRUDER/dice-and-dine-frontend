@@ -41,6 +41,8 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 .main-content {
@@ -104,4 +106,13 @@ h2 {
 span {
   font-size: 1.4rem;
   opacity: 0.8;
+}
+
+.leaflet-container {
+  height: min(50vh, 40rem);
+  width: min(100%, 75rem);
+
+  .leaflet-popup-content {
+    color: var(--theme-background);
+  }
 }
