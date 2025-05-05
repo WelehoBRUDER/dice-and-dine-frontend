@@ -26,3 +26,14 @@
   list-style: none;
   border-style: solid;
 }
+
+.forum-post-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  padding: 1rem;
+  background-color: var(--theme-background);
+  border-radius: 1rem;
+  border-style: solid;
+}

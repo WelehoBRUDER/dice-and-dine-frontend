@@ -1,15 +1,34 @@
+import {useState} from "react";
 import useForum from "../hooks/useForum";
 import {useLanguage} from "../context/LanguageContext";
 import {useEffect} from "react";
 import LoadingWheel from "../components/LoadingWheel";
 import Button from "../components/Button";
+import Input from "../components/Input";
+
 import ForumArticle from "../components/forum/ForumArticle";
+import {useUserContext} from "../hooks/useUserContext";
+import {useNavigate} from "react-router-dom";
 
 const Forum = () => {
   const {currentLanguage, lang, setCurrentPage} = useLanguage();
   const {forum, loading} = useForum(currentLanguage);
 
-  //console.log("forum", forum);
+  const [title, setTitle] = useState("");
+  const [message, setMessage] = useState("");
+  const {postMessage} = useForum();
+  const {user} = useUserContext();
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(user);
+    postMessage(title, message, user.username).then((res) => {
+      console.log(res);
+      setMessage("");
+      navigate("/forum");
+    });
+  };
 
   useEffect(() => {
     setCurrentPage("forum_page");
@@ -29,6 +48,22 @@ const Forum = () => {
           {forum.map((item) => (
             <ForumArticle item={item} lang={lang} />
           ))}
+          <form onSubmit={handleSubmit} className="forum-post-form">
+            <h3>{lang("make a new post")}</h3>
+            <Input
+              text={lang("forum_page_post_title")}
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+            <Input
+              text={lang("forum_page_post_message")}
+              type="text"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+            <Button type="submit">{lang("forum_page_post_button")}</Button>
+          </form>
         </section>
       )}
     </>
