@@ -1,7 +1,7 @@
 import {useState} from "react";
 import Button from "../Button";
 import ForumReplyMenu from "./ForumReplyMenu";
-import Input from "../Input";
+import TextArea from "../TextArea";
 import useForum from "../../hooks/useForum";
 import {useUserContext} from "../../hooks/useUserContext";
 
@@ -37,7 +37,7 @@ export const ForumPostArticle = ({item, lang}) => {
           lang={lang}
         />
         <form onSubmit={handleSubmit} className="forum-post-form">
-          <Input
+          <TextArea
             type="text"
             value={message}
             onChange={(e) => setMessage(e.target.value)}

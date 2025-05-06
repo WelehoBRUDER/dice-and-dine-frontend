@@ -5,8 +5,10 @@ import {useEffect} from "react";
 import LoadingWheel from "../components/LoadingWheel";
 import Button from "../components/Button";
 import Input from "../components/Input";
+import TextArea from "../components/TextArea";
 
 import ForumArticle from "../components/forum/ForumArticle";
+import ForumThread from "../components/forum/ForumThread";
 import {useUserContext} from "../hooks/useUserContext";
 import {useNavigate} from "react-router-dom";
 
@@ -49,9 +51,11 @@ const Forum = () => {
         <LoadingWheel />
       ) : (
         <section id="forum-section">
-          {forum.map((item) => (
-            <ForumArticle item={item} lang={lang} />
-          ))}
+          <div className="articles">
+            {forum.map((item) => (
+              <ForumThread item={item} lang={lang} />
+            ))}
+          </div>
           <form onSubmit={handleSubmit} className="forum-post-form">
             <h3>{lang("make a new post")}</h3>
             <Input
@@ -59,8 +63,9 @@ const Forum = () => {
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
+              icon="star"
             />
-            <Input
+            <TextArea
               text={lang("forum_page_post_message")}
               type="text"
               value={message}

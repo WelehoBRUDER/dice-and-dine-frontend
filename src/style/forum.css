@@ -9,10 +9,11 @@
 
 .forum-article {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 2rem;
-  padding: 1rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem;
+  padding: 0.5rem 2rem;
   background-color: var(--theme-background);
   border-radius: 1rem;
   border-style: solid;
@@ -56,4 +57,10 @@
 
 .forum-reply-menu-item input {
   color: black;
+}
+
+.articles {
+  max-height: 60vh;
+  overflow: hidden;
+  overflow-y: auto;
 }
