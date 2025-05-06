@@ -8,8 +8,11 @@
     "title": "Dice & Dine",
     "subtitle": "Great food. Great games.",
     "description": "We are a restaurant that specializes in board games and delicious food. Our goal is to create a fun and welcoming environment for everyone. Whether you're a board game enthusiast or just looking for a great meal, we have something for you!",
-    "find_us_here": "Find us here"
+    "find_us_here": "Find us here",
+    "home_description": "Welcome to Dice & Dine! We are a restaurant that combines love of board games with delicious food.",
+    "home_keywords": "Board games, Restaurant, Food, Fun, Family-friendly"
   },
+  "default_profile_picture": "Default profile picture",
 
   "loading_text": "Loading content...",
   "try_again": "Try again",
@@ -110,6 +113,8 @@
   "reservation_page": {
     "make_reservation": "Make a reservation",
     "loading_reservation": "Loading reservation...",
+    "reservation_title": "Make a table reservation",
+    "reservation_description": "Make a reservation for a table at our restaurant. Choose the date, time, and number of people. You can also add additional information if needed.",
     "reservation": "Reservation",
     "reservation_date": "Which day would you like to reserve?",
     "reservation_arrival": "What time will you arrive?",
@@ -118,7 +123,7 @@
     "reservation_summary": "Summary",
     "reservation_summary_text": "View summary",
     "not_set_arrival": "Pick arrival time",
-    "not_set_length": "Pick length of stay",
+    "not_set_length": "Pick reservation duration",
     "not_set_tables": "Pick table(s)",
     "table": "Table",
     "seats": "Seats",
@@ -128,7 +133,7 @@
     "reservation_failed_desc": "There was an error while making the reservation. Please try again later.",
     "date": "Date",
     "arrival_time": "Arrival time",
-    "length_of_stay": "Length of stay",
+    "length_of_stay": "Reservation duration",
     "tables": "Tables reserved"
   },
 
@@ -164,6 +169,7 @@
     "anon": "Anonymous",
     "review_title": "Review title",
     "leave_review": "Leave a review",
+    "reviews_description": "Browse reviews from other customers and leave your own.",
     "read_more": "More⠀↓"
   },
   "profile_page.change_password": "Change Password",
@@ -191,6 +197,7 @@
 
   "unauthorized_page.title": "403 - Not Authorized",
   "unauthorized_page.description": "You do not have permission to access this page.",
+  "not_authorized": "403 - Not Authorized",
 
   "admin_orders_page.title": "Manage Orders",
   "admin_orders_page.filter_by_status": "Filter by status",

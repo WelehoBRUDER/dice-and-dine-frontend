@@ -7,8 +7,11 @@
     "title": "Dice & Dine",
     "subtitle": "Hyvää ruokaa. Hauskoja pelejä.",
     "description": "Olemme ravintola, joka yhdistää lautapelit ja herkullisen ruoan. Meillä voit nauttia maukkaista annoksista samalla kun pelaat suosikkilautapelejäsi ystäviesi kanssa. Meidän valikoimastamme löydät laajan valikoiman pelejä eri genreistä ja vaikeustasoista, joten jokaiselle löytyy jotakin! Tule ja koe unohtumaton ilta meillä!",
-    "find_us_here": "Täältä löydät meidät"
+    "find_us_here": "Täältä löydät meidät",
+    "home_description": "Tervetuloa ravintolan Dice & Dine kotisivuille! Yhdistämme rakkauden lautapelejä kohtaan herkullisen ruuan kanssa.",
+    "home_keywords": "Lautapelit, Ravintola, Ruoka, Hauska, Perheystävällinen"
   },
+  "default_profile_picture": "Oletusprofiilikuva",
 
   "loading_text": "Ladataan sisältöä...",
   "try_again": "Yritä uudelleen",
@@ -103,12 +106,15 @@
     "review_submitted_desc": "Arvostelusi on lähetetty onnistuneesti. Kiitos palautteestanne!",
     "review_failed": "Arvostelun lähetys epäonnistui",
     "review_failed_desc": "Arvostelun lähetyksessä tapahtui virhe. Yrittäkää uudeelleen myöhemmin.",
-    "review_description": "Ravintolan arvostelut"
+    "review_description": "Ravintolan arvostelut",
+    "loading_review": "Ladataan arvostelua..."
   },
 
   "reservation_page": {
     "make_reservation": "Tee varaus",
     "loading_reservation": "Ladataan varausikkunaa...",
+    "reservation_title": "Tee pöytävaraus",
+    "reservation_description": "Tee pöytävaraus ravintolassamme. Valitse haluamasi päivä, saapumisaika ja varauksen kesto. Voit myös valita haluamasi pöydät ryhmällesi.",
     "reservation": "Varaus",
     "reservation_date": "Minkä päivän haluaisit varata?",
     "reservation_arrival": "Mihin aikaan tulette saapumaan?",
@@ -165,6 +171,7 @@
     "anon": "Anonyymi",
     "review_title": "Arvostelun otsikko",
     "leave_review": "Jätä arvostelu",
+    "reviews_description": "Selaa asiakkaiden jättämiä arvosteluja ja luo omasi.",
     "read_more": "Lisää⠀↓"
   },
   "profile_page.change_password": "Vaihda salasana",
@@ -192,6 +199,7 @@
 
   "unauthorized_page.title": "403 - Pääsy kielletty",
   "unauthorized_page.description": "Sinulla ei ole oikeuksia käyttää tätä sivua.",
+  "not_authorized": "403 - Pääsy kielletty",
 
   "admin_orders_page.title": "Hallitse tilauksia",
   "admin_orders_page.filter_by_status": "Suodata tilan mukaan",

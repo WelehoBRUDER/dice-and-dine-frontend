@@ -59,7 +59,7 @@ const ReviewContent = ({reviewText, user, stars}) => {
         <div className="review__user flex-row wrap">
           <img
             src={icons.user}
-            alt={lang("profile_page.default_profile_image")}
+            alt={lang("default_profile_picture")}
             className="review__user-image"
           />
           <h3>{lang("anon")}</h3>

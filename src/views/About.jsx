@@ -27,9 +27,6 @@ const About = () => {
     <div>
       <article>
         <title>{lang("about_page_title")}</title>
-        <meta name="description" content={lang("about_description")} />
-        <meta name="keywords" content={lang("about_keywords")} />
-        <meta name="author" content={lang("about_author")} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </article>
       <h1>{lang("about_page_title")}</h1>

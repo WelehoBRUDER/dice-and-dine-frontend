@@ -8,7 +8,7 @@ import "../style/home.css";
 
 const Home = () => {
   const {lang, setCurrentPage} = useLanguage();
-  const {getTransportationInfo, loading} = useRestaurantInfo();
+  const {getTransportationInfo} = useRestaurantInfo();
   const [transportationInfo, setTransportationInfo] = useState(null);
 
   useEffect(() => {
@@ -29,7 +29,6 @@ const Home = () => {
         <title>{lang("home_title")}</title>
         <meta name="description" content={lang("home_description")} />
         <meta name="keywords" content={lang("home_keywords")} />
-        <meta name="author" content={lang("home_author")} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </article>
       <div className="home flex-column center">

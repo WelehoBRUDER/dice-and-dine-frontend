@@ -16,6 +16,11 @@ const Reviews = () => {
 
   return (
     <>
+      <article>
+        <title>{lang("title")}</title>
+        <meta name="description" content={lang("reviews_description")} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </article>
       <h1>{lang("title")}</h1>
       <div className="container corner-sticky">
         <Button to="/make-review" className="btn">
