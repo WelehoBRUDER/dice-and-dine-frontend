@@ -265,5 +265,6 @@
   "editabout_page.description": "This page is for editing restaurant information. You can edit the restaurant's name, phone number, email address, and opening times. To edit the information, click on the 'Edit' button next to the field you want to change. After making changes, click on the 'Save' button to save the changes.",
   "editabout_page.phone": "Phone",
   "editabout_page.email": "Email",
-  "editabout_page.opentimes": "Open times"
+  "editabout_page.opentimes": "Open times",
+  "editabout_page.edit": "Edit"
 }
