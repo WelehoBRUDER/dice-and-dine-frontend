@@ -47,13 +47,15 @@
     "location": "Ravintolan sijainti kartalla"
   },
 
-    "forum_page": {
+  "forum_page": {
     "forum_page_title": "Foorumi",
     "forum_page_replies": "Vastaukset",
     "forum_page_post_button": "lähetä",
     "forum_page_reply_button": "Vastaa",
     "forum_page_post_title": "viestin otsikko",
-    "forum_page_post_message": "Viesti"
+    "forum_page_post_message": "Viesti",
+    "reply_to_message": "Vastaa viestiin",
+    "cancel": "Peru"
   },
 
   "authentication_page": {

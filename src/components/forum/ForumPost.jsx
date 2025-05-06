@@ -3,6 +3,7 @@ import {useState, useEffect} from "react";
 import LoadingWheel from "../LoadingWheel";
 import ForumReply from "./ForumReply";
 import ForumUserInfo from "./ForumUserInfo";
+import ForumReplyToMessage from "./ForumReplyToMessage";
 
 export const ForumPost = ({item, lang}) => {
   console.log(item);
@@ -51,6 +52,7 @@ export const ForumPost = ({item, lang}) => {
         <div className="content">
           <p>{item?.message}</p>
         </div>
+        <ForumReplyToMessage item={item} lang={lang} />
       </div>
       {replies && replies.length > 0 ? (
         <div className="replies">

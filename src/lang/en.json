@@ -54,7 +54,9 @@
     "forum_page_post_button": "post",
     "forum_page_reply_button": "Reply",
     "forum_page_post_title": "Post title",
-    "forum_page_post_message": "Post message"
+    "forum_page_post_message": "Post message",
+    "reply_to_message": "Reply to message",
+    "cancel": "Cancel"
   },
 
   "authentication_page": {
