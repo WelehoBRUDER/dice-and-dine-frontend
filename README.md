@@ -6,6 +6,7 @@ A React App built for a fictional restaurant where great food meets great board 
 - [Features](#features)
 - [Live app](#live-app)
 - [Running locally](#how-to-run-locally)
+- [Testing the app](#testing-the-app)
 - [Attributions](#attributions)
 
 ## Overview
@@ -103,6 +104,61 @@ This guide walks you through setting up the frontend for local development.
    ```
 5. **Open the app**  
  Visit `http://localhost:5173` in your browser.
+
+## 🧪 Testing the App
+
+Follow the steps below to test each key feature and ensure the app is working as expected.  
+All pages can be accessed from the header menu.
+![Image of the header menu](header.png)  
+The admin link will not work for test users, as it requires admin credentials.
+
+### 0. Set Up a User Profile
+- When first landing on the site, click **Register** to create a test user.
+- A user profile is required to access most features (ordering, reservations, posting, etc.).
+- Register a new profile with a unique email and password.
+- After registration, log in with the new credentials.
+> **Note:** The page may not always refresh properly after registration. If you encounter issues, try refreshing the page manually.
+
+### 1. Menu & Ordering
+- Navigate to the Menu page.
+- Add food items to the cart by clicking the [**+**] buttons.
+- Confirm the cart appears in the header.
+- Submit an order and verify it appears under your profile.
+
+### 2. Table Reservations
+- Go to the Reservations page.
+- Select a date, time, duration, and table.
+- Add a note in the extra info field and submit.
+- Check that the reservation appears in your profile.
+
+### 3. Game Library
+- Browse the Games page.
+- Use filters to narrow down game categories.
+- Verify that game cards show relevant details.
+> **Note:** it is not possible to reserve games on the website.
+
+### 4. Profile Management
+- Sign up or log in with a test account.
+- Edit profile details (name, email, password).
+- Change profile picture.
+- Confirm reservation and order history are visible.
+
+### 5. Reviews
+- Submit a review as a guest and as a logged-in user.
+- Use different star ratings and verify character limit enforcement.
+- Check that reviews appear after submission.
+> **Note:** The review form may not always refresh properly after submission. If you encounter issues, try refreshing the page manually.
+
+### 6. Forum
+- Create a new thread.
+- Reply to an existing thread.
+- Verify that thread pages display replies correctly.
+
+### 7. Embedded Map
+- Visit the homepage and Contact page.
+- Confirm the map loads and shows correct location and nearby transport.
+
+> Tip: Test on both desktop and mobile viewports to verify responsiveness.
 
 ## Attributions
 - Hero image from [Unsplash](https://unsplash.com/photos/a-man-sitting-at-a-table-playing-a-board-game-7gagNAbWocg?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
