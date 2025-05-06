@@ -5,13 +5,9 @@ import Input from "../Input";
 import useForum from "../../hooks/useForum";
 import {useUserContext} from "../../hooks/useUserContext";
 
-export const ForumPostArticle = ({item, lang, id, post}) => {
-  const [clickedItem, setClickedItem] = useState([]);
-  const handleItemClick = (item) => {
-    setClickedItem(item);
-  };
+export const ForumPostArticle = ({item, lang}) => {
   const [message, setMessage] = useState("");
-  const {forum, setForum, postReplyMessage} = useForum();
+  const {postReplyMessage} = useForum();
   const {user} = useUserContext();
 
   const handleSubmit = (e) => {
@@ -21,18 +17,13 @@ export const ForumPostArticle = ({item, lang, id, post}) => {
       console.log("RES:", res.result);
 
       item.replies.push(res.result);
-      //setForum([...forum, res.result]);
+
       setMessage("");
     });
   };
 
   return (
     <article className="forum-article" key={item?.id}>
-      {/*
-      <Button className="btn-smaller" onClick={() => handleItemClick(null)}>
-        {String.fromCodePoint(0x274c)}
-      </Button>
-      */}
       <h2>{item?.title}</h2>
       <p>{item?.message}</p>
       <p>{item?.time}</p>
