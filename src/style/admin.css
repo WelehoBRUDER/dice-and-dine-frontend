@@ -103,6 +103,11 @@
   align-self: center;
 }
 
+.admin-info-table {
+  width: 75%;
+  align-self: center;
+}
+
 .admin-center {
   align-self: center;
 }
