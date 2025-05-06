@@ -52,24 +52,26 @@ const Reservations = () => {
   return (
     <div className="flex-column">
       <h1>{lang("reservations_page.title")}</h1>
-      <p>
-        <strong>
-          🚧 Project deadline hit before this feature did. Coming soon --- or
-          not!
-        </strong>
-      </p>
-      <p>{lang("reservations_page.description")}</p>
-      <div style={{marginBottom: "1rem"}}>
-        <label>
-          {lang("reservations_page.filter_by_date")}:
-          <input
-            type="date"
-            value={filterDate}
-            onChange={(e) => setFilterDate(e.target.value)}
-            className="admin-filter"
-          />
-        </label>
+      <div className="admin-center">
+        <p>
+          <strong>
+            🚧 Project deadline hit before this feature did. Coming soon --- or
+            not!
+          </strong>
+        </p>
+        <p>{lang("reservations_page.description")}</p>
       </div>
+
+      <label>
+        {lang("reservations_page.filter_by_date")}:
+        <input
+          type="date"
+          value={filterDate}
+          onChange={(e) => setFilterDate(e.target.value)}
+          className="admin-filter"
+        />
+      </label>
+
       <table>
         <thead>
           <tr>

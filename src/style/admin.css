@@ -97,3 +97,12 @@
 .admin-form {
   align-self: center;
 }
+
+.delete-menu-item-table {
+  width: 75%;
+  align-self: center;
+}
+
+.admin-center {
+  align-self: center;
+}

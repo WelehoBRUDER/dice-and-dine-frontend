@@ -15,11 +15,9 @@ const EditMenu = () => {
   const {deleteItem} = usePostItem();
 
   const handleDelete = async (id) => {
-    console.log("Deleting item with ID:", id);
     try {
       const success = await deleteItem(id);
       if (success) {
-        console.log("Item deleted successfully");
         const updatedEnMenu = enMenu.filter((item) => item.id !== id);
         const updatedFiMenu = fiMenu.filter((item) => item.id !== id);
         setEnMenu(updatedEnMenu);
@@ -53,9 +51,10 @@ const EditMenu = () => {
       ? bothMenus
       : bothMenus.filter((item) => item.categories?.includes(selectedCategory));
   return (
-    <div>
+    <div className="flex-column">
       <h1>{lang("editmenu_page.title")}</h1>
-      <div>
+      <p>{lang("editmenu_page.description")}</p>
+      <div className="delete-menu-item-table">
         <label htmlFor="categoryFilter">{lang("editmenu_page.filter")}:</label>
         <select
           className="admin-filter"
@@ -70,7 +69,7 @@ const EditMenu = () => {
           ))}
         </select>
       </div>
-      <table>
+      <table className="delete-menu-item-table">
         <thead>
           <tr>
             <th>{lang("editmenu_page.itemid")}</th>

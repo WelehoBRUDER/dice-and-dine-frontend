@@ -211,6 +211,7 @@
   "editmenu_page.price": "Price",
   "editmenu_page.category": "Category",
   "editmenu_page.delete": "Delete",
+  "editmenu_page.description": "This page is for deleting menu items. You can filter the items by category. To delete an item, click on the '❌' button next to the item you want to remove. Please note that this action cannot be undone.",
 
   "addtomenu_page.title": "Add to Menu",
   "addtomenu_page.enTitle": "English",

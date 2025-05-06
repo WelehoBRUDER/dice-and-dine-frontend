@@ -210,6 +210,7 @@
   "editmenu_page.price": "Hinta",
   "editmenu_page.category": "Kategoria",
   "editmenu_page.delete": "Poista",
+  "editmenu_page.description": "Tällä sivulla voit poistaa tuotteita ravintolan ruokalistalta. Voit suodattaa tuotteita kategorian mukaan. Poistaaksesi tuotteen, napsauta tuotteen vieressä olevaa '❌' painiketta. Huomaa, että tämä toimenpide ei ole peruutettavissa.",
 
   "addtomenu_page.title": "Lisää ruokalistalle",
   "addtomenu_page.enTitle": "Englanti",
