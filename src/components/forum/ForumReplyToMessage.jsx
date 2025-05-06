@@ -4,16 +4,19 @@ import {useState} from "react";
 import TextArea from "../TextArea";
 import useForum from "../../hooks/useForum";
 import {useUserContext} from "../../hooks/useUserContext";
+import LoadingWheel from "../LoadingWheel";
 
 const ForumReplyToMessage = ({item, lang}) => {
   const [showReply, setShowReply] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const {postReplyMessage} = useForum();
   const {user} = useUserContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(user);
+    setShowReply(false);
+    setLoading(true);
     postReplyMessage(message, item.id, user.username).then(() => {
       window.location.reload();
     });
@@ -43,6 +46,7 @@ const ForumReplyToMessage = ({item, lang}) => {
           </Button>
         </form>
       )}
+      {loading && <LoadingWheel />}
     </div>
   );
 };
