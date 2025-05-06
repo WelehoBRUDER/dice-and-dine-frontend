@@ -41,6 +41,37 @@
   }
 }
 
+.filter-button {
+  background: var(--theme-darker);
+  color: var(--theme-contrast);
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  border: none;
+  border: 0.25rem solid rgba(240, 239, 244, 0.15);
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: all 0.1s;
+  margin: 0.5rem;
+  text-transform: capitalize;
+  box-sizing: border-box;
+
+  &:hover {
+    background: var(--theme-foreground);
+    color: var(--theme-contrast);
+  }
+
+  &.active {
+    background: var(--theme-background);
+    color: var(--theme-contrast);
+    border: 0.25rem solid var(--theme-contrast);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.3rem rgba(240, 239, 244, 0.3); /* contrast color glow */
+  }
+}
+
 button:disabled {
   opacity: 0.5;
   pointer-events: none;

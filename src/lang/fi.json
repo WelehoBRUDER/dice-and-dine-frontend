@@ -80,7 +80,10 @@
   "games_page.title": "Pelit",
   "games_page.description": "Pelisivulla voit tutustua erilaisiin lautapeleihin ja roolipeleihin, joita tarjoamme ravintolassamme. Voit varata pelisession ystäviesi kanssa tai liittyä muihin pelaajiin. Meillä on laaja valikoima pelejä eri genreistä ja vaikeustasoista, joten jokaiselle löytyy jotakin!",
   "games_page.no_games": "Ei pelejä saatavilla",
+  "games_page.filter_by_category": "Suodata kategorian mukaan",
+
   "profile_page.title": "Profiili",
+
   "review_page": {
     "review_title": "Arvostelut",
     "title": "Kirjoita arvostelu",

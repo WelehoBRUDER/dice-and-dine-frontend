@@ -81,6 +81,7 @@
   "games_page.title": "Games",
   "games_page.description": "Explore our collection of games. From board games to card games, we have something for everyone! Join us for a fun night of gaming with friends and family.",
   "games_page.no_games": "No games available",
+  "games_page.filter_by_category": "Filter by category",
   "profile_page.title": "Profile",
 
   "review_page": {

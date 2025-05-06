@@ -1,8 +1,8 @@
 import {useState, useEffect} from "react";
 import {MapContainer, TileLayer, Marker, Popup} from "react-leaflet";
-import {useLanguage} from "../context/LanguageContext";
-import useRestaurantInfo from "../hooks/useRestaurantInfo";
-import LoadingWheel from "./LoadingWheel";
+import {useLanguage} from "../../context/LanguageContext";
+import useRestaurantInfo from "../../hooks/useRestaurantInfo";
+import LoadingWheel from "../LoadingWheel";
 import MapInvalidator from "./MapInvalidator";
 import MapTransportationMarkers from "./MapTransportationMarkers";
 /**

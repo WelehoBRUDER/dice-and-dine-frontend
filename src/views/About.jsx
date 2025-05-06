@@ -1,7 +1,7 @@
 import useRestaurantInfo from "../hooks/useRestaurantInfo";
 import {useLanguage} from "../context/LanguageContext";
 import {useEffect, useState} from "react";
-import LeafletMap from "../components/LeafletMap";
+import LeafletMap from "../components/map/LeafletMap";
 import LoadingWheel from "../components/LoadingWheel";
 
 const About = () => {

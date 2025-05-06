@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {useLanguage} from "../context/LanguageContext";
 import Button from "../components/Button";
 import logo from "/restaurant_logo.png?url";
-import LeafletMap from "../components/LeafletMap";
+import LeafletMap from "../components/map/LeafletMap";
 import useRestaurantInfo from "../hooks/useRestaurantInfo";
 import "../style/home.css";
 

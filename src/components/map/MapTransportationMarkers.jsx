@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {Marker, Popup} from "react-leaflet";
-import ScooterIcon from "../assets/icons/scooter.svg";
-import BusIcon from "../assets/icons/bus.svg";
+import ScooterIcon from "../../assets/icons/scooter.svg";
+import BusIcon from "../../assets/icons/bus.svg";
 import L from "leaflet";
 
 const MapTransportationMarkers = ({data}) => {
