@@ -211,6 +211,7 @@
   "editmenu_page.category": "Kategoria",
   "editmenu_page.delete": "Poista",
   "editmenu_page.description": "Tällä sivulla voit poistaa tuotteita ravintolan ruokalistalta. Voit suodattaa tuotteita kategorian mukaan. Poistaaksesi tuotteen, napsauta tuotteen vieressä olevaa '❌' painiketta. Huomaa, että tämä toimenpide ei ole peruutettavissa.",
+  "editmenu_page.confirm_delete": "Oletko varma, että haluat poistaa ruokalistalta tuotteen: ",
 
   "addtomenu_page.title": "Lisää ruokalistalle",
   "addtomenu_page.enTitle": "Englanti",
@@ -256,5 +257,11 @@
   "reservations_page.actions": "Toimenpiteet",
   "reservations_page.filter_by_date": "Suodata",
   "reservations_page.no_reservations": "Ei varauksia saatavilla",
-  "reservations_page.description": "Pöytävaraukset-sivulla voit tarkastella ja hallita ravintolan pöytävarauksia."
+  "reservations_page.description": "Pöytävaraukset-sivulla voit tarkastella ja hallita ravintolan pöytävarauksia.",
+
+  "editabout_page.title": "Muokkaa ravintolan tietoja",
+  "editabout_page.description": "Tällä sivulla voit muokata ravintolan tietoja, kuten puhelinnumeroa, sähköpostia ja aukioloaikoja. Valitse muokattava kenttä ja tallenna lopuksi.",
+  "editabout_page.phone": "Puhelinnumero",
+  "editabout_page.email": "Sähköposti",
+  "editabout_page.opentimes": "Aukioloaika"
 }

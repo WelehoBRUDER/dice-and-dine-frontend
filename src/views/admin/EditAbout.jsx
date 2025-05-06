@@ -90,7 +90,7 @@ const About = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </article>
       <div className="flex-column">
-        <h1>Edit Restaurant Information</h1>
+        <h1>{lang("editabout_page.title")}</h1>
         <p className="admin-description">
           {lang("editabout_page.description")}
         </p>

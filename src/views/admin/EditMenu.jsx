@@ -14,7 +14,13 @@ const EditMenu = () => {
   const [fiMenu, setFiMenu] = useState([]);
   const {deleteItem} = usePostItem();
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (id, name) => {
+    const confirmDelete = window.confirm(
+      `${lang("editmenu_page.confirm_delete")} ${name}`
+    );
+    if (!confirmDelete) {
+      return;
+    }
     try {
       const success = await deleteItem(id);
       if (success) {
@@ -97,7 +103,7 @@ const EditMenu = () => {
                 <td>
                   <Button
                     className="delete-menu-item-btn"
-                    onClick={() => handleDelete(item.id)}
+                    onClick={() => handleDelete(item.id, item.name)}
                   >
                     ❌
                   </Button>
