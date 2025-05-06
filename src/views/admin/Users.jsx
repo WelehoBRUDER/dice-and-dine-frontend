@@ -1,4 +1,13 @@
-import {useState, useEffect, use} from "react";
+/**
+ * @file Users.jsx
+ * @description This file contains the Users component, which is used to display a list of users in the admin section of the application.
+ * It uses the useUser hook to fetch user data and the useLanguage context to manage language settings.
+ * The component allows the admin to delete or edit users, although these features are not yet implemented.
+ * It also includes a loading state while fetching data.
+ * @returns {JSX.Element} The Users component.
+ */
+
+import {useState, useEffect} from "react";
 import {useUser} from "../../hooks/userHooks";
 import Button from "../../components/Button";
 import {useLanguage} from "../../context/LanguageContext";

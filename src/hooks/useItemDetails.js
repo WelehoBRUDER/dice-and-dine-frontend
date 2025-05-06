@@ -1,3 +1,8 @@
+/**
+ * Custom hook to fetch item details from an API.
+ *
+ */
+
 import {useState, useEffect} from "react";
 
 const useItemDetails = (itemIds) => {

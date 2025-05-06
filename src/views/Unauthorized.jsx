@@ -1,3 +1,9 @@
+/**
+ * Unauthorized.jsx
+ * @description This file contains the Unauthorized component, which is displayed when a user tries to access a page they are not authorized to view.
+ * @returns {JSX.Element} The Unauthorized component.
+ */
+
 import {useEffect} from "react";
 import {useLanguage} from "../context/LanguageContext";
 

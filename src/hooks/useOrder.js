@@ -1,3 +1,9 @@
+/**
+ * @file useOrder.js
+ * @description Custom hook to manage orders in the application.
+ * This hook provides functions to place an order, fetch order details, and update order status.
+ */
+
 import {useState} from "react";
 import {fetchData} from "../utils/fetchData.js";
 import {useUserContext} from "./useUserContext.js";

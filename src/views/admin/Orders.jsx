@@ -1,3 +1,12 @@
+/**
+ * @file Orders.jsx
+ * @description This file contains the Orders component, which is used to display and manage orders in the admin section of the application.
+ * It uses the useOrder and useMenu hooks to fetch and update order data, and the useLanguage context to manage language settings.
+ * The component allows the admin to filter orders by status and date, and update the status of each order.
+ * It also includes a loading state while fetching data.
+ * @returns {JSX.Element} The Orders component.
+ *
+ */
 import {useEffect, useMemo, useState} from "react";
 import useOrder from "../../hooks/useOrder";
 import LoadingWheel from "../../components/LoadingWheel";

@@ -1,4 +1,8 @@
-//DELETE IF NOT NEEDED
+/**
+ * @file useAllergens.js
+ * @description Custom hook to fetch allergens data from the API.
+ *
+ */
 
 import {useState, useEffect} from "react";
 import {fetchData} from "../utils/fetchData.js";

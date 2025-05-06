@@ -1,3 +1,9 @@
+/**
+ * @file usePostItem.js
+ * @description Custom hook to post and delete menu items using the API.
+ * This hook provides functions to post a new menu item and delete an existing one.
+ */
+
 import {fetchData} from "../utils/fetchData.js";
 
 const API_URL = import.meta.env.VITE_API_URL;

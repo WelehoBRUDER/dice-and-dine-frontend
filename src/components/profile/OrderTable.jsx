@@ -1,3 +1,12 @@
+/**
+ * OrderTable component displays a table of order details or a message if no orders are available.
+ *
+ * @component
+ * @param {Object} props - The props object.
+ * @param {Array} props.orderDetails - An array of order details to display in the table.
+ * @returns {JSX.Element} A table displaying order details or a message indicating no orders.
+ *
+ */
 import {useLanguage} from "../../context/LanguageContext";
 
 const OrderTable = ({orderDetails}) => {

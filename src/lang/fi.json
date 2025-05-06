@@ -263,5 +263,9 @@
   "editabout_page.description": "Tällä sivulla voit muokata ravintolan tietoja, kuten puhelinnumeroa, sähköpostia ja aukioloaikoja. Valitse muokattava kenttä ja tallenna lopuksi.",
   "editabout_page.phone": "Puhelinnumero",
   "editabout_page.email": "Sähköposti",
-  "editabout_page.opentimes": "Aukioloaika"
+  "editabout_page.opentimes": "Aukioloaika",
+
+  "logout_page.title": "Uloskirjautuminen",
+  "logout_page.description": "Olet kirjautunut ulos onnistuneesti. Kiitos vierailustasi. Toivottavasti näemme pian uudelleen!",
+  "logout_page.go_home": "Kotisivulle"
 }

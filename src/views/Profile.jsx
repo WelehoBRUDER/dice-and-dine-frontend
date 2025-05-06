@@ -1,3 +1,10 @@
+/**
+ * @file Profile.jsx
+ * @description This file contains the Profile component, which displays the user's profile information, including their profile picture, details, and order/reservation history.
+ * It uses the useLanguage context for localization and the useUserContext to access user data.
+ * @returns {JSX.Element} The Profile component.
+ */
+
 import {useEffect, useState} from "react";
 import {useLanguage} from "../context/LanguageContext";
 import {useUserContext} from "../hooks/useUserContext";

@@ -1,6 +1,11 @@
+/**
+ * AdminRoute.jsx
+ * @description This component is used to protect admin routes in the application.
+ * It checks if the user is logged in and has admin privileges before allowing access to the route.
+ */
+
 import {Navigate} from "react-router-dom";
 import {useUserContext} from "../hooks/useUserContext";
-import LoadingWheel from "./LoadingWheel";
 
 const AdminRoute = ({children}) => {
   const {user} = useUserContext();

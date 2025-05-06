@@ -1,3 +1,10 @@
+/**
+ * @file useImage.js
+ * @description Custom hook to fetch and display images using blob URLs.
+ * This hook fetches an image from a given path and creates a blob URL for it.
+
+ */
+
 import {useState, useEffect} from "react";
 
 // Use blob URLs to display images in a React component to rerender them

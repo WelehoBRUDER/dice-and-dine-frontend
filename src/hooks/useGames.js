@@ -1,3 +1,9 @@
+/**
+ * @file useGames.js
+ * @description Custom hook to fetch games data from the API.
+ *
+ */
+
 import {useState, useEffect} from "react";
 import {fetchData} from "../utils/fetchData.js";
 

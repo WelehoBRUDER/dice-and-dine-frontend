@@ -1,3 +1,10 @@
+/**
+ * @file userHooks.js
+ * @description Custom hooks for user authentication and management.
+ * This file contains hooks for user login, registration, fetching user details,
+ * updating user information, and uploading profile images.
+ */
+
 import {fetchData} from "../utils/fetchData";
 const apiURL = import.meta.env.VITE_API_URL;
 

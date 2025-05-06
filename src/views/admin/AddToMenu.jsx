@@ -1,3 +1,12 @@
+/**
+ * @file AddToMenu.jsx
+ * @description This file contains the AddToMenu component, which allows the admin to add new items to the menu.
+ * It includes a form for entering item details in both Finnish and English.
+ * The component uses custom hooks to fetch categories and allergens, and to post new items to the API.
+ * The component also handles validation and displays error messages if the input is invalid.
+ * @returns {JSX.Element} The AddToMenu component.
+ */
+
 import {useEffect, useState} from "react";
 import {useLanguage} from "../../context/LanguageContext";
 import useForm from "../../hooks/formHooks";

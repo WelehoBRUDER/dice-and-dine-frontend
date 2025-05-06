@@ -1,3 +1,9 @@
+/**
+ * @file EditAbout.jsx
+ * @description This file contains the EditAbout component, which is used to edit the restaurant's information such as phone, email, and open times.
+ * It uses the useRestaurantInfo hook to fetch and update the restaurant's information.
+ * @returns {JSX.Element} The EditAbout component.
+ */
 import {useEffect, useState} from "react";
 import {useLanguage} from "../../context/LanguageContext";
 import useRestaurantInfo from "../../hooks/useRestaurantInfo";

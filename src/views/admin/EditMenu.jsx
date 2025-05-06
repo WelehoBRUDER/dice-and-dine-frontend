@@ -1,3 +1,12 @@
+/**
+ * EditMenu.jsx
+ * @description This file contains the EditMenu component, which allows the admin to edit or delete items from the menu.
+ * It fetches the menu items in both English and Finnish, and displays them in a table.
+ * The admin can filter the items by category and delete items from the menu.
+ * It uses the useMenu hook to fetch the menu items and the usePostItem hook to delete items.
+ * @returns {JSX.Element} The EditMenu component.
+ */
+
 import {useEffect, useState} from "react";
 import {useLanguage} from "../../context/LanguageContext";
 import LoadingWheel from "../../components/LoadingWheel";

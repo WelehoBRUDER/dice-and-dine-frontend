@@ -1,3 +1,11 @@
+/**
+ * ReservationTable component displays a table of reservation details.
+ * If no reservations are available, it shows a message indicating that.
+ * @param {Object} props - The props object.
+ * @param {Array} props.reservationDetails - An array of reservation details to display in the table.
+ * @returns {JSX.Element} A table displaying reservation details or a message indicating no reservations.
+ */
+
 import React from "react";
 import {useLanguage} from "../../context/LanguageContext";
 
