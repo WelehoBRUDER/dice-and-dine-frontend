@@ -230,5 +230,12 @@
   "addtomenu_page.endescription_required": "Englanninkielinen kuvaus on pakollinen",
   "addtomenu_page.category_required": "Kategoria on pakollinen",
   "addtomenu_page.success_title": "Tuote lisätty onnistuneesti",
-  "addtomenu_page.success_desc": "Tuote on lisätty onnistuneesti ruokalistalle. Voit tarkastella sitä ruokalistalla."
+  "addtomenu_page.success_desc": "Tuote on lisätty onnistuneesti ruokalistalle. Voit tarkastella sitä ruokalistalla.",
+
+  "users_page.title": "Käyttäjät",
+  "users_page.id": "ID",
+  "users_page.username": "Käyttäjänimi",
+  "users_page.email": "Sähköposti",
+  "users_page.user_type": "Käyttäjätyyppi",
+  "users_page.actions": "Toimenpiteet"
 }
