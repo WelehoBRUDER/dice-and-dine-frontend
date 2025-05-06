@@ -164,7 +164,7 @@ const AddToMenu = () => {
           <p className="admin-description">
             {lang("addtomenu_page.description")}
           </p>
-          <form class="admin-form" onSubmit={handleSubmit}>
+          <form className="admin-form" onSubmit={handleSubmit}>
             {/* English form part */}
             <Input
               name="name"

@@ -59,7 +59,7 @@ const EditMenu = () => {
       </article>
       <div className="flex-column">
         <h1>{lang("editmenu_page.title")}</h1>
-        <p>{lang("editmenu_page.description")}</p>
+        <p className="admin-description">{lang("editmenu_page.description")}</p>
         <div className="delete-menu-item-table">
           <label htmlFor="categoryFilter">
             {lang("editmenu_page.filter")}:

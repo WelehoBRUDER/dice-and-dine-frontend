@@ -259,5 +259,7 @@
   "reservations_page.filter_by_date": "Filter by date",
   "reservations_page.description": "This page is for manging restaurant tables and table reservations.",
   "reservations_page.no_for_selected": "No reservations for selected date.",
-  "resevations_page.no_reservations": "No reservations."
+  "reservations_page.no_reservations": "No reservations.",
+
+  "editabout_page.title": "Edit Restaurant Information"
 }
