@@ -12,7 +12,7 @@ import {useNavigate} from "react-router-dom";
 
 const Forum = () => {
   const {currentLanguage, lang, setCurrentPage} = useLanguage();
-  const {forum, loading} = useForum(currentLanguage);
+  const {forum, setForum, loading} = useForum(currentLanguage);
 
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
@@ -24,7 +24,11 @@ const Forum = () => {
     e.preventDefault();
     console.log(user);
     postMessage(title, message, user.username).then((res) => {
-      console.log(res);
+      console.log("RES:", res.result);
+
+      res.result.id = res.result.messageTableId;
+      setForum([...forum, res.result]);
+      setTitle("");
       setMessage("");
       navigate("/forum");
     });

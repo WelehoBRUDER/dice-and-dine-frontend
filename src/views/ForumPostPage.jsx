@@ -10,9 +10,9 @@ import ForumPostArticle from "../components/forum/ForumPostArticle";
 import {useUserContext} from "../hooks/useUserContext";
 import {useNavigate, useParams} from "react-router-dom";
 
-const Forum = () => {
+const ForumPostPage = () => {
   const {currentLanguage, lang, setCurrentPage} = useLanguage();
-  const {forum, loading} = useForum(currentLanguage);
+  const {forum, setForum, loading} = useForum(currentLanguage);
 
   const {id} = useParams();
   const post = forum.find((item) => item.id === parseInt(id));
@@ -28,7 +28,6 @@ const Forum = () => {
     postReplyMessage(message, post.id, user.username).then((res) => {
       console.log(res);
       setMessage("");
-      navigate("/forum");
     });
   };
 
@@ -50,10 +49,18 @@ const Forum = () => {
           <Button className="btn-smaller" onClick={() => navigate(`/forum`)}>
             {String.fromCodePoint(0x274c)}
           </Button>
-          <ForumPostArticle item={post} lang={lang} />
-          {post?.replies.map((item) => (
+          <ForumPostArticle
+            item={post}
+            lang={lang}
+            id={id}
+            post={post}
+            forum={forum}
+            setForum={setForum}
+          />
+          {/*post?.replies.map((item) => (
             <ForumPostArticle item={item} lang={lang} />
-          ))}
+          ))*/}
+          {/*
           <form onSubmit={handleSubmit} className="forum-post-form">
             <Input
               type="text"
@@ -62,10 +69,11 @@ const Forum = () => {
             />
             <Button type="submit">{lang("forum_page_reply_button")}</Button>
           </form>
+          */}
         </section>
       )}
     </>
   );
 };
 
-export default Forum;
+export default ForumPostPage;

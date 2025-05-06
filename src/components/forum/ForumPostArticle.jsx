@@ -4,31 +4,30 @@ import ForumReplyMenu from "./ForumReplyMenu";
 import Input from "../Input";
 import useForum from "../../hooks/useForum";
 import {useUserContext} from "../../hooks/useUserContext";
-import {useNavigate} from "react-router-dom";
-import {NavLink} from "react-router-dom";
 
-export const ForumPostArticle = ({item, lang}) => {
+export const ForumPostArticle = ({item, lang, id, post}) => {
   const [clickedItem, setClickedItem] = useState([]);
   const handleItemClick = (item) => {
     setClickedItem(item);
   };
   const [message, setMessage] = useState("");
-  const {postReplyMessage} = useForum();
+  const {forum, setForum, postReplyMessage} = useForum();
   const {user} = useUserContext();
-  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(user);
     postReplyMessage(message, item.id, user.username).then((res) => {
-      console.log(res);
+      console.log("RES:", res.result);
+
+      item.replies.push(res.result);
+      //setForum([...forum, res.result]);
       setMessage("");
-      navigate("/forum");
     });
   };
 
   return (
-    <article className="forum-article clicked-article" key={item.id}>
+    <article className="forum-article" key={item?.id}>
       {/*
       <Button className="btn-smaller" onClick={() => handleItemClick(null)}>
         {String.fromCodePoint(0x274c)}
@@ -40,7 +39,12 @@ export const ForumPostArticle = ({item, lang}) => {
 
       <div>
         <h4>{lang("forum_page_replies")}:</h4>
-        <ForumReplyMenu replies={item.replies} lang={lang} />
+        <ForumReplyMenu
+          id={item.messageTableId}
+          replies={item.replies}
+          user={user}
+          lang={lang}
+        />
         <form onSubmit={handleSubmit} className="forum-post-form">
           <Input
             type="text"

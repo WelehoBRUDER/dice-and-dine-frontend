@@ -37,3 +37,23 @@
   border-radius: 1rem;
   border-style: solid;
 }
+
+.forum-reply-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.forum-reply-menu-item {
+  border-style: solid;
+  border-radius: 1rem;
+  border-width: 0.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.forum-reply-menu-item input {
+  color: black;
+}
