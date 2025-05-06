@@ -7,6 +7,8 @@ A React App built for a fictional restaurant where great food meets great board 
 - [Live app](#live-app)
 - [Running locally](#how-to-run-locally)
 - [Testing the app](#testing-the-app)
+- [Testing the admin panel](#testing-the-admin-panel)
+- [Backend repository](#backend-repository)
 - [Attributions](#attributions)
 
 ## Overview
@@ -211,6 +213,8 @@ The different pages of the admin panel are accessible from the special admin hea
 - Confirm that updates appear correctly on the **Home** and **About** pages.
 > **Note:** It is currently not possible to edit the restaurant's location from the admin panel.
 
+## 💻 Backend Repository
+Find the backend repository here: 👉  [Dice & Dine Backend](https://github.com/Aarojy/dice-and-dine-backend)
 
 ## Attributions
 - Hero image from [Unsplash](https://unsplash.com/photos/a-man-sitting-at-a-table-playing-a-board-game-7gagNAbWocg?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
