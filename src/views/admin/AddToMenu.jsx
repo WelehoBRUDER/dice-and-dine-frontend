@@ -154,9 +154,12 @@ const AddToMenu = () => {
           continueCallback={() => setShowResult(false)} // Hide the result window and maybe redirect
         />
       ) : (
-        <>
+        <div className="flex-column">
           <h1>{lang("addtomenu_page.title")}</h1>
-          <form onSubmit={handleSubmit}>
+          <p className="admin-description">
+            {lang("addtomenu_page.description")}
+          </p>
+          <form class="admin-form" onSubmit={handleSubmit}>
             {/* English form part */}
             <Input
               name="name"
@@ -254,10 +257,10 @@ const AddToMenu = () => {
             {errors.enPrice && <div className="error">{errors.enPrice}</div>}
 
             <button className="btn-smaller" type="submit">
-              Save
+              {lang("addtomenu_page.submit")}
             </button>
           </form>
-        </>
+        </div>
       )}
     </>
   );

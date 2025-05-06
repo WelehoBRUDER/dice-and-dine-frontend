@@ -39,7 +39,7 @@ const Users = () => {
   }, []);
 
   return (
-    <div>
+    <div className="flex-column">
       <h1>{lang("users_page.title")}</h1>
       <p>
         <strong>
@@ -47,10 +47,8 @@ const Users = () => {
           not!
         </strong>
       </p>
-      <p>
-        This page is for manging users: users list, edit user details, delete
-        users.
-      </p>
+
+      <p>{lang("users_page.description")}</p>
 
       <table>
         <thead>
@@ -63,31 +61,38 @@ const Users = () => {
           </tr>
         </thead>
         <tbody>
-          {users.map((user) => (
-            <tr key={user.id}>
-              <td>{user.id}</td>
-              <td>{user.name}</td>
-
-              <td>{user.email}</td>
-              <td>{user.user_type}</td>
-              <td>
-                <Button
-                  className="btn-smaller"
-                  onClick={() => handleEdit(user.id)}
-                  title="Edit"
-                >
-                  ✏️
-                </Button>{" "}
-                <Button
-                  className="btn-smaller"
-                  onClick={() => handleDelete(user.id)}
-                  title="Delete"
-                >
-                  🗑️
-                </Button>
+          {users.length === 0 ? (
+            <tr>
+              <td colSpan="5" style={{textAlign: "center", padding: "1rem"}}>
+                {lang("users_page.nousers")}
               </td>
             </tr>
-          ))}
+          ) : (
+            users.map((user) => (
+              <tr key={user.id}>
+                <td>{user.id}</td>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+                <td>{user.user_type}</td>
+                <td>
+                  <Button
+                    className="btn-smaller"
+                    onClick={() => handleEdit(user.id)}
+                    title="Edit"
+                  >
+                    ✏️
+                  </Button>{" "}
+                  <Button
+                    className="btn-smaller"
+                    onClick={() => handleDelete(user.id)}
+                    title="Delete"
+                  >
+                    🗑️
+                  </Button>
+                </td>
+              </tr>
+            ))
+          )}
         </tbody>
       </table>
     </div>

@@ -63,6 +63,24 @@ const useReservation = () => {
     }
   };
 
+  const getAllReservations = async () => {
+    try {
+      setLoading(true);
+      const data = await fetchData(`${API_URL}/tables/`, {
+        method: "GET",
+      });
+      if (data) {
+        return data;
+      } else {
+        setError("Failed to fetch reservation details");
+      }
+    } catch (err) {
+      setError("Failed to fetch reservation details: " + err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return {
     makeReservation,
     loading,
@@ -70,6 +88,7 @@ const useReservation = () => {
     reservationId,
     error,
     getReservationDetails,
+    getAllReservations,
   };
 };
 

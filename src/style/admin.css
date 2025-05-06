@@ -88,3 +88,12 @@
 .admin-label {
   font-size: 2rem;
 }
+
+.admin-description {
+  align-self: center;
+  width: 75%;
+}
+
+.admin-form {
+  align-self: center;
+}
