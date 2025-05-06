@@ -27,6 +27,7 @@ import {LanguageProvider} from "./context/LanguageContext";
 import AdminRoute from "./components/AdminRoute";
 import Unauthorized from "./views/Unauthorized";
 import AddToMenu from "./views/admin/AddToMenu";
+import NotFound from "./views/404";
 
 const App = () => {
   return (
@@ -50,6 +51,7 @@ const App = () => {
                 <Route path="/logout" element={<Logout />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/unauthorized" element={<Unauthorized />} />
+                <Route path="*" element={<NotFound />} />
               </Route>
 
               <Route
@@ -68,6 +70,7 @@ const App = () => {
                 <Route path="editabout" element={<EditAbout />} />
                 <Route path="adminreviews" element={<AdminReviews />} />
                 <Route path="addtomenu" element={<AddToMenu />} />
+                <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>
           </CartProvider>

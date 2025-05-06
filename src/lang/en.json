@@ -16,6 +16,12 @@
   "continue": "Continue",
   "home_title": "Dice & Dine",
 
+  "not_found_page": {
+    "title": "404 - Page Not Found",
+    "subtitle": "The page you are looking for isn't here. It may have been removed, renamed, or did not exist in the first place.",
+    "home": "Go to home page"
+  },
+
   "home_page_link": "Home",
   "about_page_link": "About",
   "forum_page_link": "Forum",

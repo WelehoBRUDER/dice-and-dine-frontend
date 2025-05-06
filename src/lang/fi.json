@@ -15,6 +15,12 @@
   "continue": "Jatka eteenpäin",
   "home_title": "Dice & Dine",
 
+  "not_found_page": {
+    "title": "404 - Sivua ei löytynyt",
+    "subtitle": "Etsimäsi sivu ei ole täällä. Se voi olla nimetty uudelleen, poistettu tai sitä ei ollut olemassa alunperinkään.",
+    "home": "Mene etusivulle"
+  },
+
   "home_page_link": "Etusivu",
   "about_page_link": "Tietoa",
   "forum_page_link": "Foorumi",
