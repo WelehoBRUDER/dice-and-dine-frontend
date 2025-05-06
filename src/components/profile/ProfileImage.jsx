@@ -1,3 +1,11 @@
+/**
+ * ProfileImage component
+ * @param {Object} props - The component props
+ * @param {Object} props.userDetails - The user details object containing profile image information.
+ * * @param {Function} props.handleImageUpload - Function to handle image upload.
+ * @returns {JSX.Element} The rendered component.
+ */
+
 import {useState} from "react";
 import useForm from "../../hooks/formHooks";
 import useImage from "../../hooks/useImage";

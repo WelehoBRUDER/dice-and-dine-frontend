@@ -1,3 +1,12 @@
+/**
+ * CartPage component
+ *  @description This file contains the CartPage component, which is used to display the user's shopping cart.
+ * It uses the useCart context to manage the cart state and the useItemDetails hook to fetch item details.
+ * The component allows the user to view the items in their cart, update item quantities, and place an order.
+ * @returns {JSX.Element} The CartPage component.
+
+ */
+
 import {useState, useEffect} from "react";
 import {useCart} from "../context/CartContext";
 import useItemDetails from "../hooks/useItemDetails";

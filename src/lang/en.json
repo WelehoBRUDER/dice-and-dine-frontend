@@ -212,6 +212,7 @@
   "editmenu_page.category": "Category",
   "editmenu_page.delete": "Delete",
   "editmenu_page.description": "This page is for deleting menu items. You can filter the items by category. To delete an item, click on the '❌' button next to the item you want to remove. Please note that this action cannot be undone.",
+  "editmenu_page.confirm_delete": "Are you sure you want to delete item: ",
 
   "addtomenu_page.title": "Add to Menu",
   "addtomenu_page.enTitle": "English",
@@ -259,5 +260,15 @@
   "reservations_page.filter_by_date": "Filter by date",
   "reservations_page.description": "This page is for manging restaurant tables and table reservations.",
   "reservations_page.no_for_selected": "No reservations for selected date.",
-  "resevations_page.no_reservations": "No reservations."
+  "reservations_page.no_reservations": "No reservations.",
+
+  "editabout_page.title": "Edit Restaurant Information",
+  "editabout_page.description": "This page is for editing restaurant information. You can edit the  phone number, email address, and opening times. To edit the information, click on the editting icon next to the field you want to change. Remember to save the changes after editing.",
+  "editabout_page.phone": "Phone",
+  "editabout_page.email": "Email",
+  "editabout_page.opentimes": "Open times",
+
+  "logout_page.title": "Logout",
+  "logout_page.description": "You have been logged out successfully. Thank you for visiting. We hope to see you again soon!",
+  "logout_page.go_home": "Home page"
 }

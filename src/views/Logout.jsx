@@ -5,9 +5,10 @@ import Button from "../components/Button";
 
 const Logout = () => {
   const {handleLogout} = useUserContext();
-  const {lang} = useLanguage();
+  const {lang, setCurrentPage} = useLanguage();
 
   useEffect(() => {
+    setCurrentPage("logout_page");
     const token = localStorage.getItem("token");
     if (token) {
       handleLogout();
@@ -17,13 +18,13 @@ const Logout = () => {
   return (
     <>
       <article>
-        <title>{lang("logout_title")}</title>
-        <meta name="description" content={lang("logout_description")} />
+        <title>{lang("logout_page.title")}</title>
+        <meta name="description" content={lang("logout_page.description")} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </article>
-      <h1>{lang("logged_out")}</h1>
-      <p>{lang("logged_out_subtitle")}</p>
-      <Button to="/">{lang("go_home")}</Button>
+      <h1>{lang("logout_page.title")}</h1>
+      <p>{lang("logout_page.description")}</p>
+      <Button to="/">{lang("logout_page.go_home")}</Button>
     </>
   );
 };

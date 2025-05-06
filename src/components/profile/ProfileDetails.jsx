@@ -1,3 +1,15 @@
+/**
+ * ProfileDetails Component
+ * This component is responsible for displaying and editing user profile details.
+ * It allows the user to view and edit their username, email, and password.
+ *
+ * @component
+ * @param {Object} props - The props object.
+ * @param {Object} props.userDetails - The user details object containing user information.
+ * @param {Function} props.lang - The function to get the translated text based on the provided key.
+ * @return {JSX.Element} The rendered component.
+ */
+
 import useForm from "../../hooks/formHooks";
 import Button from "../Button";
 import Input from "../Input";

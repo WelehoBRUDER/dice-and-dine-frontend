@@ -1,3 +1,11 @@
+/**
+ * Reservations.jsx
+ * @description This file contains the Reservations component, which displays a list of reservations made by customers.
+ * It allows the admin to filter reservations by date and provides options to edit or delete reservations.
+ * It uses the useReservation hook to fetch reservation data and the useLanguage context for localization.
+ * The component also includes a loading state while fetching data.
+ * @returns {JSX.Element} The Reservations component.
+ */
 import {useEffect, useState} from "react";
 import {useLanguage} from "../../context/LanguageContext";
 import useReservation from "../../hooks/useReservation";

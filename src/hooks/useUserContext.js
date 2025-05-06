@@ -1,3 +1,8 @@
+/**
+ * @file useUserContext.js
+ * @description Custom hook to access the UserContext in a React application.
+ */
+
 import {useContext} from "react";
 import {UserContext} from "../context/UserContext";
 

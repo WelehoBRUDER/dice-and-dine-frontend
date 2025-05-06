@@ -1,4 +1,8 @@
-// src/hooks/useCategory.js
+/**
+ * @file useCategory.js
+ * @description Custom hook to fetch categories from the API.
+ *
+ */
 import {useState, useEffect} from "react";
 import {fetchData} from "../utils/fetchData.js";
 

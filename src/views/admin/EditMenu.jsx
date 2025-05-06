@@ -1,3 +1,12 @@
+/**
+ * EditMenu.jsx
+ * @description This file contains the EditMenu component, which allows the admin to edit or delete items from the menu.
+ * It fetches the menu items in both English and Finnish, and displays them in a table.
+ * The admin can filter the items by category and delete items from the menu.
+ * It uses the useMenu hook to fetch the menu items and the usePostItem hook to delete items.
+ * @returns {JSX.Element} The EditMenu component.
+ */
+
 import {useEffect, useState} from "react";
 import {useLanguage} from "../../context/LanguageContext";
 import LoadingWheel from "../../components/LoadingWheel";
@@ -14,7 +23,13 @@ const EditMenu = () => {
   const [fiMenu, setFiMenu] = useState([]);
   const {deleteItem} = usePostItem();
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (id, name) => {
+    const confirmDelete = window.confirm(
+      `${lang("editmenu_page.confirm_delete")} ${name}`
+    );
+    if (!confirmDelete) {
+      return;
+    }
     try {
       const success = await deleteItem(id);
       if (success) {
@@ -59,7 +74,7 @@ const EditMenu = () => {
       </article>
       <div className="flex-column">
         <h1>{lang("editmenu_page.title")}</h1>
-        <p>{lang("editmenu_page.description")}</p>
+        <p className="admin-description">{lang("editmenu_page.description")}</p>
         <div className="delete-menu-item-table">
           <label htmlFor="categoryFilter">
             {lang("editmenu_page.filter")}:
@@ -97,7 +112,7 @@ const EditMenu = () => {
                 <td>
                   <Button
                     className="delete-menu-item-btn"
-                    onClick={() => handleDelete(item.id)}
+                    onClick={() => handleDelete(item.id, item.name)}
                   >
                     ❌
                   </Button>
