@@ -42,7 +42,7 @@ const Users = () => {
     <>
       <article>
         <title>{lang("users_page.title")}</title>
-        <meta name="description" content={lang("users_page.description")} />
+        <meta name="robots" content="noindex, nofollow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </article>
       <div className="flex-column">

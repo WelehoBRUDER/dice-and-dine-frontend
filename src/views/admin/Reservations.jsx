@@ -53,10 +53,7 @@ const Reservations = () => {
     <>
       <article>
         <title>{lang("reservations_page.title")}</title>
-        <meta
-          name="description"
-          content={lang("reservations_page.description")}
-        />
+        <meta name="robots" content="noindex, nofollow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </article>
       <div className="flex-column">
