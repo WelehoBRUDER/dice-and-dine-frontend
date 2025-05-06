@@ -1,6 +1,23 @@
-# Dice & Dine Frontend
+# Dice & Dine
+A React App built for a hypothetical board game focused restaurant.
 
-## How to run
+## Table of Contents
+- [Purpose](#purpose)
+- [Live app](#live-app)
+- [Running locally](#how-to-run-locally)
+- [Localization](#how-to-use-localization)
+- [Attributions](#attributions)
+
+## Purpose
+
+### What does this app do?
+Dice & Dine app is the home page for a fictional restaurant that specializes in board games.  
+Users can view the menu, place orders, reserve tables, browse the game collection, post on the forums and leave reviews.
+
+## Live app
+![Screenshot of the app](dash.png)
+
+## How to run locally
 1. Clone the repository
 2. Navigate to the project directory
 3. Install dependencies
