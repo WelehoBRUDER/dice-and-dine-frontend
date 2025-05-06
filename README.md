@@ -1,25 +1,25 @@
-# Dice & Dine
-A React App built for a hypothetical board game focused restaurant.
+![Banner image](banner.png)
+A React App built for a fictional restaurant where great food meets great board games.
 
 ## Table of Contents
-- [Purpose](#purpose)
+- [Overview](#overview)
 - [Features](#features)
 - [Live app](#live-app)
 - [Running locally](#how-to-run-locally)
 - [Localization](#how-to-use-localization)
 - [Attributions](#attributions)
 
-## Purpose
+## Overview
+Dice & Dine is the digital front door to a board game-themed restaurant. Customers can:
 
-### What does this app do?
-Dice & Dine app is the home page for a fictional restaurant that specializes in board games.  
-Users can view the menu, place orders, reserve tables, browse the game collection, post on the forums and leave reviews.
+- Browse the food and drink menu
+- Reserve tables in advance
+- Explore a curated board game collection
+- Place online orders
+- Post in community forums
+- Leave reviews and feedback
 
-### What makes it useful?
-Without this app, it would very inconvenient for customers to do business with the restaurant.  
-Features like online ordering, table reservations, and game browsing make it easy for customers to interact with the restaurant.  
-Most importantly, the app provides a platform for customers to share their experiences and opinions with others.
-
+Designed to enhance both in-person and online experiences, Dice & Dine makes it effortless for guests to plan a visit, engage with the restaurant community, and share their gaming and dining adventures.
 ## Features
 This is a list of features that are currently implemented in the app:
 
