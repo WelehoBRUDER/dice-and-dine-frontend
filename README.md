@@ -26,7 +26,7 @@ Dice & Dine offers a range of features to enhance the customer experience, from 
 
 ### 🧾 Menu & Ordering
 - Browse a categorized menu: Starters, Mains, Desserts, and Beverages
-- Add items to a shopping cart with live updates in the header
+- Add items to a shopping cart with live updates
 - Place orders online for dine-in or pickup
 
 ### 📅 Table Reservations
@@ -61,7 +61,7 @@ Dice & Dine offers a range of features to enhance the customer experience, from 
 ![Screenshot of the app](dash.png)
 
 ### ⚠️ Before You Begin
-1. Visit the [server](insert-server-link-here).
+1. Visit the [server](https://10.120.32.62).
 2. In **Chrome**: Type `thisisunsafe` on your keyboard to bypass the warning screen.  
    In **Firefox**: Click **Advanced**, then choose **Accept the Risk and Continue**.
 
@@ -110,19 +110,21 @@ This guide walks you through setting up the frontend for local development.
 Follow the steps below to test each key feature and ensure the app is working as expected.  
 All pages can be accessed from the header menu.
 ![Image of the header menu](header.png)  
-The admin link will not work for test users, as it requires admin credentials.
+Users without admin credentials will not see / access the admin panel.
 
 ### 0. Set Up a User Profile
 - When first landing on the site, click **Register** to create a test user.
 - A user profile is required to access most features (ordering, reservations, posting, etc.).
-- Register a new profile with a unique email and password.
+- Register a new profile with a unique username, email and password.
 - After registration, log in with the new credentials.
 > **Note:** The page may not always refresh properly after registration. If you encounter issues, try refreshing the page manually.
 
 ### 1. Menu & Ordering
 - Navigate to the Menu page.
 - Add food items to the cart by clicking the [**+**] buttons.
-- Confirm the cart appears in the header.
+- Confirm the cart icon appears in the header.
+- Click the cart icon to view the order summary.
+- Adjust item quantities and remove items as needed.
 - Submit an order and verify it appears under your profile.
 
 ### 2. Table Reservations
@@ -159,6 +161,55 @@ The admin link will not work for test users, as it requires admin credentials.
 - Confirm the map loads and shows correct location and nearby transport.
 
 > Tip: Test on both desktop and mobile viewports to verify responsiveness.
+
+## 🛠️ Testing the admin panel
+
+To test admin-only functionality, log in using an account with admin credentials.  
+This section covers features such as user management, access controls, and other   restricted tools available through the admin interface.  
+Make sure to verify that non-admin users cannot access these areas.
+![Image of the admin panel's header](admin-header.png)  
+The different pages of the admin panel are accessible from the special admin header menu.
+
+### 0. Logging in as an admin
+- Use the credentials below to log in as an admin:
+   - **Username:** admin
+   - **Password:** admin
+- Once logged in, the **Admin Panel** will appear in the navigation menu.
+
+### 1. Order management
+- Go to the **Orders** page in the admin panel.
+- View the list of all user-submitted orders.
+- Filter orders by status or date to test filtering functionality.
+- Update an order’s status (e.g., from “Pending” to “Completed”) and confirm it saves.
+> **Note:** It is currently not possible to delete orders from the admin panel.
+
+### 2. Menu management
+- Go to the **Add To Menu** page in the admin panel.
+- Add a new item by filling in all required fields (name, description, price).
+- Ensure both **English** and **Finnish** fields are completed.
+- Confirm the item appears correctly in the user-facing menu.
+- Then, go to **Delete From Menu**.
+- Remove the item you just added.
+- Verify that the item is no longer visible in the menu.
+> **Note:** It is currently not possible to edit menu items from the admin panel.
+
+### 3. Table reservations management
+- Go to the **Table Reservations** page in the admin panel.
+- View the list of all reservations made by users.
+- Test filtering by date to check functionality.
+> **Note:** It is currently not possible to edit/delete reservations from the admin panel.
+
+### 4. User management
+- Go to the **Users** page in the admin panel.
+- View the list of all registered users.
+> **Note:** It is currently not possible to edit/delete users from the admin panel.
+
+### 5. Restaurant information management
+- Go to the **Edit About** in the admin panel.
+- Click the ✏️ icon to modify the restaurant’s name, description, etc.
+- Confirm that updates appear correctly on the **Home** and **About** pages.
+> **Note:** It is currently not possible to edit the restaurant's location from the admin panel.
+
 
 ## Attributions
 - Hero image from [Unsplash](https://unsplash.com/photos/a-man-sitting-at-a-table-playing-a-board-game-7gagNAbWocg?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
