@@ -35,6 +35,11 @@ export const ForumPost = ({item, lang}) => {
     }
   }, [item]);
 
+  const getMessageById = (id) => {
+    const reply = replies.find((reply) => reply.id === id);
+    return reply ? reply : null;
+  };
+
   return (
     <article className="forum-article flex-row" key={item.id}>
       <div className="top-post">
@@ -50,7 +55,13 @@ export const ForumPost = ({item, lang}) => {
       {replies && replies.length > 0 ? (
         <div className="replies">
           {replies.map((reply) => (
-            <ForumReply key={reply.id} item={reply} lang={lang} />
+            <ForumReply
+              key={reply.id}
+              item={reply}
+              lang={lang}
+              original={item.id}
+              getMessageById={getMessageById}
+            />
           ))}
         </div>
       ) : (
