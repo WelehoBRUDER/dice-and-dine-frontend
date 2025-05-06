@@ -9,10 +9,17 @@ const Admin = () => {
   }, []);
 
   return (
-    <div className="admin-page">
-      <h1>{lang("admin_page.title")}</h1>
-      <p>{lang("admin_page.description")}</p>
-    </div>
+    <>
+      <article>
+        <title>{lang("admin_page.title")}</title>
+        <meta name="description" content={lang("admin.description")} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </article>
+      <div className="admin-page">
+        <h1>{lang("admin_page.title")}</h1>
+        <p>{lang("admin_page.description")}</p>
+      </div>
+    </>
   );
 };
 

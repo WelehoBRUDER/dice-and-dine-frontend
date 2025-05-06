@@ -39,63 +39,70 @@ const Users = () => {
   }, []);
 
   return (
-    <div className="flex-column">
-      <h1>{lang("users_page.title")}</h1>
-      <p>
-        <strong>
-          🚧 Project deadline hit before this feature did. Coming soon --- or
-          not!
-        </strong>
-      </p>
+    <>
+      <article>
+        <title>{lang("users_page.title")}</title>
+        <meta name="description" content={lang("users_page.description")} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </article>
+      <div className="flex-column">
+        <h1>{lang("users_page.title")}</h1>
+        <p>
+          <strong>
+            🚧 Project deadline hit before this feature did. Coming soon --- or
+            not!
+          </strong>
+        </p>
 
-      <p>{lang("users_page.description")}</p>
+        <p>{lang("users_page.description")}</p>
 
-      <table>
-        <thead>
-          <tr>
-            <th>{lang("users_page.id")}</th>
-            <th>{lang("users_page.username")}</th>
-            <th>{lang("users_page.email")}</th>
-            <th>{lang("users_page.user_type")}</th>
-            <th>{lang("users_page.actions")}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.length === 0 ? (
+        <table>
+          <thead>
             <tr>
-              <td colSpan="5" style={{textAlign: "center", padding: "1rem"}}>
-                {lang("users_page.nousers")}
-              </td>
+              <th>{lang("users_page.id")}</th>
+              <th>{lang("users_page.username")}</th>
+              <th>{lang("users_page.email")}</th>
+              <th>{lang("users_page.user_type")}</th>
+              <th>{lang("users_page.actions")}</th>
             </tr>
-          ) : (
-            users.map((user) => (
-              <tr key={user.id}>
-                <td>{user.id}</td>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.user_type}</td>
-                <td>
-                  <Button
-                    className="btn-smaller"
-                    onClick={() => handleEdit(user.id)}
-                    title="Edit"
-                  >
-                    ✏️
-                  </Button>{" "}
-                  <Button
-                    className="btn-smaller"
-                    onClick={() => handleDelete(user.id)}
-                    title="Delete"
-                  >
-                    🗑️
-                  </Button>
+          </thead>
+          <tbody>
+            {users.length === 0 ? (
+              <tr>
+                <td colSpan="5" style={{textAlign: "center", padding: "1rem"}}>
+                  {lang("users_page.nousers")}
                 </td>
               </tr>
-            ))
-          )}
-        </tbody>
-      </table>
-    </div>
+            ) : (
+              users.map((user) => (
+                <tr key={user.id}>
+                  <td>{user.id}</td>
+                  <td>{user.name}</td>
+                  <td>{user.email}</td>
+                  <td>{user.user_type}</td>
+                  <td>
+                    <Button
+                      className="btn-smaller"
+                      onClick={() => handleEdit(user.id)}
+                      title="Edit"
+                    >
+                      ✏️
+                    </Button>{" "}
+                    <Button
+                      className="btn-smaller"
+                      onClick={() => handleDelete(user.id)}
+                      title="Delete"
+                    >
+                      🗑️
+                    </Button>
+                  </td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 };
 

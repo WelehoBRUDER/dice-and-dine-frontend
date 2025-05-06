@@ -50,94 +50,106 @@ const Reservations = () => {
   }
 
   return (
-    <div className="flex-column">
-      <h1>{lang("reservations_page.title")}</h1>
-      <div className="admin-center">
-        <p>
-          <strong>
-            🚧 Project deadline hit before this feature did. Coming soon --- or
-            not!
-          </strong>
-        </p>
-        <p>{lang("reservations_page.description")}</p>
-      </div>
-
-      <label>
-        {lang("reservations_page.filter_by_date")}:
-        <input
-          type="date"
-          value={filterDate}
-          onChange={(e) => setFilterDate(e.target.value)}
-          className="admin-filter"
+    <>
+      <article>
+        <title>{lang("reservations_page.title")}</title>
+        <meta
+          name="description"
+          content={lang("reservations_page.description")}
         />
-      </label>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </article>
+      <div className="flex-column">
+        <h1>{lang("reservations_page.title")}</h1>
+        <div className="admin-center">
+          <p>
+            <strong>
+              🚧 Project deadline hit before this feature did. Coming soon ---
+              or not!
+            </strong>
+          </p>
+          <p>{lang("reservations_page.description")}</p>
+        </div>
 
-      <table>
-        <thead>
-          <tr>
-            <th>{lang("reservations_page.id")}</th>
-            <th>{lang("reservations_page.reservedby")}</th>
-            <th>{lang("reservations_page.arrival")}</th>
-            <th>{lang("reservations_page.departure")}</th>
-            <th>{lang("reservations_page.size")}</th>
-            <th>{lang("reservations_page.tables")}</th>
-            <th>{lang("reservations_page.additional")}</th>
-            <th>{lang("reservations_page.actions")}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {reservations.filter((reservation) =>
-            !filterDate
-              ? true
-              : formatDateToInput(reservation.arrival_time) === filterDate
-          ).length === 0 ? (
+        <label>
+          {lang("reservations_page.filter_by_date")}:
+          <input
+            type="date"
+            value={filterDate}
+            onChange={(e) => setFilterDate(e.target.value)}
+            className="admin-filter"
+          />
+        </label>
+
+        <table>
+          <thead>
             <tr>
-              <td colSpan="8" style={{textAlign: "center", padding: "1rem"}}>
-                {filterDate
-                  ? lang("reservations_page.no_for_selected")
-                  : lang("reservations_page.no_reservations")}
-              </td>
+              <th>{lang("reservations_page.id")}</th>
+              <th>{lang("reservations_page.reservedby")}</th>
+              <th>{lang("reservations_page.arrival")}</th>
+              <th>{lang("reservations_page.departure")}</th>
+              <th>{lang("reservations_page.size")}</th>
+              <th>{lang("reservations_page.tables")}</th>
+              <th>{lang("reservations_page.additional")}</th>
+              <th>{lang("reservations_page.actions")}</th>
             </tr>
-          ) : (
-            reservations
-              .filter((reservation) =>
-                !filterDate
-                  ? true
-                  : formatDateToInput(reservation.arrival_time) === filterDate
-              )
-              .map((reservation) => (
-                <tr key={reservation.id}>
-                  <td>{reservation.id}</td>
-                  <td>{reservation.customer.name}</td>
-                  <td>{new Date(reservation.arrival_time).toLocaleString()}</td>
-                  <td>
-                    {new Date(reservation.departure_time).toLocaleString()}
-                  </td>
-                  <td>{reservation.reservation_size}</td>
-                  <td>{reservation.tables.join(", ")}</td>
-                  <td>{reservation.additional_information}</td>
-                  <td>
-                    <Button
-                      className="btn-smaller"
-                      onClick={() => handleEdit(reservation.id)}
-                      title="Edit"
-                    >
-                      ✏️
-                    </Button>{" "}
-                    <Button
-                      className="btn-smaller"
-                      onClick={() => handleDelete(reservation.id)}
-                      title="Delete"
-                    >
-                      🗑️
-                    </Button>
-                  </td>
-                </tr>
-              ))
-          )}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {reservations.filter((reservation) =>
+              !filterDate
+                ? true
+                : formatDateToInput(reservation.arrival_time) === filterDate
+            ).length === 0 ? (
+              <tr>
+                <td colSpan="8" style={{textAlign: "center", padding: "1rem"}}>
+                  {filterDate
+                    ? lang("reservations_page.no_for_selected")
+                    : lang("reservations_page.no_reservations")}
+                </td>
+              </tr>
+            ) : (
+              reservations
+                .filter((reservation) =>
+                  !filterDate
+                    ? true
+                    : formatDateToInput(reservation.arrival_time) === filterDate
+                )
+                .map((reservation) => (
+                  <tr key={reservation.id}>
+                    <td>{reservation.id}</td>
+                    <td>{reservation.customer.name}</td>
+                    <td>
+                      {new Date(reservation.arrival_time).toLocaleString()}
+                    </td>
+                    <td>
+                      {new Date(reservation.departure_time).toLocaleString()}
+                    </td>
+                    <td>{reservation.reservation_size}</td>
+                    <td>{reservation.tables.join(", ")}</td>
+                    <td>{reservation.additional_information}</td>
+                    <td>
+                      <Button
+                        className="btn-smaller"
+                        onClick={() => handleEdit(reservation.id)}
+                        title="Edit"
+                      >
+                        ✏️
+                      </Button>{" "}
+                      <Button
+                        className="btn-smaller"
+                        onClick={() => handleDelete(reservation.id)}
+                        title="Delete"
+                      >
+                        🗑️
+                      </Button>
+                    </td>
+                  </tr>
+                ))
+            )}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 };
 

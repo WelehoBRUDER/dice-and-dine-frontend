@@ -51,54 +51,63 @@ const EditMenu = () => {
       ? bothMenus
       : bothMenus.filter((item) => item.categories?.includes(selectedCategory));
   return (
-    <div className="flex-column">
-      <h1>{lang("editmenu_page.title")}</h1>
-      <p>{lang("editmenu_page.description")}</p>
-      <div className="delete-menu-item-table">
-        <label htmlFor="categoryFilter">{lang("editmenu_page.filter")}:</label>
-        <select
-          className="admin-filter"
-          value={selectedCategory}
-          onChange={(e) => setSelectedCategory(e.target.value)}
-        >
-          <option value="all">{lang("editmenu_page.all")}</option>
-          {categories.map((cat) => (
-            <option key={cat} value={cat}>
-              {cat}
-            </option>
-          ))}
-        </select>
-      </div>
-      <table className="delete-menu-item-table">
-        <thead>
-          <tr>
-            <th>{lang("editmenu_page.itemid")}</th>
-            <th>{lang("editmenu_page.name")}</th>
-            <th>{lang("editmenu_page.price")}</th>
-            <th>{lang("editmenu_page.category")}</th>
-            <th>{lang("editmenu_page.delete")}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredMenu.map((item) => (
-            <tr key={`${item.language}-${item.id}`}>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.price} €</td>
-              <td>{item.categories[0]}</td>
-              <td>
-                <Button
-                  className="delete-menu-item-btn"
-                  onClick={() => handleDelete(item.id)}
-                >
-                  ❌
-                </Button>
-              </td>
+    <>
+      <article>
+        <title>{lang("editmenu_page.title")}</title>
+        <meta name="description" content={lang("editmenu.description")} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </article>
+      <div className="flex-column">
+        <h1>{lang("editmenu_page.title")}</h1>
+        <p>{lang("editmenu_page.description")}</p>
+        <div className="delete-menu-item-table">
+          <label htmlFor="categoryFilter">
+            {lang("editmenu_page.filter")}:
+          </label>
+          <select
+            className="admin-filter"
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+          >
+            <option value="all">{lang("editmenu_page.all")}</option>
+            {categories.map((cat) => (
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
+            ))}
+          </select>
+        </div>
+        <table className="delete-menu-item-table">
+          <thead>
+            <tr>
+              <th>{lang("editmenu_page.itemid")}</th>
+              <th>{lang("editmenu_page.name")}</th>
+              <th>{lang("editmenu_page.price")}</th>
+              <th>{lang("editmenu_page.category")}</th>
+              <th>{lang("editmenu_page.delete")}</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {filteredMenu.map((item) => (
+              <tr key={`${item.language}-${item.id}`}>
+                <td>{item.id}</td>
+                <td>{item.name}</td>
+                <td>{item.price} €</td>
+                <td>{item.categories[0]}</td>
+                <td>
+                  <Button
+                    className="delete-menu-item-btn"
+                    onClick={() => handleDelete(item.id)}
+                  >
+                    ❌
+                  </Button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 };
 

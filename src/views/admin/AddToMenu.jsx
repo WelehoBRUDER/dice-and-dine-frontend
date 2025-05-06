@@ -146,6 +146,11 @@ const AddToMenu = () => {
 
   return (
     <>
+      <article>
+        <title>{lang("addtomenu_page.title")}</title>
+        <meta name="description" content={lang("addtomenu.description")} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </article>
       {showResult ? (
         <ResultWindow
           success={true}
