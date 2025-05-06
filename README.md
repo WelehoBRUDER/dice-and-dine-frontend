@@ -61,8 +61,9 @@ Dice & Dine offers a range of features to enhance the customer experience, from 
 ![Screenshot of the app](dash.png)
 
 ### ⚠️ Before You Begin
-1. Visit the [server](https://10.120.32.62).
-2. In **Chrome**: Type `thisisunsafe` on your keyboard to bypass the warning screen.  
+1. Connect to the Metropolia network via campus Wi-Fi or [VPN](https://wiki.metropolia.fi/display/tietohallinto/VPN-yhteys+GlobalProtect-palvelun+kautta).
+2. Visit the [server](https://10.120.32.62).
+3. In **Chrome**: Type `thisisunsafe` on your keyboard to bypass the warning screen.  
    In **Firefox**: Click **Advanced**, then choose **Accept the Risk and Continue**.
 
 > This step is required to connect to the server. If skipped, the app will not function properly.
