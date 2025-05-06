@@ -2,6 +2,7 @@ import parseDateToTimeStamp from "../../utils/dateTime";
 import {useState, useEffect} from "react";
 import LoadingWheel from "../LoadingWheel";
 import ForumReply from "./ForumReply";
+import ForumUserInfo from "./ForumUserInfo";
 
 export const ForumPost = ({item, lang}) => {
   console.log(item);
@@ -39,6 +40,7 @@ export const ForumPost = ({item, lang}) => {
       <div className="top-post">
         <div className="title">
           <h2>{item?.title}</h2>
+          <ForumUserInfo item={item} lang={lang} />
           <span>{parseDateToTimeStamp(item?.time)}</span>
         </div>
         <div className="content">
