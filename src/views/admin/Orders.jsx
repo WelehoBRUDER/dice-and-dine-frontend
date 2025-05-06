@@ -70,8 +70,10 @@ const Orders = () => {
   }
 
   return (
-    <div>
+    <div className="flex-column">
       <h1>{lang("admin_orders_page.title")}</h1>
+      <p>{lang("admin_orders_page.description")}</p>
+
       <div className="flex-row">
         <label htmlFor="status-filter-label" className="status-filter-label">
           {lang("admin_orders_page.filter_by_status")}:

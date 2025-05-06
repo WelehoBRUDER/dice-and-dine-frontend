@@ -200,6 +200,7 @@
   "admin_orders_page.th_date": "Päivämäärä",
   "admin_orders_page.th_actions": "Toimenpiteet",
   "admin_page.addtomenu_page_link": "Lisää ruokalistalle",
+  "admin_orders_page.description": "Tilaukset-sivulla voit tarkastella ja hallita ravintolan asiakastilauksia. Voit suodattaa tilauksia tilan ja päivämäärän mukaan, tarkastella yksityiskohtia ja muuttaa tilauksen tilaa. Tilauksen tila muutetaan valitsemalla tilauksen tila toimenpiteet sarakkeesta.",
 
   "editmenu_page.title": "Ruokalistalta poisto",
   "editmenu_page.filter": "Suodata kategorian mukaan",
@@ -209,6 +210,7 @@
   "editmenu_page.price": "Hinta",
   "editmenu_page.category": "Kategoria",
   "editmenu_page.delete": "Poista",
+  "editmenu_page.description": "Tällä sivulla voit poistaa tuotteita ravintolan ruokalistalta. Voit suodattaa tuotteita kategorian mukaan. Poistaaksesi tuotteen, napsauta tuotteen vieressä olevaa '❌' painiketta. Huomaa, että tämä toimenpide ei ole peruutettavissa.",
 
   "addtomenu_page.title": "Lisää ruokalistalle",
   "addtomenu_page.enTitle": "Englanti",
@@ -230,5 +232,29 @@
   "addtomenu_page.endescription_required": "Englanninkielinen kuvaus on pakollinen",
   "addtomenu_page.category_required": "Kategoria on pakollinen",
   "addtomenu_page.success_title": "Tuote lisätty onnistuneesti",
-  "addtomenu_page.success_desc": "Tuote on lisätty onnistuneesti ruokalistalle. Voit tarkastella sitä ruokalistalla."
+  "addtomenu_page.success_desc": "Tuote on lisätty onnistuneesti ruokalistalle. Voit tarkastella sitä ruokalistalla.",
+  "addtomenu_page.description": "Tällä sivulla voit lisätä uusia tuotteita ravintolan ruokalistalle. Täytä kaikki kentät lomakkeessa. Allergiat ovat ainoa valinnainen kenttä. Allergeenit valitaan ruksimalla vaihtoehto. Kirjoita nimi ja kuvaus molemmilla kielillä. Valitse kategoria pudotusvalikosta. Hinta on pakollinen euroissa. Täytettyäsi kaikki tiedot, napsauta 'Tallenna' -painiketta lisätäksesi tuotteen ruokalistalle.",
+  "addtomenu_page.submit": "Tallenna",
+
+  "users_page.title": "Käyttäjät",
+  "users_page.id": "ID",
+  "users_page.username": "Käyttäjänimi",
+  "users_page.email": "Sähköposti",
+  "users_page.user_type": "Käyttäjätyyppi",
+  "users_page.actions": "Toimenpiteet",
+  "users_page.nousers": "Ei käyttäjiä saatavilla",
+  "users_page.description": "Käyttäjät-sivulla voit tarkastella ja hallita ravintolasovelluksen käyttäjiä.",
+
+  "reservations_page.title": "Pöytävaraukset",
+  "reservations_page.id": "ID",
+  "reservations_page.reservedby": "Varauksen tekijä",
+  "reservations_page.arrival": "Saapumisaika",
+  "reservations_page.departure": "Lähtöaika",
+  "reservations_page.size": "Henkilöitä",
+  "reservations_page.tables": "Pöydät",
+  "reservations_page.additional": "Lisätiedot",
+  "reservations_page.actions": "Toimenpiteet",
+  "reservations_page.filter_by_date": "Suodata",
+  "reservations_page.no_reservations": "Ei varauksia saatavilla",
+  "reservations_page.description": "Pöytävaraukset-sivulla voit tarkastella ja hallita ravintolan pöytävarauksia."
 }

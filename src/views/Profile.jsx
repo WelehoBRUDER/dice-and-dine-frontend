@@ -24,11 +24,10 @@ const Profile = () => {
 
   const fetchUserAndOrderDetails = async () => {
     if (user && user.id) {
-      console.log("User :", user);
       try {
         const details = await getUserDetails(user.id);
         setUserDetails(details);
-        console.log("User details:", details);
+
         const orders = await Promise.all(
           details.orders.map(async (orderId) => {
             const order = await getOrderDetails(orderId);
@@ -49,7 +48,6 @@ const Profile = () => {
         );
 
         setReservationDetails(sortedReservations);
-        console.log("Reservation details:", reservationDetails);
         setOrderDetails(sortedOrders);
       } catch (error) {
         console.error("Failed to fetch user details", error);

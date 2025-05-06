@@ -83,12 +83,27 @@ const useUser = () => {
     return userResult;
   };
 
+  const getAllUsers = async () => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      return null;
+    }
+    const fetchOptions = {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    };
+    const usersResult = await fetchData(apiURL + "/users", fetchOptions);
+    return usersResult;
+  };
+
   return {
     getUserByToken,
     postUser,
     getUserDetails,
     uploadProfileImage,
     putUser,
+    getAllUsers,
   };
 };
 

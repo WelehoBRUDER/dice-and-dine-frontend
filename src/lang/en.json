@@ -201,6 +201,7 @@
   "admin_orders_page.th_date": "Date",
   "admin_orders_page.th_actions": "Actions",
   "admin_page.addtomenu_page_link": "Add To Menu",
+  "admin_orders_page.description": "This page is for managing orders. You can view all orders, filter by status or date, and update the status of an order by selecting the correct status from actions selector.",
 
   "editmenu_page.title": "Delete Menu Item",
   "editmenu_page.filter": "Filter By Category",
@@ -210,6 +211,7 @@
   "editmenu_page.price": "Price",
   "editmenu_page.category": "Category",
   "editmenu_page.delete": "Delete",
+  "editmenu_page.description": "This page is for deleting menu items. You can filter the items by category. To delete an item, click on the '❌' button next to the item you want to remove. Please note that this action cannot be undone.",
 
   "addtomenu_page.title": "Add to Menu",
   "addtomenu_page.enTitle": "English",
@@ -232,5 +234,30 @@
   "addtomenu_page.endescription_required": "English description is required",
   "addtomenu_page.category_required": "Category is required",
   "addtomenu_page.success_title": "Menu item added",
-  "addtomenu_page.success_desc": "The menu item has been added successfully. You can view it in the menu."
+  "addtomenu_page.success_desc": "The menu item has been added successfully. You can view it in the menu.",
+  "addtomenu_page.description": "This page is for adding new menu items. It is required to fill in all details in the form. Allergens are the only optional field. Choose allergens by checking the correct boxes. Type in name and description in both languages. Choose a category from the dropdown menu. Price is required in euros. After filling in all details, click on the 'Save' button to add the item to the menu.",
+  "addtomenu_page.submit": "Save",
+
+  "users_page.title": "Manage Users",
+  "users_page.id": "Id",
+  "users_page.username": "Username",
+  "users_page.email": "Email",
+  "users_page.user_type": "User type",
+  "users_page.actions": "Actions",
+  "users_page.nousers": "No users available",
+  "users_page.description": "This page is for manging users: users list, edit user details, delete users.",
+
+  "reservations_page.title": "Manage Table Reservations",
+  "reservations_page.id": "ID",
+  "reservations_page.reservedby": "Reserved by",
+  "reservations_page.arrival": "Arrival",
+  "reservations_page.departure": "Departure",
+  "reservations_page.size": "Size",
+  "reservations_page.tables": "Tables",
+  "reservations_page.additional": "Additional Information",
+  "reservations_page.actions": "Actions",
+  "reservations_page.filter_by_date": "Filter by date",
+  "reservations_page.description": "This page is for manging restaurant tables and table reservations.",
+  "reservations_page.no_for_selected": "No reservations for selected date.",
+  "resevations_page.no_reservations": "No reservations."
 }

@@ -88,3 +88,21 @@
 .admin-label {
   font-size: 2rem;
 }
+
+.admin-description {
+  align-self: center;
+  width: 75%;
+}
+
+.admin-form {
+  align-self: center;
+}
+
+.delete-menu-item-table {
+  width: 75%;
+  align-self: center;
+}
+
+.admin-center {
+  align-self: center;
+}

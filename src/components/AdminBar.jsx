@@ -56,14 +56,6 @@ const AdminBar = () => {
             {lang("admin_page.editabout_page_link")}
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to="/admin/adminreviews"
-            className={({isActive}) => (isActive ? "active-link" : "")}
-          >
-            {lang("admin_page.reviews_page_link")}
-          </NavLink>
-        </li>
       </ul>
     </div>
   );
