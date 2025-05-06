@@ -6,7 +6,6 @@ A React App built for a fictional restaurant where great food meets great board 
 - [Features](#features)
 - [Live app](#live-app)
 - [Running locally](#how-to-run-locally)
-- [Localization](#how-to-use-localization)
 - [Attributions](#attributions)
 
 ## Overview
@@ -20,67 +19,79 @@ Dice & Dine is the digital front door to a board game-themed restaurant. Custome
 - Leave reviews and feedback
 
 Designed to enhance both in-person and online experiences, Dice & Dine makes it effortless for guests to plan a visit, engage with the restaurant community, and share their gaming and dining adventures.
+
 ## Features
-This is a list of features that are currently implemented in the app:
+Dice & Dine offers a range of features to enhance the customer experience, from planning a visit to joining the community:
 
-### Menu
-Users can view the menu and place orders for food and drinks.   
-When the shopping cart has items, it is shown in the website header.   
-The menu is divided into categories like starters, mains, desserts and beverages.
+### 🧾 Menu & Ordering
+- Browse a categorized menu: Starters, Mains, Desserts, and Beverages
+- Add items to a shopping cart with live updates in the header
+- Place orders online for dine-in or pickup
 
-### Table reservations
-Users can reserve tables for their desired date and time.  
-Users can pick their date, time, length of reservation and tables.  
-Before submitting the reservation, it is possible to include extra information in freeform.  
-Reservations can be viewed on the profile page. Canceling must be done by calling the restaurant.
+### 📅 Table Reservations
+- Book tables in advance by selecting date, time, duration, and preferred tables
+- Add special instructions before confirming the reservation
+- View upcoming reservations in your profile
+- (Note: Cancellations must be done by phone)
 
-### Browse games
-The website has a collection of board games that users can browse.  
-Games can be filtered by category. The page shows basic information about each game.
+### 🎲 Game Library
+- Explore a curated selection of board games
+- Filter games by category
+- View summaries and key information at a glance
 
-### Profile management
-Users can create a profile and manage their information.  
-It is possible to change the profile picture, name, email and password.  
-On the profile page, users can view their reservations and orders.
+### 👤 Profile Management
+- Create and update your personal profile
+- Edit name, email, password, and profile picture
+- Access order history and reservations from your profile dashboard
 
-### Reviews
-Users and guests can leave a review for the restaurant.  
-Reviews are given in stars (1-5) and a comment up to 150 characters.
+### ⭐ Reviews
+- Leave a star-rated review (1–5) with a short comment (up to 150 characters)
+- Submit feedback as a guest or logged-in user
 
-### Forum
-Users can post on the forum and reply to other users.  
-Posts are separated into "threads" which are created when a user posts a new topic.  
-Each thread is its own separate page, where users can reply to the original post and other replies.
+### 💬 Forum
+- Start new discussion threads or join ongoing conversations
+- Each thread has a dedicated page for replies and discussions
 
-### Embedded map
-Both the home page and the contact page have an embedded map.  
-The map shows the location of the restaurant and the closest bus stops and public scooters.
+### 🗺️ Embedded Map
+- Interactive map on the homepage and contact page
+- Highlights restaurant location, nearby bus stops, and public scooter stations
 
-## Live app
+## 🚀 Live App
 ![Screenshot of the app](dash.png)
 
-### To do before using the app
-- 1. Go to [the server](insert-server-link-here)
-- 2. Type "thisisunsafe" if on chrome, or click "Advanced" and then "Accept the risk and continue" if on Firefox.  
-This is a self-signed certificate, so you need to bypass the warning
+### ⚠️ Before You Begin
+1. Visit the [server](insert-server-link-here).
+2. In **Chrome**: Type `thisisunsafe` on your keyboard to bypass the warning screen.  
+   In **Firefox**: Click **Advanced**, then choose **Accept the Risk and Continue**.
 
-You will be unable to access the server if you do not complete this step.
+> This step is required to connect to the server. If skipped, the app will not function properly.
 
-Click the link below to access the app:  
-[Dice & Dine](https://localhost:3000)
+---
 
-## How to run locally
-This guide explains how you can run the app locally on your machine.  
-The backend is hosted elsewhere and its repository is not publicly available.  
-You must also follow the instructions for using the live hosted version of the app.
+### 🔗 Launch the App
 
-### Set up the frontend
-1. Clone the repository
-2. Navigate to the project directory
-3. Create a `.env` file in the root directory, based on the `.env.example` file.  
-   This file contains the API keys for the app.
+Click below to open the React app:
+
+👉 [Dice & Dine](https://localhost:3000)
+
+## 🛠️ How to Run Locally
+
+This guide walks you through setting up the frontend for local development.
+
+> **Note:** The backend is hosted externally and is not publicly available.  
+> You must first complete the steps in the [Live App](#-live-app) section to bypass the browser warning and connect to the backend.
+
+---
+
+### 🔧 Setup Instructions
+1. **Clone the repository**
    ```bash
-   VITE_API_URL=
+   git clone https://github.com/your-username/dice-and-dine.git
+   cd dice-and-dine
+2. **Create a `.env` file**  
+ Copy from `.env.example` and set your environment variables:
+   ```bash
+   VITE_API_URL=https://not-yet-hosted-backend.com
    ```
 3. Install dependencies
    ```bash
@@ -90,7 +101,8 @@ You must also follow the instructions for using the live hosted version of the a
    ```bash
    npm run dev
    ```
-5. Open your browser and go to `http://localhost:5173`
+5. **Open the app**  
+ Visit `http://localhost:5173` in your browser.
 
-### Attributions
+## Attributions
 - Hero image from [Unsplash](https://unsplash.com/photos/a-man-sitting-at-a-table-playing-a-board-game-7gagNAbWocg?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
