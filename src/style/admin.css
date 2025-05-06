@@ -5,7 +5,8 @@
   font-size: 1.8rem;
   width: 100%;
   position: sticky;
-  margin-top: 1.5rem;
+  top: 6.8rem;
+  z-index: 9;
   overflow-x: auto;
   white-space: nowrap;
 }
@@ -43,7 +44,7 @@
 }
 
 .status-select,
-.status-filter {
+.admin-filter {
   width: 20rem;
   background: var(--theme-foreground);
   font-size: 2rem;
@@ -55,4 +56,58 @@
   display: flex;
   padding: 0.5rem;
   width: 15rem;
+}
+
+.delete-menu-item-btn {
+  background-color: var(--theme-foreground);
+}
+
+.admin-checkbox {
+  gap: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px; /* Spacing between checkboxes */
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-item label {
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+.admin-label {
+  font-size: 2rem;
+}
+
+.admin-description {
+  align-self: center;
+  width: 75%;
+}
+
+.admin-form {
+  align-self: center;
+}
+
+.delete-menu-item-table {
+  width: 75%;
+  align-self: center;
+}
+
+.admin-info-table {
+  width: 75%;
+  align-self: center;
+}
+
+.admin-center {
+  align-self: center;
 }

@@ -1,6 +1,14 @@
 import {useLanguage} from "../../context/LanguageContext";
 import Button from "../Button";
 
+/**
+ * Component for selecting tables in the reservation system.
+ *
+ * @param {Array} tables - Array of selected table IDs.
+ * @param {Array} tablesAvailable - Array of available tables.
+ * @param {function} setTables - Function to set the selected tables.
+ * @returns
+ */
 const ReservationTables = ({tables, tablesAvailable, setTables}) => {
   const {lang} = useLanguage();
 

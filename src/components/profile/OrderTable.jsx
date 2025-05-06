@@ -1,27 +1,37 @@
+/**
+ * OrderTable component displays a table of order details or a message if no orders are available.
+ *
+ * @component
+ * @param {Object} props - The props object.
+ * @param {Array} props.orderDetails - An array of order details to display in the table.
+ * @returns {JSX.Element} A table displaying order details or a message indicating no orders.
+ *
+ */
 import {useLanguage} from "../../context/LanguageContext";
 
-const OrderTable = ({userDetails, orderDetails}) => {
+const OrderTable = ({orderDetails}) => {
   const {lang} = useLanguage();
+  if (!orderDetails || orderDetails.length === 0) {
+    return <p>{lang("profile_page.no_orders")}</p>;
+  }
 
   return (
     <table>
       <thead>
         <tr>
-          <th>Order ID</th>
-          <th>Order time</th>
-          <th>Status</th>
+          <th>{lang("profile_page.orderid")}</th>
+          <th>{lang("profile_page.ordertime")}</th>
+          <th>{lang("profile_page.orderstatus")}</th>
         </tr>
       </thead>
       <tbody>
-        {userDetails.orders.length > 0 ? (
-          userDetails.orders.map((order, index) => (
-            <tr key={index}>
-              <td>{order}</td>
-              <td>{new Date(orderDetails[index].time).toLocaleString()}</td>
+        {orderDetails.length > 0 ? (
+          orderDetails.map((order, index) => (
+            <tr key={order.id || index}>
+              <td>{order.id}</td>
+              <td>{new Date(order.time).toLocaleString()}</td>
               <td>
-                {lang(
-                  `admin_orders_page.status_${orderDetails[index].order[0].status}`
-                )}
+                {lang(`admin_orders_page.status_${order.order[0].status}`)}
               </td>
             </tr>
           ))

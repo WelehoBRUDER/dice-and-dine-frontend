@@ -1,4 +1,8 @@
-// src/hooks/useCategory.js
+/**
+ * @file useCategory.js
+ * @description Custom hook to fetch categories from the API.
+ *
+ */
 import {useState, useEffect} from "react";
 import {fetchData} from "../utils/fetchData.js";
 
@@ -14,7 +18,6 @@ export function useCategory(language) {
         const data = await fetchData(
           `${API_URL}/info/itemcategories/${language}`
         );
-        console.log("Fetched categories:", data);
         setCategories(data);
       } catch (error) {
         console.error("Error fetching categories:", error);

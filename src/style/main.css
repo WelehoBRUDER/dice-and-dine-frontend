@@ -124,6 +124,23 @@ span {
     }
   }
 
+  .material-icon-wrapper {
+    background: var(--theme-darker);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.blue {
+      background: var(--hsl-blue);
+    }
+
+    &.gold {
+      background: var(--hsl-gold);
+    }
+  }
+
 }
 
 .large-text {
@@ -134,3 +151,25 @@ span {
 h1.large-text  {
   font-size: 7rem;
 }
+
+
+  /* For WebKit-based browsers (Chrome, Safari, Edge) */
+  ::-webkit-scrollbar {
+    width: 0.6rem;       /* Very thin vertical scrollbar */
+    height: 0.6rem;      /* Very thin horizontal scrollbar */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.4); 
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5); /* Subtle thumb */
+    border-radius: 1rem;
+  }
+
+  /* For Firefox */
+  * {
+    scrollbar-width: thin;              /* Makes scrollbar thinner */
+    scrollbar-color: rgba(0,0,0,0.3) transparent; /* Subtle thumb, transparent track */
+  }

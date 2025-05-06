@@ -7,13 +7,22 @@
     "title": "Dice & Dine",
     "subtitle": "Hyvää ruokaa. Hauskoja pelejä.",
     "description": "Olemme ravintola, joka yhdistää lautapelit ja herkullisen ruoan. Meillä voit nauttia maukkaista annoksista samalla kun pelaat suosikkilautapelejäsi ystäviesi kanssa. Meidän valikoimastamme löydät laajan valikoiman pelejä eri genreistä ja vaikeustasoista, joten jokaiselle löytyy jotakin! Tule ja koe unohtumaton ilta meillä!",
-    "find_us_here": "Täältä löydät meidät"
+    "find_us_here": "Täältä löydät meidät",
+    "home_description": "Tervetuloa ravintolan Dice & Dine kotisivuille! Yhdistämme rakkauden lautapelejä kohtaan herkullisen ruuan kanssa.",
+    "home_keywords": "Lautapelit, Ravintola, Ruoka, Hauska, Perheystävällinen"
   },
+  "default_profile_picture": "Oletusprofiilikuva",
 
   "loading_text": "Ladataan sisältöä...",
   "try_again": "Yritä uudelleen",
   "continue": "Jatka eteenpäin",
   "home_title": "Dice & Dine",
+
+  "not_found_page": {
+    "title": "404 - Sivua ei löytynyt",
+    "subtitle": "Etsimäsi sivu ei ole täällä. Se voi olla nimetty uudelleen, poistettu tai sitä ei ollut olemassa alunperinkään.",
+    "home": "Mene etusivulle"
+  },
 
   "home_page_link": "Etusivu",
   "about_page_link": "Tietoa",
@@ -34,7 +43,8 @@
     "about_page_phone": "Puhelin",
     "about_page_email": "Sähköposti",
     "about_page_address": "Osoite",
-    "about_page_open_times": "Aukioloajat"
+    "about_page_open_times": "Aukioloajat",
+    "location": "Ravintolan sijainti kartalla"
   },
 
     "forum_page": {
@@ -70,6 +80,7 @@
   "menu_page.remove_button_text": "Poista",
   "menu_page.allergens_text": "Allergeenit",
   "menu_page.description": "Löydä meidän herkulliset vaihtoehdot ruokalistalta. Alkupaloista pääruokiin ja jälkiruokiin, meiltä löytyy jokaiselle jotakin! Tilaa noudettavaksi tai tule nauttimaan ravintolaan.",
+  "menu_page.not_available": "Ruokalista ei saatavilla",
 
   "cart_page.order_success_message": "Tilaus onnistui! Voit seurata tilauksen tilaa profiilissasi. Tilausnumero: ",
   "cart_page.title": "Ostoskori",
@@ -86,8 +97,11 @@
 
   "games_page.title": "Pelit",
   "games_page.description": "Pelisivulla voit tutustua erilaisiin lautapeleihin ja roolipeleihin, joita tarjoamme ravintolassamme. Voit varata pelisession ystäviesi kanssa tai liittyä muihin pelaajiin. Meillä on laaja valikoima pelejä eri genreistä ja vaikeustasoista, joten jokaiselle löytyy jotakin!",
+  "games_page.no_games": "Ei pelejä saatavilla",
+  "games_page.filter_by_category": "Suodata kategorian mukaan",
 
   "profile_page.title": "Profiili",
+
   "review_page": {
     "review_title": "Arvostelut",
     "title": "Kirjoita arvostelu",
@@ -101,12 +115,15 @@
     "review_submitted_desc": "Arvostelusi on lähetetty onnistuneesti. Kiitos palautteestanne!",
     "review_failed": "Arvostelun lähetys epäonnistui",
     "review_failed_desc": "Arvostelun lähetyksessä tapahtui virhe. Yrittäkää uudeelleen myöhemmin.",
-    "review_description": "Ravintolan arvostelut"
+    "review_description": "Ravintolan arvostelut",
+    "loading_review": "Ladataan arvostelua..."
   },
 
   "reservation_page": {
     "make_reservation": "Tee varaus",
     "loading_reservation": "Ladataan varausikkunaa...",
+    "reservation_title": "Tee pöytävaraus",
+    "reservation_description": "Tee pöytävaraus ravintolassamme. Valitse haluamasi päivä, saapumisaika ja varauksen kesto. Voit myös valita haluamasi pöydät ryhmällesi.",
     "reservation": "Varaus",
     "reservation_date": "Minkä päivän haluaisit varata?",
     "reservation_arrival": "Mihin aikaan tulette saapumaan?",
@@ -139,6 +156,22 @@
   "profile_page.profile_picture": "Profiilikuva",
   "profile_page.orders": "Tilauksesi",
   "profile_page.details": "Tiedot",
+  "profile_page.arrival": "Saapumisaika",
+  "profile_page.time_range": "Aika",
+  "profile_page.size": "Varauksen koko",
+  "profile_page.tables": "Varatut pöydät",
+  "profile_page.reservations": "Varauksesi",
+  "profile_page.orderid": "Tilausnumero",
+  "profile_page.ordertime": "Tilausaika",
+  "profile_page.orderstatus": "Tila",
+  "profile_page.reservationid": "Varausnumero",
+  "profile_page.updated_succesfully": "Profiilisi on päivitetty onnistuneesti.",
+  "profile_page.updated_profile": "Profiilisi on päivitetty onnistuneesti.",
+  "profile_page.password_changed": "Salasanasi on vaihdettu onnistuneesti. Kirjaudu sisään uudelleen.",
+  "profile_page.password_error": "Virhe salasanaa vaihtaessa. Tarkista vanha salasana ja yritä uudelleen.",
+  "profile_page.update_error": "Virhe profiilin päivittämisessä. Tarkista syötteesi ja yritä uudelleen.",
+  "profile_page.no_orders": "Ei tilauksia",
+  "profile_page.no_reservations": "Ei varauksia",
 
   "profile_page.description": "Profiilisivusi, jolta voit hallita tiliäsi. Täällä voit tarkastella ja muokata henkilökohtaisia tietojasi, tarkastella tilauksiasi ja varauksiasi. Voit myös vaihtaa salasanaasi ja ladata profiilikuva.",
 
@@ -147,6 +180,7 @@
     "anon": "Anonyymi",
     "review_title": "Arvostelun otsikko",
     "leave_review": "Jätä arvostelu",
+    "reviews_description": "Selaa asiakkaiden jättämiä arvosteluja ja luo omasi.",
     "read_more": "Lisää⠀↓"
   },
   "profile_page.change_password": "Vaihda salasana",
@@ -166,7 +200,7 @@
   "admin_page.title": "Ylläpitosivu",
   "admin_page.orders_page_link": "Tilaukset",
   "admin_page.users_page_link": "Käyttäjät",
-  "admin_page.editmenu_page_link": "Muokkaa ruokalistaa",
+  "admin_page.editmenu_page_link": "Poista ruokalistalta",
   "admin_page.editabout_page_link": "Muokkaa tietoja",
   "admin_page.reviews_page_link": "Arvostelut",
   "admin_page.reservations_page_link": "Pöytävaraukset",
@@ -174,6 +208,7 @@
 
   "unauthorized_page.title": "403 - Pääsy kielletty",
   "unauthorized_page.description": "Sinulla ei ole oikeuksia käyttää tätä sivua.",
+  "not_authorized": "403 - Pääsy kielletty",
 
   "admin_orders_page.title": "Hallitse tilauksia",
   "admin_orders_page.filter_by_status": "Suodata tilan mukaan",
@@ -189,5 +224,74 @@
   "admin_orders_page.th_items": "Tuotteet",
   "admin_orders_page.th_status": "Tila",
   "admin_orders_page.th_date": "Päivämäärä",
-  "admin_orders_page.th_actions": "Toimenpiteet"
+  "admin_orders_page.th_actions": "Toimenpiteet",
+  "admin_page.addtomenu_page_link": "Lisää ruokalistalle",
+  "admin_orders_page.description": "Tilaukset-sivulla voit tarkastella ja hallita ravintolan asiakastilauksia. Voit suodattaa tilauksia tilan ja päivämäärän mukaan, tarkastella yksityiskohtia ja muuttaa tilauksen tilaa. Tilauksen tila muutetaan valitsemalla tilauksen tila toimenpiteet sarakkeesta.",
+
+  "editmenu_page.title": "Ruokalistalta poisto",
+  "editmenu_page.filter": "Suodata kategorian mukaan",
+  "editmenu_page.all": "Kaikki",
+  "editmenu_page.itemid": "Tuotteen ID",
+  "editmenu_page.name": "Nimi",
+  "editmenu_page.price": "Hinta",
+  "editmenu_page.category": "Kategoria",
+  "editmenu_page.delete": "Poista",
+  "editmenu_page.description": "Tällä sivulla voit poistaa tuotteita ravintolan ruokalistalta. Voit suodattaa tuotteita kategorian mukaan. Poistaaksesi tuotteen, napsauta tuotteen vieressä olevaa '❌' painiketta. Huomaa, että tämä toimenpide ei ole peruutettavissa.",
+  "editmenu_page.confirm_delete": "Oletko varma, että haluat poistaa ruokalistalta tuotteen: ",
+
+  "addtomenu_page.title": "Lisää ruokalistalle",
+  "addtomenu_page.enTitle": "Englanti",
+  "addtomenu_page.fiTitle": "Suomi",
+  "addtomenu_page.finame": "Nimi suomeksi",
+  "addtomenu_page.namePlaceholder": "Anna nimi",
+  "addtomenu_page.price": "Hinta",
+  "addtomenu_page.pricePlaceholder": "Anna hinta euroina",
+  "addtomenu_page.category": "Valitse kategoria",
+  "addtomenu_page.allergens": "Allergeenit",
+  "addtomenu_page.fidescription": "Kuvaus suomeksi",
+  "addtomenu_page.descriptionPlaceholder": "Anna annoksen kuvaus",
+  "addtomenu_page.enname": "Nimi englanniksi",
+  "addtomenu_page.endescription": "Kuvaus englanniksi",
+  "addtomenu_page.enname_required": "Englanninkielinen nimi on pakollinen",
+  "addtomenu_page.price_required": "Hinta on pakollinen",
+  "addtomenu_page.finame_required": "Suomenkielinen nimi on pakollinen",
+  "addtomenu_page.fidescription_required": "Suomenkielinen kuvaus on pakollinen",
+  "addtomenu_page.endescription_required": "Englanninkielinen kuvaus on pakollinen",
+  "addtomenu_page.category_required": "Kategoria on pakollinen",
+  "addtomenu_page.success_title": "Tuote lisätty onnistuneesti",
+  "addtomenu_page.success_desc": "Tuote on lisätty onnistuneesti ruokalistalle. Voit tarkastella sitä ruokalistalla.",
+  "addtomenu_page.description": "Tällä sivulla voit lisätä uusia tuotteita ravintolan ruokalistalle. Täytä kaikki kentät lomakkeessa. Allergiat ovat ainoa valinnainen kenttä. Allergeenit valitaan ruksimalla vaihtoehto. Kirjoita nimi ja kuvaus molemmilla kielillä. Valitse kategoria pudotusvalikosta. Hinta on pakollinen euroissa. Täytettyäsi kaikki tiedot, napsauta 'Tallenna' -painiketta lisätäksesi tuotteen ruokalistalle.",
+  "addtomenu_page.submit": "Tallenna",
+
+  "users_page.title": "Käyttäjät",
+  "users_page.id": "ID",
+  "users_page.username": "Käyttäjänimi",
+  "users_page.email": "Sähköposti",
+  "users_page.user_type": "Käyttäjätyyppi",
+  "users_page.actions": "Toimenpiteet",
+  "users_page.nousers": "Ei käyttäjiä saatavilla",
+  "users_page.description": "Käyttäjät-sivulla voit tarkastella ja hallita ravintolasovelluksen käyttäjiä.",
+
+  "reservations_page.title": "Pöytävaraukset",
+  "reservations_page.id": "ID",
+  "reservations_page.reservedby": "Varauksen tekijä",
+  "reservations_page.arrival": "Saapumisaika",
+  "reservations_page.departure": "Lähtöaika",
+  "reservations_page.size": "Henkilöitä",
+  "reservations_page.tables": "Pöydät",
+  "reservations_page.additional": "Lisätiedot",
+  "reservations_page.actions": "Toimenpiteet",
+  "reservations_page.filter_by_date": "Suodata",
+  "reservations_page.no_reservations": "Ei varauksia saatavilla",
+  "reservations_page.description": "Pöytävaraukset-sivulla voit tarkastella ja hallita ravintolan pöytävarauksia.",
+
+  "editabout_page.title": "Muokkaa ravintolan tietoja",
+  "editabout_page.description": "Tällä sivulla voit muokata ravintolan tietoja, kuten puhelinnumeroa, sähköpostia ja aukioloaikoja. Valitse muokattava kenttä ja tallenna lopuksi.",
+  "editabout_page.phone": "Puhelinnumero",
+  "editabout_page.email": "Sähköposti",
+  "editabout_page.opentimes": "Aukioloaika",
+
+  "logout_page.title": "Uloskirjautuminen",
+  "logout_page.description": "Olet kirjautunut ulos onnistuneesti. Kiitos vierailustasi. Toivottavasti näemme pian uudelleen!",
+  "logout_page.go_home": "Kotisivulle"
 }

@@ -1,3 +1,9 @@
+/**
+ * @file Menu.jsx
+ * @description This file contains the Menu component, which is used to display the restaurant's menu.
+ * It uses the useMenu hook to fetch the menu data and the useLanguage context to manage language settings.
+ * @returns {JSX.Element} The Menu component.
+ */
 import useMenu from "../hooks/useMenu.js";
 import MenuCategory from "../components/menu/MenuCategory";
 import LoadingWheel from "../components/LoadingWheel.jsx";
@@ -45,7 +51,7 @@ const Menu = () => {
           ));
         })()
       ) : (
-        <p>No menu items available.</p>
+        <p>{lang("menu_page.not_available")}</p>
       )}
     </div>
   );

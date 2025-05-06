@@ -1,3 +1,9 @@
+/**
+ * @file UserContext.jsx
+ * @description This file contains the UserContext and UserProvider components.
+ * The UserContext is used to manage user authentication and user data in the application.
+ * The UserProvider component wraps the application and provides the user state and functions to manipulate it.
+ */
 import {createContext, useState} from "react";
 import {useAuthentication, useUser} from "../hooks/userHooks";
 import {useLocation, useNavigate} from "react-router";
@@ -25,7 +31,6 @@ const UserProvider = ({children}) => {
     try {
       localStorage.removeItem("token");
       setUser(null);
-      navigate("/");
     } catch (e) {
       console.log(e.message);
     }

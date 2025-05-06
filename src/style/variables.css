@@ -6,6 +6,8 @@
   --theme-contrast: #f0eff4;
   --loading-wheel: #433a6b;
   --loading-wheel-lighter: rgb(107, 92, 175);
+  --hsl-blue: rgb(0, 116, 191);
+  --hsl-gold: rgb(194, 146, 36);
   font-size: 62.5%; /* 1rem = 10px */
 
   font-family: "Roboto", sans-serif;

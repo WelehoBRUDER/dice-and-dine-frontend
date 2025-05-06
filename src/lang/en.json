@@ -8,13 +8,22 @@
     "title": "Dice & Dine",
     "subtitle": "Great food. Great games.",
     "description": "We are a restaurant that specializes in board games and delicious food. Our goal is to create a fun and welcoming environment for everyone. Whether you're a board game enthusiast or just looking for a great meal, we have something for you!",
-    "find_us_here": "Find us here"
+    "find_us_here": "Find us here",
+    "home_description": "Welcome to Dice & Dine! We are a restaurant that combines love of board games with delicious food.",
+    "home_keywords": "Board games, Restaurant, Food, Fun, Family-friendly"
   },
+  "default_profile_picture": "Default profile picture",
 
   "loading_text": "Loading content...",
   "try_again": "Try again",
   "continue": "Continue",
   "home_title": "Dice & Dine",
+
+  "not_found_page": {
+    "title": "404 - Page Not Found",
+    "subtitle": "The page you are looking for isn't here. It may have been removed, renamed, or did not exist in the first place.",
+    "home": "Go to home page"
+  },
 
   "home_page_link": "Home",
   "about_page_link": "About",
@@ -36,7 +45,7 @@
     "about_page_email": "Email",
     "about_page_address": "Address",
     "about_page_open_times": "Open times",
-    "location": "Our location"
+    "location": "Restaurant location on map"
   },
 
   "forum_page": {
@@ -72,6 +81,7 @@
   "menu_page.remove_button_text": "Remove",
   "menu_page.allergens_text": "Allergens",
   "menu_page.description": "Explore our menu and discover a variety of delicious dishes. From appetizers to desserts, we have something for everyone! Order take away or come dine in at our restaurant.",
+  "menu_page.not_available": "Menu items not available",
 
   "cart_page.order_success_message": "Order placed successfully! You can follow the status of your order in your profilepage. Order ID: ",
   "cart_page.title": "Your Cart",
@@ -88,7 +98,8 @@
 
   "games_page.title": "Games",
   "games_page.description": "Explore our collection of games. From board games to card games, we have something for everyone! Join us for a fun night of gaming with friends and family.",
-
+  "games_page.no_games": "No games available",
+  "games_page.filter_by_category": "Filter by category",
   "profile_page.title": "Profile",
 
   "review_page": {
@@ -111,6 +122,8 @@
   "reservation_page": {
     "make_reservation": "Make a reservation",
     "loading_reservation": "Loading reservation...",
+    "reservation_title": "Make a table reservation",
+    "reservation_description": "Make a reservation for a table at our restaurant. Choose the date, time, and number of people. You can also add additional information if needed.",
     "reservation": "Reservation",
     "reservation_date": "Which day would you like to reserve?",
     "reservation_arrival": "What time will you arrive?",
@@ -119,7 +132,7 @@
     "reservation_summary": "Summary",
     "reservation_summary_text": "View summary",
     "not_set_arrival": "Pick arrival time",
-    "not_set_length": "Pick length of stay",
+    "not_set_length": "Pick reservation duration",
     "not_set_tables": "Pick table(s)",
     "table": "Table",
     "seats": "Seats",
@@ -129,7 +142,7 @@
     "reservation_failed_desc": "There was an error while making the reservation. Please try again later.",
     "date": "Date",
     "arrival_time": "Arrival time",
-    "length_of_stay": "Length of stay",
+    "length_of_stay": "Reservation duration",
     "tables": "Tables reserved"
   },
 
@@ -144,12 +157,28 @@
   "profile_page.profile_picture": "Profile Picture",
   "profile_page.orders": "Your orders",
   "profile_page.details": "Details",
+  "profile_page.arrival": "Arrival",
+  "profile_page.time_range": "Time",
+  "profile_page.size": "Reservation size",
+  "profile_page.tables": "Table reserved",
+  "profile_page.reservations": "Your reservations",
+  "profile_page.orderid": "Order ID",
+  "profile_page.ordertime": "Order time",
+  "profile_page.orderstatus": "Order status",
+  "profile_page.reservationid": "Reservation ID",
+  "profile_page.updated_succesfully": "Profile updated successfully",
+  "profile_page.password_changed": "Password changed successfully! Please log in again.",
+  "profile_page.password_error": "Error changing password. Please try again.",
+  "profile_page.update_error": "Error updating profile. Please try again.",
+  "profile_page.no_orders": "No orders",
+  "profile_page.no_reservations": "No reservations",
 
   "reviews_page": {
     "title": "All Reviews",
     "anon": "Anonymous",
     "review_title": "Review title",
     "leave_review": "Leave a review",
+    "reviews_description": "Browse reviews from other customers and leave your own.",
     "read_more": "More⠀↓"
   },
   "profile_page.change_password": "Change Password",
@@ -169,7 +198,7 @@
   "admin_page.title": "Admin Page",
   "admin_page.orders_page_link": "Orders",
   "admin_page.users_page_link": "Users",
-  "admin_page.editmenu_page_link": "Edit Menu",
+  "admin_page.editmenu_page_link": "Delete From Menu",
   "admin_page.editabout_page_link": "Edit About",
   "admin_page.reviews_page_link": "Reviews",
   "admin_page.reservations_page_link": "Table Reservations",
@@ -177,6 +206,7 @@
 
   "unauthorized_page.title": "403 - Not Authorized",
   "unauthorized_page.description": "You do not have permission to access this page.",
+  "not_authorized": "403 - Not Authorized",
 
   "admin_orders_page.title": "Manage Orders",
   "admin_orders_page.filter_by_status": "Filter by status",
@@ -192,5 +222,76 @@
   "admin_orders_page.th_items": "Items",
   "admin_orders_page.th_status": "Status",
   "admin_orders_page.th_date": "Date",
-  "admin_orders_page.th_actions": "Actions"
+  "admin_orders_page.th_actions": "Actions",
+  "admin_page.addtomenu_page_link": "Add To Menu",
+  "admin_orders_page.description": "This page is for managing orders. You can view all orders, filter by status or date, and update the status of an order by selecting the correct status from actions selector.",
+
+  "editmenu_page.title": "Delete Menu Item",
+  "editmenu_page.filter": "Filter By Category",
+  "editmenu_page.all": "All",
+  "editmenu_page.itemid": "Item ID",
+  "editmenu_page.name": "Name",
+  "editmenu_page.price": "Price",
+  "editmenu_page.category": "Category",
+  "editmenu_page.delete": "Delete",
+  "editmenu_page.description": "This page is for deleting menu items. You can filter the items by category. To delete an item, click on the '❌' button next to the item you want to remove. Please note that this action cannot be undone.",
+  "editmenu_page.confirm_delete": "Are you sure you want to delete item: ",
+
+  "addtomenu_page.title": "Add to Menu",
+  "addtomenu_page.enTitle": "English",
+  "addtomenu_page.fiTitle": "Suomeksi",
+  "addtomenu_page.enname": "Name in English",
+  "addtomenu_page.namePlaceholder": "Enter name",
+  "addtomenu_page.price": "Price",
+  "addtomenu_page.pricePlaceholder": "Enter price in euros",
+  "addtomenu_page.category": "Choose category",
+  "addtomenu_page.allergens": "Allergens",
+  "addtomenu_page.endescription": "Description in English",
+  "addtomenu_page.descriptionPlaceholder": "Enter item description",
+  "addtomenu_page.finame": "Name in Finnish",
+  "addtomenu_page.fidescription": "Description in Finnish",
+
+  "addtomenu_page.enname_required": "English name is required",
+  "addtomenu_page.price_required": "Price is required",
+  "addtomenu_page.finame_required": "Finnish name is required",
+  "addtomenu_page.fidescription_required": "Finnish description is required",
+  "addtomenu_page.endescription_required": "English description is required",
+  "addtomenu_page.category_required": "Category is required",
+  "addtomenu_page.success_title": "Menu item added",
+  "addtomenu_page.success_desc": "The menu item has been added successfully. You can view it in the menu.",
+  "addtomenu_page.description": "This page is for adding new menu items. It is required to fill in all details in the form. Allergens are the only optional field. Choose allergens by checking the correct boxes. Type in name and description in both languages. Choose a category from the dropdown menu. Price is required in euros. After filling in all details, click on the 'Save' button to add the item to the menu.",
+  "addtomenu_page.submit": "Save",
+
+  "users_page.title": "Manage Users",
+  "users_page.id": "Id",
+  "users_page.username": "Username",
+  "users_page.email": "Email",
+  "users_page.user_type": "User type",
+  "users_page.actions": "Actions",
+  "users_page.nousers": "No users available",
+  "users_page.description": "This page is for manging users: users list, edit user details, delete users.",
+
+  "reservations_page.title": "Manage Table Reservations",
+  "reservations_page.id": "ID",
+  "reservations_page.reservedby": "Reserved by",
+  "reservations_page.arrival": "Arrival",
+  "reservations_page.departure": "Departure",
+  "reservations_page.size": "Size",
+  "reservations_page.tables": "Tables",
+  "reservations_page.additional": "Additional Information",
+  "reservations_page.actions": "Actions",
+  "reservations_page.filter_by_date": "Filter by date",
+  "reservations_page.description": "This page is for manging restaurant tables and table reservations.",
+  "reservations_page.no_for_selected": "No reservations for selected date.",
+  "reservations_page.no_reservations": "No reservations.",
+
+  "editabout_page.title": "Edit Restaurant Information",
+  "editabout_page.description": "This page is for editing restaurant information. You can edit the  phone number, email address, and opening times. To edit the information, click on the editting icon next to the field you want to change. Remember to save the changes after editing.",
+  "editabout_page.phone": "Phone",
+  "editabout_page.email": "Email",
+  "editabout_page.opentimes": "Open times",
+
+  "logout_page.title": "Logout",
+  "logout_page.description": "You have been logged out successfully. Thank you for visiting. We hope to see you again soon!",
+  "logout_page.go_home": "Home page"
 }

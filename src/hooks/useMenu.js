@@ -1,3 +1,9 @@
+/**
+ * @file useMenu.js
+ * @description Custom hook to fetch menu data from the API.
+ * This hook fetches the menu based on the provided language.
+ */
+
 import {useState, useEffect} from "react";
 import {fetchData} from "../utils/fetchData.js";
 

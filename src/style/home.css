@@ -24,6 +24,17 @@
   }
 }
 
+.logo {
+
+  img {
+    width: 100%;
+    max-width: var(--medium-content-width);
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
 
 @media (max-width: 768px) {
 

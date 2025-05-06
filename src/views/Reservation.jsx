@@ -61,6 +61,9 @@ const Reservation = () => {
     }
   }, [step]);
 
+  // Reflect the user's choice in the step name.
+  // Each step has different data compared to the others
+  // which is why we need to individually display all steps.
   const reflectUserChoice = (name) => {
     switch (name) {
       case "reservation_date":
@@ -86,6 +89,8 @@ const Reservation = () => {
         return name;
     }
   };
+  // Whenever the user goes back, we need to rollback all values that come after the current step.
+  // Not doing this would cause conflicts with data that relies on the previous steps.
   const changeStep = (newStep) => {
     if (newStep < step) {
       const rollbackActions = [
@@ -102,12 +107,16 @@ const Reservation = () => {
 
   // Filter out tables that are already reserved
   useEffect(() => {
+    // Compares two dates and returns true if they are the same day
     const isSameDate = (date1, date2) =>
       date1.toDateString() === date2.toDateString();
 
+    // Compares two time slots and returns true if they overlap
+    // Overlap means that the start time of one slot is before the end time of the other slot
     const isTimeOverlap = (start1, end1, start2, end2) =>
       start1 < end2 && start2 < end1;
 
+    // Get the hours from a date string (e.g. "2023-10-01T12:00:00Z")
     const getHours = (dateStr) => new Date(dateStr).getHours();
 
     const filteredTables = tables.filter((table) => {
@@ -128,6 +137,7 @@ const Reservation = () => {
           ? arrival + reservationLength
           : null;
 
+        // Check if the reservation time overlaps with the order time
         const overlaps =
           (arrival !== undefined &&
             isTimeOverlap(arrival, arrival + 1, orderStart, orderEnd)) ||
