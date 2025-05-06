@@ -255,5 +255,6 @@
   "reservations_page.additional": "Lisätiedot",
   "reservations_page.actions": "Toimenpiteet",
   "reservations_page.filter_by_date": "Suodata",
+  "reservations_page.no_reservations": "Ei varauksia saatavilla",
   "reservations_page.description": "Pöytävaraukset-sivulla voit tarkastella ja hallita ravintolan pöytävarauksia."
 }
