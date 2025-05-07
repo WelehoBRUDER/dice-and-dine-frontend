@@ -15,11 +15,13 @@
 
 import {useCart} from "../../context/CartContext";
 import {useLanguage} from "../../context/LanguageContext";
+import {useUserContext} from "../../hooks/useUserContext";
 import CartItemControls from "./CartItemControls";
 
 const MenuItem = ({item}) => {
   const {lang} = useLanguage();
   const {cart} = useCart();
+  const {user} = useUserContext();
   const allergensText = lang("menu_page.allergens_text");
 
   const cartItem = cart.find(
@@ -38,11 +40,12 @@ const MenuItem = ({item}) => {
             {allergensText}: {item.allergens.join(", ")}
           </p>
         )}
-
-        <CartItemControls
-          itemId={item.id}
-          currentAmount={cartItem?.amount || 0}
-        />
+        {user && user.id && (
+          <CartItemControls
+            itemId={item.id}
+            currentAmount={cartItem?.amount || 0}
+          />
+        )}
       </div>
     </>
   );
