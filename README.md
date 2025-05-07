@@ -1,5 +1,5 @@
 ![Banner image](banner.png)
-A React App built for a fictional restaurant where great food meets great board games.
+A React App built for a fictional restaurant where great food meets great board games. Developers are Leevi Rinnetmäki, Nea Lukumies, Aaro Jylhämäki and Juhana Hänninen.
 
 ## Table of Contents
 
