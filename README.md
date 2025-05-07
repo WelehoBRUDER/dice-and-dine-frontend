@@ -88,7 +88,7 @@ Dice & Dine offers a range of features to enhance the customer experience, from 
 
 Click below to open the React app:
 
-👉 [Dice & Dine](https://localhost:3000)
+👉 [Dice & Dine](https://users.metropolia.fi/~juhanaha/dice-and-dine/)
 
 ## 🛠️ How to Run Locally
 
