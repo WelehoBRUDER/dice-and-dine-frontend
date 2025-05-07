@@ -1,0 +1,115 @@
+#forum-section {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--theme-foreground);
+  border-radius: 1rem;
+  overflow: hidden;
+  min-width: 60vw;
+}
+
+.forum-article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 1rem;
+  background-color: var(--theme-background);
+  border-radius: 1rem;
+  border-style: solid;
+}
+
+.forum-thread {
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem;
+  padding: 0.5rem 2rem;
+  background-color: var(--theme-background);
+  border-radius: 1rem;
+  border-style: solid;
+}
+
+.replies {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  .forum-reply-message {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0.1rem;
+    padding: 0.5rem 2rem;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    border-style: solid;
+    border-left: none;
+    border-right: none;
+    background: var(--theme-darker);
+    width: 100%;
+  }
+}
+
+
+.clicked-article {
+  background-color: var(--theme-lighter);
+}
+
+.forum-reply {
+  list-style: none;
+  border-style: solid;
+}
+
+.forum-post-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  padding: 1rem;
+  background-color: var(--theme-background);
+  border-radius: 1rem;
+  border-style: solid;
+}
+
+.forum-reply-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.forum-reply-menu-item {
+  border-style: solid;
+  border-radius: 1rem;
+  border-width: 0.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.forum-reply-menu-item input {
+  color: black;
+}
+
+.articles {
+  max-height: 60vh;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.user-info {
+  padding: 0;
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .profile-pic {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 0.2rem solid var(--theme-contrast);
+  }
+}

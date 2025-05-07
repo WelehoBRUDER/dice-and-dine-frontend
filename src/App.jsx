@@ -3,6 +3,7 @@ import Layout from "./views/Layout";
 import Home from "./views/Home";
 import About from "./views/About";
 import Forum from "./views/forum";
+import ForumPostPage from "./views/ForumPostPage";
 import Login from "./views/login";
 import Register from "./views/Register";
 import Reservation from "./views/Reservation";
@@ -40,6 +41,7 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/forum" element={<Forum />} />
+                <Route path="/forum/:id" element={<ForumPostPage />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/reservation" element={<Reservation />} />

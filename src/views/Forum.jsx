@@ -1,22 +1,81 @@
+import {useState} from "react";
+import useForum from "../hooks/useForum";
 import {useLanguage} from "../context/LanguageContext";
 import {useEffect} from "react";
+import LoadingWheel from "../components/LoadingWheel";
+import Button from "../components/Button";
+import Input from "../components/Input";
+import TextArea from "../components/TextArea";
+
+import ForumArticle from "../components/forum/ForumArticle";
+import ForumThread from "../components/forum/ForumThread";
+import {useUserContext} from "../hooks/useUserContext";
+import {useNavigate} from "react-router-dom";
 
 const Forum = () => {
-  const {lang, setCurrentPage} = useLanguage();
+  const {currentLanguage, lang, setCurrentPage} = useLanguage();
+  const {forum, setForum, loading} = useForum(currentLanguage);
+
+  const [title, setTitle] = useState("");
+  const [message, setMessage] = useState("");
+  const {postMessage} = useForum();
+  const {user} = useUserContext();
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(user);
+    postMessage(title, message, user.username).then((res) => {
+      console.log("RES:", res.result);
+
+      res.result.id = res.result.messageTableId;
+      setForum([...forum, res.result]);
+      setTitle("");
+      setMessage("");
+      navigate("/forum");
+    });
+  };
 
   useEffect(() => {
     setCurrentPage("forum_page");
   }, []);
   return (
-    <div>
+    <>
       <article>
-        <title>{lang("forum_title")}</title>
+        <title>{lang("forum_page_title")}</title>
         <meta name="description" content={lang("forum_description")} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </article>
-      <h1>Forum</h1>
-      <p>This is the forum page.</p>
-    </div>
+      <h1>{lang("forum_page_title")}</h1>
+      {loading ? (
+        <LoadingWheel />
+      ) : (
+        <section id="forum-section">
+          <div className="articles">
+            {forum.map((item) => (
+              <ForumThread item={item} lang={lang} />
+            ))}
+          </div>
+          <form onSubmit={handleSubmit} className="forum-post-form">
+            <h3>{lang("make a new post")}</h3>
+            <Input
+              text={lang("forum_page_post_title")}
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              icon="star"
+            />
+            <TextArea
+              text={lang("forum_page_post_message")}
+              type="text"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+            <Button type="submit">{lang("forum_page_post_button")}</Button>
+          </form>
+        </section>
+      )}
+    </>
   );
 };
 

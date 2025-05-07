@@ -16,6 +16,7 @@ const Button = ({
   to,
   disabled = false,
   type,
+  title = "",
   children,
 }) => {
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ const Button = ({
       className={className ? `${className}` : "btn"}
       disabled={disabled}
       type={type ? type : "button"}
+      title={title}
     >
       {icon && <img src={icon} alt="button icon" className="btn-icon" />}
       {children}
