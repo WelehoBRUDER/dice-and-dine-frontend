@@ -128,7 +128,7 @@ const Header = () => {
                 </li>
               </>
             )}
-            {cart.length > 0 && (
+            {user && cart.length > 0 && (
               <li>
                 <NavLink
                   to="/cart"

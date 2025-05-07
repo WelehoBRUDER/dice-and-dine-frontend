@@ -84,6 +84,7 @@
   "menu_page.allergens_text": "Allergens",
   "menu_page.description": "Explore our menu and discover a variety of delicious dishes. From appetizers to desserts, we have something for everyone! Order take away or come dine in at our restaurant.",
   "menu_page.not_available": "Menu items not available",
+  "menu_page.order_instructions": "You need to be logged in to order. Please log in or register to place an order.",
 
   "cart_page.order_success_message": "Order placed successfully! You can follow the status of your order in your profilepage. Order ID: ",
   "cart_page.title": "Your Cart",

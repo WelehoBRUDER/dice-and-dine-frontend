@@ -9,10 +9,12 @@ import MenuCategory from "../components/menu/MenuCategory";
 import LoadingWheel from "../components/LoadingWheel.jsx";
 import {useLanguage} from "../context/LanguageContext.jsx";
 import {useEffect} from "react";
+import {useUserContext} from "../hooks/useUserContext.js";
 
 const Menu = () => {
   const {setCurrentPage, lang, currentLanguage} = useLanguage();
   const {menu, loading} = useMenu(currentLanguage);
+  const {user} = useUserContext();
 
   useEffect(() => {
     setCurrentPage("menu_page");
@@ -33,23 +35,26 @@ const Menu = () => {
       {loading ? (
         <LoadingWheel />
       ) : menu && menu.length > 0 ? (
-        (() => {
-          const groupedItems = menu.reduce((acc, item) => {
-            item.categories.forEach((category) => {
-              if (!acc[category]) acc[category] = [];
-              acc[category].push(item);
-            });
-            return acc;
-          }, {});
+        <>
+          {!user && <p>{lang("menu_page.order_instructions")}</p>}
+          {(() => {
+            const groupedItems = menu.reduce((acc, item) => {
+              item.categories.forEach((category) => {
+                if (!acc[category]) acc[category] = [];
+                acc[category].push(item);
+              });
+              return acc;
+            }, {});
 
-          return Object.entries(groupedItems).map(([categoryName, items]) => (
-            <MenuCategory
-              key={categoryName}
-              categoryName={categoryName}
-              items={items}
-            />
-          ));
-        })()
+            return Object.entries(groupedItems).map(([categoryName, items]) => (
+              <MenuCategory
+                key={categoryName}
+                categoryName={categoryName}
+                items={items}
+              />
+            ));
+          })()}
+        </>
       ) : (
         <p>{lang("menu_page.not_available")}</p>
       )}

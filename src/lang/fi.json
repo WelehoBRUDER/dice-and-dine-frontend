@@ -83,6 +83,7 @@
   "menu_page.allergens_text": "Allergeenit",
   "menu_page.description": "Löydä meidän herkulliset vaihtoehdot ruokalistalta. Alkupaloista pääruokiin ja jälkiruokiin, meiltä löytyy jokaiselle jotakin! Tilaa noudettavaksi tai tule nauttimaan ravintolaan.",
   "menu_page.not_available": "Ruokalista ei saatavilla",
+  "menu_page.order_instructions": "Sinun täytyy kirjautua sisään tai rekisteröityä, jotta voit tehdä tilauksen.",
 
   "cart_page.order_success_message": "Tilaus onnistui! Voit seurata tilauksen tilaa profiilissasi. Tilausnumero: ",
   "cart_page.title": "Ostoskori",
