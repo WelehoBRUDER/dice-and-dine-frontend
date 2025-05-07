@@ -5,11 +5,11 @@ A React App built for a fictional restaurant where great food meets great board 
 
 - [Overview](#overview)
 - [Features](#features)
-- [Live app](#live-app)
-- [Running locally](#how-to-run-locally)
-- [Testing the app](#testing-the-app)
-- [Testing the admin panel](#testing-the-admin-panel)
-- [Backend repository](#backend-repository)
+- [Live app](#-live-app)
+- [Running locally](#%EF%B8%8F-how-to-run-locally)
+- [Testing the app](#-testing-the-app)
+- [Testing the admin panel](#%EF%B8%8F-testing-the-admin-panel)
+- [Backend repository](#-backend-repository)
 - [Attributions](#attributions)
 
 ## Overview
