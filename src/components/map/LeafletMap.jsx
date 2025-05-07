@@ -5,6 +5,7 @@ import useRestaurantInfo from "../../hooks/useRestaurantInfo";
 import LoadingWheel from "../LoadingWheel";
 import MapInvalidator from "./MapInvalidator";
 import MapTransportationMarkers from "./MapTransportationMarkers";
+import L from "leaflet";
 /**
  * Component that renders a Leaflet map with a marker and popup.
  * It fetches the restaurant's latitude and longitude from the API and displays it on the map.
@@ -24,6 +25,15 @@ const LeafletMap = ({transportationInfo, children}) => {
       setPosition([latitude, longitude]); // Update position with fetched coordinates
     }
   }, [info]);
+
+  // Fix Leaflet's missing icon paths after build
+  delete L.Icon.Default.prototype._getIconUrl;
+
+  L.Icon.Default.mergeOptions({
+    iconUrl: "/~juhanaha/dice-and-dine/leaflet/marker-icon.png",
+    iconRetinaUrl: "/~juhanaha/dice-and-dine/leaflet/marker-icon-2x.png",
+    shadowUrl: "/~juhanaha/dice-and-dine/leaflet/marker-shadow.png",
+  });
 
   return (
     <div className="map-embed flex-column ">

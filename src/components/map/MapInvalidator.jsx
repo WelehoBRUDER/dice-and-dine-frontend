@@ -13,7 +13,11 @@ const MapInvalidator = ({position}) => {
   useEffect(() => {
     if (position) {
       map.setView(position, map.getZoom(), {animate: true});
-      map.invalidateSize(); // Invalidate the map size to ensure it renders correctly
+
+      // Add a small delay to ensure the map has fully rendered before calling invalidateSize
+      setTimeout(() => {
+        map.invalidateSize();
+      }, 100); // Slight delay (100ms) ensures the layout is settled
     }
   }, [position, map]);
 
