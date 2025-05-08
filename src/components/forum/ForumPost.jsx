@@ -6,7 +6,6 @@ import ForumUserInfo from "./ForumUserInfo";
 import ForumReplyToMessage from "./ForumReplyToMessage";
 
 export const ForumPost = ({item, lang}) => {
-  console.log(item);
   const [replies, setReplies] = useState(null);
 
   useEffect(() => {

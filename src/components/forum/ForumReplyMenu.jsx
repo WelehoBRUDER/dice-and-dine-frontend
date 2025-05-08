@@ -18,7 +18,6 @@ export const ForumReplyMenu = ({id, replies, user, lang}) => {
   const handleReplyToggle = (replyId) => {
     setActiveReplyId((prevId) => (prevId === replyId ? null : replyId));
   };
-  console.log(id);
   return (
     <ul className="forum-reply-menu">
       {replies?.map(

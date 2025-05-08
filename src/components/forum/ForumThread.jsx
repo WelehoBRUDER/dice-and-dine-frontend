@@ -2,7 +2,6 @@ import {Link} from "react-router-dom";
 import parseDateToTimeStamp from "../../utils/dateTime";
 
 export const ForumThread = ({item, lang}) => {
-  console.log(item);
   return (
     <article className="forum-thread flex-row" key={item.id}>
       <Link to={`/forum/${item.id}`} className="forum-link flex-row center">

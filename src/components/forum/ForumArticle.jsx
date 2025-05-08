@@ -18,9 +18,7 @@ export const ForumArticle = ({item, lang}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(user);
     postReplyMessage(message, item.id, user.username).then((res) => {
-      console.log(res);
       setMessage("");
       navigate("/forum");
     });

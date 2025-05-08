@@ -12,10 +12,7 @@ export const ForumPostArticle = ({item, lang}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(user);
     postReplyMessage(message, item.id, user.username).then((res) => {
-      console.log("RES:", res.result);
-
       item.replies.push(res.result);
 
       setMessage("");
