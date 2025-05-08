@@ -256,6 +256,7 @@ npx playwright test
 ## 💻 Backend Repository
 
 Find the backend repository here: 👉 [Dice & Dine Backend](https://github.com/Aarojy/dice-and-dine-backend)
+Apidocs: 👉 [Dice & Dine Apidocs](https://users.metropolia.fi/~aarojy/root/project-apidocs/)
 
 ## Attributions
 
